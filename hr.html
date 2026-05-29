@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хүний нөөцийн бодлого - EMJJ Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hr-hero {
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #f5f9ff 100%);
+        }
+        
+        .hr-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hr-hero-text h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+        
+        .hr-hero-text p {
+            font-size: 16px;
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+        
+        .hr-hero-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .hr-hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .vmv-section {
+            padding: 60px 0;
+            background: var(--bg-white);
+        }
+        
+        .vmv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .vmv-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        
+        .vmv-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .vmv-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+        
+        .vmv-card p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+        
+        .vmv-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 16px;
+        }
+        
+        .vmv-card ul li {
+            padding: 6px 0;
+            color: var(--text-medium);
+            font-size: 14px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .vmv-card ul li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .tab-section {
+            padding: 40px 0 0;
+            background: var(--bg-white);
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .tab {
+            padding: 16px 40px;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            margin: 0 4px;
+        }
+        
+        .tab:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .policy-section {
+            padding: 60px 0;
+            background: var(--bg-white);
+        }
+        
+        .policy-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .policy-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .policy-content p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .values-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin: 40px 0;
+        }
+        
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+        
+        .value-item-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .value-item-text h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        
+        .value-item-text p {
+            font-size: 12px;
+            color: var(--text-medium);
+            margin: 0;
+        }
+        
+        .training-section {
+            padding: 60px 0;
+            background: var(--bg-light);
+        }
+        
+        .training-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .training-header-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .training-header h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .training-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .training-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        
+        .training-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .training-number {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 18px;
+        }
+        
+        .training-card-header h4 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        
+        .training-card-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        
+        .training-card-content {
+            padding: 20px;
+        }
+        
+        .training-card-content p {
+            color: var(--text-medium);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .benefits-section {
+            padding: 40px 0;
+            background: var(--bg-white);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+        
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .benefit-item p {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        
+        .contact-banner {
+            background: var(--primary);
+            padding: 40px 0;
+            color: white;
+        }
+        
+        .contact-banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-banner-text h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .contact-banner-text p {
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .hr-hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .vmv-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .training-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-banner-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span>📞 1900-9999</span>
+                        <span>✉️ info@emjj.mn</span>
+                        <span>📍 Улаанбаатар, Монгол</span>
+                    </div>
+                    <button class="lang-toggle">MN / EN</button>
+                </div>
+            </div>
+        </div>
+        <div class="header-main container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">EM</div>
+                EMJJ Hospital
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                    <li><a href="training.html">Сургалт</a></li>
+                    <li><a href="news.html">Мэдээ</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">Хандив</a>
+                <a href="#" class="btn btn-primary">Нэвтрэх</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HR Hero -->
+    <section class="hr-hero">
+        <div class="container">
+            <div class="hr-hero-content">
+                <div class="hr-hero-text">
+                    <h1>ХҮНИЙ НӨӨЦИЙН БОДЛОГО</h1>
+                    <p>ЭМЖЖ эмнэлэг нь хүний нөөцийн хөгжлийг байгууллагын хөгжлийн суурь гэж үзэн, чадварлаг, мэргэжлийн, ёс зүйтэй хамт олныг бүрдүүлэх, тогтвортой суурьшилтай ажиллах орчныг бүрдүүлэхэд тууштай ажилладаг.</p>
+                </div>
+                <div class="hr-hero-image">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=400&fit=crop" alt="EMJJ Hospital Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision, Mission, Values -->
+    <section class="vmv-section">
+        <div class="container">
+            <div class="vmv-grid">
+                <div class="vmv-card">
+                    <div class="vmv-icon">👁</div>
+                    <h3>АЛСЫН ХАРАА</h3>
+                    <p>Олон улсын жишигт нийцсэн, чих хамар хоолой, сонсгол судлалын үндэсний загвар төв болох.</p>
+                </div>
+                <div class="vmv-card">
+                    <div class="vmv-icon">🎯</div>
+                    <h3>ЭРХЭМ ЗОРИЛГО</h3>
+                    <p>Үйлчлүүлэгчдээ эрхэмлэгдэг тэргүүн туришлага, шиндэг инноваци бүхий эмнэлэг, эрдэм шинжилгээ, сургалтын эминэгэ байх.</p>
+                </div>
+                <div class="vmv-card">
+                    <div class="vmv-icon">💎</div>
+                    <h3>ҮНЭТ ЗҮЙЛ</h3>
+                    <ul>
+                        <li>Э-ЭЛДЭГ ХАРИЛЦАА</li>
+                        <li>М-АНЛАЙЛАГЧ ХАМТ ОЛОН</li>
+                        <li>Ж-ИШИГ ҮЙЛЧЛЭГЭЭ</li>
+                        <li>Ж-АРГАТАЙ ҮЙЛЧЛҮҮЛЭГЧ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="tab-section">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab active">Хүний нөөцийн бодлого</button>
+                <button class="tab">Нээлттэй ажлын байр</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <section class="policy-section">
+        <div class="container">
+            <div class="policy-content">
+                <h3>ХҮНИЙ НӨӨЦИЙН БОДЛОГО</h3>
+                
+                <p>"ЭМЖЖ" ХХК-ийн Захиргаа хүний нөөцийн газар нь байгууллагынхаа "Алсын хараа", "Үнэт зүйл", "Эрхэм зорилго", "Чанарын бодлого", зорилт, чиг үүргийг мэргэжлийн өндөр түвшинд хэрэгжүүлэх чадвартай хүний нөөцийг бүрдүүлэх, дасан зохицуулах, сургах хөгжүүлэх, илэвхжүүлэх, хүний нөөцийн манлайллыг хангах, тогтоон барих хөтөлбөрүүдийг хэрэгжүүлэх замаар хүний нөөцийн бодлогоо хэрэгжүүлэн үйл ажиллагаагаа явуулдаг билээ.</p>
+                
+                <p>Бид үүсгэн байгуулагдсан цагаасаа эхлэн ажилтнуудынхаа мэргэжлийн чиг үүргийн мэдлэг ур чадварыг тогтмол дээшлүүлж, гадаадын болон дотоодын сургалтад хамруулан сургаж хөгжүүлж, нарийн мэргэжил зээшүүлж, мэргэжил дээшлүүлж, өрсөлдөх чадварыг нэмэгдүүлж, байгууллагын зүрээс томоохон хөрөнгө оруулалтыг тасралтгүй хийсээр байна. Мөн ажлын байрны хэрэгцээ, шаардлагаад нийцсэн чадварлаг, бүтээлч, сурч, хөгжих темүүлэлтэй, зөв хандлага бүхий хамт олныг бүрдүүлэх, ажилтны ажлын гүйцэтгэлийг зөв шударга үнэлж, цалин урамшууллын өнөвчтой системийг хэрэгжүүлэх, ажилтныхаа нийгмийн баталгаа, ажил амьдралын тэнцвэрийг хангах, ажлын байрны орчинг тасралтгүй сайжруулах, байгууллагын соёлыг бүрдүүлэх, эерэг уур амьсгалыг төлөвшүүлэх зорилгоор хүний нөөцийн хөгжлийн хөтөлбөрийг боловсруулан ажиллаж байна.</p>
+                
+                <div class="values-row">
+                    <div class="value-item">
+                        <div class="value-item-icon">👥</div>
+                        <div class="value-item-text">
+                            <h4>ХҮНД ХҮНДЭТГЭЛТЭЙ</h4>
+                            <p>Харилцана</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-item-icon">🛡</div>
+                        <div class="value-item-text">
+                            <h4>ХАРИУЦЛАГАТАЙ</h4>
+                            <p>Ажиллана</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-item-icon">📈</div>
+                        <div class="value-item-text">
+                            <h4>ХӨГЖИЛД ЧИГЛЭСЭН</h4>
+                            <p>Санаачилгатай</p>
+                        </div>
+                    </div>
+                    
+                    <div class="value-item">
+                        <div class="value-item-icon">🤝</div>
+                        <div class="value-item-text">
+                            <h4>ИТГЭЛ, ЁС ЗҮЙ</h4>
+                            <p>Эрхэмлэнэ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section class="training-section">
+        <div class="container">
+            <div class="training-header">
+                <div class="training-header-icon">👥</div>
+                <h3>Сургалт хөгжил</h3>
+            </div>
+            
+            <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 30px;">Бид нийт ажилтнуудынхаа мэргэжил, мэдлэгийг дээшлүүлэх, мэргэшүүлэх, гадаад болон дотоодын сургалтын үйл ажиллагаанд хамруулах, ажлын байрны сургалтыг ур дунтэй, өнөөдчтой зохион байгуулах, хувь хүний хөгжилд анхаарч, сурч боловсрох нөхцөл бололцоог ханган ажиллаж байна.</p>
+            
+            <div class="training-cards">
+                <div class="training-card">
+                    <div class="training-card-header">
+                        <div class="training-number">01</div>
+                        <h4>ШИНЭ АЖИЛТНЫ СУРГАЛТ</h4>
+                    </div>
+                    <div class="training-card-image">📚</div>
+                    <div class="training-card-content">
+                        <p>Шинэ ажилтнуудаа байгууллагынхаа үүсэн хөгжил, бүтэц зохион байгуулалт, хөдөлмөрийн дотоод журмын хариуцах талаар мэдлэг олгох, ХАБЭА-н анхан шатны мэдлэг олгох, мэргэжлийн үйл ажиллагаатай танилцуулж, танилцуулж, сургалт хийж, дасан зохицох хөтөлбөрт хамруулдаг.</p>
+                    </div>
+                </div>
+                
+                <div class="training-card">
+                    <div class="training-card-header">
+                        <div class="training-number">02</div>
+                        <h4>АЖЛЫН БАЙРНЫ СУРГАЛТ</h4>
+                    </div>
+                    <div class="training-card-image">🏥</div>
+                    <div class="training-card-content">
+                        <p>Ажилтнуудыг ажлын байранд дасан зохицуулж, мэргэжлийн ур чадварыг дээшлүүлж, мэдлэгийг сэргээх, урьдчилсан мэдлэгийн дээд гаргаас албан дарга, тасгийн хэсгийн сургалтыг зохион байгуулж, мэргэжлийн ажлын байрны удирдлагын зорилгоор сургалтыг зохион байгуулж, үнэлж дүгнэдэг.</p>
+                    </div>
+                </div>
+                
+                <div class="training-card">
+                    <div class="training-card-header">
+                        <div class="training-number">03</div>
+                        <h4>МЭРГЭЖИЛ ДЭЭШЛҮҮЛЭХ СУРГАЛТ</h4>
+                    </div>
+                    <div class="training-card-image">🎓</div>
+                    <div class="training-card-content">
+                        <p>Мэргэжил дээшлүүлэх сургалтыг гадаад болон дотоодын мэргэжлийн байгууллага, сургууль, сургалтын төв, ХХЭМБЭ, ЭМЯ, ЭМД, улсын эмнэлэгүүдийг хамтран зохион байгуулдаг бөгөөд ажлын байрны урт хугацааны, дунд хугацааны, богино хугацааны сургалтанд ажилтнуудаа хамруулдаг.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✅</div>
+                    <p>Тогтвортуй ажлын байр бүхий таатай орчин</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <p>Хөгжил, дэвшилд дэмжигдсэн соёл</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📖</div>
+                    <p>Сурч, хөгжих ерөнхий боломж</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">👥</div>
+                    <p>Ажил амьдралын тэнцвэр</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">❤️</div>
+                    <p>Нийгмийн баталгаа, эрүүл мэндийн дэмжлэг</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Banner -->
+    <section class="contact-banner">
+        <div class="container">
+            <div class="contact-banner-content">
+                <div class="contact-banner-text">
+                    <h3>🎧 Танд туслахад бид бэлэн</h3>
+                    <p>7034-1111, 1900-999</p>
+                </div>
+                <a href="contact.html" class="btn btn-white">Холбоо барих</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>EMJJ Hospital</h3>
+                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг. Бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ үзүүлж байна.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Үндсэн цэс</h4>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="about.html">Бидний тухай</a></li>
+                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                        <li><a href="training.html">Сургалт</a></li>
+                        <li><a href="news.html">Мэдээ</a></li>
+                        <li><a href="branches.html">Салбар байршил</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Туслах цэс</h4>
+                    <ul>
+                        <li><a href="#">Онлайн цаг захиалга</a></li>
+                        <li><a href="#">Сонсголын тест</a></li>
+                        <li><a href="#">Сэргээн засах сувилал</a></li>
+                        <li><a href="#">Сонсголын аппарат</a></li>
+                        <li><a href="#">B2B</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Танд тусалъя</h4>
+                    <ul>
+                        <li><a href="#">Түгээмэл асуулт</a></li>
+                        <li><a href="#">Цагийн хуваарь</a></li>
+                        <li><a href="#">Санал хүсэлт</a></li>
+                        <li><a href="#">Хандив</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Холбоо барих</h4>
+                    <ul>
+                        <li><a href="#">📞 1900-9999</a></li>
+                        <li><a href="#">📞 7034-1111</a></li>
+                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                        <li><a href="#">📍 СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
+                <p>Хандив: Дун хэл заслын сургалтын төвд 1%</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
