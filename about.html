@@ -50,37 +50,188 @@
             padding: 80px 0;
         }
         
-        .timeline {
+        .history-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .history-header h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        
+        .history-header p {
+            color: var(--text-medium);
+            font-size: 18px;
             max-width: 800px;
             margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-dark));
         }
         
         .timeline-item {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
             gap: 30px;
-            margin-bottom: 40px;
-            padding: 30px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            grid-column: 3;
+            text-align: left;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-image {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        
+        .timeline-year {
+            grid-column: 1;
+            text-align: right;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .timeline-year span {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-medium);
+        }
+        
+        .timeline-dot {
+            grid-column: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+        
+        .timeline-dot-inner {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(0,84,166,0.3);
+        }
+        
+        .timeline-content {
+            grid-column: 3;
             background: white;
+            padding: 24px;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
         
-        .timeline-year {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--primary);
-            min-width: 100px;
+        .timeline-image {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            margin-bottom: 16px;
+        }
+        
+        .timeline-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .timeline-content h3 {
             font-size: 20px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            color: var(--primary);
         }
         
         .timeline-content p {
             color: var(--text-medium);
             line-height: 1.7;
+            font-size: 14px;
+        }
+        
+        .first-in-mongolia {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+        
+        .first-in-mongolia h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 24px;
+        }
+        
+        .achievement-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .achievement-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .achievement-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+        
+        .achievement-card .year {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
         }
         
         .values-section {
@@ -171,6 +322,74 @@
             line-height: 1.8;
         }
         
+        .vmv-section {
+            padding: 60px 0;
+            background: var(--bg-white);
+        }
+        
+        .vmv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .vmv-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        
+        .vmv-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .vmv-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+        
+        .vmv-card p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+        
+        .vmv-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 16px;
+        }
+        
+        .vmv-card ul li {
+            padding: 6px 0;
+            color: var(--text-medium);
+            font-size: 14px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .vmv-card ul li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
         @media (max-width: 768px) {
             .about-grid,
             .values-grid {
@@ -182,7 +401,24 @@
             }
             
             .timeline-item {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .timeline-line {
+                display: none;
+            }
+            
+            .timeline-dot {
+                display: none;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .vmv-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -211,7 +447,6 @@
                 <ul class="nav">
                     <li><a href="index.html">Нүүр</a></li>
                     <li><a href="about.html">Бидний тухай</a></li>
-                    <li><a href="history.html">Түүхэн замнал</a></li>
                     <li><a href="services.html">Тусламж үйлчилгээ</a></li>
                     <li><a href="training.html">Сургалт</a></li>
                     <li><a href="news.html">Мэдээ</a></li>
@@ -229,7 +464,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Бидний тухай</h1>
-            <p>1998 оноос эхлэн олон улсын стандартад нийцсэн эрүүл мэндийн үйлчилгээг эх хэлээрээ үзүүлж байна</p>
+            <p>1992 оноос эхлэн олон улсын стандартад нийцсэн эрүүл мэндийн үйлчилгээг эх хэлээрээ үзүүлж байна</p>
         </div>
     </section>
 
@@ -249,53 +484,188 @@
         </div>
     </section>
 
+    <!-- Vision, Mission, Values -->
+    <section class="vmv-section">
+        <div class="container">
+            <div class="vmv-grid">
+                <div class="vmv-card">
+                    <div class="vmv-icon">👁</div>
+                    <h3>АЛСЫН ХАРАА</h3>
+                    <p>Олон улсын жишигт нийцсэн, чих хамар хоолой, сонсгол судлалын үндэсний загвар төв болох.</p>
+                </div>
+                <div class="vmv-card">
+                    <div class="vmv-icon">🎯</div>
+                    <h3>ЭРХЭМ ЗОРИЛГО</h3>
+                    <p>Үйлчлүүлэгчдээ эрхэмлэгдэг тэргүүн туришлага, шиндэг инноваци бүхий эмнэлэг, эрдэм шинжилгээ, сургалтын эминэгэ байх.</p>
+                </div>
+                <div class="vmv-card">
+                    <div class="vmv-icon">💎</div>
+                    <h3>ҮНЭТ ЗҮЙЛ</h3>
+                    <ul>
+                        <li>Э-ЭЛДЭГ ХАРИЛЦАА</li>
+                        <li>М-АНЛАЙЛАГЧ ХАМТ ОЛОН</li>
+                        <li>Ж-ИШИГ ҮЙЛЧЛЭГЭЭ</li>
+                        <li>Ж-АРГАТАЙ ҮЙЛЧЛҮҮЛЭГЧ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- History Section -->
     <section class="history-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Түүхэн замнал</h2>
-                <p>Бидний хөгжлийн түүх</p>
+            <div class="history-header">
+                <h2>ТҮҮХЭН ЗАМНАЛ</h2>
+                <p>ЭМЖЖ эмнэлэг нь 1992 оноос эхлэн чих, хамар, хоолойн нарийн мэргэжлийн тусламж үйлчилгээг тасралтгүй үзүүлж, теорийнхоо эрхэм зорилгыг хэрэгжүүлэн ирлээ.</p>
             </div>
             
-            <div class="timeline">
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
                 <div class="timeline-item">
-                    <div class="timeline-year">1998</div>
+                    <div class="timeline-year">
+                        1992
+                        <span>он</span>
+                    </div>
+                    <div class="timeline-dot">
+                        <div class="timeline-dot-inner">🏥</div>
+                    </div>
                     <div class="timeline-content">
-                        <h3>ЭМЖЖ үүсгэн байгуулагдлаа</h3>
-                        <p>Чих, хамар, хоолойн нарийн мэргэжлийн үзлэг, оношилгоо, эмчилгээний чиглэлээр үйл ажиллагаа эхлүүлсэн.</p>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=200&fit=crop" alt="1992">
+                        </div>
+                        <h3>Баттай Эрдэнэжаргал ээжийн "Сонор" пүүс байгуулагдлаа</h3>
+                        <p>Анхны пүүс нь түүхэн үеийн ЭНЭШТөв (одоогоор ЭХЭМҮТ)-ийн Чих хамар хоолойн мэс заслын тасгийн эмч, ажилчид пүүсийнхээ хувь эзэмшигч байсан бөгөөд түүхэн үеийн пүүсийн захирал Э.Жаргалсүрэн, аж ахуйн дарга, менежер Д.Довчин, манчин, сувилагч х.Авирзэд (сувилагч) нар ажиллаж байв.</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-year">2005</div>
+                    <div class="timeline-year">
+                        1994
+                        <span>он</span>
+                    </div>
+                    <div class="timeline-dot">
+                        <div class="timeline-dot-inner">🤝</div>
+                    </div>
                     <div class="timeline-content">
-                        <h3>Сонсгол нөхөн сэргээх төв нээгдлээ</h3>
-                        <p>Монгол улсад анх удаа сонсголын нарийн мэргэжлийн оношилгоо, сонсголын аппарат тохируулгын үйлчилгээг нэвтрүүлсэн.</p>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="1994">
+                        </div>
+                        <h3>"Сонор" пүүс татан буугдаж, "Сонор-Ж" ХЗАА-т АШУ-ны доктор, профессор, Монгол Улсын Хүний Гавьяат эмч Баттай Эрдэнэжаргалын санаачлагаар байгуулагдсан бөгөөд Чих хамар хоолойн явуулын үзлэг, гадаад худаалдаа, мал аж ахуй эрхэлж байв.</h3>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-year">2010</div>
+                    <div class="timeline-year">
+                        199_
+                        <span>он</span>
+                    </div>
+                    <div class="timeline-dot">
+                        <div class="timeline-dot-inner">🏛</div>
+                    </div>
                     <div class="timeline-content">
-                        <h3>10-р хороолол клиник нээгдлээ</h3>
-                        <p>Хоёр дахь салбар клиникийг Баянгол дүүрэгт нээн үйлчилгээний хүртээмжээ нэмэгдүүлсэн.</p>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=200&fit=crop" alt="1990s">
+                        </div>
+                        <h3>Түүхэн үеийн хууль тогтоомжийн хүрээнд "Сонор-Ж" ХЗАА татан буугдаж сүүлийн дээр нь "ЭМЖЖ" эмнэлгийг 1-р төв эмнэлгийн хуучин байрны 2 давхарт байгуулж, 15 ортой Мэс засал, хавьтлын эмчилгээ тасаг нээж, үйл ажиллагаагаа өргөжүүлж, 1 Чих хамар хоолойн эмч, 5 их эмч, 1 үтүглүүр эмч, 4 сувилагч, 2 туслах ажилтан 1 тогоочийн бүрэлдэхүүнтэйгээр ажиллаж байв.</h3>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-year">2015</div>
+                    <div class="timeline-year">
+                        2001
+                        <span>он</span>
+                    </div>
+                    <div class="timeline-dot">
+                        <div class="timeline-dot-inner">👂</div>
+                    </div>
                     <div class="timeline-content">
-                        <h3>ДуН хэл заслын сургалтын төв</h3>
-                        <p>Монгол Улсын анхны мэргэжлийн хэл заслын сургалтын төвийг байгуулсан.</p>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2001">
+                        </div>
+                        <h3>Дунд чихний протезийн мэс заслыг хийж эхэллээ.</h3>
+                        <p>ХБНГУ-ын "Fro Acoustic" холбоотой хамтын ажиллагааны гэрээ байгуулж, Монгол улсад анх удаа акустик инженерүүдийг бэлтгэж, Сонсгол судлалын их бүрэн кабинеттэй нэг олон улсын стандартыг дагуу сонсголын аппаратын тохируулга, засвар үйлчилгээ, сонсголын өвчлөлийн шинжилгээ хийх, олон улсын хамтарсан сургалт зохион байгуулав.</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
-                    <div class="timeline-content">
-                        <h3>5 салбарт өргөжлөө</h3>
-                        <p>Мишээл клиник, Халдварт клиник, Сэргээн засах сувилал нээн нийт 5 салбарт үйлчилгээ үзүүлж байна.</p>
+                    <div class="timeline-year">
+                        2003
+                        <span>он</span>
                     </div>
+                    <div class="timeline-dot">
+                        <div class="timeline-dot-inner">📺</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2003">
+                        </div>
+                        <h3>Монгол улсад анх удаа ХБНГУ-ын эрдэмтдийн хамтарч мэс заслыг LIVE-р шууд дамжуулан ҮНТЗ дээр сургалт зохион байгуулав.</h3>
+                        <p>Магадлан итгэмжлэгдсэн анхдагч хувийн эмнэлэгүүдийн нэг болов.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        2005
+                        <span>он</span>
+                    </div>
+                    <div class="timeline-dot">
+                        <div class="timeline-dot-inner">📅</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2005">
+                        </div>
+                        <h3>"ЭМЖЖ" эмнэлэг 33 ортой, өөрчийн байртай болж үйл ажиллагаагаа өргөжүүлж, 8 эмч, 12 сувилагч, 8 туслах ажилтантай болов.</h3>
+                        <p>Монгол улсад анх удаа нярайн сонсгол шалгах шинжилгээг нэвтрүүлж, анхны бие даасан сонсголын тасгийг байгуулав.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- First in Mongolia -->
+    <section class="first-in-mongolia">
+        <div class="container">
+            <h2>МОНГОЛД АНХ УДАА</h2>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">👂</div>
+                    <h4>Дунд чихний титан протезийн мэс засал</h4>
+                    <div class="year">2006 он</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">👶</div>
+                    <h4>Нярайн сонсгол шалгах шинжилгээ</h4>
+                    <div class="year">2005 он</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">🦻</div>
+                    <h4>Дунгийн суулгац хагалгаа</h4>
+                    <div class="year">2009 он</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">👃</div>
+                    <h4>Хамрын дурангийн мэс засал</h4>
+                    <div class="year">2010 он</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">👂</div>
+                    <h4>Чихний дурангийн мэс засал</h4>
+                    <div class="year">2017 он</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">🔄</div>
+                    <h4>СВСТ төхөөрөмж нэвтрүүлсэн</h4>
+                    <div class="year">2020 он</div>
                 </div>
             </div>
         </div>
