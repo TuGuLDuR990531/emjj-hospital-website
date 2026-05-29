@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тусламж үйлчилгээ - EMJJ Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .filter-tab {
+            padding: 12px 24px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,84,166,0.3);
+        }
+        
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 60px;
+        }
+        
+        .services-table th {
+            background: var(--primary);
+            color: white;
+            padding: 18px 24px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        
+        .services-table td {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        
+        .services-table tr:hover {
+            background: var(--bg-light);
+        }
+        
+        .service-category {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+        
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0,84,166,0.08);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-size: 36px;
+            transition: all 0.3s;
+        }
+        
+        .category-card:hover .category-icon {
+            background: var(--primary);
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .category-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+        
+        .category-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span>📞 1900-9999</span>
+                        <span>✉️ info@emjj.mn</span>
+                    </div>
+                    <button class="lang-toggle">MN / EN</button>
+                </div>
+            </div>
+        </div>
+        <div class="header-main container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">EM</div>
+                EMJJ Hospital
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                    <li><a href="news.html">Мэдээ</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">Хандив</a>
+                <a href="#" class="btn btn-primary">Нэвтрэх</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Тусламж үйлчилгээ</h1>
+            <p>Бид олон улсын стандартад нийцсэн, орчин үеийн тоног төхөөрөмжтэй үйлчилгээг санал болгож байна</p>
+        </div>
+    </section>
+
+    <!-- Services Filter -->
+    <section class="services-section">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-tab active">Бүх үйлчилгээ</button>
+                <button class="filter-tab">Амбулатори</button>
+                <button class="filter-tab">Мэс засал</button>
+                <button class="filter-tab">Оношлогоо</button>
+                <button class="filter-tab">Сэргээн засах</button>
+            </div>
+
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Үйлчилгээ</th>
+                        <th>Тайлбар</th>
+                        <th>Салбар</th>
+                        <th>Үнэ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Чих, Сонсгол</strong></td>
+                        <td>Сонсголын бүх төрлийн шинжилгээ, оношилгоо</td>
+                        <td>Төв эмнэлэг</td>
+                        <td><span class="price-tag">25,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Тэнцвэр</strong></td>
+                        <td>Тэнцвэрийн нарийн оношилгоо, эмчилгээ</td>
+                        <td>Мишээл клиник</td>
+                        <td><span class="price-tag">35,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Хамар, Харшил</strong></td>
+                        <td>Хамар, харшилын нарийн шинжилгээ, эмчилгээ</td>
+                        <td>Төв эмнэлэг</td>
+                        <td><span class="price-tag">30,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Залгиур, төвөнх</strong></td>
+                        <td>Залгиур, төвөнхийн дурангийн үзлэг, эмчилгээ</td>
+                        <td>10-р хороолол клиник</td>
+                        <td><span class="price-tag">20,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Дотор</strong></td>
+                        <td>Дотрын бүх төрлийн үзлэг, оношилгоо</td>
+                        <td>Халдварт клиник</td>
+                        <td><span class="price-tag">20,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Мэс засал</strong></td>
+                        <td>Чих, хамар, хоолойн дурангийн мэс засал</td>
+                        <td>Төв эмнэлэг</td>
+                        <td><span class="price-tag">500,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>Мэдээгүйжүүлэг</strong></td>
+                        <td>Бүх төрлийн мэдээгүйжүүлэг</td>
+                        <td>Төв эмнэлэг</td>
+                        <td><span class="price-tag">150,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>КТ, КВСТ</strong></td>
+                        <td>Компьютерийн томографи шинжилгээ</td>
+                        <td>Бүх салбар</td>
+                        <td><span class="price-tag">45,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><strong>Лаборатори</strong></td>
+                        <td>Цусны шинжилгээ, биохимийн шинжилгээ</td>
+                        <td>Бүх салбар</td>
+                        <td><span class="price-tag">15,000₮+</span></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><strong>Сонсголын аппарат</strong></td>
+                        <td>Сонсголын аппарат тохируулга, засвар</td>
+                        <td>Бүх салбар</td>
+                        <td><span class="price-tag">450,000₮+</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="service-category">
+        <div class="container">
+            <div class="section-header">
+                <h2>Үйлчилгээний ангилал</h2>
+                <p>Таны эрүүл мэндэд хамгийн тохиромжтой үйлчилгээ</p>
+            </div>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🏥</div>
+                    <h3>Амбулаторийн үйлчилгээ</h3>
+                    <p>Урьдчилан сэргийлэх үзлэг, оношлогоо, эмчилгээ, зөвлөгөө</p>
+                    <a href="#" class="btn btn-primary">Дэлгэрэнгүй</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">⚕️</div>
+                    <h3>Мэс заслын үйлчилгээ</h3>
+                    <p>Чих, хамар, хоолойн дурангийн мэс засал, дунгийн суулгац</p>
+                    <a href="#" class="btn btn-primary">Дэлгэрэнгүй</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🔬</div>
+                    <h3>Оношлогын үйлчилгээ</h3>
+                    <p>КТ, КВСТ, ЭХО, рентген, дурангийн шинжилгээ</p>
+                    <a href="#" class="btn btn-primary">Дэлгэрэнгүй</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🧪</div>
+                    <h3>Лабораторийн үйлчилгээ</h3>
+                    <p>Цусны шинжилгээ, биохимийн шинжилгээ, харшилын тест</p>
+                    <a href="#" class="btn btn-primary">Дэлгэрэнгүй</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">👂</div>
+                    <h3>Сонсгол сэргээх</h3>
+                    <p>Сонсгол шалгалт, аппарат тохируулах, яриа сэргээх</p>
+                    <a href="#" class="btn btn-primary">Дэлгэрэнгүй</a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">🌿</div>
+                    <h3>Сэргээн засах</h3>
+                    <p>Уламжлалт эмчилгээ, сэргээн засах эмчилгээ, сувилал</p>
+                    <a href="#" class="btn btn-primary">Дэлгэрэнгүй</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Онлайн цаг захиалга</h2>
+            <p>1900-9999 дугаарт холбогдон эсвэл доорх товчийг дарж цаг аваарай</p>
+            <a href="#" class="btn btn-white btn-large">Цаг захиалах</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>EMJJ Hospital</h3>
+                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Үндсэн цэс</h4>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="about.html">Бидний тухай</a></li>
+                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                        <li><a href="news.html">Мэдээ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Туслах цэс</h4>
+                    <ul>
+                        <li><a href="#">Онлайн цаг захиалга</a></li>
+                        <li><a href="#">Сонсголын тест</a></li>
+                        <li><a href="branches.html">Салбар байршил</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Танд тусалъя</h4>
+                    <ul>
+                        <li><a href="#">Түгээмэл асуулт</a></li>
+                        <li><a href="#">Цагийн хуваарь</a></li>
+                        <li><a href="#">Санал хүсэлт</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Холбоо барих</h4>
+                    <ul>
+                        <li><a href="#">📞 1900-9999</a></li>
+                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

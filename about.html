@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бидний тухай - EMJJ Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+        
+        .about-text p {
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .history-section {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+        
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        
+        .timeline-year {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            min-width: 100px;
+        }
+        
+        .timeline-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content p {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        .values-section {
+            padding: 80px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .leadership-section {
+            background: var(--bg-light);
+            padding: 80px 0;
+        }
+        
+        .leader-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        
+        .leader-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+        
+        .leader-content {
+            padding: 40px;
+        }
+        
+        .leader-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .leader-content .position {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .leader-content p {
+            color: var(--text-medium);
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .leader-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span>📞 1900-9999</span>
+                        <span>✉️ info@emjj.mn</span>
+                        <span>📍 Улаанбаатар, Монгол</span>
+                    </div>
+                    <button class="lang-toggle">MN / EN</button>
+                </div>
+            </div>
+        </div>
+        <div class="header-main container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">EM</div>
+                EMJJ Hospital
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                    <li><a href="news.html">Мэдээ</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">Хандив</a>
+                <a href="#" class="btn btn-primary">Нэвтрэх</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Бидний тухай</h1>
+            <p>1998 оноос эхлэн олон улсын стандартад нийцсэн эрүүл мэндийн үйлчилгээг эх хэлээрээ үзүүлж байна</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&h=400&fit=crop" alt="EMJJ Hospital">
+                </div>
+                <div class="about-text">
+                    <h2>ЭМЖЖ Төв Эмнэлэг</h2>
+                    <p>Чих, хамар, хоолой, сонсгол судлалын чиглэлээр амбулаторийн үзлэг, Монгол улсын хэмжээнд анхны цор ганц тэнцвэрийн эмгэгийг оношилох лабораторийн шинжилгээ, хамар, харшил, хоолойн нарийн мэргэжлийн шинжилгээ, өдрийн болон хэсгийн эмчилгээ, компьютерийн (CT), (CBCT) шинжилгээ, чих, хамар, хоолойн дурангийн мэс засал, дунгийн суулгац, гажиг заслын мэс засал хийдэг.</p>
+                    <p>41 ортой хэвтүүлэн эмчлэх тусламж үйлчилгээг улсын хэмжээнд үзүүлэхээс гадна нийтэд үйлчлэх эмийн сангийн үйлчилгээ, сонсголын аппарат тохируулга, засвар, нярайн сонсголын скрининг, сонсголын нарийн мэргэжлийн оношилгоо (OAE, BERA, ASSR, тимпанометр), сонсгол сэргээх эмчилгээг олон улсын стандартад нийцүүлэн хамгийн сүүлийн үеийн дэвшилтэт технологи бүхий тоног төхөөрөмжийг ашиглан бүх насны хүн амд нэг цэгт үзүүлж байна.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Түүхэн замнал</h2>
+                <p>Бидний хөгжлийн түүх</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1998</div>
+                    <div class="timeline-content">
+                        <h3>ЭМЖЖ үүсгэн байгуулагдлаа</h3>
+                        <p>Чих, хамар, хоолойн нарийн мэргэжлийн үзлэг, оношилгоо, эмчилгээний чиглэлээр үйл ажиллагаа эхлүүлсэн.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-content">
+                        <h3>Сонсгол нөхөн сэргээх төв нээгдлээ</h3>
+                        <p>Монгол улсад анх удаа сонсголын нарийн мэргэжлийн оношилгоо, сонсголын аппарат тохируулгын үйлчилгээг нэвтрүүлсэн.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h3>10-р хороолол клиник нээгдлээ</h3>
+                        <p>Хоёр дахь салбар клиникийг Баянгол дүүрэгт нээн үйлчилгээний хүртээмжээ нэмэгдүүлсэн.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h3>ДуН хэл заслын сургалтын төв</h3>
+                        <p>Монгол Улсын анхны мэргэжлийн хэл заслын сургалтын төвийг байгуулсан.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>5 салбарт өргөжлөө</h3>
+                        <p>Мишээл клиник, Халдварт клиник, Сэргээн засах сувилал нээн нийт 5 салбарт үйлчилгээ үзүүлж байна.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Үнэт зүйлс</h2>
+                <p>Бидний эрхэм зорилго</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Чанар</h3>
+                    <p>Олон улсын стандартад нийцсэн чанартай үйлчилгээ</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">💙</div>
+                    <h3>Хүндэтгэл</h3>
+                    <p>Үйлчлүүлэгч бүрийг хувь хүнийг нь хүндэтгэн үйлчилнэ</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🔬</div>
+                    <h3>Инноваци</h3>
+                    <p>Хамгийн сүүлийн үеийн дэвшилтэт технологийг нэвтрүүлнэ</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Хамтын ажиллагаа</h3>
+                    <p>Олон улсын хэмжээнд хамтран ажиллаж байна</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Удирдлага</h2>
+                <p>Манай хамт олон</p>
+            </div>
+            
+            <div class="leader-card">
+                <div class="leader-image">👨‍⚕️</div>
+                <div class="leader-content">
+                    <h3>Захирал</h3>
+                    <div class="position">Тэргүүн захирал</div>
+                    <p>ЭМЖЖ эмнэлгийн захирлын мэндчилгээ: Бид олон улсын стандартад нийцсэн, чанартай эрүүл мэндийн үйлчилгээг эх хэлээрээ хүргэх эрхэм зорилготойгоор ажиллаж байна. Манай эмнэлэг нь ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлгүүдийн нэг бөгөөд 25 жилийн туршлага, 50,000+ үйлчлүүлэгчидтэй.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>EMJJ Hospital</h3>
+                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Үндсэн цэс</h4>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="about.html">Бидний тухай</a></li>
+                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                        <li><a href="news.html">Мэдээ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Туслах цэс</h4>
+                    <ul>
+                        <li><a href="#">Онлайн цаг захиалга</a></li>
+                        <li><a href="#">Сонсголын тест</a></li>
+                        <li><a href="branches.html">Салбар байршил</a></li>
+                        <li><a href="#">Сонсголын аппарат</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Танд тусалъя</h4>
+                    <ul>
+                        <li><a href="#">Түгээмэл асуулт</a></li>
+                        <li><a href="#">Цагийн хуваарь</a></li>
+                        <li><a href="#">Санал хүсэлт</a></li>
+                        <li><a href="#">Хандив</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Холбоо барих</h4>
+                    <ul>
+                        <li><a href="#">📞 1900-9999</a></li>
+                        <li><a href="#">📞 7034-1111</a></li>
+                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
+                <p>Хандив: Дун хэл заслын сургалтын төвд 1%</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Салбар байршил - EMJJ Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .branches-section {
+            padding: 80px 0;
+        }
+        
+        .branch-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        
+        .branch-detail:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .branch-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .branch-image {
+            border-radius: 16px;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .branch-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .branch-info h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        
+        .branch-info .subtitle {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+        
+        .branch-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 16px;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+        
+        .branch-info-item .icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .branch-info-item h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .branch-info-item p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+        
+        .schedule-table th,
+        .schedule-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .schedule-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .branch-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .branch-detail:nth-child(even) {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span>📞 1900-9999</span>
+                        <span>✉️ info@emjj.mn</span>
+                    </div>
+                    <button class="lang-toggle">MN / EN</button>
+                </div>
+            </div>
+        </div>
+        <div class="header-main container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">EM</div>
+                EMJJ Hospital
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                    <li><a href="news.html">Мэдээ</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">Хандив</a>
+                <a href="#" class="btn btn-primary">Нэвтрэх</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Салбар байршил</h1>
+            <p>Манай 6 салбар танд үйлчилж байна</p>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section class="branches-section">
+        <div class="container">
+            <!-- Branch 1 -->
+            <div class="branch-detail">
+                <div class="branch-image">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=300&fit=crop" alt="Төв эмнэлэг">
+                </div>
+                <div class="branch-info">
+                    <h2>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</h2>
+                    <p class="subtitle">Чих, хамар, хоолой, сонсгол судлалын төрөлжсөн нарийн мэргэжлийн эмнэлэг</p>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <h4>Байршил</h4>
+                            <p>СБД, 1-р төрөх эмнэлгийн зүүн талд, Улаанбаатар</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <h4>Утас</h4>
+                            <p>1900-9999, 7034-1111</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <h4>Цагийн хуваарь</h4>
+                            <p>Даваа - Баасан: 08:00 - 20:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 2 -->
+            <div class="branch-detail">
+                <div class="branch-image">
+                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&h=300&fit=crop" alt="10-р хороолол клиник">
+                </div>
+                <div class="branch-info">
+                    <h2>ЭМЖЖ - 10-р хороолол клиник</h2>
+                    <p class="subtitle">20 жил тасралтгүй ажиллаж байгаа "ЭМЖЖХҮ" эмнэлэг</p>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <h4>Байршил</h4>
+                            <p>БГД, 5-р хороо, 10-р хорооллын "Хаан банк"-ны баруун талд, 89-р байрны 1 давхар</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <h4>Утас</h4>
+                            <p>7702-5858, 1900-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <h4>Цагийн хуваарь</h4>
+                            <p>Даваа - Баасан: 08:30 - 17:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 3 -->
+            <div class="branch-detail">
+                <div class="branch-image">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=300&fit=crop" alt="Халдварт клиник">
+                </div>
+                <div class="branch-info">
+                    <h2>ЭМЖЖ - Халдварт клиник</h2>
+                    <p class="subtitle">Монгол, Япон, БНСУ, Дани улсад төрөлжсөн нарийн мэргэжил дээшлүүсэн баг</p>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <h4>Байршил</h4>
+                            <p>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төвийн 5 давхар</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <h4>Утас</h4>
+                            <p>7037-4444, 1900-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <h4>Цагийн хуваарь</h4>
+                            <p>Даваа - Баасан: 08:30 - 17:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 4 -->
+            <div class="branch-detail">
+                <div class="branch-image">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&h=300&fit=crop" alt="Мишээл клиник">
+                </div>
+                <div class="branch-info">
+                    <h2>ЭМЖЖ - Мишээл клиник</h2>
+                    <p class="subtitle">БНСУ-д төрөлжсөн нарийн мэргэжил дээшлүүсэн баг хамт олон</p>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <h4>Байршил</h4>
+                            <p>ХУД, Мишээл Сити цогцолбор, М1 блок, 3 давхар</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <h4>Утас</h4>
+                            <p>7799-7744, 1900-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <h4>Цагийн хуваарь</h4>
+                            <p>Даваа - Баасан: 08:30 - 17:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 5 -->
+            <div class="branch-detail">
+                <div class="branch-image">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=300&fit=crop" alt="Сэргээн засах сувилал">
+                </div>
+                <div class="branch-info">
+                    <h2>ЭМЖЖ - Сэргээн засах сувилал</h2>
+                    <p class="subtitle">Байгалийн үзэсгэлэнт тайван орчинд</p>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <h4>Байршил</h4>
+                            <p>Улаанбаатар хотоос 50 км, Төв аймгийн Баянчандмань сум, Дарцагт уулын энгэр</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <h4>Утас</h4>
+                            <p>9942-7581</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <h4>Цагийн хуваарь</h4>
+                            <p>Даваа - Баасан: 08:30 - 17:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branch 6 -->
+            <div class="branch-detail">
+                <div class="branch-image">
+                    <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=300&fit=crop" alt="Эм ханган нийлүүлэх">
+                </div>
+                <div class="branch-info">
+                    <h2>ЭМЖЖЭМ - Эм ханган нийлүүлэх</h2>
+                    <p class="subtitle">Эмнэлгийн тоног төхөөрөмж, хэрэгсэл</p>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <h4>Байршил</h4>
+                            <p>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төвийн 4 давхар</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <h4>Утас</h4>
+                            <p>7037-5555</p>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <h4>Цагийн хуваарь</h4>
+                            <p>Даваа - Баасан: 09:00 - 17:00<br>Бямба, Ням: Амарна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>EMJJ Hospital</h3>
+                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Үндсэн цэс</h4>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="about.html">Бидний тухай</a></li>
+                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                        <li><a href="news.html">Мэдээ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Туслах цэс</h4>
+                    <ul>
+                        <li><a href="#">Онлайн цаг захиалга</a></li>
+                        <li><a href="#">Сонсголын тест</a></li>
+                        <li><a href="branches.html">Салбар байршил</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Танд тусалъя</h4>
+                    <ul>
+                        <li><a href="#">Түгээмэл асуулт</a></li>
+                        <li><a href="#">Цагийн хуваарь</a></li>
+                        <li><a href="#">Санал хүсэлт</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Холбоо барих</h4>
+                    <ul>
+                        <li><a href="#">📞 1900-9999</a></li>
+                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мэдээ, мэдээлэл - EMJJ Hospital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .news-section {
+            padding: 80px 0;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
+        }
+        
+        .news-content {
+            padding: 28px;
+        }
+        
+        .news-date {
+            color: var(--accent-orange);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        
+        .news-category {
+            display: inline-block;
+            background: rgba(0,84,166,0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .news-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            color: var(--text-dark);
+        }
+        
+        .news-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s;
+        }
+        
+        .read-more:hover {
+            gap: 10px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 60px;
+        }
+        
+        .page-btn {
+            width: 44px;
+            height: 44px;
+            border: 2px solid var(--border);
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover,
+        .page-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span>📞 1900-9999</span>
+                        <span>✉️ info@emjj.mn</span>
+                    </div>
+                    <button class="lang-toggle">MN / EN</button>
+                </div>
+            </div>
+        </div>
+        <div class="header-main container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">EM</div>
+                EMJJ Hospital
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                    <li><a href="news.html">Мэдээ</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">Хандив</a>
+                <a href="#" class="btn btn-primary">Нэвтрэх</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Мэдээ, мэдээлэл</h1>
+            <p>Эмнэлгийн үйл ажиллагаа, эрүүл мэндийн зөвлөгөө, сургалтын мэдээлэл</p>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="News 1">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Зөвлөгөө</span>
+                        <span class="news-date">2026.05.20</span>
+                        <h3>ДуН-ийн урьдчилан сэргийлэх үзлэгийн ач холбогдол</h3>
+                        <p>Дуу чимээний улмаас үүсэх сонсголын бууралтыг эрт оношлох нь эмчилгээний үр дүнг нэмэгдүүлдэг...</p>
+                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop" alt="News 2">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Технологи</span>
+                        <span class="news-date">2026.05.15</span>
+                        <h3>Сонсголын аппаратны шинэ технологи</h3>
+                        <p>Бидэнтэй хамтран ажилладаг дэлхийн шилдэг брэндүүдийн шинэ технологийн талаар...</p>
+                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&h=400&fit=crop" alt="News 3">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Мэдээ</span>
+                        <span class="news-date">2026.05.10</span>
+                        <h3>Эрүүл мэндийн даатгалтай хамтран ажиллана</h3>
+                        <p>Бид эрүүл мэндийн даатгалын компаниудтай хамтран иргэдэд хөнгөлөлттэй үйлчилгээ үзүүлж байна...</p>
+                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" alt="News 4">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Сургалт</span>
+                        <span class="news-date">2026.05.05</span>
+                        <h3>ДуН хэл заслын сургалтын төв шинэ хөтөлбөр эхлүүллээ</h3>
+                        <p>Сонсголын аппарат зүүсэн хүүхдүүдэд зориулсан шинэ хөтөлбөр...</p>
+                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop" alt="News 5">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Зөвлөгөө</span>
+                        <span class="news-date">2026.04.28</span>
+                        <h3>Харшилын улиралд анхаарах зүйлс</h3>
+                        <p>Хавар, зуны улиралд харшил өвчнөөр өвдөгчид олширдог. Хэрхэн урьдчилан сэргийлэх вэ?</p>
+                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&h=400&fit=crop" alt="News 6">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Мэдээ</span>
+                        <span class="news-date">2026.04.20</span>
+                        <h3>ЭМЖЖ эмнэлэг ISO сертификат шинэчлэн авлаа</h3>
+                        <p>Олон улсын чанарын удирдлагын ISO 9001:2015 стандартын сертификатыг шинэчлэн авлаа...</p>
+                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn">←</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>EMJJ Hospital</h3>
+                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Үндсэн цэс</h4>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="about.html">Бидний тухай</a></li>
+                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                        <li><a href="news.html">Мэдээ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Туслах цэс</h4>
+                    <ul>
+                        <li><a href="#">Онлайн цаг захиалга</a></li>
+                        <li><a href="#">Сонсголын тест</a></li>
+                        <li><a href="branches.html">Салбар байршил</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Танд тусалъя</h4>
+                    <ul>
+                        <li><a href="#">Түгээмэл асуулт</a></li>
+                        <li><a href="#">Цагийн хуваарь</a></li>
+                        <li><a href="#">Санал хүсэлт</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Холбоо барих</h4>
+                    <ul>
+                        <li><a href="#">📞 1900-9999</a></li>
+                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

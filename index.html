@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMJJ Hospital - ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр тэргүүлэгч эмнэлэг</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0054a6;
+            --primary-dark: #003d7a;
+            --accent-orange: #f99d33;
+            --accent-teal: #03bfd7;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6b7280;
+            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: var(--primary);
+            color: white;
+            padding: 10px 0;
+            font-size: 13px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-contact span {
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-toggle {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateY(-1px);
+        }
+
+        .header-main {
+            padding: 18px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0,84,166,0.3);
+        }
+
+        .nav {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,84,166,0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,84,166,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2.5px solid var(--primary);
+            font-weight: 700;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,84,166,0.3);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-white:hover {
+            background: var(--bg-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-large {
+            padding: 18px 36px;
+            font-size: 16px;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #f5f9ff 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            background: rgba(0,84,166,0.1);
+            color: var(--primary);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 28px;
+            color: var(--text-dark);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            display: block;
+            margin-top: 8px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-medium);
+            margin-bottom: 36px;
+            line-height: 1.8;
+            max-width: 520px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,84,166,0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ========== STATS ========== */
+        .stats {
+            background: var(--primary);
+            padding: 60px 0;
+            color: white;
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-item p {
+            font-size: 16px;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        /* ========== SERVICES FILTER ========== */
+        .services-filter {
+            padding: 100px 0;
+            background: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-tab {
+            padding: 12px 24px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,84,166,0.3);
+        }
+
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .services-table th {
+            background: var(--primary);
+            color: white;
+            padding: 18px 24px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .services-table td {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .services-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* ========== SERVICES GRID ========== */
+        .services {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 45px 35px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0,84,166,0.08);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            color: var(--primary);
+            font-size: 36px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ========== BANNERS ========== */
+        .banners {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+
+        .banners-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .banner-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .banner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,84,166,0.3);
+        }
+
+        .banner-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .banner-card p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* ========== FEATURED 6 SECTIONS ========== */
+        .featured-sections {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .featured-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .featured-content {
+            padding: 30px;
+        }
+
+        .featured-content h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .featured-content p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ========== ENT CARE SECTION ========== */
+        .ent-care {
+            padding: 100px 0;
+            background: var(--bg-white);
+        }
+
+        .ent-care-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .ent-care-text h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .ent-care-text p {
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .ent-modules {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .ent-module {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .ent-module h4 {
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+
+        .ent-module p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* ========== BRANCHES ========== */
+        .branches {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .branch-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+        }
+
+        .branch-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .branch-card h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .branch-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .branch-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-medium);
+        }
+
+        .branch-info-item strong {
+            color: var(--text-dark);
+            min-width: 80px;
+        }
+
+        /* ========== LANGUAGE CENTER ========== */
+        .language-center {
+            padding: 100px 0;
+            background: var(--bg-white);
+        }
+
+        .language-center-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .language-center-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .language-center-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .language-center-text h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .language-center-text p {
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* ========== PARTNERS ========== */
+        .partners {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            width: 120px;
+            height: 60px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+
+        /* ========== CTA ========== */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 36px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #0f172a;
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            color: white;
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content,
+            .ent-care-content,
+            .language-center-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid,
+            .news-grid,
+            .stats-grid,
+            .featured-grid,
+            .branches-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-header h2,
+            .about-text h2,
+            .cta h2,
+            .ent-care-text h2,
+            .language-center-text h2 {
+                font-size: 32px;
+            }
+
+            .banners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-contact">
+                        <span>📞 1900-9999</span>
+                        <span>✉️ info@emjj.mn</span>
+                        <span>📍 Улаанбаатар, Монгол</span>
+                    </div>
+                    <button class="lang-toggle">MN / EN</button>
+                </div>
+            </div>
+        </div>
+        <div class="header-main container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">EM</div>
+                EMJJ Hospital
+            </a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                    <li><a href="news.html">Мэдээ</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#donate" class="btn btn-outline">Хандив</a>
+                <a href="#login" class="btn btn-primary">Нэвтрэх</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">Эрүүл мэндийн дэд бүтэц</span>
+                    <h1>Таны эрүүл мэнд<span>бидний зорилго</span></h1>
+                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг. Бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ үзүүлж байна.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary btn-large">Үйлчилгээ үзэх</a>
+                        <a href="#contact" class="btn btn-outline btn-large">Онлайн цаг захиалга</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=480&fit=crop" alt="EMJJ Hospital">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Жилийн туршлага</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50,000+</h3>
+                    <p>Үйлчлүүлэгч</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Мэргэжилтэн</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5</h3>
+                    <p>Салбар</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Filter Section -->
+    <section class="services-filter" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Тусламж үйлчилгээ</h2>
+                <p>Бид олон улсын стандартад нийцсэн, орчин үеийн тоног төхөөрөмжтэй үйлчилгээг санал болгож байна</p>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-tab active">Бүх үйлчилгээ</button>
+                <button class="filter-tab">Амбулатори</button>
+                <button class="filter-tab">Мэс засал</button>
+                <button class="filter-tab">Оношлогоо</button>
+                <button class="filter-tab">Сэргээн засах</button>
+            </div>
+
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Үйлчилгээ</th>
+                        <th>Тайлбар</th>
+                        <th>Салбар</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Чих, Сонсгол</td>
+                        <td>Сонсголын бүх төрлийн шинжилгээ, оношилгоо</td>
+                        <td>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Тэнцвэр</td>
+                        <td>Тэнцвэрийн нарийн оношилгоо, эмчилгээ</td>
+                        <td>ЭМЖЖ - Мишээл клиник</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Хамар, Харшил</td>
+                        <td>Хамар, харшилын нарийн шинжилгээ, эмчилгээ</td>
+                        <td>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Залгиур, төвөнх</td>
+                        <td>Залгиур, төвөнхийн дурангийн үзлэг, эмчилгээ</td>
+                        <td>ЭМЖЖ - 10-р хороолол клиник</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Дотор</td>
+                        <td>Дотрын бүх төрлийн үзлэг, оношилгоо</td>
+                        <td>ЭМЖЖ - Халдварт клиник</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Манай үйлчилгээ</h2>
+                <p>Танд хамгийн тохиромжтой үйлчилгээг санал болгож байна</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👂</div>
+                    <h3>ДуН / БАХА</h3>
+                    <p>Чих, хамар, хоолойн нарийн мэргэжлийн үзлэг, оношилгоо, эмчилгээ</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Сонсгол нөхөн сэргээх</h3>
+                    <p>Сонсгол шалгалт, аппарат тохируулах, яриа сэргээх эмчилгээ</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Амбулатори</h3>
+                    <p>Урьдчилан сэргийлэх үзлэг, оношлогоо, эмчилгээ, зөвлөгөө</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚕️</div>
+                    <h3>Мэс засал</h3>
+                    <p>Чих, хамар, хоолойн дурангийн мэс засал, дунгийн суулгац</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Дүрс оношилгоо</h3>
+                    <p>КТ, КВСТ, ЭХО, рентген, дурангийн шинжилгээ</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧪</div>
+                    <h3>Лаборатори</h3>
+                    <p>Цусны шинжилгээ, биохимийн шинжилгээ, харшилын тест</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banners Section -->
+    <section class="banners">
+        <div class="container">
+            <div class="section-header">
+                <h2>Онцлох</h2>
+                <p>Бидний онцлох үйлчилгээ, хөтөлбөр</p>
+            </div>
+            <div class="banners-grid">
+                <div class="banner-card">
+                    <h3>Онлайн цаг захиалга</h3>
+                    <p>1900-9999 дугаарт холбогдон цаг авах</p>
+                </div>
+                <div class="banner-card">
+                    <h3>Signia</h3>
+                    <p>Албан ёсны дистрибютер</p>
+                </div>
+                <div class="banner-card">
+                    <h3>Хөнгөлөлттэй багц</h3>
+                    <p>Үзлэг, оношлогооны багц</p>
+                </div>
+                <div class="banner-card">
+                    <h3>ENT CARE</h3>
+                    <p>Эрүүл мэндийн цогц үйлчилгээ</p>
+                </div>
+                <div class="banner-card">
+                    <h3>1% Хандив</h3>
+                    <p>Дун хэл заслын сургалтын төвд</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured 6 Sections -->
+    <section class="featured-sections">
+        <div class="container">
+            <div class="section-header">
+                <h2>Онцлох 6 цэс</h2>
+                <p>Таны эрүүл мэндэд хамгийн хэрэгтэй мэдээлэл</p>
+            </div>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="featured-image">🏥</div>
+                    <div class="featured-content">
+                        <h3>Эмнэлгийн танилцуулга</h3>
+                        <p>Бидний түүх, үнэт зүйлс, алсын хараа</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">👨‍⚕️</div>
+                    <div class="featured-content">
+                        <h3>Тасгийн танилцуулга</h3>
+                        <p>Манай нарийн мэргэжлийн тасгууд</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">📚</div>
+                    <div class="featured-content">
+                        <h3>Сургалт эрдэм шинжилгээ</h3>
+                        <p>Мэргэжил дээшлүүлэх сургалтууд</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">🔬</div>
+                    <div class="featured-content">
+                        <h3>Сонсголын аппарат</h3>
+                        <p>Сонсголын аппаратны зай борлуулагдаж буй байршлууд</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">🌿</div>
+                    <div class="featured-content">
+                        <h3>Сэргээн засах сувилал</h3>
+                        <p>Улаанбаатар хотоос 50 км-т байрлах сувилал</p>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="featured-image">🤝</div>
+                    <div class="featured-content">
+                        <h3>B2B Хамтран ажиллагаа</h3>
+                        <p>Байгууллагатай хамтран ажиллах</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENT Care Section -->
+    <section class="ent-care">
+        <div class="container">
+            <div class="ent-care-content">
+                <div class="ent-care-text">
+                    <h2>ENT CARE</h2>
+                    <p>Эрүүл мэндийн цогц үйлчилгээ - Чих, Хамар, Хоолой, Сонсгол судлалын чиглэлээр олон улсын стандартад нийцсэн үйлчилгээ.</p>
+                    <p>Бид олон улсын жишигт нийцсэн дэвшилтэт технологи бүхий тоног төхөөрөмжийг ашиглан бүх насны хүн амд нэг цэгт үзүүлж байна.</p>
+                    <div class="ent-modules">
+                        <div class="ent-module">
+                            <h4>E-Commerce</h4>
+                            <p>Merch, ENT Care бүтээгдэхүүн</p>
+                        </div>
+                        <div class="ent-module">
+                            <h4>3D Модел</h4>
+                            <p>ДуН бүтцийн 3D загвар</p>
+                        </div>
+                        <div class="ent-module">
+                            <h4>Киоск</h4>
+                            <p>Бүртгэлийн автомат</p>
+                        </div>
+                        <div class="ent-module">
+                            <h4>Багш - Микрофон</h4>
+                            <p>Сургалтын тоног төхөөрөмж</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=480&fit=crop" alt="ENT Care">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section class="branches">
+        <div class="container">
+            <div class="section-header">
+                <h2>Салбар байршил</h2>
+                <p>Манай 5 салбар танд үйлчилж байна</p>
+            </div>
+            <div class="branches-grid">
+                <div class="branch-card">
+                    <h3>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</h3>
+                    <div class="branch-info">
+                        <div class="branch-info-item">
+                            <strong>Байршил:</strong>
+                            <span>СБД, 1-р төрөх эмнэлгийн зүүн талд</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Утас:</strong>
+                            <span>1900-9999, 7034-1111</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Цаг:</strong>
+                            <span>Да-Ба: 08:00-20:00, Бя: 10:00-14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <h3>ЭМЖЖ - 10-р хороолол клиник</h3>
+                    <div class="branch-info">
+                        <div class="branch-info-item">
+                            <strong>Байршил:</strong>
+                            <span>БГД, 5-р хороо, 10-р хороолол</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Утас:</strong>
+                            <span>7702-5858, 1900-9999</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Цаг:</strong>
+                            <span>Да-Ба: 08:30-17:00, Бя: 10:00-14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <h3>ЭМЖЖ - Халдварт клиник</h3>
+                    <div class="branch-info">
+                        <div class="branch-info-item">
+                            <strong>Байршил:</strong>
+                            <span>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төв</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Утас:</strong>
+                            <span>7037-4444, 1900-9999</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Цаг:</strong>
+                            <span>Да-Ба: 08:30-17:00, Бя: 10:00-14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <h3>ЭМЖЖ - Мишээл клиник</h3>
+                    <div class="branch-info">
+                        <div class="branch-info-item">
+                            <strong>Байршил:</strong>
+                            <span>ХУД, Мишээл Сити цогцолбор, М1 блок</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Утас:</strong>
+                            <span>7799-7744, 1900-9999</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Цаг:</strong>
+                            <span>Да-Ба: 08:30-17:00, Бя: 10:00-14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <h3>ЭМЖЖ - Сэргээн засах сувилал</h3>
+                    <div class="branch-info">
+                        <div class="branch-info-item">
+                            <strong>Байршил:</strong>
+                            <span>Төв аймгийн Баянчандмань сум, Дарцагт уул</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Утас:</strong>
+                            <span>9942-7581</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Цаг:</strong>
+                            <span>Да-Ба: 08:30-17:00, Бя: 10:00-14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <h3>ЭМЖЖЭМ - Эм ханган нийлүүлэх</h3>
+                    <div class="branch-info">
+                        <div class="branch-info-item">
+                            <strong>Байршил:</strong>
+                            <span>БЗД, RAPID MED төвийн 4 давхар</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Утас:</strong>
+                            <span>7037-5555</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <strong>Цаг:</strong>
+                            <span>Да-Ба: 09:00-17:00, Бя-Ня: Амарна</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Center -->
+    <section class="language-center">
+        <div class="container">
+            <div class="language-center-content">
+                <div class="language-center-image">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop" alt="Language Center">
+                </div>
+                <div class="language-center-text">
+                    <h2>ДуН хэл заслын сургалтын төв</h2>
+                    <p>2015 оноос хойш 11 дэх жилдээ тасралтгүй ажиллаж байгаа Монгол Улсын анхны мэргэжлийн хэл заслын сургалтын төв.</p>
+                    <p>"Дунгийн суулгац" хагалгаанд орсон болон сонсголын аппарат тохируулсан хүүхдүүдийг нарийн мэргэжлийн хэл засалч багш, сонсгол судлалын мэргэжлийн эмч нарын тусламжтайгаар сонсгол сэргээх, хэл яриа үүсгэх, оюун ухааныг хөгжүүлэх зорилт тавин ажиллаж байна.</p>
+                    <a href="#" class="btn btn-primary btn-large">Дэлгэрэнгүй</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2>Хамтран ажиллагч байгууллага</h2>
+                <p>Олон улсын хэмжээнд хамтран ажиллаж байна</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-logo">Signia</div>
+                <div class="partner-logo">ENT CARE</div>
+                <div class="partner-logo">RAPID MED</div>
+                <div class="partner-logo">B2B</div>
+                <div class="partner-logo">ЭМЖЖ</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Бидэнтэй холбоо барих</h2>
+            <p>Танд асуулт байна уу? Бид таньд тусалъя. Доорх товчийг дарж бидэнтэй холбоо барина уу.</p>
+            <a href="#" class="btn btn-white btn-large">Холбоо барих</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>EMJJ Hospital</h3>
+                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг. Бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ үзүүлж байна.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Үндсэн цэс</h4>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="about.html">Бидний тухай</a></li>
+                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                        <li><a href="news.html">Мэдээ</a></li>
+                        <li><a href="branches.html">Салбар байршил</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Туслах цэс</h4>
+                    <ul>
+                        <li><a href="#">Онлайн цаг захиалга</a></li>
+                        <li><a href="#">Сонсголын тест</a></li>
+                        <li><a href="#">Сэргээн засах сувилал</a></li>
+                        <li><a href="#">Сонсголын аппарат</a></li>
+                        <li><a href="#">B2B</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Танд тусалъя</h4>
+                    <ul>
+                        <li><a href="#">Түгээмэл асуулт</a></li>
+                        <li><a href="#">Цагийн хуваарь</a></li>
+                        <li><a href="#">Санал хүсэлт</a></li>
+                        <li><a href="#">Хандив</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Холбоо барих</h4>
+                    <ul>
+                        <li><a href="#">📞 1900-9999</a></li>
+                        <li><a href="#">📞 7034-1111</a></li>
+                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                        <li><a href="#">📍 СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
+                <p>Хандив: Дун хэл заслын сургалтын төвд 1%</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
