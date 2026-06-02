@@ -7,109 +7,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .branches-section {
+        .branches-cards {
             padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
-        .branch-detail {
+        .branches-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 60px;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .branch-detail:nth-child(even) {
-            direction: rtl;
-        }
-        
-        .branch-detail:nth-child(even) > * {
-            direction: ltr;
-        }
-        
-        .branch-image {
+        .branch-card {
+            background: linear-gradient(180deg, #1e88e5 0%, #1565c0 100%);
             border-radius: 16px;
             overflow: hidden;
-            height: 300px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
         }
         
-        .branch-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .branch-card:hover {
+            transform: translateY(-8px);
         }
         
-        .branch-info h2 {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            color: var(--primary);
+        .branch-card-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
         
-        .branch-info .subtitle {
-            color: var(--text-light);
-            margin-bottom: 24px;
-            font-size: 15px;
+        .branch-card-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
         }
         
-        .branch-info-item {
+        .branch-card-content {
+            padding: 20px;
+            color: white;
+        }
+        
+        .branch-card-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .branch-card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .branch-card-info-item {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 16px;
-            padding: 16px;
-            background: var(--bg-light);
-            border-radius: 12px;
+            gap: 10px;
+            font-size: 13px;
+            line-height: 1.5;
         }
         
-        .branch-info-item .icon {
-            font-size: 20px;
+        .branch-card-info-item .icon {
+            font-size: 16px;
             flex-shrink: 0;
+            margin-top: 2px;
         }
         
-        .branch-info-item h4 {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .branch-card-info-item span {
+            opacity: 0.95;
         }
         
-        .branch-info-item p {
-            margin: 0;
-            font-size: 14px;
-            color: var(--text-medium);
-            line-height: 1.6;
-        }
-        
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 16px;
-            font-size: 14px;
-        }
-        
-        .schedule-table th,
-        .schedule-table td {
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .schedule-table th {
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            .branch-detail {
-                grid-template-columns: 1fr;
+        @media (max-width: 1024px) {
+            .branches-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .branch-detail:nth-child(even) {
-                direction: ltr;
+        }
+        
+        @media (max-width: 640px) {
+            .branches-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -160,218 +143,104 @@
     <section class="page-header">
         <div class="container">
             <h1>Салбар байршил</h1>
-            <p>Манай 6 салбар танд үйлчилж байна</p>
+            <p>Манай 4 салбар танд үйлчилж байна</p>
         </div>
     </section>
 
-    <!-- Branches Section -->
-    <section class="branches-section">
-        <div class="container">
-            <!-- Branch 1 -->
-            <div class="branch-detail">
-                <div class="branch-image">
-                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=300&fit=crop" alt="Төв эмнэлэг">
+    <!-- Branches Cards Section -->
+    <section class="branches-cards">
+        <div class="branches-grid">
+            <!-- Branch 1: Main Hospital -->
+            <div class="branch-card">
+                <div class="branch-card-image">
+                    <img src="images/branch-main.png" alt="ЭМЖЖ Төв эмнэлэг">
                 </div>
-                <div class="branch-info">
-                    <h2>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</h2>
-                    <p class="subtitle">Чих, хамар, хоолой, сонсгол судлалын төрөлжсөн нарийн мэргэжлийн эмнэлэг</p>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📍</span>
-                        <div>
-                            <h4>Байршил</h4>
-                            <p>СБД, 1-р төрөх эмнэлгийн зүүн талд, Улаанбаатар</p>
+                <div class="branch-card-content">
+                    <h3>ЭМЖЖ Төв эмнэлэг</h3>
+                    <div class="branch-card-info">
+                        <div class="branch-card-info-item">
+                            <span class="icon">📅</span>
+                            <span>Даваа - Баасан: 08:00 - 20:00<br>Бямба гаригт: 10:00 - 14:00</span>
                         </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📞</span>
-                        <div>
-                            <h4>Утас</h4>
-                            <p>1900-9999, 7034-1111</p>
+                        <div class="branch-card-info-item">
+                            <span class="icon">📞</span>
+                            <span>1900-9999</span>
                         </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">🕐</span>
-                        <div>
-                            <h4>Цагийн хуваарь</h4>
-                            <p>Даваа - Баасан: 08:00 - 20:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
+                        <div class="branch-card-info-item">
+                            <span class="icon">📍</span>
+                            <span>Сүхбаатар дүүрэг 1-р төрөх эмнэлгийн зүүн талд</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Branch 2 -->
-            <div class="branch-detail">
-                <div class="branch-image">
-                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&h=300&fit=crop" alt="10-р хороолол клиник">
+            <!-- Branch 2: Mishaal Clinic -->
+            <div class="branch-card">
+                <div class="branch-card-image">
+                    <img src="images/branch-mishaal.png" alt="Мишээл клиник">
                 </div>
-                <div class="branch-info">
-                    <h2>ЭМЖЖ - 10-р хороолол клиник</h2>
-                    <p class="subtitle">20 жил тасралтгүй ажиллаж байгаа "ЭМЖЖХҮ" эмнэлэг</p>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📍</span>
-                        <div>
-                            <h4>Байршил</h4>
-                            <p>БГД, 5-р хороо, 10-р хорооллын "Хаан банк"-ны баруун талд, 89-р байрны 1 давхар</p>
+                <div class="branch-card-content">
+                    <h3>Мишээл клиник</h3>
+                    <div class="branch-card-info">
+                        <div class="branch-card-info-item">
+                            <span class="icon">📅</span>
+                            <span>Даваа - Баасан: 08:00 - 17:00<br>Бямба гаригт: 10:00 - 14:00</span>
                         </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📞</span>
-                        <div>
-                            <h4>Утас</h4>
-                            <p>7702-5858, 1900-9999</p>
+                        <div class="branch-card-info-item">
+                            <span class="icon">📞</span>
+                            <span>1900-9999</span>
                         </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">🕐</span>
-                        <div>
-                            <h4>Цагийн хуваарь</h4>
-                            <p>Даваа - Баасан: 08:30 - 17:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
+                        <div class="branch-card-info-item">
+                            <span class="icon">📍</span>
+                            <span>ХУД, Мишээл Сити цогцолбор, М1 блок, 3 давхар</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Branch 3 -->
-            <div class="branch-detail">
-                <div class="branch-image">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=300&fit=crop" alt="Халдварт клиник">
+            <!-- Branch 3: 10th District Clinic -->
+            <div class="branch-card">
+                <div class="branch-card-image">
+                    <img src="images/branch-10th.png" alt="10-р хороолол клиник">
                 </div>
-                <div class="branch-info">
-                    <h2>ЭМЖЖ - Халдварт клиник</h2>
-                    <p class="subtitle">Монгол, Япон, БНСУ, Дани улсад төрөлжсөн нарийн мэргэжил дээшлүүсэн баг</p>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📍</span>
-                        <div>
-                            <h4>Байршил</h4>
-                            <p>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төвийн 5 давхар</p>
+                <div class="branch-card-content">
+                    <h3>10-р хороолол клиник</h3>
+                    <div class="branch-card-info">
+                        <div class="branch-card-info-item">
+                            <span class="icon">📅</span>
+                            <span>Даваа - Баасан: 08:00 - 17:00<br>Бямба гаригт: 10:00 - 14:00</span>
                         </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📞</span>
-                        <div>
-                            <h4>Утас</h4>
-                            <p>7037-4444, 1900-9999</p>
+                        <div class="branch-card-info-item">
+                            <span class="icon">📞</span>
+                            <span>1900-9999</span>
                         </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">🕐</span>
-                        <div>
-                            <h4>Цагийн хуваарь</h4>
-                            <p>Даваа - Баасан: 08:30 - 17:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
+                        <div class="branch-card-info-item">
+                            <span class="icon">📍</span>
+                            <span>БГД, 10-р хорооллын "Хаан банк"-ны баруун талд 89-р байрны 1 давхар</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Branch 4 -->
-            <div class="branch-detail">
-                <div class="branch-image">
-                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&h=300&fit=crop" alt="Мишээл клиник">
+            <!-- Branch 4: Halbdart Clinic -->
+            <div class="branch-card">
+                <div class="branch-card-image">
+                    <img src="images/branch-halbdart.png" alt="Халдварт клиник">
                 </div>
-                <div class="branch-info">
-                    <h2>ЭМЖЖ - Мишээл клиник</h2>
-                    <p class="subtitle">БНСУ-д төрөлжсөн нарийн мэргэжил дээшлүүсэн баг хамт олон</p>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📍</span>
-                        <div>
-                            <h4>Байршил</h4>
-                            <p>ХУД, Мишээл Сити цогцолбор, М1 блок, 3 давхар</p>
+                <div class="branch-card-content">
+                    <h3>Халдварт клиник</h3>
+                    <div class="branch-card-info">
+                        <div class="branch-card-info-item">
+                            <span class="icon">📅</span>
+                            <span>Даваа - Баасан: 08:00 - 17:00<br>Бямба гаригт: 10:00 - 14:00</span>
                         </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📞</span>
-                        <div>
-                            <h4>Утас</h4>
-                            <p>7799-7744, 1900-9999</p>
+                        <div class="branch-card-info-item">
+                            <span class="icon">📞</span>
+                            <span>1900-9999</span>
                         </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">🕐</span>
-                        <div>
-                            <h4>Цагийн хуваарь</h4>
-                            <p>Даваа - Баасан: 08:30 - 17:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Branch 5 -->
-            <div class="branch-detail">
-                <div class="branch-image">
-                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=300&fit=crop" alt="Сэргээн засах сувилал">
-                </div>
-                <div class="branch-info">
-                    <h2>ЭМЖЖ - Сэргээн засах сувилал</h2>
-                    <p class="subtitle">Байгалийн үзэсгэлэнт тайван орчинд</p>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📍</span>
-                        <div>
-                            <h4>Байршил</h4>
-                            <p>Улаанбаатар хотоос 50 км, Төв аймгийн Баянчандмань сум, Дарцагт уулын энгэр</p>
-                        </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📞</span>
-                        <div>
-                            <h4>Утас</h4>
-                            <p>9942-7581</p>
-                        </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">🕐</span>
-                        <div>
-                            <h4>Цагийн хуваарь</h4>
-                            <p>Даваа - Баасан: 08:30 - 17:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Branch 6 -->
-            <div class="branch-detail">
-                <div class="branch-image">
-                    <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&h=300&fit=crop" alt="Эм ханган нийлүүлэх">
-                </div>
-                <div class="branch-info">
-                    <h2>ЭМЖЖЭМ - Эм ханган нийлүүлэх</h2>
-                    <p class="subtitle">Эмнэлгийн тоног төхөөрөмж, хэрэгсэл</p>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📍</span>
-                        <div>
-                            <h4>Байршил</h4>
-                            <p>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төвийн 4 давхар</p>
-                        </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">📞</span>
-                        <div>
-                            <h4>Утас</h4>
-                            <p>7037-5555</p>
-                        </div>
-                    </div>
-                    
-                    <div class="branch-info-item">
-                        <span class="icon">🕐</span>
-                        <div>
-                            <h4>Цагийн хуваарь</h4>
-                            <p>Даваа - Баасан: 09:00 - 17:00<br>Бямба, Ням: Амарна</p>
+                        <div class="branch-card-info-item">
+                            <span class="icon">📍</span>
+                            <span>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төвийн 5 давхарт</span>
                         </div>
                     </div>
                 </div>
@@ -423,18 +292,18 @@
         const translations = {
             mn: {
                 title: document.title,
-                nav_home: "????",
-                nav_about: "?????? ?????",
-                nav_services: "??????? ?????????",
-                nav_training: "???????",
-                nav_news: "?????",
-                nav_contact: "?????? ?????",
-                nav_branches: "?????? ???????",
-                footer_menu: "?????? ???",
-                footer_help: "???? ???????",
-                footer_contact: "?????? ?????",
-                copyright: "� 2026 EMJJ Hospital. ??? ??? ??????? ?????????????.",
-                donation: "??????: ??? ??? ?????? ????????? ???? 1%"
+                nav_home: "Нүүр",
+                nav_about: "Бидний тухай",
+                nav_services: "Тусламж үйлчилгээ",
+                nav_training: "Сургалт",
+                nav_news: "Мэдээ",
+                nav_contact: "Холбоо барих",
+                nav_branches: "Салбар байршил",
+                footer_menu: "Үндсэн цэс",
+                footer_help: "Танд тусалъя",
+                footer_contact: "Холбоо барих",
+                copyright: "© 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.",
+                donation: "Хандив: Дун хэл заслын сургалтын төвд 1%"
             },
             en: {
                 nav_home: "Home",
@@ -447,7 +316,7 @@
                 footer_menu: "Main Menu",
                 footer_help: "Need Help?",
                 footer_contact: "Contact Us",
-                copyright: "� 2026 EMJJ Hospital. All rights reserved.",
+                copyright: "© 2026 EMJJ Hospital. All rights reserved.",
                 donation: "Donation: 1% to Hearing Training Center"
             }
         };
