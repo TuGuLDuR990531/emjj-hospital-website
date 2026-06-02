@@ -1075,7 +1075,7 @@
                         <span>✉️ info@emjj.mn</span>
                         <span>📍 Улаанбаатар, Монгол</span>
                     </div>
-                    <button class="lang-toggle">MN / EN</button>
+                    <button class="lang-toggle" onclick="toggleLanguage()">MN</button>
                 </div>
             </div>
         </div>
@@ -1701,5 +1701,101 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Language Toggle
+        const translations = {
+            mn: {
+                title: "EMJJ Hospital - ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр тэргүүлэгч эмнэлэг",
+                nav_home: "Нүүр",
+                nav_about: "Бидний тухай",
+                nav_services: "Тусламж үйлчилгээ",
+                nav_training: "Сургалт",
+                nav_news: "Мэдээ",
+                nav_contact: "Холбоо барих",
+                nav_branches: "Салбар байршил",
+                hero_title: "Таны сонсголыг\nхамгаалъя",
+                hero_subtitle: "ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг",
+                cta_appointment: "Цаг захиалга",
+                cta_services: "Үйлчилгээ",
+                stats_patients: "Үйлчлүүлэгч",
+                stats_experience: "Жилийн туршлага",
+                stats_doctors: "Нарийн мэргэжлийн эмч",
+                stats_branches: "Салбар",
+                footer_about: "ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг. Бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ үзүүлж байна.",
+                footer_menu: "Үндсэн цэс",
+                footer_help: "Танд тусалъя",
+                footer_contact: "Холбоо барих",
+                copyright: "© 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.",
+                donation: "Хандив: Дун хэл заслын сургалтын төвд 1%"
+            },
+            en: {
+                title: "EMJJ Hospital - Leading ENT, Audiology & Speech Therapy Center",
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_services: "Services",
+                nav_training: "Training",
+                nav_news: "News",
+                nav_contact: "Contact",
+                nav_branches: "Branches",
+                hero_title: "Protect Your\nHearing",
+                hero_subtitle: "Mongolia's leading hospital in ENT, Audiology & Speech Therapy",
+                cta_appointment: "Book Appointment",
+                cta_services: "Our Services",
+                stats_patients: "Patients Served",
+                stats_experience: "Years Experience",
+                stats_doctors: "Specialist Doctors",
+                stats_branches: "Branches",
+                footer_about: "Leading hospital in ENT, Audiology & Speech Therapy in Mongolia. We provide international standard services in your native language.",
+                footer_menu: "Main Menu",
+                footer_help: "Need Help?",
+                footer_contact: "Contact Us",
+                copyright: "© 2026 EMJJ Hospital. All rights reserved.",
+                donation: "Donation: 1% to Hearing Training Center"
+            }
+        };
+
+        let currentLang = localStorage.getItem('emjj-language') || 'mn';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'mn' ? 'en' : 'mn';
+            localStorage.setItem('emjj-language', currentLang);
+            applyLanguage();
+        }
+
+        function applyLanguage() {
+            const t = translations[currentLang];
+            const btn = document.querySelector('.lang-toggle');
+            if (btn) btn.textContent = currentLang.toUpperCase();
+            
+            // Update title
+            document.title = t.title;
+            
+            // Update nav links
+            const navLinks = document.querySelectorAll('.nav-links a');
+            if (navLinks[0]) navLinks[0].textContent = t.nav_home;
+            if (navLinks[1]) navLinks[1].textContent = t.nav_about;
+            if (navLinks[2]) navLinks[2].textContent = t.nav_services;
+            if (navLinks[3]) navLinks[3].textContent = t.nav_training;
+            if (navLinks[4]) navLinks[4].textContent = t.nav_news;
+            if (navLinks[5]) navLinks[5].textContent = t.nav_contact;
+            
+            // Update hero
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) heroTitle.textContent = t.hero_title;
+            
+            const heroSubtitle = document.querySelector('.hero p');
+            if (heroSubtitle) heroSubtitle.textContent = t.hero_subtitle;
+            
+            // Update footer
+            const footerAbout = document.querySelector('.footer-about p');
+            if (footerAbout) footerAbout.textContent = t.footer_about;
+            
+            const footerBottom = document.querySelector('.footer-bottom p');
+            if (footerBottom) footerBottom.textContent = t.copyright;
+        }
+
+        // Apply on page load
+        applyLanguage();
+    </script>
 </body>
 </html>

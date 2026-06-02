@@ -191,7 +191,7 @@
                         <span>üìû 1900-9999</span>
                         <span>‚úâÔ∏è info@emjj.mn</span>
                     </div>
-                    <button class="lang-toggle">MN / EN</button>
+                    <button class="lang-toggle" onclick="toggleLanguage()">MN</button>
                 </div>
             </div>
         </div>
@@ -431,5 +431,67 @@
             </div>
         </div>
     </footer>
+    <script>
+        const translations = {
+            mn: {
+                title: document.title,
+                nav_home: "????",
+                nav_about: "?????? ?????",
+                nav_services: "??????? ?????????",
+                nav_training: "???????",
+                nav_news: "?????",
+                nav_contact: "?????? ?????",
+                nav_branches: "?????? ???????",
+                footer_menu: "?????? ???",
+                footer_help: "???? ???????",
+                footer_contact: "?????? ?????",
+                copyright: "© 2026 EMJJ Hospital. ??? ??? ??????? ?????????????.",
+                donation: "??????: ??? ??? ?????? ????????? ???? 1%"
+            },
+            en: {
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_services: "Services",
+                nav_training: "Training",
+                nav_news: "News",
+                nav_contact: "Contact",
+                nav_branches: "Branches",
+                footer_menu: "Main Menu",
+                footer_help: "Need Help?",
+                footer_contact: "Contact Us",
+                copyright: "© 2026 EMJJ Hospital. All rights reserved.",
+                donation: "Donation: 1% to Hearing Training Center"
+            }
+        };
+
+        let currentLang = localStorage.getItem('emjj-language') || 'mn';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'mn' ? 'en' : 'mn';
+            localStorage.setItem('emjj-language', currentLang);
+            applyLanguage();
+        }
+
+        function applyLanguage() {
+            const t = translations[currentLang];
+            const btn = document.querySelector('.lang-toggle');
+            if (btn) btn.textContent = currentLang.toUpperCase();
+            
+            // Update nav links
+            const navLinks = document.querySelectorAll('.nav-links a');
+            if (navLinks[0]) navLinks[0].textContent = t.nav_home;
+            if (navLinks[1]) navLinks[1].textContent = t.nav_about;
+            if (navLinks[2]) navLinks[2].textContent = t.nav_services;
+            if (navLinks[3]) navLinks[3].textContent = t.nav_training;
+            if (navLinks[4]) navLinks[4].textContent = t.nav_news;
+            if (navLinks[5]) navLinks[5].textContent = t.nav_contact;
+            
+            // Update footer
+            const footerBottom = document.querySelector('.footer-bottom p');
+            if (footerBottom) footerBottom.textContent = t.copyright;
+        }
+
+        applyLanguage();
+    </script>
 </body>
 </html>
