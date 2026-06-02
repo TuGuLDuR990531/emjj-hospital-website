@@ -914,10 +914,134 @@
                 font-size: 32px;
             }
 
-            .banners-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .banners-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            background: linear-gradient(135deg, #e8f4fd 0%, #d4edfc 50%, #c5e5fa 100%);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .carousel-content {
+            flex: 1;
+        }
+
+        .carousel-content h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .carousel-content p {
+            font-size: 16px;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .carousel-image {
+            width: 300px;
+            height: 200px;
+            border-radius: 16px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .carousel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: var(--primary);
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        .quick-links {
+            padding: 60px 0;
+            background: var(--bg-white);
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        .quick-link-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .quick-link-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: white;
+            font-size: 32px;
+        }
+
+        .quick-link-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+    }
     </style>
 </head>
 <body>
@@ -982,6 +1106,117 @@
             </div>
         </div>
     </section>
+
+    <!-- Auto-scrolling Banner -->
+    <section class="banner-carousel">
+        <div class="container">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <h3>🦻 Signia - Албан ёсны дистрибьютер</h3>
+                            <p>EMJJ Hospital нь дэлхийд тэргүүлэгч Signia сонсголын аппаратын албан ёсны дистрибьютер. Хамгийн сүүлийн үеийн технологи бүхий сонсголын аппаратыг мэргэжлийн зөвлөгөөтэйгээр.</p>
+                            <a href="#" class="btn btn-primary">Дэлгэрэнгүй</a>
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop" alt="Signia Hearing Aids">
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <h3>📱 Онлайн цаг захиалга</h3>
+                            <p>1900-9999 дугаарт холбогдон эсвэл онлайнаар цаг захиалаарай. Бид 7 хоногийн 6 өдөр, 08:00-20:00 цагийн хооронд үйлчилж байна.</p>
+                            <a href="contact.html" class="btn btn-primary">Цаг захиалах</a>
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=400&h=300&fit=crop" alt="Online Appointment">
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="carousel-content">
+                            <h3>🏥 6 салбар, 1 цэгт</h3>
+                            <p>Төв эмнэлэг, 10-р хороолол, Халдварт, Мишээл клиник, Сэргээн засах сувилал, Эм ханган нийлүүлэх - бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ.</p>
+                            <a href="branches.html" class="btn btn-primary">Салбарууд</a>
+                        </div>
+                        <div class="carousel-image">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop" alt="EMJJ Branches">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-dots">
+                <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                <span class="carousel-dot" onclick="goToSlide(1)"></span>
+                <span class="carousel-dot" onclick="goToSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="container">
+            <div class="quick-links-grid">
+                <a href="contact.html" class="quick-link-card">
+                    <div class="quick-link-icon">📅</div>
+                    <h4>Цаг захиалга</h4>
+                </a>
+                
+                <a href="services.html" class="quick-link-card">
+                    <div class="quick-link-icon">📦</div>
+                    <h4>Багц үйлчилгээ</h4>
+                </a>
+                
+                <a href="#" class="quick-link-card">
+                    <div class="quick-link-icon">👂</div>
+                    <h4>Сонсголын тест</h4>
+                </a>
+                
+                <a href="#" class="quick-link-card">
+                    <div class="quick-link-icon">🛡</div>
+                    <h4>Сонсгол хамгаалах өдөр</h4>
+                </a>
+                
+                <a href="#" class="quick-link-card">
+                    <div class="quick-link-icon">🏥</div>
+                    <h4>Тоног төхөөрөмж худалдаа</h4>
+                </a>
+                
+                <a href="#" class="quick-link-card">
+                    <div class="quick-link-icon">🦻</div>
+                    <h4>Сонсголын аппарат</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const track = document.getElementById('carouselTrack');
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        setInterval(nextSlide, 5000);
+    </script>
 
     <!-- Stats -->
     <section class="stats">
