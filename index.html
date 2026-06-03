@@ -663,12 +663,18 @@
             gap: 30px;
         }
 
+        .branches-grid-4 {
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 20px;
+        }
+
         .branch-card {
             background: white;
             border-radius: 20px;
-            padding: 35px;
+            padding: 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             transition: all 0.3s;
+            text-align: center;
         }
 
         .branch-card:hover {
@@ -676,30 +682,38 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
 
-        .branch-card h3 {
-            font-size: 20px;
-            font-weight: 800;
+        .branch-icon {
+            font-size: 48px;
             margin-bottom: 16px;
+        }
+
+        .branch-card h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 20px;
             color: var(--primary);
+            line-height: 1.3;
         }
 
         .branch-info {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .branch-info-item {
             display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 14px;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
             color: var(--text-medium);
+            line-height: 1.5;
         }
 
-        .branch-info-item strong {
-            color: var(--text-dark);
-            min-width: 80px;
+        .branch-info-item .icon {
+            font-size: 16px;
+            flex-shrink: 0;
         }
 
         /* ========== LANGUAGE CENTER ========== */
@@ -858,6 +872,12 @@
         }
 
         /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .branches-grid-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
         @media (max-width: 768px) {
             .dropdown {
                 position: static;
@@ -885,8 +905,9 @@
             .news-grid,
             .stats-grid,
             .featured-grid,
-            .branches-grid {
-                grid-template-columns: 1fr;
+            .branches-grid,
+            .branches-grid-4 {
+                grid-template-columns: 1fr !important;
             }
 
             .footer-grid {
@@ -1490,113 +1511,81 @@
         <div class="container">
             <div class="section-header">
                 <h2>Салбар байршил</h2>
-                <p>Манай 5 салбар танд үйлчилж байна</p>
+                <p>Манай 4 салбар танд үйлчилж байна</p>
             </div>
-            <div class="branches-grid">
+            <div class="branches-grid branches-grid-4">
                 <div class="branch-card">
+                    <div class="branch-icon">🏥</div>
                     <h3>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</h3>
                     <div class="branch-info">
                         <div class="branch-info-item">
-                            <strong>Байршил:</strong>
+                            <span class="icon">📍</span>
                             <span>СБД, 1-р төрөх эмнэлгийн зүүн талд</span>
                         </div>
                         <div class="branch-info-item">
-                            <strong>Утас:</strong>
-                            <span>1900-9999, 7034-1111</span>
+                            <span class="icon">📞</span>
+                            <span>1900-9999</span>
                         </div>
                         <div class="branch-info-item">
-                            <strong>Цаг:</strong>
+                            <span class="icon">🕐</span>
                             <span>Да-Ба: 08:00-20:00, Бя: 10:00-14:00</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="branch-card">
-                    <h3>ЭМЖЖ - 10-р хороолол клиник</h3>
-                    <div class="branch-info">
-                        <div class="branch-info-item">
-                            <strong>Байршил:</strong>
-                            <span>БГД, 5-р хороо, 10-р хороолол</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <strong>Утас:</strong>
-                            <span>7702-5858, 1900-9999</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <strong>Цаг:</strong>
-                            <span>Да-Ба: 08:30-17:00, Бя: 10:00-14:00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="branch-card">
-                    <h3>ЭМЖЖ - Халдварт клиник</h3>
-                    <div class="branch-info">
-                        <div class="branch-info-item">
-                            <strong>Байршил:</strong>
-                            <span>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төв</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <strong>Утас:</strong>
-                            <span>7037-4444, 1900-9999</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <strong>Цаг:</strong>
-                            <span>Да-Ба: 08:30-17:00, Бя: 10:00-14:00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="branch-card">
+                    <div class="branch-icon">🏥</div>
                     <h3>ЭМЖЖ - Мишээл клиник</h3>
                     <div class="branch-info">
                         <div class="branch-info-item">
-                            <strong>Байршил:</strong>
+                            <span class="icon">📍</span>
                             <span>ХУД, Мишээл Сити цогцолбор, М1 блок</span>
                         </div>
                         <div class="branch-info-item">
-                            <strong>Утас:</strong>
-                            <span>7799-7744, 1900-9999</span>
+                            <span class="icon">📞</span>
+                            <span>1900-9999</span>
                         </div>
                         <div class="branch-info-item">
-                            <strong>Цаг:</strong>
-                            <span>Да-Ба: 08:30-17:00, Бя: 10:00-14:00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="branch-card">
-                    <h3>ЭМЖЖ - Сэргээн засах сувилал</h3>
-                    <div class="branch-info">
-                        <div class="branch-info-item">
-                            <strong>Байршил:</strong>
-                            <span>Төв аймгийн Баянчандмань сум, Дарцагт уул</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <strong>Утас:</strong>
-                            <span>9942-7581</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <strong>Цаг:</strong>
-                            <span>Да-Ба: 08:30-17:00, Бя: 10:00-14:00</span>
+                            <span class="icon">🕐</span>
+                            <span>Да-Ба: 08:00-17:00, Бя: 10:00-14:00</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="branch-card">
-                    <h3>ЭМЖЖЭМ - Эм ханган нийлүүлэх</h3>
+                    <div class="branch-icon">🏥</div>
+                    <h3>ЭМЖЖ - 10-р хороолол клиник</h3>
                     <div class="branch-info">
                         <div class="branch-info-item">
-                            <strong>Байршил:</strong>
-                            <span>БЗД, RAPID MED төвийн 4 давхар</span>
+                            <span class="icon">📍</span>
+                            <span>БГД, 10-р хорооллын "Хаан банк"-ны баруун талд</span>
                         </div>
                         <div class="branch-info-item">
-                            <strong>Утас:</strong>
-                            <span>7037-5555</span>
+                            <span class="icon">📞</span>
+                            <span>1900-9999</span>
                         </div>
                         <div class="branch-info-item">
-                            <strong>Цаг:</strong>
-                            <span>Да-Ба: 09:00-17:00, Бя-Ня: Амарна</span>
+                            <span class="icon">🕐</span>
+                            <span>Да-Ба: 08:00-17:00, Бя: 10:00-14:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <div class="branch-icon">🏥</div>
+                    <h3>ЭМЖЖ - Халдварт клиник</h3>
+                    <div class="branch-info">
+                        <div class="branch-info-item">
+                            <span class="icon">📍</span>
+                            <span>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төв</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <span class="icon">📞</span>
+                            <span>1900-9999</span>
+                        </div>
+                        <div class="branch-info-item">
+                            <span class="icon">🕐</span>
+                            <span>Да-Ба: 08:00-17:00, Бя: 10:00-14:00</span>
                         </div>
                     </div>
                 </div>

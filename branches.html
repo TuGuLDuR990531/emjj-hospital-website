@@ -8,7 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>Салбар байршил - EMJJ Hospital (v2)</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
     <style>
         .branches-cards {
             padding: 80px 0;
@@ -149,11 +149,18 @@
         </div>
     </header>
 
+    <script>
+        // Force reload if cached version detected
+        if (!window.location.href.includes('?v=')) {
+            window.location.href = window.location.href + '?v=3';
+        }
+    </script>
+
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Салбар байршил</h1>
-            <p>Манай 4 салбар танд үйлчилж байна</p>
+            <p>Манай 4 салбар танд үйлчилж байна <span style="color: #f99d33; font-size: 12px;">[v3]</span></p>
         </div>
     </section>
 
