@@ -659,22 +659,16 @@
 
         .branches-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .branches-grid-4 {
-            grid-template-columns: repeat(4, 1fr) !important;
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
         }
 
         .branch-card {
             background: white;
             border-radius: 20px;
-            padding: 30px;
+            overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             transition: all 0.3s;
-            text-align: center;
         }
 
         .branch-card:hover {
@@ -682,15 +676,31 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
 
-        .branch-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
+        .branch-card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .branch-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .branch-card:hover .branch-card-image img {
+            transform: scale(1.05);
+        }
+
+        .branch-card-content {
+            padding: 24px;
         }
 
         .branch-card h3 {
             font-size: 18px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             color: var(--primary);
             line-height: 1.3;
         }
@@ -698,22 +708,22 @@
         .branch-info {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
 
         .branch-info-item {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-size: 13px;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
             color: var(--text-medium);
             line-height: 1.5;
         }
 
         .branch-info-item .icon {
-            font-size: 16px;
+            font-size: 18px;
             flex-shrink: 0;
+            margin-top: 2px;
         }
 
         /* ========== LANGUAGE CENTER ========== */
@@ -873,8 +883,8 @@
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
-            .branches-grid-4 {
-                grid-template-columns: repeat(2, 1fr) !important;
+            .branches-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -905,8 +915,7 @@
             .news-grid,
             .stats-grid,
             .featured-grid,
-            .branches-grid,
-            .branches-grid-4 {
+            .branches-grid {
                 grid-template-columns: 1fr !important;
             }
 
@@ -1513,79 +1522,95 @@
                 <h2>Салбар байршил</h2>
                 <p>Манай 4 салбар танд үйлчилж байна</p>
             </div>
-            <div class="branches-grid branches-grid-4">
+            <div class="branches-grid">
                 <div class="branch-card">
-                    <div class="branch-icon">🏥</div>
-                    <h3>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</h3>
-                    <div class="branch-info">
-                        <div class="branch-info-item">
-                            <span class="icon">📍</span>
-                            <span>СБД, 1-р төрөх эмнэлгийн зүүн талд</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <span class="icon">📞</span>
-                            <span>1900-9999</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <span class="icon">🕐</span>
-                            <span>Да-Ба: 08:00-20:00, Бя: 10:00-14:00</span>
+                    <div class="branch-card-image">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop" alt="ЭМЖЖ Төв эмнэлэг">
+                    </div>
+                    <div class="branch-card-content">
+                        <h3>ЭМЖЖ Төв эмнэлэг</h3>
+                        <div class="branch-info">
+                            <div class="branch-info-item">
+                                <span class="icon">📍</span>
+                                <span>СБД, 1-р төрөх эмнэлгийн зүүн талд</span>
+                            </div>
+                            <div class="branch-info-item">
+                                <span class="icon">📞</span>
+                                <span>1900-9999, 7034-1111</span>
+                            </div>
+                            <div class="branch-info-item">
+                                <span class="icon">🕐</span>
+                                <span>Да-Ба: 08:00-20:00<br>Бя: 10:00-14:00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="branch-card">
-                    <div class="branch-icon">🏥</div>
-                    <h3>ЭМЖЖ - Мишээл клиник</h3>
-                    <div class="branch-info">
-                        <div class="branch-info-item">
-                            <span class="icon">📍</span>
-                            <span>ХУД, Мишээл Сити цогцолбор, М1 блок</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <span class="icon">📞</span>
-                            <span>1900-9999</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <span class="icon">🕐</span>
-                            <span>Да-Ба: 08:00-17:00, Бя: 10:00-14:00</span>
+                    <div class="branch-card-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Мишээл клиник">
+                    </div>
+                    <div class="branch-card-content">
+                        <h3>Мишээл клиник</h3>
+                        <div class="branch-info">
+                            <div class="branch-info-item">
+                                <span class="icon">📍</span>
+                                <span>ХУД, Мишээл Сити цогцолбор, М1 блок, 3 давхар</span>
+                            </div>
+                            <div class="branch-info-item">
+                                <span class="icon">📞</span>
+                                <span>1900-9999, 7799-7744</span>
+                            </div>
+                            <div class="branch-info-item">
+                                <span class="icon">🕐</span>
+                                <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="branch-card">
-                    <div class="branch-icon">🏥</div>
-                    <h3>ЭМЖЖ - 10-р хороолол клиник</h3>
-                    <div class="branch-info">
-                        <div class="branch-info-item">
-                            <span class="icon">📍</span>
-                            <span>БГД, 10-р хорооллын "Хаан банк"-ны баруун талд</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <span class="icon">📞</span>
-                            <span>1900-9999</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <span class="icon">🕐</span>
-                            <span>Да-Ба: 08:00-17:00, Бя: 10:00-14:00</span>
+                    <div class="branch-card-image">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop" alt="10-р хороолол клиник">
+                    </div>
+                    <div class="branch-card-content">
+                        <h3>10-р хороолол клиник</h3>
+                        <div class="branch-info">
+                            <div class="branch-info-item">
+                                <span class="icon">📍</span>
+                                <span>БГД, 10-р хорооллын "Хаан банк"-ны баруун талд, 89-р байрны 1 давхар</span>
+                            </div>
+                            <div class="branch-info-item">
+                                <span class="icon">📞</span>
+                                <span>1900-9999, 7702-5858</span>
+                            </div>
+                            <div class="branch-info-item">
+                                <span class="icon">🕐</span>
+                                <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="branch-card">
-                    <div class="branch-icon">🏥</div>
-                    <h3>ЭМЖЖ - Халдварт клиник</h3>
-                    <div class="branch-info">
-                        <div class="branch-info-item">
-                            <span class="icon">📍</span>
-                            <span>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төв</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <span class="icon">📞</span>
-                            <span>1900-9999</span>
-                        </div>
-                        <div class="branch-info-item">
-                            <span class="icon">🕐</span>
-                            <span>Да-Ба: 08:00-17:00, Бя: 10:00-14:00</span>
+                    <div class="branch-card-image">
+                        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop" alt="Халдварт клиник">
+                    </div>
+                    <div class="branch-card-content">
+                        <h3>Халдварт клиник</h3>
+                        <div class="branch-info">
+                            <div class="branch-info-item">
+                                <span class="icon">📍</span>
+                                <span>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төвийн 5 давхар</span>
+                            </div>
+                            <div class="branch-info-item">
+                                <span class="icon">📞</span>
+                                <span>1900-9999, 7037-4444</span>
+                            </div>
+                            <div class="branch-info-item">
+                                <span class="icon">🕐</span>
+                                <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
