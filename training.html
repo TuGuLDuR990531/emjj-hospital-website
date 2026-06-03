@@ -425,6 +425,127 @@
                 text-align: center;
             }
         }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 5px 0;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .mobile-actions {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                gap: 0;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .nav.active {
+                right: 0;
+            }
+
+            .nav li {
+                border-bottom: 1px solid var(--border);
+                width: 100%;
+            }
+
+            .nav a {
+                display: block;
+                padding: 16px 0;
+                font-size: 16px;
+            }
+
+            .nav a::after {
+                display: none;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                padding: 0 0 0 20px;
+                display: none;
+                min-width: auto;
+            }
+
+            .dropdown.active {
+                display: block;
+            }
+
+            .dropdown li {
+                border-bottom: none;
+            }
+
+            .dropdown li a {
+                padding: 12px 0;
+                font-size: 14px;
+            }
+
+            .header-actions {
+                display: none;
+            }
+
+            .mobile-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid var(--border);
+                list-style: none;
+            }
+
+            .mobile-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -447,11 +568,16 @@
                 <div class="logo-icon">EM</div>
                 EMJJ Hospital
             </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
-                <ul class="nav">
+                <ul class="nav" id="mobileNav">
                     <li><a href="index.html">Нүүр</a></li>
                     <li>
-                        <a href="about.html">Бидний тухай</a>
+                        <a href="about.html" onclick="toggleDropdown(event)">Бидний тухай</a>
                         <ul class="dropdown">
                             <li><a href="about.html">Бидний тухай</a></li>
                             <li><a href="hr.html">Хүний нөөц</a></li>
@@ -461,6 +587,10 @@
                     <li><a href="services.html">Тусламж үйлчилгээ</a></li>
                     <li><a href="news.html">Мэдээ</a></li>
                     <li><a href="contact.html">Холбоо барих</a></li>
+                    <li class="mobile-actions">
+                        <a href="#donate" class="btn btn-outline">Хандив</a>
+                        <a href="#login" class="btn btn-primary">Нэвтрэх</a>
+                    </li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -746,6 +876,38 @@
         </div>
     </footer>
     <script>
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mobileNav');
+            const btn = document.querySelector('.mobile-menu-btn');
+            nav.classList.toggle('active');
+            btn.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function toggleDropdown(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const dropdown = e.target.nextElementSibling;
+                if (dropdown && dropdown.classList.contains('dropdown')) {
+                    dropdown.classList.toggle('active');
+                }
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const nav = document.getElementById('mobileNav');
+                    const btn = document.querySelector('.mobile-menu-btn');
+                    nav.classList.remove('active');
+                    btn.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
         const translations = {
             mn: {
                 title: document.title,
@@ -759,7 +921,7 @@
                 footer_menu: "?????? ???",
                 footer_help: "???? ???????",
                 footer_contact: "?????? ?????",
-                copyright: "� 2026 EMJJ Hospital. ??? ??? ??????? ?????????????.",
+                copyright: "� 2026 EMJJ Hospital. ??? ??? ??????? ?????????????.",
                 donation: "??????: ??? ??? ?????? ????????? ???? 1%"
             },
             en: {
@@ -773,7 +935,7 @@
                 footer_menu: "Main Menu",
                 footer_help: "Need Help?",
                 footer_contact: "Contact Us",
-                copyright: "� 2026 EMJJ Hospital. All rights reserved.",
+                copyright: "� 2026 EMJJ Hospital. All rights reserved.",
                 donation: "Donation: 1% to Hearing Training Center"
             }
         };
