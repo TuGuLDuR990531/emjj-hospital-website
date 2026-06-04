@@ -129,9 +129,76 @@
             border-color: var(--primary);
         }
         
+        .featured-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 40px;
+        }
+
+        .featured-image {
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .featured-content h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .featured-content p {
+            font-size: 15px;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
         @media (max-width: 768px) {
             .news-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                min-height: 250px;
+            }
+
+            .featured-content {
+                padding: 28px;
+            }
+
+            .featured-content h2 {
+                font-size: 22px;
             }
         }
 
@@ -316,95 +383,80 @@
         </div>
     </section>
 
-    <!-- News Section -->
+    <!-- Featured News -->
     <section class="news-section">
         <div class="container">
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="News 1">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-category">Зөвлөгөө</span>
-                        <span class="news-date">2026.05.20</span>
-                        <h3>ДуН-ийн урьдчилан сэргийлэх үзлэгийн ач холбогдол</h3>
-                        <p>Дуу чимээний улмаас үүсэх сонсголын бууралтыг эрт оношлох нь эмчилгээний үр дүнг нэмэгдүүлдэг...</p>
-                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
-                    </div>
+            <!-- Featured Article -->
+            <div class="featured-article">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=500&fit=crop" alt="Featured News">
                 </div>
-
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop" alt="News 2">
+                <div class="featured-content">
+                    <div class="featured-meta">
+                        <span class="news-category">Эмнэлгийн мэдээ</span>
+                        <span class="news-date">📅 2025.05.15</span>
                     </div>
-                    <div class="news-content">
-                        <span class="news-category">Технологи</span>
-                        <span class="news-date">2026.05.15</span>
-                        <h3>Сонсголын аппаратны шинэ технологи</h3>
-                        <p>Бидэнтэй хамтран ажилладаг дэлхийн шилдэг брэндүүдийн шинэ технологийн талаар...</p>
-                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&h=400&fit=crop" alt="News 3">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-category">Мэдээ</span>
-                        <span class="news-date">2026.05.10</span>
-                        <h3>Эрүүл мэндийн даатгалтай хамтран ажиллана</h3>
-                        <p>Бид эрүүл мэндийн даатгалын компаниудтай хамтран иргэдэд хөнгөлөлттэй үйлчилгээ үзүүлж байна...</p>
-                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" alt="News 4">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-category">Сургалт</span>
-                        <span class="news-date">2026.05.05</span>
-                        <h3>ДуН хэл заслын сургалтын төв шинэ хөтөлбөр эхлүүллээ</h3>
-                        <p>Сонсголын аппарат зүүсэн хүүхдүүдэд зориулсан шинэ хөтөлбөр...</p>
-                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop" alt="News 5">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-category">Зөвлөгөө</span>
-                        <span class="news-date">2026.04.28</span>
-                        <h3>Харшилын улиралд анхаарах зүйлс</h3>
-                        <p>Хавар, зуны улиралд харшил өвчнөөр өвдөгчид олширдог. Хэрхэн урьдчилан сэргийлэх вэ?</p>
-                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <div class="news-image">
-                        <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=600&h=400&fit=crop" alt="News 6">
-                    </div>
-                    <div class="news-content">
-                        <span class="news-category">Мэдээ</span>
-                        <span class="news-date">2026.04.20</span>
-                        <h3>ЭМЖЖ эмнэлэг ISO сертификат шинэчлэн авлаа</h3>
-                        <p>Олон улсын чанарын удирдлагын ISO 9001:2015 стандартын сертификатыг шинэчлэн авлаа...</p>
-                        <a href="#" class="read-more">Дэлгэрэнгүй →</a>
-                    </div>
+                    <h2>ЭМЖЖ эмнэлэг шинэ эргэлтийн барилга ашиглалтанд орууллаа</h2>
+                    <p>Орчин үеийн стандартад нийцсэн шинэ эргэлтийн барилга нь үйлчилгээний хүртээмж, чанарыг нэмэгдүүлж, өвчтөн та бүхэнд илүү тав тухтай орчинг үйлчлэх боломж бүрдлээ.</p>
+                    <a href="#" class="service-category-btn">Дэлгэрэнгүй →</a>
                 </div>
             </div>
 
-            <div class="pagination">
-                <button class="page-btn">←</button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">→</button>
+            <!-- Latest News Header -->
+            <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-top: 60px; margin-bottom: 30px;">
+                <h2 style="margin: 0;">Сүүлийн мэдээ</h2>
+                <a href="#" class="read-more" style="font-size: 15px;">Бүгдийг харах →</a>
+            </div>
+
+            <!-- News Grid -->
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop" alt="News 1">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category" style="background: rgba(0,84,166,0.1); color: var(--primary);">Олон улсын хамтын ажиллагаа</span>
+                        <div class="news-date">📅 2025.05.08</div>
+                        <h3>БНСУ-ын Бундэг эмнэлэгтэй хамтын ажиллагааг өргөжүүллээ</h3>
+                        <p>Тэнцвэрийн эмгэгийн оношилгоо, эмчилгээний чиглэлээр хамтарсан сургалт, судалгааг хөгжүүлнэ.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&h=400&fit=crop" alt="News 2">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category" style="background: rgba(153,50,204,0.1); color: #9932CC;">Сургалт, эрдэм шинжилгээ</span>
+                        <div class="news-date">📅 2025.04.28</div>
+                        <h3>"Чих хамар хоолойн эмгэгийн орчин үеийн оношилгоо" сургалт амжилттай боллоо</h3>
+                        <p>Эмч, мэргэжилтнүүдийн мэдлэг чадварыг дээшлүүлэх зорилготой сургалтад 120 гаруй хүн хамрагдлаа.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" alt="News 3">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category" style="background: rgba(0,84,166,0.1); color: var(--primary);">Эмнэлгийн мэдээ</span>
+                        <div class="news-date">📅 2025.04.15</div>
+                        <h3>Чихний бичил мэс заслын шинэ технологийг нэвтрүүллээ</h3>
+                        <p>Давхцалт микроскоп, багаж тоног төхөөрөмжөөр чихний мэс заслын үр дүнг сайжруулж байна.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop" alt="News 4">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category" style="background: rgba(255,140,0,0.1); color: #FF8C00;">Эмчийн зөвлөгөө</span>
+                        <div class="news-date">📅 2025.04.05</div>
+                        <h3>Чих шуугих шалтгаан, эмчилгээ</h3>
+                        <p>Чих шуугих нь олон шалтгаантай. Эрсдэл хүчин зүйлс, эмчилгээний аргачлалын талаар зөвлөгөө.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
