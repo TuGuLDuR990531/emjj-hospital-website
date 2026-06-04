@@ -355,6 +355,43 @@
             display: block;
         }
 
+        /* ========== STICKY APPOINTMENT BAR ========== */
+        .sticky-appointment {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+
+        .sticky-appointment.hidden {
+            transform: translateY(100%);
+        }
+
+        .sticky-appointment-narrow {
+            padding: 16px 0;
+        }
+
+        .sticky-appointment-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-appointment-text {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .sticky-appointment .btn {
+            padding: 10px 24px;
+            font-size: 14px;
+        }
+
         /* ========== APPOINTMENT SECTION ========== */
         .appointment-section {
             padding: 80px 0;
@@ -723,8 +760,20 @@
         </div>
     </section>
 
+    <!-- Sticky Appointment Bar -->
+    <div class="sticky-appointment" id="stickyAppointment">
+        <div class="sticky-appointment-narrow">
+            <div class="container">
+                <div class="sticky-appointment-content">
+                    <span class="sticky-appointment-text">📅 Цаг захиалах - Онлайн захиалга өгөх</span>
+                    <a href="#appointment-section" class="btn btn-primary" onclick="scrollToAppointment()">Захиалах</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Appointment Section -->
-    <section class="appointment-section">
+    <section class="appointment-section" id="appointment-section">
         <div class="container">
             <div class="appointment-content">
                 <div class="appointment-image">
@@ -882,6 +931,28 @@
             btn.classList.toggle('active');
             alert('Нэмэлт шүүлтүүрүүд (Демо)');
         }
+
+        // ========== STICKY APPOINTMENT BAR ==========
+        function scrollToAppointment() {
+            document.getElementById('appointment-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show/hide sticky appointment bar
+        window.addEventListener('scroll', () => {
+            const stickyBar = document.getElementById('stickyAppointment');
+            const appointmentSection = document.getElementById('appointment-section');
+            
+            if (!stickyBar || !appointmentSection) return;
+            
+            const appointmentRect = appointmentSection.getBoundingClientRect();
+            const isAppointmentVisible = appointmentRect.top < window.innerHeight && appointmentRect.bottom > 0;
+            
+            if (isAppointmentVisible) {
+                stickyBar.classList.add('hidden');
+            } else {
+                stickyBar.classList.remove('hidden');
+            }
+        });
 
         // ========== LANGUAGE TOGGLE ==========
         const translations = {
