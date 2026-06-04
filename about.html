@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="mn">
 <head>
     <meta charset="UTF-8">
@@ -605,7 +605,8 @@
         </div>
     </header>
 
-    <!-- Page Header -->
+        <div class="mobile-menu-overlay"></div>
+<!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>Бидний тухай</h1>
@@ -925,36 +926,67 @@
         </div>
     </footer>
     <script>
-        // Mobile Menu Functions
+                // Mobile Menu Functions
         function toggleMobileMenu() {
             const navWrapper = document.getElementById('mobileNav');
             const btn = document.querySelector('.mobile-menu-btn');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            
             navWrapper.classList.toggle('active');
             btn.classList.toggle('active');
-            document.body.style.overflow = navWrapper.classList.contains('active') ? 'hidden' : '';
+            
+            if (overlay) {
+                overlay.classList.toggle('active');
+            }
+            
+            if (navWrapper.classList.contains('active')) {
+                document.body.classList.add('menu-open');
+            } else {
+                document.body.classList.remove('menu-open');
+            }
         }
 
         function toggleDropdown(e) {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
-                const dropdown = e.target.parentElement.querySelector('.dropdown');
+                e.stopPropagation();
+                const dropdown = e.currentTarget.parentElement.querySelector('.dropdown');
                 if (dropdown && dropdown.classList.contains('dropdown')) {
                     dropdown.classList.toggle('active');
                 }
             }
         }
 
-        // Close mobile menu when clicking on a link
+        // Close mobile menu when clicking on a non-dropdown link
         document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    const nav = document.getElementById('mobileNav');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768 && !link.parentElement.classList.contains('has-dropdown')) {
+                    const navWrapper = document.getElementById('mobileNav');
                     const btn = document.querySelector('.mobile-menu-btn');
-                    nav.classList.remove('active');
+                    const overlay = document.querySelector('.mobile-menu-overlay');
+                    navWrapper.classList.remove('active');
                     btn.classList.remove('active');
-                    document.body.style.overflow = '';
+                    if (overlay) overlay.classList.remove('active');
+                    document.body.classList.remove('menu-open');
                 }
             });
+        });
+
+        // Close mobile menu when clicking overlay
+        document.addEventListener('click', (e) => {
+            const navWrapper = document.getElementById('mobileNav');
+            const btn = document.querySelector('.mobile-menu-btn');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            
+            if (navWrapper.classList.contains('active') && 
+                !navWrapper.contains(e.target) && 
+                !btn.contains(e.target)) {
+                navWrapper.classList.remove('active');
+                btn.classList.remove('active');
+                if (overlay) overlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
         });
 
         const translations = {
