@@ -550,12 +550,12 @@
         <div class="header-top">
             <div class="container">
                 <div class="header-top-content">
-                    <div class="header-contact">
-                        <span>📞 1900-9999</span>
-                        <span>✉️ info@emjj.mn</span>
-                        <span>📍 Улаанбаатар, Монгол</span>
+                    <div class="header-top-left">
+                        <a href="tel:19009999">📞 1900-9999</a>
                     </div>
-                    <button class="lang-toggle" onclick="toggleLanguage()">MN</button>
+                    <div class="header-top-right">
+                        <button class="lang-toggle" onclick="toggleLanguage()">MN</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -569,36 +569,38 @@
                 <span></span>
                 <span></span>
             </button>
-            <nav>
-                <ul class="nav" id="mobileNav">
-                    <li><a href="index.html">Нүүр</a></li>
-                    <li>
-                    <a href="about.html" onclick="toggleDropdown(event)">Бидний тухай</a>
-                    <ul class="dropdown">
-                            <li><a href="about.html">Бидний тухай</a></li>
-                            <li><a href="hr.html">Хүний нөөц</a></li>
-                            <li><a href="training.html">Сургалт</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="ent-health.html">ENT Health+</a>
-                        <ul class="dropdown">
-                            <li><a href="ent-health.html#ent-care">ENT Care</a></li>
-                            <li><a href="ent-health.html#ent-wellness">ENT Wellness</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="services.html">Тусламж үйлчилгээ</a></li>
-                    <li><a href="news.html">Мэдээ</a></li>
-                    <li><a href="contact.html">Холбоо барих</a></li>
-                    <li class="mobile-actions">
-                        <a href="#donate" class="btn btn-outline">Хандив</a>
-                        <a href="#login" class="btn btn-primary">Нэвтрэх</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="#" class="btn btn-outline">Хандив</a>
-                <a href="#" class="btn btn-primary">Нэвтрэх</a>
+            <div class="nav-wrapper" id="mobileNav">
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li class="has-dropdown">
+                            <a href="about.html">Бидний тухай</a>
+                            <ul class="dropdown">
+                                <li><a href="about.html">Бидний тухай</a></li>
+                                <li><a href="hr.html">Хүний нөөц</a></li>
+                                <li><a href="training.html">Сургалт</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="ent-health.html">ENT Health+</a>
+                            <ul class="dropdown">
+                                <li><a href="ent-health.html#ent-care">ENT Care</a></li>
+                                <li><a href="ent-health.html#ent-wellness">ENT Wellness</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
+                        <li><a href="news.html">Мэдээ</a></li>
+                        <li><a href="contact.html">Холбоо барих</a></li>
+                        <li class="mobile-actions">
+                            <a href="#donate" class="btn btn-outline">Хандив</a>
+                            <a href="#login" class="btn btn-primary">Нэвтрэх</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#donate" class="btn btn-outline">Хандив</a>
+                    <a href="#login" class="btn btn-primary">Нэвтрэх</a>
+                </div>
             </div>
         </div>
     </header>
@@ -925,17 +927,17 @@
     <script>
         // Mobile Menu Functions
         function toggleMobileMenu() {
-            const nav = document.getElementById('mobileNav');
+            const navWrapper = document.getElementById('mobileNav');
             const btn = document.querySelector('.mobile-menu-btn');
-            nav.classList.toggle('active');
+            navWrapper.classList.toggle('active');
             btn.classList.toggle('active');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+            document.body.style.overflow = navWrapper.classList.contains('active') ? 'hidden' : '';
         }
 
         function toggleDropdown(e) {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
-                const dropdown = e.target.nextElementSibling;
+                const dropdown = e.target.parentElement.querySelector('.dropdown');
                 if (dropdown && dropdown.classList.contains('dropdown')) {
                     dropdown.classList.toggle('active');
                 }
