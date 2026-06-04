@@ -367,24 +367,203 @@
         }
 
         /* ========== SERVICES FILTER ========== */
-        .services-filter {
-            padding: 100px 0;
+        /* ========== SERVICES SEARCH ========== */
+        .services-search {
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, #e8f4fd 0%, #d4edfc 50%, #c5e5fa 100%);
+        }
+
+        .search-module {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,84,166,0.1);
+        }
+
+        .search-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .search-header-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+        }
+
+        .search-header-text h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .search-header-text p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .search-filters {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) auto;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .filter-select {
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: var(--text-medium);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0,84,166,0.1);
+        }
+
+        .search-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            align-self: flex-end;
+        }
+
+        .search-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,84,166,0.3);
+        }
+
+        .additional-filters {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .additional-filters label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-right: 8px;
+        }
+
+        .filter-chip {
+            padding: 10px 20px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-medium);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-chip:hover,
+        .filter-chip.active {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(0,84,166,0.05);
+        }
+
+        .clear-filters {
+            margin-left: auto;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: none;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .clear-filters:hover {
+            text-decoration: underline;
+        }
+
+        /* ========== SERVICES CATEGORIES ========== */
+        .services-categories {
+            padding: 80px 0;
             background: var(--bg-white);
         }
 
-        .section-header {
+        .services-title {
             text-align: center;
             margin-bottom: 60px;
         }
 
-        .section-header h2 {
+        .services-title h2 {
             font-size: 42px;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .section-header p {
+        .services-title .title-decoration {
+            display: flex;
+            gap: 6px;
+        }
+
+        .services-title .title-decoration span {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .services-title p {
             color: var(--text-light);
             font-size: 17px;
             max-width: 600px;
@@ -392,121 +571,201 @@
             line-height: 1.7;
         }
 
-        .filter-tabs {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .filter-tab {
-            padding: 12px 24px;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-
-        .filter-tab:hover,
-        .filter-tab.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,84,166,0.3);
-        }
-
-        .services-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        }
-
-        .services-table th {
-            background: var(--primary);
-            color: white;
-            padding: 18px 24px;
-            text-align: left;
-            font-weight: 700;
-            font-size: 15px;
-        }
-
-        .services-table td {
-            padding: 16px 24px;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-        }
-
-        .services-table tr:hover {
-            background: var(--bg-light);
-        }
-
-        /* ========== SERVICES GRID ========== */
-        .services {
-            padding: 100px 0;
-            background: var(--bg-light);
-        }
-
-        .services-grid {
+        .services-categories-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
         }
 
-        .service-card {
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 45px 35px;
-            transition: all 0.3s;
+        .service-category-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 24px;
+            padding: 40px 24px;
             text-align: center;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .service-card:hover {
+        .service-category-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 60px rgba(0,0,0,0.1);
             border-color: var(--primary);
         }
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(0,84,166,0.08);
-            border-radius: 20px;
+        .service-category-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #e8f4fd 0%, #d4edfc 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 28px;
-            color: var(--primary);
-            font-size: 36px;
+            margin-bottom: 24px;
+            font-size: 48px;
             transition: all 0.3s;
         }
 
-        .service-card:hover .service-icon {
+        .service-category-card:hover .service-category-icon {
             background: var(--primary);
-            color: white;
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.1);
         }
 
-        .service-card h3 {
-            font-size: 22px;
+        .service-category-card:hover .service-category-icon img,
+        .service-category-card:hover .service-category-icon svg {
+            filter: brightness(0) invert(1);
+        }
+
+        .service-category-card h3 {
+            font-size: 18px;
             font-weight: 800;
-            margin-bottom: 14px;
             color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.3;
         }
 
-        .service-card p {
-            font-size: 15px;
+        .service-category-divider {
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            margin-bottom: 16px;
+        }
+
+        .service-category-card p {
+            font-size: 13px;
             color: var(--text-light);
             line-height: 1.7;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .service-category-btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .service-category-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,84,166,0.3);
+        }
+
+        /* ========== APPOINTMENT SECTION ========== */
+        .appointment-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #e8f4fd 0%, #d4edfc 50%, #c5e5fa 100%);
+        }
+
+        .appointment-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+            background: white;
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: 0 10px 40px rgba(0,84,166,0.1);
+        }
+
+        .appointment-image {
+            text-align: center;
+        }
+
+        .appointment-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .appointment-text h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .appointment-text h2 .icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .appointment-text p {
+            font-size: 16px;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .appointment-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .appointment-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-medium);
+        }
+
+        .appointment-feature .check {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .appointment-btn {
+            background: var(--primary);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .appointment-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,84,166,0.3);
         }
 
         /* ========== BANNERS ========== */
@@ -950,6 +1209,57 @@
 
             .quick-links-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .search-filters {
+                grid-template-columns: 1fr;
+            }
+
+            .search-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services-categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .appointment-content {
+                grid-template-columns: 1fr;
+                padding: 40px;
+            }
+
+            .services-title h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .additional-filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-chip {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .clear-filters {
+                margin-left: 0;
+                justify-content: center;
+            }
+
+            .search-module {
+                padding: 24px;
+            }
+
+            .appointment-content {
+                padding: 30px;
             }
         }
 
@@ -1421,104 +1731,167 @@
         </div>
     </section>
 
-    <!-- Services Filter Section -->
-    <section class="services-filter" id="services">
+    <!-- Services Search Section -->
+    <section class="services-search" id="services">
         <div class="container">
-            <div class="section-header">
-                <h2>Тусламж үйлчилгээ</h2>
-                <p>Бид олон улсын стандартад нийцсэн, орчин үеийн тоног төхөөрөмжтэй үйлчилгээг санал болгож байна</p>
-            </div>
+            <div class="search-module">
+                <div class="search-header">
+                    <div class="search-header-icon">⚕️</div>
+                    <div class="search-header-text">
+                        <h3>Үйлчилгээ хайх</h3>
+                        <p>Танд хэрэгтэй эрүүл мэндийн үйлчилгээг хялбар, хурдан олоорой.</p>
+                    </div>
+                </div>
 
-            <div class="filter-tabs">
-                <button class="filter-tab active">Бүх үйлчилгээ</button>
-                <button class="filter-tab">Амбулатори</button>
-                <button class="filter-tab">Мэс засал</button>
-                <button class="filter-tab">Оношлогоо</button>
-                <button class="filter-tab">Сэргээн засах</button>
-            </div>
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label>Үйлчилгээний төрөл</label>
+                        <select class="filter-select">
+                            <option>Үйлчилгээний төрөл сонгох</option>
+                            <option>Амбулатори</option>
+                            <option>Мэс засал</option>
+                            <option>Дүрс оношилгоо</option>
+                            <option>Лаборатори</option>
+                            <option>Сонсгол сэргээх</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Байршил</label>
+                        <select class="filter-select">
+                            <option>Хот эсвэл дүүрэг сонгох</option>
+                            <option>Сүхбаатар дүүрэг</option>
+                            <option>Хан-Уул дүүрэг</option>
+                            <option>Баянгол дүүрэг</option>
+                            <option>Баянзүрх дүүрэг</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Эмнэлэг / Байгууллага</label>
+                        <select class="filter-select">
+                            <option>Эмнэлэг эсвэл байгууллага</option>
+                            <option>ЭМЖЖ Төв эмнэлэг</option>
+                            <option>Мишээл клиник</option>
+                            <option>10-р хороолол клиник</option>
+                            <option>Халдварт клиник</option>
+                        </select>
+                    </div>
+                    <button class="search-btn">
+                        🔍 Хайх
+                    </button>
+                </div>
 
-            <table class="services-table">
-                <thead>
-                    <tr>
-                        <th>№</th>
-                        <th>Үйлчилгээ</th>
-                        <th>Тайлбар</th>
-                        <th>Салбар</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Чих, Сонсгол</td>
-                        <td>Сонсголын бүх төрлийн шинжилгээ, оношилгоо</td>
-                        <td>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Тэнцвэр</td>
-                        <td>Тэнцвэрийн нарийн оношилгоо, эмчилгээ</td>
-                        <td>ЭМЖЖ - Мишээл клиник</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Хамар, Харшил</td>
-                        <td>Хамар, харшилын нарийн шинжилгээ, эмчилгээ</td>
-                        <td>ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Залгиур, төвөнх</td>
-                        <td>Залгиур, төвөнхийн дурангийн үзлэг, эмчилгээ</td>
-                        <td>ЭМЖЖ - 10-р хороолол клиник</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Дотор</td>
-                        <td>Дотрын бүх төрлийн үзлэг, оношилгоо</td>
-                        <td>ЭМЖЖ - Халдварт клиник</td>
-                    </tr>
-                </tbody>
-            </table>
+                <div class="additional-filters">
+                    <label>Нэмэлт шүүлтүүр:</label>
+                    <button class="filter-chip">💰 Үнэ</button>
+                    <button class="filter-chip">🛡️ Даатгал</button>
+                    <button class="filter-chip">👥 Насны ангилал</button>
+                    <button class="filter-chip">🔽 Бусад шүүлтүүр</button>
+                    <button class="clear-filters">🔄 Шүүлтүүр цэвэрлэх</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="services">
+    <!-- Services Categories Section -->
+    <section class="services-categories">
         <div class="container">
-            <div class="section-header">
-                <h2>Манай үйлчилгээ</h2>
-                <p>Танд хамгийн тохиромжтой үйлчилгээг санал болгож байна</p>
+            <div class="services-title">
+                <h2>
+                    <span class="title-decoration">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </span>
+                    Тусламж үйлчилгээ
+                    <span class="title-decoration">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </span>
+                </h2>
+                <p>Бид танд чанартай, хүртээмжтэй эрүүл мэндийн тусламж үйлчилгээг үзүүлнэ.</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">👂</div>
-                    <h3>ДуН / БАХА</h3>
-                    <p>Чих, хамар, хоолойн нарийн мэргэжлийн үзлэг, оношилгоо, эмчилгээ</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔬</div>
-                    <h3>Сонсгол нөхөн сэргээх</h3>
-                    <p>Сонсгол шалгалт, аппарат тохируулах, яриа сэргээх эмчилгээ</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏥</div>
+
+            <div class="services-categories-grid">
+                <div class="service-category-card">
+                    <div class="service-category-icon">🩺</div>
                     <h3>Амбулатори</h3>
-                    <p>Урьдчилан сэргийлэх үзлэг, оношлогоо, эмчилгээ, зөвлөгөө</p>
+                    <div class="service-category-divider"></div>
+                    <p>Ерөнхий үзлэг, оношилгоо болон эмчийн зөвлөгөө үйлчилгээ.</p>
+                    <a href="#" class="service-category-btn">
+                        Дэлгэрэнгүй →
+                    </a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">⚕️</div>
-                    <h3>Мэс засал</h3>
-                    <p>Чих, хамар, хоолойн дурангийн мэс засал, дунгийн суулгац</p>
+
+                <div class="service-category-card">
+                    <div class="service-category-icon">🔪</div>
+                    <h3>Мэс засал, мэдээгүйжүүлэг</h3>
+                    <div class="service-category-divider"></div>
+                    <p>Төрөлжсөн мэс засал болон мэдээгүйжүүлгийн үйлчилгээ.</p>
+                    <a href="#" class="service-category-btn">
+                        Дэлгэрэнгүй →
+                    </a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
+
+                <div class="service-category-card">
+                    <div class="service-category-icon">🖥️</div>
                     <h3>Дүрс оношилгоо</h3>
-                    <p>КТ, КВСТ, ЭХО, рентген, дурангийн шинжилгээ</p>
+                    <div class="service-category-divider"></div>
+                    <p>Рентген, хэт авиа, MRI, CT зэрэг дүрс оношилгооны үйлчилгээ.</p>
+                    <a href="#" class="service-category-btn">
+                        Дэлгэрэнгүй →
+                    </a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🧪</div>
+
+                <div class="service-category-card">
+                    <div class="service-category-icon">🧪</div>
                     <h3>Лаборатори</h3>
-                    <p>Цусны шинжилгээ, биохимийн шинжилгээ, харшилын тест</p>
+                    <div class="service-category-divider"></div>
+                    <p>Нарийвчилсан шинжилгээ болон лабораторийн үйлчилгээ.</p>
+                    <a href="#" class="service-category-btn">
+                        Дэлгэрэнгүй →
+                    </a>
+                </div>
+
+                <div class="service-category-card">
+                    <div class="service-category-icon">👂</div>
+                    <h3>Сонсгол сэргээх</h3>
+                    <div class="service-category-divider"></div>
+                    <p>Сонсголын оношилгоо, сонсгол сэргээх болон зөвлөгөө үйлчилгээ.</p>
+                    <a href="#" class="service-category-btn">
+                        Дэлгэрэнгүй →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="appointment-content">
+                <div class="appointment-image">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400&h=400&fit=crop" alt="Calendar">
+                </div>
+                <div class="appointment-text">
+                    <h2>
+                        <span class="icon">📅</span>
+                        Цаг захиалах
+                    </h2>
+                    <p>Та манай үйлчилгээнд цаг авахыг хүсвэл дараах товчийг дарж захиална уу.</p>
+                    <div class="appointment-features">
+                        <div class="appointment-feature">
+                            <span class="check">✓</span>
+                            Хялбар, хурдан
+                        </div>
+                        <div class="appointment-feature">
+                            <span class="check">✓</span>
+                            Тохиромжтой цаг сонголт
+                        </div>
+                        <div class="appointment-feature">
+                            <span class="check">✓</span>
+                            Баталгаатай үйлчилгээ
+                        </div>
+                    </div>
+                    <a href="#" class="appointment-btn">
+                        📅 Цаг захиалах →
+                    </a>
                 </div>
             </div>
         </div>
