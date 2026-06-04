@@ -7,6 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* Fix nav text wrapping */
+        .nav a {
+            white-space: nowrap;
+        }
+
+        /* Ensure mobile-actions are hidden on desktop */
+        .mobile-actions {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-actions {
+                display: flex !important;
+            }
+        }
+
         /* ========== SERVICES SEARCH ========== */
         .services-search {
             padding: 60px 0 40px;
@@ -707,105 +723,6 @@
         </div>
     </section>
 
-    <!-- Services List Section -->
-    <section class="services-list" id="services-list">
-        <div class="container">
-            <div class="services-title">
-                <h2>Бүх үйлчилгээ</h2>
-                <p>Доорх хүснэгтээс бүх үйлчилгээний мэдээллийг харах боломжтой</p>
-            </div>
-
-            <div class="no-results" id="noResults">
-                <p>❌ Таны хайлтанд тохирох үйлчилгээ олдсонгүй.</p>
-                <p>Шүүлтүүрийг өөрчлөн дахин оролдоно уу.</p>
-            </div>
-
-            <table class="services-table" id="servicesTable">
-                <thead>
-                    <tr>
-                        <th>№</th>
-                        <th>Үйлчилгээ</th>
-                        <th>Тайлбар</th>
-                        <th>Салбар</th>
-                        <th>Үнэ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-category="сонсгол" data-branch="төв" data-location="сүхбаатар">
-                        <td>1</td>
-                        <td><strong>Чих, Сонсгол</strong></td>
-                        <td>Сонсголын бүх төрлийн шинжилгээ, оношилгоо</td>
-                        <td>Төв эмнэлэг</td>
-                        <td><span class="price-tag">25,000₮+</span></td>
-                    </tr>
-                    <tr data-category="сонсгол" data-branch="мишээл" data-location="хан-уул">
-                        <td>2</td>
-                        <td><strong>Тэнцвэр</strong></td>
-                        <td>Тэнцвэрийн нарийн оношилгоо, эмчилгээ</td>
-                        <td>Мишээл клиник</td>
-                        <td><span class="price-tag">35,000₮+</span></td>
-                    </tr>
-                    <tr data-category="амбулатори" data-branch="төв" data-location="сүхбаатар">
-                        <td>3</td>
-                        <td><strong>Хамар, Харшил</strong></td>
-                        <td>Хамар, харшилын нарийн шинжилгээ, эмчилгээ</td>
-                        <td>Төв эмнэлэг</td>
-                        <td><span class="price-tag">30,000₮+</span></td>
-                    </tr>
-                    <tr data-category="амбулатори" data-branch="10-р хороолол" data-location="баянгол">
-                        <td>4</td>
-                        <td><strong>Залгиур, төвөнх</strong></td>
-                        <td>Залгиур, төвөнхийн дурангийн үзлэг, эмчилгээ</td>
-                        <td>10-р хороолол клиник</td>
-                        <td><span class="price-tag">20,000₮+</span></td>
-                    </tr>
-                    <tr data-category="амбулатори" data-branch="халдварт" data-location="баянзүрх">
-                        <td>5</td>
-                        <td><strong>Дотор</strong></td>
-                        <td>Дотрын бүх төрлийн үзлэг, оношилгоо</td>
-                        <td>Халдварт клиник</td>
-                        <td><span class="price-tag">20,000₮+</span></td>
-                    </tr>
-                    <tr data-category="мэс засал" data-branch="төв" data-location="сүхбаатар">
-                        <td>6</td>
-                        <td><strong>Мэс засал</strong></td>
-                        <td>Чих, хамар, хоолойн дурангийн мэс засал</td>
-                        <td>Төв эмнэлэг</td>
-                        <td><span class="price-tag">500,000₮+</span></td>
-                    </tr>
-                    <tr data-category="мэс засал" data-branch="төв" data-location="сүхбаатар">
-                        <td>7</td>
-                        <td><strong>Мэдээгүйжүүлэг</strong></td>
-                        <td>Бүх төрлийн мэдээгүйжүүлэг</td>
-                        <td>Төв эмнэлэг</td>
-                        <td><span class="price-tag">150,000₮+</span></td>
-                    </tr>
-                    <tr data-category="дүрс оношилгоо" data-branch="төв" data-location="сүхбаатар">
-                        <td>8</td>
-                        <td><strong>КТ, КВСТ</strong></td>
-                        <td>Компьютерийн томографи шинжилгээ</td>
-                        <td>Бүх салбар</td>
-                        <td><span class="price-tag">45,000₮+</span></td>
-                    </tr>
-                    <tr data-category="лаборатори" data-branch="төв" data-location="сүхбаатар">
-                        <td>9</td>
-                        <td><strong>Лаборатори</strong></td>
-                        <td>Цусны шинжилгээ, биохимийн шинжилгээ</td>
-                        <td>Бүх салбар</td>
-                        <td><span class="price-tag">15,000₮+</span></td>
-                    </tr>
-                    <tr data-category="сонсгол" data-branch="төв" data-location="сүхбаатар">
-                        <td>10</td>
-                        <td><strong>Сонсголын аппарат</strong></td>
-                        <td>Сонсголын аппарат тохируулга, засвар</td>
-                        <td>Бүх салбар</td>
-                        <td><span class="price-tag">450,000₮+</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
     <!-- Appointment Section -->
     <section class="appointment-section">
         <div class="container">
@@ -917,48 +834,21 @@
 
         // ========== FILTER FUNCTIONS ==========
         function filterServices() {
-            const type = document.getElementById('filterType').value.toLowerCase();
-            const location = document.getElementById('filterLocation').value.toLowerCase();
-            const branch = document.getElementById('filterBranch').value.toLowerCase();
+            const type = document.getElementById('filterType').value;
+            const location = document.getElementById('filterLocation').value;
+            const branch = document.getElementById('filterBranch').value;
             
-            const rows = document.querySelectorAll('#servicesTable tbody tr');
-            let visibleCount = 0;
+            // Build search message
+            let message = 'Хайлт хийж байна...\n';
+            if (type) message += 'Төрөл: ' + type + '\n';
+            if (location) message += 'Байршил: ' + location + '\n';
+            if (branch) message += 'Эмнэлэг: ' + branch + '\n';
             
-            rows.forEach(row => {
-                const rowType = row.getAttribute('data-category') || '';
-                const rowBranch = row.getAttribute('data-branch') || '';
-                const rowLocation = row.getAttribute('data-location') || '';
-                
-                const matchType = !type || rowType.includes(type);
-                const matchLocation = !location || rowLocation.includes(location);
-                const matchBranch = !branch || rowBranch.includes(branch);
-                
-                if (matchType && matchLocation && matchBranch) {
-                    row.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    row.classList.add('hidden');
-                }
-            });
-            
-            // Show/hide no results message
-            const noResults = document.getElementById('noResults');
-            if (visibleCount === 0) {
-                noResults.classList.add('show');
-                document.getElementById('servicesTable').style.display = 'none';
-            } else {
-                noResults.classList.remove('show');
-                document.getElementById('servicesTable').style.display = 'table';
-            }
-            
-            // Scroll to results
-            document.getElementById('services-list').scrollIntoView({ behavior: 'smooth' });
+            alert(message + '\n(Демо: Жинхэнэ системд үйлчилгээний жагсаалт шүүгдэнэ)');
         }
 
         function filterByCategory(category) {
-            // Set the dropdown value
             document.getElementById('filterType').value = category;
-            // Trigger filter
             filterServices();
         }
 
@@ -967,41 +857,30 @@
             document.getElementById('filterLocation').value = '';
             document.getElementById('filterBranch').value = '';
             
-            // Remove active class from chips
             document.querySelectorAll('.filter-chip').forEach(chip => {
                 chip.classList.remove('active');
             });
-            
-            // Show all rows
-            const rows = document.querySelectorAll('#servicesTable tbody tr');
-            rows.forEach(row => {
-                row.classList.remove('hidden');
-            });
-            
-            document.getElementById('noResults').classList.remove('show');
-            document.getElementById('servicesTable').style.display = 'table';
         }
 
         // Toggle filter chips
         function togglePriceFilter(btn) {
             btn.classList.toggle('active');
-            // In a real app, this would sort by price
-            alert('Үнээр эрэмбэлэх функц');
+            alert('Үнээр эрэмбэлэх функц (Демо)');
         }
 
         function toggleInsuranceFilter(btn) {
             btn.classList.toggle('active');
-            alert('Даатгалаар шүүх функц');
+            alert('Даатгалаар шүүх функц (Демо)');
         }
 
         function toggleAgeFilter(btn) {
             btn.classList.toggle('active');
-            alert('Насны ангилалаар шүүх функц');
+            alert('Насны ангилалаар шүүх функц (Демо)');
         }
 
         function toggleOtherFilters(btn) {
             btn.classList.toggle('active');
-            alert('Нэмэлт шүүлтүүрүүд');
+            alert('Нэмэлт шүүлтүүрүүд (Демо)');
         }
 
         // ========== LANGUAGE TOGGLE ==========
