@@ -7,69 +7,158 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        .page-header {
+            background: linear-gradient(135deg, #0054a6 0%, #0077cc 50%, #03bfd7 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(249,157,51,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
         .news-section {
             padding: 80px 0;
+            background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
         }
-        
+
         .news-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
-        
+
         .news-card {
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0,84,166,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,84,166,0.06);
+            position: relative;
         }
-        
+
+        .news-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0054a6, #03bfd7);
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         .news-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,84,166,0.15);
         }
-        
+
+        .news-card:hover::before {
+            opacity: 1;
+        }
+
         .news-image {
             width: 100%;
             height: 220px;
             overflow: hidden;
+            position: relative;
         }
-        
+
+        .news-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(0,84,166,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .news-card:hover .news-image::after {
+            opacity: 1;
+        }
+
         .news-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
+            transition: transform 0.5s ease;
         }
-        
+
         .news-card:hover .news-image img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
-        
+
         .news-content {
             padding: 28px;
         }
-        
+
         .news-date {
-            color: var(--accent-orange);
+            color: #f99d33;
             font-size: 13px;
             font-weight: 700;
             margin-bottom: 12px;
             display: inline-block;
         }
-        
+
         .news-category {
             display: inline-block;
-            background: rgba(0,84,166,0.1);
-            color: var(--primary);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
             margin-bottom: 12px;
+            margin-right: 8px;
         }
-        
+
+        .news-card:nth-child(1) .news-category,
+        .news-card:nth-child(3) .news-category {
+            background: linear-gradient(135deg, rgba(0,84,166,0.12) 0%, rgba(3,191,215,0.12) 100%);
+            color: #0054a6;
+        }
+
+        .news-card:nth-child(2) .news-category {
+            background: linear-gradient(135deg, rgba(249,157,51,0.12) 0%, rgba(0,84,166,0.12) 100%);
+            color: #f99d33;
+        }
+
+        .news-card:nth-child(4) .news-category {
+            background: linear-gradient(135deg, rgba(249,157,51,0.12) 0%, rgba(3,191,215,0.12) 100%);
+            color: #f99d33;
+        }
+
         .news-card h3 {
             font-size: 18px;
             font-weight: 700;
@@ -77,40 +166,41 @@
             line-height: 1.4;
             color: var(--text-dark);
         }
-        
+
         .news-card p {
             font-size: 14px;
             color: var(--text-light);
             line-height: 1.7;
             margin-bottom: 16px;
         }
-        
+
         .read-more {
-            color: var(--primary);
+            color: #0054a6;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            transition: gap 0.3s;
+            transition: all 0.3s;
         }
-        
+
         .read-more:hover {
             gap: 10px;
+            color: #f99d33;
         }
-        
+
         .pagination {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-top: 60px;
         }
-        
+
         .page-btn {
             width: 44px;
             height: 44px;
-            border: 2px solid var(--border);
+            border: 2px solid rgba(0,84,166,0.15);
             background: white;
             border-radius: 10px;
             display: flex;
@@ -120,15 +210,18 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             transition: all 0.3s;
+            color: #0054a6;
         }
-        
+
         .page-btn:hover,
         .page-btn.active {
-            background: var(--primary);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%);
             color: white;
-            border-color: var(--primary);
+            border-color: transparent;
+            box-shadow: 0 6px 15px rgba(0,84,166,0.3);
+            transform: translateY(-2px);
         }
-        
+
         .featured-article {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -136,13 +229,37 @@
             background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 30px rgba(0,84,166,0.1);
             margin-bottom: 40px;
+            border: 1px solid rgba(0,84,166,0.08);
+            position: relative;
+        }
+
+        .featured-article::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #0054a6 0%, #03bfd7 50%, #f99d33 100%);
+            z-index: 2;
         }
 
         .featured-image {
             height: 100%;
             min-height: 400px;
+            position: relative;
+        }
+
+        .featured-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 80px;
+            background: linear-gradient(to left, rgba(0,84,166,0.05), transparent);
         }
 
         .featured-image img {
@@ -165,10 +282,16 @@
             align-items: center;
         }
 
+        .featured-meta .news-category {
+            background: linear-gradient(135deg, rgba(249,157,51,0.12) 0%, rgba(0,84,166,0.12) 100%);
+            color: #f99d33;
+            margin-bottom: 0;
+        }
+
         .featured-content h2 {
             font-size: 28px;
             font-weight: 800;
-            color: var(--text-dark);
+            color: #0054a6;
             margin-bottom: 16px;
             line-height: 1.3;
         }
@@ -178,6 +301,25 @@
             color: var(--text-medium);
             line-height: 1.7;
             margin-bottom: 24px;
+        }
+
+        .service-category-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,84,166,0.2);
+        }
+
+        .service-category-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,84,166,0.3);
+            background: linear-gradient(135deg, #f99d33 0%, #0054a6 100%);
         }
 
         @media (max-width: 768px) {
@@ -402,7 +544,7 @@
                         <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&h=400&fit=crop" alt="News 2">
                     </div>
                     <div class="news-content">
-                        <span class="news-category" style="background: rgba(153,50,204,0.1); color: #9932CC;">Сургалт, эрдэм шинжилгээ</span>
+                        <span class="news-category" style="background: linear-gradient(135deg, rgba(3,191,215,0.12) 0%, rgba(0,84,166,0.12) 100%); color: #03bfd7;">Сургалт, эрдэм шинжилгээ</span>
                         <div class="news-date">📅 2025.04.28</div>
                         <h3>"Чих хамар хоолойн эмгэгийн орчин үеийн оношилгоо" сургалт амжилттай боллоо</h3>
                         <p>Эмч, мэргэжилтнүүдийн мэдлэг чадварыг дээшлүүлэх зорилготой сургалтад 120 гаруй хүн хамрагдлаа.</p>
@@ -426,7 +568,7 @@
                         <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop" alt="News 4">
                     </div>
                     <div class="news-content">
-                        <span class="news-category" style="background: rgba(255,140,0,0.1); color: #FF8C00;">Эмчийн зөвлөгөө</span>
+                        <span class="news-category" style="background: linear-gradient(135deg, rgba(249,157,51,0.12) 0%, rgba(3,191,215,0.12) 100%); color: #f99d33;">Эмчийн зөвлөгөө</span>
                         <div class="news-date">📅 2025.04.05</div>
                         <h3>Чих шуугих шалтгаан, эмчилгээ</h3>
                         <p>Чих шуугих нь олон шалтгаантай. Эрсдэл хүчин зүйлс, эмчилгээний аргачлалын талаар зөвлөгөө.</p>

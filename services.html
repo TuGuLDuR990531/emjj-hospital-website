@@ -26,7 +26,7 @@
         /* ========== SERVICES SEARCH ========== */
         .services-search {
             padding: 60px 0 40px;
-            background: linear-gradient(135deg, #e8f4fd 0%, #d4edfc 50%, #c5e5fa 100%);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 50%, #f99d33 100%);
         }
 
         .search-module {
@@ -46,13 +46,14 @@
         .search-header-icon {
             width: 60px;
             height: 60px;
-            background: var(--primary);
+            background: linear-gradient(135deg, #f99d33 0%, #ffbb66 100%);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 28px;
+            box-shadow: 0 6px 20px rgba(249,157,51,0.4);
         }
 
         .search-header-text h3 {
@@ -105,7 +106,7 @@
         }
 
         .search-btn {
-            background: var(--primary);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%);
             color: white;
             border: none;
             padding: 14px 32px;
@@ -119,12 +120,13 @@
             gap: 8px;
             transition: all 0.3s;
             align-self: flex-end;
+            box-shadow: 0 6px 20px rgba(0,84,166,0.3);
         }
-
+        
         .search-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,84,166,0.3);
+            background: linear-gradient(135deg, #f99d33 0%, #ffbb66 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(249,157,51,0.4);
         }
 
         .additional-filters {
@@ -161,9 +163,11 @@
 
         .filter-chip:hover,
         .filter-chip.active {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(0,84,166,0.05);
+            border-color: #f99d33;
+            color: #ffffff;
+            background: linear-gradient(135deg, #f99d33 0%, #ffbb66 100%);
+            box-shadow: 0 6px 20px rgba(249,157,51,0.3);
+            transform: translateY(-2px);
         }
 
         .clear-filters {
@@ -227,17 +231,65 @@
             flex-direction: column;
             align-items: center;
         }
-
+        
         .service-category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.1);
-            border-color: var(--primary);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(0,84,166,0.2);
+        }
+        
+        .service-category-card:nth-child(1) {
+            border-color: #0054a6;
+            border-bottom: 5px solid #0054a6;
+        }
+        
+        .service-category-card:nth-child(1):hover {
+            border-color: #03bfd7;
+            border-bottom-color: #f99d33;
+        }
+        
+        .service-category-card:nth-child(2) {
+            border-color: #f99d33;
+            border-bottom: 5px solid #f99d33;
+        }
+        
+        .service-category-card:nth-child(2):hover {
+            border-color: #0054a6;
+            border-bottom-color: #03bfd7;
+        }
+        
+        .service-category-card:nth-child(3) {
+            border-color: #03bfd7;
+            border-bottom: 5px solid #03bfd7;
+        }
+        
+        .service-category-card:nth-child(3):hover {
+            border-color: #f99d33;
+            border-bottom-color: #0054a6;
+        }
+        
+        .service-category-card:nth-child(4) {
+            border-color: #0054a6;
+            border-bottom: 5px solid #0054a6;
+        }
+        
+        .service-category-card:nth-child(4):hover {
+            border-color: #03bfd7;
+            border-bottom-color: #f99d33;
+        }
+        
+        .service-category-card:nth-child(5) {
+            border-color: #f99d33;
+            border-bottom: 5px solid #f99d33;
+        }
+        
+        .service-category-card:nth-child(5):hover {
+            border-color: #0054a6;
+            border-bottom-color: #03bfd7;
         }
 
         .service-category-icon {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, #e8f4fd 0%, #d4edfc 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -246,9 +298,37 @@
             font-size: 48px;
             transition: all 0.3s;
         }
-
+        
+        .service-category-card:nth-child(1) .service-category-icon {
+            background: linear-gradient(135deg, #e8f4fd 0%, #b8ddf9 100%);
+            color: #0054a6;
+        }
+        
+        .service-category-card:nth-child(2) .service-category-icon {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe4b8 100%);
+            color: #f99d33;
+        }
+        
+        .service-category-card:nth-child(3) .service-category-icon {
+            background: linear-gradient(135deg, #e6f9fc 0%, #b8f0f7 100%);
+            color: #03bfd7;
+        }
+        
+        .service-category-card:nth-child(4) .service-category-icon {
+            background: linear-gradient(135deg, #e8f4fd 0%, #b8ddf9 100%);
+            color: #0054a6;
+        }
+        
+        .service-category-card:nth-child(5) .service-category-icon {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe4b8 100%);
+            color: #f99d33;
+        }
+        
         .service-category-card:hover .service-category-icon {
-            background: var(--primary);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%) !important;
+            color: white !important;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,84,166,0.35);
         }
 
         .service-category-card h3 {
@@ -261,8 +341,8 @@
 
         .service-category-divider {
             width: 40px;
-            height: 3px;
-            background: var(--primary);
+            height: 4px;
+            background: linear-gradient(90deg, #0054a6, #03bfd7, #f99d33);
             border-radius: 2px;
             margin-bottom: 16px;
         }
@@ -276,7 +356,7 @@
         }
 
         .service-category-btn {
-            background: var(--primary);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%);
             color: white;
             padding: 12px 24px;
             border-radius: 10px;
@@ -287,18 +367,19 @@
             align-items: center;
             gap: 8px;
             transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,84,166,0.25);
         }
-
+        
         .service-category-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,84,166,0.3);
+            background: linear-gradient(135deg, #f99d33 0%, #ffbb66 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(249,157,51,0.4);
         }
 
         /* ========== SERVICES TABLE ========== */
         .services-list {
             padding: 80px 0;
-            background: var(--bg-light);
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f7fa 50%, #fff8f0 100%);
         }
 
         .services-table {
@@ -307,11 +388,12 @@
             background: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 30px rgba(0,84,166,0.12);
+            border: 2px solid #0054a6;
         }
 
         .services-table th {
-            background: var(--primary);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%);
             color: white;
             padding: 18px 24px;
             text-align: left;
@@ -322,11 +404,17 @@
         .services-table td {
             padding: 16px 24px;
             border-bottom: 1px solid var(--border);
+            border-left: 3px solid transparent;
             font-size: 14px;
+            transition: all 0.3s;
         }
 
         .services-table tr:hover {
-            background: var(--bg-light);
+            background: linear-gradient(90deg, rgba(0,84,166,0.05), rgba(3,191,215,0.05));
+        }
+        
+        .services-table tr:hover td {
+            border-left: 3px solid #f99d33;
         }
 
         .services-table tr.hidden {
@@ -335,12 +423,13 @@
 
         .price-tag {
             display: inline-block;
-            background: var(--bg-light);
+            background: linear-gradient(135deg, #e6f7fa 0%, #fff5e6 100%);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 14px;
-            font-weight: 600;
-            color: var(--primary);
+            font-weight: 700;
+            color: #0054a6;
+            border: 1px solid #03bfd7;
         }
 
         .no-results {
@@ -395,7 +484,7 @@
         /* ========== APPOINTMENT SECTION ========== */
         .appointment-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #e8f4fd 0%, #d4edfc 50%, #c5e5fa 100%);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 50%, #f99d33 100%);
         }
 
         .appointment-content {
@@ -477,7 +566,7 @@
         }
 
         .appointment-btn {
-            background: var(--primary);
+            background: linear-gradient(135deg, #f99d33 0%, #ffbb66 100%);
             color: white;
             padding: 18px 36px;
             border-radius: 12px;
@@ -491,12 +580,13 @@
             border: none;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 8px 25px rgba(249,157,51,0.35);
         }
 
         .appointment-btn:hover {
-            background: var(--primary-dark);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,84,166,0.3);
+            box-shadow: 0 12px 35px rgba(0,84,166,0.4);
         }
 
         /* ========== RESPONSIVE ========== */
@@ -575,6 +665,10 @@
             .services-categories-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 50%, #f99d33 100%) !important;
         }
     </style>
 </head>

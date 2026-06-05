@@ -7,9 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=3">
     <style>
+        .page-header {
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%) !important;
+            color: white;
+        }
+        .page-header h1 {
+            color: white;
+        }
+        .page-header p {
+            color: rgba(255,255,255,0.9);
+        }
+
         .branches-cards {
             padding: 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%);
         }
         
         .branches-grid {
@@ -22,23 +33,29 @@
         }
         
         .branch-card {
-            background: linear-gradient(180deg, #1e88e5 0%, #1565c0 100%);
+            background: linear-gradient(180deg, #0054a6 0%, #004080 100%);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,84,166,0.35);
+            transition: all 0.3s ease;
+            border-top: 4px solid #f99d33;
         }
-        
+
+        .branch-card:nth-child(2) { border-top-color: #03bfd7; }
+        .branch-card:nth-child(3) { border-top-color: #f99d33; }
+        .branch-card:nth-child(4) { border-top-color: #03bfd7; }
+
         .branch-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-12px);
+            box-shadow: 0 16px 48px rgba(0,84,166,0.45);
         }
-        
+
         .branch-card-image {
             height: 200px;
             overflow: hidden;
             position: relative;
         }
-        
+
         .branch-card-image::after {
             content: '';
             position: absolute;
@@ -46,7 +63,7 @@
             left: 0;
             right: 0;
             height: 60%;
-            background: linear-gradient(to top, rgba(30, 136, 229, 0.8), transparent);
+            background: linear-gradient(to top, rgba(0, 84, 166, 0.9), transparent);
         }
         
         .branch-card-image img {
