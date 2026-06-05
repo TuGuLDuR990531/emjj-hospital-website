@@ -120,9 +120,13 @@
                 <a href="index.html">Нүүр</a>
                 <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
-                <a href="ent-health.html" class="active">ENT Health</a>
-                <a href="ent-wellness.html">ENT Wellness</a>
-                <a href="ent-care.html">ENT Care</a>
+                <div class="ref-dropdown">
+                    <a href="ent-health.html" class="active">ENT Health</a>
+                    <div class="ref-dropdown-menu">
+                        <a href="ent-wellness.html">ENT Wellness</a>
+                        <a href="ent-care.html">ENT Care</a>
+                    </div>
+                </div>
                 <a href="news.html">Мэдээ мэдээлэл</a>
                 <a href="contact.html">Холбоо барих</a>
             </nav>
@@ -231,8 +235,36 @@
     <script>
         function toggleMenu() {
             document.getElementById('refNav').classList.toggle('open');
+            document.querySelector('.ref-menu').classList.toggle('active');
             document.body.classList.toggle('menu-open');
         }
+
+        // Mobile dropdown toggle
+        document.querySelectorAll('.ref-dropdown > a').forEach(dropdownLink => {
+            dropdownLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdownMenu = dropdownLink.nextElementSibling;
+                    if (dropdownMenu && dropdownMenu.classList.contains('ref-dropdown-menu')) {
+                        dropdownMenu.classList.toggle('open');
+                    }
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.ref-nav a, .ref-dropdown-menu a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    if (link.parentElement.classList.contains('ref-dropdown')) {
+                        return;
+                    }
+                    document.getElementById('refNav').classList.remove('open');
+                    document.querySelector('.ref-menu').classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
     </script>
 </body>
 </html>
