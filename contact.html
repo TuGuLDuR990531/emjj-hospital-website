@@ -74,7 +74,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #f99d33 0%, #e58520 100%);
+            background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -82,6 +82,11 @@
             color: white;
             font-size: 20px;
             flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,84,166,0.3);
+        }
+
+        .contact-item:first-child .contact-icon {
+            background: linear-gradient(135deg, #f99d33 0%, #e58520 100%);
             box-shadow: 0 4px 10px rgba(249,157,51,0.3);
         }
         
@@ -111,7 +116,7 @@
             content: '';
             position: absolute;
             top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(135deg, #0054a6, #03bfd7, #f99d33);
+            background: linear-gradient(135deg, #0054a6, #03bfd7);
             border-radius: 22px;
             z-index: -1;
         }
@@ -206,7 +211,7 @@
             content: '';
             position: absolute;
             top: -4px; left: -4px; right: -4px; bottom: -4px;
-            background: linear-gradient(135deg, #0054a6, #03bfd7, #f99d33);
+            background: linear-gradient(135deg, #0054a6, #03bfd7);
             border-radius: 24px;
             z-index: -1;
         }
@@ -234,14 +239,14 @@
         .branch-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 40px rgba(0,84,166,0.2);
-            border-left-color: #f99d33;
+            border-left-color: #03bfd7;
         }
 
-        .branch-card:nth-child(2) { border-left-color: #f99d33; }
+        .branch-card:nth-child(2) { border-left-color: #0054a6; }
         .branch-card:nth-child(3) { border-left-color: #03bfd7; }
         .branch-card:nth-child(4) { border-left-color: #0054a6; }
-        .branch-card:nth-child(5) { border-left-color: #f99d33; }
-        .branch-card:nth-child(6) { border-left-color: #03bfd7; }
+        .branch-card:nth-child(5) { border-left-color: #03bfd7; }
+        .branch-card:nth-child(6) { border-left-color: #0054a6; }
 
         .branch-card h3 {
             font-size: 18px;

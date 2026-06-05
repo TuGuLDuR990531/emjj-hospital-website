@@ -56,7 +56,7 @@
             right: -20%;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(249,157,51,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(3,191,215,0.15) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -122,16 +122,16 @@
         }
 
         .hero-buttons .btn-primary {
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #e88a1a 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             border: none;
-            box-shadow: 0 6px 20px rgba(249,157,51,0.4);
+            box-shadow: 0 6px 20px rgba(0,84,166,0.4);
             transition: all 0.3s;
         }
 
         .hero-buttons .btn-primary:hover {
-            background: linear-gradient(135deg, #e88a1a 0%, var(--accent-orange) 100%);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(249,157,51,0.5);
+            box-shadow: 0 10px 30px rgba(0,84,166,0.5);
         }
 
         .hero-buttons .btn-outline {
@@ -179,7 +179,7 @@
             bottom: 0;
             background: 
                 radial-gradient(circle at 20% 50%, rgba(3,191,215,0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(249,157,51,0.1) 0%, transparent 50%);
+                radial-gradient(circle at 80% 50%, rgba(3,191,215,0.1) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -218,6 +218,13 @@
             font-size: 16px;
             opacity: 0.95;
             font-weight: 600;
+        }
+
+        .stat-item:nth-child(1) h3 {
+            background: linear-gradient(135deg, white 0%, var(--accent-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         /* ========== SERVICES FILTER ========== */
@@ -361,9 +368,9 @@
 
         .filter-chip:hover,
         .filter-chip.active {
-            border-color: var(--accent-orange);
-            color: var(--accent-orange);
-            background: rgba(249,157,51,0.08);
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(0,84,166,0.08);
         }
 
         .clear-filters {
@@ -420,7 +427,7 @@
         }
 
         .services-title .title-decoration span:nth-child(2) {
-            background: var(--accent-orange);
+            background: var(--accent-teal);
         }
 
         .services-title .title-decoration span:nth-child(3) {
@@ -562,7 +569,7 @@
             right: -20%;
             width: 700px;
             height: 700px;
-            background: radial-gradient(circle, rgba(249,157,51,0.1) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(3,191,215,0.1) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -588,7 +595,7 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.2);
             position: relative;
             z-index: 1;
-            border-top: 4px solid var(--accent-orange);
+            border-top: 4px solid var(--accent-teal);
         }
 
         .appointment-image {
@@ -613,7 +620,7 @@
         .appointment-text h2 .icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-teal) 100%);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -660,7 +667,7 @@
         }
 
         .appointment-btn {
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #e88a1a 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             padding: 18px 36px;
             border-radius: 12px;
@@ -674,13 +681,13 @@
             border: none;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
-            box-shadow: 0 6px 20px rgba(249,157,51,0.3);
+            box-shadow: 0 6px 20px rgba(0,84,166,0.3);
         }
 
         .appointment-btn:hover {
-            background: linear-gradient(135deg, #e88a1a 0%, var(--accent-orange) 100%);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(249,157,51,0.4);
+            box-shadow: 0 10px 30px rgba(0,84,166,0.4);
         }
 
         /* ========== BANNERS ========== */
@@ -709,13 +716,13 @@
         }
 
         .banner-card:nth-child(2) {
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #e88a1a 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             border-top-color: white;
         }
 
         .banner-card:nth-child(3) {
             background: linear-gradient(135deg, var(--accent-teal) 0%, #02a8bd 100%);
-            border-top-color: var(--accent-orange);
+            border-top-color: var(--primary);
         }
 
         .banner-card:nth-child(4) {
@@ -725,7 +732,7 @@
 
         .banner-card:nth-child(5) {
             background: linear-gradient(135deg, #0054a6 0%, var(--accent-teal) 100%);
-            border-top-color: var(--accent-orange);
+            border-top-color: var(--accent-teal);
         }
 
         .banner-card:hover {
@@ -768,7 +775,7 @@
         .featured-card:nth-child(2) { border-top-color: var(--accent-orange); }
         .featured-card:nth-child(3) { border-top-color: var(--accent-teal); }
         .featured-card:nth-child(4) { border-top-color: var(--primary); }
-        .featured-card:nth-child(5) { border-top-color: var(--accent-orange); }
+        .featured-card:nth-child(5) { border-top-color: var(--primary); }
         .featured-card:nth-child(6) { border-top-color: var(--accent-teal); }
 
         .featured-card:hover {
@@ -830,7 +837,7 @@
             display: inline-block;
             width: 6px;
             height: 40px;
-            background: linear-gradient(180deg, var(--accent-orange) 0%, var(--accent-teal) 100%);
+            background: linear-gradient(180deg, var(--primary) 0%, var(--accent-teal) 100%);
             border-radius: 3px;
         }
 
@@ -857,7 +864,7 @@
             transition: all 0.3s;
         }
 
-        .ent-module:nth-child(2) { border-left-color: var(--accent-orange); }
+        .ent-module:nth-child(2) { border-left-color: var(--accent-teal); }
         .ent-module:nth-child(3) { border-left-color: var(--accent-teal); }
         .ent-module:nth-child(4) { border-left-color: var(--primary); }
 
@@ -899,7 +906,7 @@
             border-top: 4px solid var(--primary);
         }
 
-        .branch-card:nth-child(2) { border-top-color: var(--accent-orange); }
+        .branch-card:nth-child(2) { border-top-color: var(--accent-teal); }
         .branch-card:nth-child(3) { border-top-color: var(--accent-teal); }
         .branch-card:nth-child(4) { border-top-color: var(--primary); }
 
@@ -946,7 +953,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: var(--accent-orange);
+            background: var(--accent-teal);
         }
 
         .branch-info {
@@ -986,7 +993,7 @@
             right: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(249,157,51,0.08) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(3,191,215,0.08) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -1068,7 +1075,7 @@
         }
 
         .partner-logo:hover {
-            border-color: var(--accent-orange);
+            border-color: var(--accent-teal);
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0,84,166,0.15);
         }
@@ -1090,7 +1097,7 @@
             left: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(249,157,51,0.12) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(3,191,215,0.12) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -1152,7 +1159,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-teal) 50%, var(--accent-orange) 100%);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-teal) 100%);
         }
 
         .footer-grid {
@@ -1324,7 +1331,7 @@
             display: inline-block;
             width: 40px;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent-orange) 0%, var(--accent-teal) 100%);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-teal) 100%);
             border-radius: 2px;
         }
 
