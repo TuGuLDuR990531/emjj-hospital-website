@@ -35,7 +35,152 @@ body.menu-open {
   padding: 0 20px;
 }
 
-/* ========== HEADER ========== */
+/* ========== REFERENCE HEADER (used by all pages) ========== */
+.ref-header {
+  height: 76px;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #e7eef8;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.ref-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.ref-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--primary);
+  font-weight: 800;
+  text-decoration: none;
+  min-width: 250px;
+}
+
+.ref-logo-mark {
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--primary);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.ref-logo-text {
+  font-size: 18px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.ref-logo-text span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  color: var(--primary-dark);
+  margin-top: 4px;
+}
+
+.ref-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+  list-style: none;
+}
+
+.ref-nav a {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 30px 0 26px;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.25s;
+  display: block;
+}
+
+.ref-nav a:hover {
+  color: var(--primary);
+}
+
+.ref-nav a.active {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.ref-menu {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--bg-light);
+  color: var(--primary);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.ref-menu span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 3px;
+  transition: all 0.25s;
+}
+
+.ref-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.ref-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.ref-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Language toggle in ref-header */
+.ref-lang-toggle {
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  padding: 4px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.3s;
+  min-width: 44px;
+  min-height: 28px;
+  margin-left: 16px;
+}
+
+.ref-lang-toggle:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ========== LEGACY HEADER (kept for backward compatibility) ========== */
 .header {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
@@ -43,6 +188,233 @@ body.menu-open {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.header-top {
+  display: none;
+}
+
+.header-main {
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 17px;
+  box-shadow: 0 4px 12px rgba(0,84,166,0.3);
+  flex-shrink: 0;
+}
+
+/* ========== NAVIGATION ========== */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+}
+
+.nav li {
+  position: relative;
+  margin: 0;
+}
+
+.nav li > a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.25s;
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.nav li > a:hover {
+  color: var(--primary);
+  background: var(--bg-light);
+}
+
+.nav li > a.active {
+  color: var(--primary);
+  background: var(--bg-light);
+}
+
+/* Dropdown arrow indicator */
+.nav li.has-dropdown > a::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.nav li.has-dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  padding: 8px 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+}
+
+.nav li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  background: white;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.dropdown li {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-dark);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.dropdown li a:hover {
+  background: var(--bg-light);
+  color: var(--primary);
+}
+
+/* ========== HEADER ACTIONS ========== */
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.mobile-actions {
+  display: none;
+}
+
+/* ========== MOBILE MENU ========== */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1002;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.mobile-menu-btn:hover {
+  background: var(--bg-light);
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--text-dark);
+  margin: 5px auto;
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile menu backdrop overlay */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  display: block;
+  opacity: 1;
 }
 
 .header-top {
@@ -475,6 +847,12 @@ body.menu-open {
 }
 
 /* ========== RESPONSIVE ========== */
+@media (max-width: 1180px) {
+  .ref-nav {
+    gap: 18px;
+  }
+}
+
 @media (max-width: 1024px) {
   .nav-wrapper {
     gap: 16px;
@@ -638,6 +1016,42 @@ body.menu-open {
     font-size: 15px;
   }
   
+  /* ref-header mobile */
+  .ref-menu {
+    display: flex;
+  }
+  
+  .ref-nav {
+    position: fixed;
+    top: 76px;
+    right: -100%;
+    width: 86%;
+    max-width: 360px;
+    height: calc(100vh - 76px);
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+    box-shadow: -20px 0 50px rgba(0,0,0,0.12);
+    transition: right 0.3s;
+    gap: 0;
+    margin-left: 0;
+  }
+  
+  .ref-nav.open {
+    right: 0;
+  }
+  
+  .ref-nav a {
+    padding: 16px 0;
+    border-bottom: 1px solid #e9f0fb;
+  }
+  
+  .ref-lang-toggle {
+    margin: 16px 0 0;
+    align-self: flex-start;
+  }
+  
   .page-header {
     padding: 60px 0;
   }
@@ -663,6 +1077,20 @@ body.menu-open {
 }
 
 @media (max-width: 480px) {
+  .ref-logo {
+    min-width: auto;
+  }
+  
+  .ref-logo-text {
+    font-size: 15px;
+  }
+  
+  .ref-logo-mark {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+  
   .header-top {
     font-size: 10px;
     padding: 4px 0;

@@ -527,66 +527,25 @@
 </head>
 <body>
     <!-- Header -->
-        <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top-content">
-                    <div class="header-top-left">
-                        <a href="tel:19009999">📞 1900-9999</a>
-                    </div>
-                    <div class="header-top-right">
-                        <button class="lang-toggle" onclick="toggleLanguage()">MN</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-main container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">EM</div>
-                EMJJ Hospital
+    <header class="ref-header">
+        <div class="container ref-header-inner">
+            <a href="index.html" class="ref-logo">
+                <div class="ref-logo-mark">ↄ</div>
+                <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-wrapper" id="mobileNav">
-                <nav>
-                    <ul class="nav">
-                        <li><a href="index.html">Нүүр</a></li>
-                        <li class="has-dropdown">
-                            <a href="about.html">Бидний тухай</a>
-                            <ul class="dropdown">
-                                <li><a href="about.html">Бидний тухай</a></li>
-                                <li><a href="hr.html">Хүний нөөц</a></li>
-                                <li><a href="training.html">Сургалт</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-dropdown">
-                            <a href="ent-health.html">ENT Health+</a>
-                            <ul class="dropdown">
-                                <li><a href="ent-care.html">ENT Care</a></li>
-                                <li><a href="ent-health.html">ENT Wellness</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
-                        <li><a href="news.html">Мэдээ</a></li>
-                        <li><a href="contact.html">Холбоо барих</a></li>
-                        <li class="mobile-actions">
-                            <a href="#donate" class="btn btn-outline">Хандив</a>
-                            <a href="#login" class="btn btn-primary">Нэвтрэх</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header-actions">
-                    <a href="#donate" class="btn btn-outline">Хандив</a>
-                    <a href="#login" class="btn btn-primary">Нэвтрэх</a>
-                </div>
-            </div>
+            <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <nav class="ref-nav" id="refNav">
+                <a href="index.html">Нүүр</a>
+                <a href="about.html" class="active">Бидний тухай</a>
+                <a href="services.html">Үйлчилгээ</a>
+                <a href="ent-health.html">ENT Health</a>
+                <a href="ent-care.html">ENT Care</a>
+                <a href="news.html">Мэдээ мэдээлэл</a>
+                <a href="contact.html">Холбоо барих</a>
+                <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
+            </nav>
         </div>
     </header>
-
-        <div class="mobile-menu-overlay"></div>
 <!-- HR Hero -->
     <section class="hr-hero">
         <div class="container">
@@ -837,49 +796,35 @@
     </footer>
     <script>
                 // Mobile Menu Functions
-        function toggleMobileMenu() {
-            const navWrapper = document.getElementById('mobileNav');
-            const btn = document.querySelector('.mobile-menu-btn');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            navWrapper.classList.toggle('active');
-            btn.classList.toggle('active');
-            
-            if (overlay) {
-                overlay.classList.toggle('active');
-            }
-            
-            if (navWrapper.classList.contains('active')) {
-                document.body.classList.add('menu-open');
-            } else {
-                document.body.classList.remove('menu-open');
-            }
+        function toggleMenu() {
+            document.getElementById('refNav').classList.toggle('open');
+            document.querySelector('.ref-menu').classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         }
 
-        function toggleDropdown(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                const dropdown = e.currentTarget.parentElement.querySelector('.dropdown');
-                if (dropdown && dropdown.classList.contains('dropdown')) {
-                    dropdown.classList.toggle('active');
-                }
-            }
-        }
-
-        // Close mobile menu when clicking on a non-dropdown link
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768 && !link.parentElement.classList.contains('has-dropdown')) {
-                    const navWrapper = document.getElementById('mobileNav');
-                    const btn = document.querySelector('.mobile-menu-btn');
-                    const overlay = document.querySelector('.mobile-menu-overlay');
-                    navWrapper.classList.remove('active');
-                    btn.classList.remove('active');
-                    if (overlay) overlay.classList.remove('active');
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.ref-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('refNav').classList.remove('open');
+                    document.querySelector('.ref-menu').classList.remove('active');
                     document.body.classList.remove('menu-open');
                 }
             });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const refNav = document.getElementById('refNav');
+            const refMenu = document.querySelector('.ref-menu');
+            
+            if (refNav.classList.contains('open') && 
+                !refNav.contains(e.target) && 
+                !refMenu.contains(e.target)) {
+                refNav.classList.remove('open');
+                refMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
         });
 
         // Close mobile menu when clicking overlay
@@ -941,11 +886,11 @@
 
         function applyLanguage() {
             const t = translations[currentLang];
-            const btn = document.querySelector('.lang-toggle');
+            const btn = document.querySelector('.ref-lang-toggle');
             if (btn) btn.textContent = currentLang.toUpperCase();
             
             // Update nav links
-            const navLinks = document.querySelectorAll('.nav-links a');
+            const navLinks = document.querySelectorAll('.ref-nav a');
             if (navLinks[0]) navLinks[0].textContent = t.nav_home;
             if (navLinks[1]) navLinks[1].textContent = t.nav_about;
             if (navLinks[2]) navLinks[2].textContent = t.nav_services;
