@@ -1,1099 +1,265 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENT Health+ - EMJJ Hospital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>ENT Health - ЭМЖЖ Эмнэлэг</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ========== ENT HERO ========== */
-        .ent-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #003d7a 50%, #002a5c 100%);
-            padding: 100px 0 60px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ent-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=800&fit=crop') no-repeat center right;
-            background-size: cover;
-            opacity: 0.15;
-        }
-
-        .ent-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-        }
-
-        .ent-hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            line-height: 1.1;
-        }
-
-        .ent-hero-subtitle {
-            font-size: 20px;
-            opacity: 0.95;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .ent-hero-icons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 40px;
-        }
-
-        .ent-hero-icon {
-            text-align: center;
-        }
-
-        .ent-hero-icon-circle {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.15);
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 12px;
-            font-size: 32px;
-            backdrop-filter: blur(10px);
-        }
-
-        .ent-hero-icon span {
-            font-size: 13px;
-            font-weight: 600;
-            opacity: 0.9;
-        }
-
-        /* ========== ABOUT SECTION ========== */
-        .ent-about {
-            padding: 80px 0;
-            background: var(--bg-white);
-        }
-
-        .ent-about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .ent-about-left {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .ent-about-item {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-        }
-
-        .ent-about-item-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-
-        .ent-about-item p {
-            font-size: 14px;
-            color: var(--text-medium);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .ent-about-quote {
-            background: linear-gradient(135deg, #e8f4fd 0%, #f0f7ff 100%);
-            border-radius: 20px;
-            padding: 40px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .ent-about-quote blockquote {
-            font-size: 16px;
-            color: var(--text-dark);
-            line-height: 1.8;
-            margin: 0 0 20px;
-            font-style: italic;
-        }
-
-        .ent-about-quote p {
-            font-size: 14px;
-            color: var(--text-medium);
-            margin: 0;
-            line-height: 1.7;
-        }
-
-        /* ========== ADVANTAGES ========== */
-        .ent-advantages {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
-
-        .ent-section-title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 50px;
-        }
-
-        .ent-advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .ent-advantage-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 24px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: all 0.3s;
-        }
-
-        .ent-advantage-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-        }
-
-        .ent-advantage-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 32px;
-            color: white;
-        }
-
-        .ent-advantage-card p {
-            font-size: 14px;
-            color: var(--text-medium);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* ========== SERVICES GRID ========== */
-        .ent-services {
-            padding: 80px 0;
-            background: var(--bg-white);
-        }
-
-        .ent-services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .ent-service-box {
-            background: white;
-            border: 2px solid var(--border);
-            border-radius: 20px;
-            padding: 32px 24px;
-            transition: all 0.3s;
-        }
-
-        .ent-service-box:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 40px rgba(0,84,166,0.1);
-        }
-
-        .ent-service-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 18px;
-            margin-bottom: 16px;
-        }
-
-        .ent-service-box h3 {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-        }
-
-        .ent-service-box ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .ent-service-box li {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            font-size: 13px;
-            color: var(--text-medium);
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-
-        .ent-service-box li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        /* ========== PRICING ========== */
-        .ent-pricing {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
-
-        .ent-pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr repeat(3, 1fr);
-            gap: 20px;
-            align-items: stretch;
-        }
-
-        .ent-pricing-features {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            padding-top: 60px;
-        }
-
-        .ent-pricing-feature {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            color: var(--text-medium);
-        }
-
-        .ent-pricing-feature::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .ent-pricing-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 24px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .ent-pricing-card.premium {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .ent-pricing-card h3 {
-            font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .ent-pricing-card p {
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .ent-pricing-card .price-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        /* ========== CARE & WELLNESS ========== */
-        .ent-care-wellness {
-            padding: 80px 0;
-            background: var(--bg-white);
-        }
-
-        .ent-care-wellness-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .ent-care-box {
-            background: white;
-            border: 2px solid var(--border);
-            border-radius: 24px;
-            overflow: hidden;
-        }
-
-        .ent-care-header {
-            padding: 24px;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .ent-care-header h3 {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin: 0;
-        }
-
-        .ent-care-header h3 .icon {
-            font-size: 28px;
-        }
-
-        .ent-care-header p {
-            font-size: 13px;
-            color: var(--text-light);
-            margin: 8px 0 0;
-        }
-
-        .ent-care-table {
-            width: 100%;
-        }
-
-        .ent-care-table th {
-            background: var(--bg-light);
-            padding: 12px 16px;
-            text-align: left;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .ent-care-table td {
-            padding: 12px 16px;
-            font-size: 13px;
-            color: var(--text-medium);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .ent-care-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .ent-care-btn {
-            display: block;
-            width: calc(100% - 48px);
-            margin: 20px auto;
-            padding: 14px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        /* ========== PARTNERSHIP ========== */
-        .ent-partnership {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
-
-        .ent-partnership-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-
-        .ent-partnership-step {
-            text-align: center;
-        }
-
-        .ent-partnership-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 20px;
-            margin: 0 auto 16px;
-        }
-
-        .ent-partnership-step h4 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .ent-partnership-step p {
-            font-size: 13px;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* ========== CTA SECTION ========== */
-        .ent-cta {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 60px 0;
-            color: white;
-        }
-
-        .ent-cta-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .ent-cta-text h2 {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .ent-cta-text p {
-            font-size: 16px;
-            opacity: 0.9;
-        }
-
-        .ent-cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .ent-cta-btn {
-            padding: 14px 32px;
-            background: white;
-            color: var(--primary);
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-        }
-
-        .ent-cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        .ent-cta-phone {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 1024px) {
-            .ent-hero-icons {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ent-advantages-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-pricing-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .ent-care-wellness-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ent-partnership-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .ent-hero h1 {
-                font-size: 36px;
-            }
-
-            .ent-hero-icons {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-advantages-grid,
-            .ent-services-grid,
-            .ent-partnership-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ent-pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ent-pricing-features {
-                display: none;
-            }
-
-            .ent-cta-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 30px;
-            }
+        :root { --blue:#004bb6; --blue-dark:#00378c; --blue-deep:#002f84; --blue-soft:#edf6ff; --cyan:#12b7c9; --green:#24b99a; --ink:#07245a; --muted:#536783; --line:#d9e6f8; --bg:#f7fbff; --white:#fff; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:Montserrat,sans-serif; color:var(--ink); background:#fff; line-height:1.5; }
+        body.menu-open { overflow:hidden; }
+        a { color:inherit; text-decoration:none; }
+        .wrap { width:min(1250px, calc(100% - 56px)); margin:0 auto; }
+
+        .ref-header { height:76px; background:rgba(255,255,255,.96); border-bottom:1px solid #e7eef8; position:sticky; top:0; z-index:100; backdrop-filter:blur(14px); }
+        .ref-header-inner { height:100%; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+        .ref-logo { display:flex; align-items:center; gap:12px; color:var(--blue); font-weight:800; min-width:250px; }
+        .ref-logo-mark { width:44px; height:44px; border:3px solid var(--blue); border-radius:50%; display:grid; place-items:center; font-size:23px; }
+        .ref-logo-text { font-size:18px; line-height:1.05; letter-spacing:-.02em; }
+        .ref-logo-text span { display:block; font-size:10px; letter-spacing:.02em; color:var(--blue-dark); margin-top:4px; }
+        .ref-nav { display:flex; align-items:center; gap:28px; margin-left:auto; }
+        .ref-nav a { font-size:13px; font-weight:800; color:var(--blue-dark); text-transform:uppercase; padding:30px 0 26px; border-bottom:3px solid transparent; white-space:nowrap; }
+        .ref-nav a.active { color:var(--blue); border-color:var(--blue); }
+        .ref-menu { display:none; width:46px; height:46px; border:0; border-radius:12px; background:var(--blue-soft); color:var(--blue); align-items:center; justify-content:center; flex-direction:column; gap:5px; }
+        .ref-menu span { width:22px; height:2px; background:currentColor; border-radius:3px; }
+
+        .health-hero { background:linear-gradient(135deg,#003d97 0%, #004db8 55%, #00357f 100%); min-height:385px; color:#fff; position:relative; overflow:hidden; }
+        .health-hero::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 70% 45%, rgba(255,255,255,.16), transparent 19%), linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,.08) 100%); opacity:.7; }
+        .health-hero::after { content:'+'; position:absolute; right:110px; top:88px; font-size:58px; font-weight:800; color:rgba(255,255,255,.12); box-shadow: 120px 90px 0 rgba(255,255,255,.08), -160px 50px 0 rgba(255,255,255,.08); }
+        .health-hero .wrap { min-height:385px; display:grid; grid-template-columns:1.1fr .85fr; align-items:center; position:relative; z-index:1; }
+        .health-hero h1 { font-size:64px; line-height:1; letter-spacing:-.04em; font-weight:800; margin-bottom:22px; }
+        .health-hero p { font-size:23px; font-weight:700; line-height:1.45; max-width:560px; margin-bottom:40px; }
+        .hero-icons { display:grid; grid-template-columns:repeat(4, 115px); gap:26px; }
+        .hero-icon { text-align:center; font-weight:800; font-size:13px; line-height:1.3; }
+        .hero-icon i { display:grid; place-items:center; width:64px; height:64px; border:2px solid rgba(255,255,255,.65); border-radius:50%; margin:0 auto 10px; font-style:normal; font-size:28px; }
+        .hero-doctor { align-self:end; justify-self:center; width:min(390px, 100%); height:365px; object-fit:cover; object-position:top center; filter:drop-shadow(0 25px 45px rgba(0,0,0,.25)); border-radius:24px 24px 0 0; }
+
+        .intro { padding:54px 0 44px; background:#fff; }
+        .intro-grid { display:grid; grid-template-columns:1.25fr .85fr; gap:62px; align-items:start; }
+        .intro-list { display:grid; gap:24px; }
+        .intro-item { display:grid; grid-template-columns:48px 1fr; gap:18px; align-items:start; }
+        .intro-item i { width:38px; height:38px; border:2px solid #d6e7ff; border-radius:12px; display:grid; place-items:center; color:var(--blue); font-size:20px; font-style:normal; }
+        .intro-item p { font-size:14px; color:#183661; line-height:1.75; font-weight:600; }
+        .quote { background:#eaf4ff; border-radius:16px; padding:34px 36px; min-height:270px; color:#113d78; box-shadow:0 12px 40px rgba(0,75,182,.08); }
+        .quote::before { content:'“'; font-size:64px; line-height:.6; color:#8cb9ee; font-weight:800; display:block; margin-bottom:6px; }
+        .quote strong { display:block; font-size:16px; line-height:1.65; margin-bottom:24px; }
+        .quote p { font-size:14px; line-height:1.7; color:#244a7c; font-weight:600; }
+
+        .section-title { text-align:center; color:var(--blue); font-size:24px; text-transform:uppercase; font-weight:800; margin:0 0 30px; line-height:1.25; }
+        .advantages { padding:28px 0 48px; }
+        .adv-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+        .adv-card { border:1px solid var(--line); border-radius:14px; padding:28px 22px; text-align:center; background:#fff; min-height:172px; box-shadow:0 8px 30px rgba(0,75,182,.04); }
+        .adv-card i { display:block; color:var(--blue); font-size:43px; font-style:normal; margin-bottom:18px; }
+        .adv-card p { color:#203a66; font-size:13px; font-weight:700; line-height:1.55; }
+
+        .services { padding:0 0 44px; }
+        .service-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+        .service-card { background:linear-gradient(180deg, #fff, #f3f8ff); border-radius:16px; padding:22px 18px 24px; min-height:320px; border:1px solid #e1ecfb; position:relative; }
+        .service-no { width:33px; height:33px; border-radius:50%; background:var(--blue); color:#fff; display:grid; place-items:center; font-weight:800; font-size:16px; margin-bottom:14px; }
+        .service-card h3 { color:var(--blue-dark); font-size:15px; line-height:1.35; font-weight:800; min-height:60px; margin-bottom:18px; }
+        .service-card li { list-style:none; color:#29446f; font-size:12px; font-weight:600; line-height:1.55; margin-bottom:12px; display:flex; gap:8px; }
+        .service-card li::before { content:'✓'; color:var(--blue); font-weight:800; }
+        .service-icon { position:absolute; left:50%; bottom:22px; transform:translateX(-50%); width:82px; height:82px; border-radius:50%; background:#fff; display:grid; place-items:center; color:var(--blue); font-size:40px; box-shadow:0 12px 30px rgba(0,75,182,.12); }
+
+        .pricing { padding:0 0 50px; }
+        .pricing-grid { display:grid; grid-template-columns:1.35fr repeat(3,.78fr); gap:18px; align-items:stretch; }
+        .feature-card { background:#f8fbff; border-radius:16px; padding:26px 24px; border:1px solid #e3eefb; }
+        .feature-card h2 { color:var(--blue); font-size:20px; font-weight:800; margin-bottom:18px; }
+        .feature-card li { list-style:none; color:#24436e; font-size:13px; line-height:1.55; font-weight:600; margin-bottom:12px; display:flex; gap:9px; }
+        .feature-card li::before { content:'✓'; color:var(--green); border:1px solid var(--green); width:18px; height:18px; border-radius:50%; display:grid; place-items:center; font-size:10px; flex:0 0 auto; }
+        .price-card { border-radius:16px; padding:32px 24px; text-align:center; background:#eaf4ff; color:var(--blue); display:flex; flex-direction:column; justify-content:space-between; min-height:230px; }
+        .price-card h3 { font-size:23px; font-weight:800; margin-bottom:16px; }
+        .price-card p { font-size:13px; line-height:1.6; font-weight:700; }
+        .price-card i { font-size:46px; font-style:normal; margin-top:20px; }
+        .price-card.premium { color:#fff; background:linear-gradient(135deg,#0055bd,#003a93); }
+
+        .wellness-table-section { padding:0 0 58px; }
+        .wellness-table-card { width:min(560px, 100%); margin:0 auto; border:1px solid #85d7d0; border-radius:14px; background:#fff; overflow:hidden; box-shadow:0 14px 40px rgba(0,75,182,.08); position:relative; }
+        .wellness-table-head { padding:20px 26px 14px 92px; position:relative; border-bottom:1px solid #e5eef9; }
+        .wellness-table-head i { position:absolute; left:24px; top:-24px; width:62px; height:62px; border-radius:50%; background:#fff; display:grid; place-items:center; box-shadow:0 12px 26px rgba(0,75,182,.12); color:#10a997; font-style:normal; font-size:34px; }
+        .wellness-table-head h2 { color:#12a392; font-size:24px; font-weight:800; margin-bottom:6px; }
+        .wellness-table-head p { color:#24436e; font-size:12px; font-weight:600; line-height:1.55; }
+        .wellness-table { width:100%; border-collapse:collapse; }
+        .wellness-table th { background:#eef5ff; color:var(--blue-dark); font-size:12px; padding:12px 18px; text-align:left; }
+        .wellness-table td { border-top:1px solid #d9e6f8; padding:13px 18px; font-size:12px; color:#29446f; font-weight:600; vertical-align:top; }
+        .wellness-table td:first-child { color:var(--blue-dark); font-weight:800; }
+        .wellness-table .price { color:var(--blue); font-weight:800; }
+        .table-btn { display:block; width:170px; height:34px; line-height:32px; text-align:center; margin:18px auto 20px; border:1px solid #14b8a6; border-radius:8px; color:#069184; font-size:12px; font-weight:800; }
+
+        .partnership { padding:0 0 36px; }
+        .partnership-grid { display:grid; grid-template-columns:1.4fr .75fr; gap:28px; align-items:stretch; }
+        .steps-card, .donate-note { background:#f4f9ff; border:1px solid #e1ecfb; border-radius:16px; padding:26px; }
+        .step-line { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; position:relative; }
+        .step { text-align:center; position:relative; padding-top:20px; }
+        .step::before { content:''; position:absolute; top:11px; left:50%; width:100%; height:1px; background:#b8d2f2; z-index:0; }
+        .step:last-child::before { display:none; }
+        .step-no { position:relative; z-index:1; width:30px; height:30px; background:var(--blue); color:#fff; border-radius:50%; display:grid; place-items:center; font-size:13px; font-weight:800; margin:0 auto 12px; }
+        .step i { display:block; color:var(--blue); font-size:34px; font-style:normal; margin-bottom:10px; }
+        .step p { color:#24436e; font-size:12px; line-height:1.45; font-weight:700; }
+        .donate-note { display:flex; align-items:center; gap:20px; color:#1f4c86; font-weight:700; font-size:14px; line-height:1.65; }
+        .donate-note i { width:62px; height:62px; border-radius:50%; border:1px solid #cfe0f7; display:grid; place-items:center; color:var(--blue); font-size:32px; font-style:normal; background:#fff; flex:0 0 auto; }
+
+        .health-cta { padding:0 0 36px; }
+        .cta-bar { border-radius:14px; background:linear-gradient(135deg,#004bb6,#00358b); color:#fff; min-height:86px; padding:22px 28px; display:flex; justify-content:space-between; align-items:center; gap:20px; box-shadow:0 16px 44px rgba(0,75,182,.2); }
+        .cta-bar h2 { font-size:24px; line-height:1.25; font-weight:800; }
+        .cta-actions { display:flex; align-items:center; gap:24px; }
+        .cta-btn { background:#fff; color:var(--blue); height:44px; padding:0 28px; border-radius:24px; display:flex; align-items:center; gap:10px; font-size:13px; font-weight:800; }
+        .cta-phone { color:#fff; font-size:20px; font-weight:800; white-space:nowrap; }
+
+        @media (max-width: 1040px) {
+            .ref-nav { gap:18px; }
+            .health-hero .wrap, .intro-grid, .partnership-grid { grid-template-columns:1fr; }
+            .hero-doctor { display:none; }
+            .hero-icons, .adv-grid, .service-grid, .pricing-grid { grid-template-columns:repeat(2,1fr); }
+            .pricing-grid .feature-card { grid-column:1 / -1; }
+        }
+        @media (max-width: 900px) {
+            .wrap { width:min(100% - 32px, 1250px); }
+            .ref-menu { display:flex; }
+            .ref-nav { position:fixed; top:76px; right:-100%; width:86%; max-width:360px; height:calc(100vh - 76px); background:#fff; flex-direction:column; align-items:stretch; padding:24px; box-shadow:-20px 0 50px rgba(0,0,0,.12); transition:right .3s; gap:0; }
+            .ref-nav.open { right:0; }
+            .ref-nav a { padding:16px 0; border-bottom:1px solid #e9f0fb; }
+            .health-hero h1 { font-size:48px; }
+            .health-hero p { font-size:19px; }
+            .cta-bar { flex-direction:column; align-items:flex-start; }
+            .cta-actions { flex-direction:column; align-items:flex-start; gap:12px; }
+        }
+        @media (max-width: 600px) {
+            .ref-logo { min-width:auto; }
+            .ref-logo-text { font-size:15px; }
+            .ref-logo-mark { width:38px; height:38px; }
+            .health-hero { min-height:460px; }
+            .health-hero .wrap { min-height:460px; }
+            .hero-icons, .adv-grid, .service-grid, .pricing-grid, .step-line { grid-template-columns:1fr; }
+            .intro-item { grid-template-columns:38px 1fr; }
+            .quote, .feature-card, .steps-card, .donate-note { padding:22px; }
+            .section-title { font-size:20px; }
+            .wellness-table-head { padding-left:24px; padding-top:44px; }
+            .wellness-table-head i { left:22px; top:-28px; }
+            .cta-bar h2 { font-size:20px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-        <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top-content">
-                    <div class="header-top-left">
-                        <a href="tel:19009999">📞 1900-9999</a>
-                    </div>
-                    <div class="header-top-right">
-                        <button class="lang-toggle" onclick="toggleLanguage()">MN</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-main container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">EM</div>
-                EMJJ Hospital
+    <header class="ref-header">
+        <div class="wrap ref-header-inner">
+            <a href="index.html" class="ref-logo">
+                <div class="ref-logo-mark">ↄ</div>
+                <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-wrapper" id="mobileNav">
-                <nav>
-                    <ul class="nav">
-                        <li><a href="index.html">Нүүр</a></li>
-                        <li class="has-dropdown">
-                            <a href="about.html">Бидний тухай</a>
-                            <ul class="dropdown">
-                                <li><a href="about.html">Бидний тухай</a></li>
-                                <li><a href="hr.html">Хүний нөөц</a></li>
-                                <li><a href="training.html">Сургалт</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-dropdown">
-                            <a href="ent-health.html">ENT Health+</a>
-                            <ul class="dropdown">
-                                <li><a href="ent-care.html">ENT Care</a></li>
-                                <li><a href="ent-health.html">ENT Wellness</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
-                        <li><a href="news.html">Мэдээ</a></li>
-                        <li><a href="contact.html">Холбоо барих</a></li>
-                        <li class="mobile-actions">
-                            <a href="#donate" class="btn btn-outline">Хандив</a>
-                            <a href="#login" class="btn btn-primary">Нэвтрэх</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header-actions">
-                    <a href="#donate" class="btn btn-outline">Хандив</a>
-                    <a href="#login" class="btn btn-primary">Нэвтрэх</a>
-                </div>
-            </div>
+            <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <nav class="ref-nav" id="refNav">
+                <a href="index.html">Нүүр</a>
+                <a href="about.html">Бидний тухай</a>
+                <a href="services.html">Үйлчилгээ</a>
+                <a href="ent-health.html" class="active">ENT Health</a>
+                <a href="ent-care.html">ENT Care</a>
+                <a href="news.html">Мэдээ мэдээлэл</a>
+                <a href="contact.html">Холбоо барих</a>
+            </nav>
         </div>
     </header>
 
-        <div class="mobile-menu-overlay"></div>
-<!-- ENT Hero -->
-    <section class="ent-hero">
-        <div class="container">
-            <div class="ent-hero-content">
-                <h1>ENT HEALTH</h1>
-                <p class="ent-hero-subtitle">Байгууллагын хамт олны чих хамар хоолойн<br>эрүүл мэндийг хамгаалъя</p>
-                
-                <div class="ent-hero-icons">
-                    <div class="ent-hero-icon">
-                        <div class="ent-hero-icon-circle">👂</div>
-                        <span>Эрт илрүүлэлт</span>
+    <main>
+        <section class="health-hero">
+            <div class="wrap">
+                <div>
+                    <h1>ENT HEALTH</h1>
+                    <p>Байгууллагын хамт олны чих хамар хоолойн<br>эрүүл мэндийг хамгаалъя</p>
+                    <div class="hero-icons">
+                        <div class="hero-icon"><i>👂</i>Эрт илрүүлэг</div>
+                        <div class="hero-icon"><i>👥</i>Эрүүл ажилтан</div>
+                        <div class="hero-icon"><i>🛡</i>Бүтээмж<br>нэмэгдэнэ</div>
+                        <div class="hero-icon"><i>📈</i>Зардал<br>буурна</div>
                     </div>
-                    <div class="ent-hero-icon">
-                        <div class="ent-hero-icon-circle">🏥</div>
-                        <span>Эрүүл ажилтан</span>
-                    </div>
-                    <div class="ent-hero-icon">
-                        <div class="ent-hero-icon-circle">🛡️</div>
-                        <span>Бүтээмж нэмэгдэнэ</span>
-                    </div>
-                    <div class="ent-hero-icon">
-                        <div class="ent-hero-icon-circle">📈</div>
-                        <span>Зардал буурна</span>
-                    </div>
+                </div>
+                <img class="hero-doctor" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=520&h=620&fit=crop" alt="ENT Health doctor">
+            </div>
+        </section>
+
+        <section class="intro">
+            <div class="wrap intro-grid">
+                <div class="intro-list">
+                    <div class="intro-item"><i>⚕</i><p>Манай эмнэлгийн түүх 1993 оноос эхлэлтэй. Монгол Улсын Хүний гавьяат эмч, Анагаах ухааны доктор, профессор Б.Эрдэнэжаргалын анх “Сонор-Ж” үүдэн эмнэлгийг үүсгэн байгуулснаар өнөөдрийн замнал эхэлсэн.</p></div>
+                    <div class="intro-item"><i>ↄ</i><p>Өнөөдөр ЭМЖЖ эмнэлэг 250 гаруй эмч, ажилтан, албан хаагчтай, 33 жилийн туршлага, хөгжлийн түүхийг бүтээсэн үндэсний хэмжээний төрөлжсөн нарийн мэргэжлийн эмнэлэг болон өргөжин хөгжжээ.</p></div>
+                    <div class="intro-item"><i>🤝</i><p>Бид зөвхөн эмчилгээ бус, итгэл, хариуцлага, мэргэжлийн ёс зүйг эрхэмлэн үйлчлүүлэгч, харилцагч, хамтрагчдынхаа итгэл дээр тулгуурлан ажилладаг.</p></div>
+                    <div class="intro-item"><i>?</i><p>ЭМЖЖ эмнэлэг нь үйл ажиллагааны цар хүрээгээ тэлж, салбар эмнэлэг, клиникүүдийг байгуулан иргэдэд ойр, хүртээмжтэй, чанартай үйлчилгээг хүргэсээр байна.</p></div>
+                </div>
+                <div class="quote"><strong>Бизнес эрхлэгч танд зориулж ЧХХ-н өвчлөлийг эрт илрүүлэх, урьдчилан сэргийлэх, эрүүл мэндийн боловсрол олгох замаар байгууллагын хүний нөөцийн эрүүл мэндийг хамгаалах “ENT HEALTH” хөтөлбөрийг санал болгож байна.</strong><p>“ENT HEALTH” хөтөлбөрт хамрагдсанаар танай хамт олон эрүүл мэндээ хамгаалж, байгууллага тань илүү эрүүл, илүү бүтээмжтэй орчныг бүрдүүлэх боломжтой.</p></div>
+            </div>
+        </section>
+
+        <section class="advantages">
+            <div class="wrap">
+                <h2 class="section-title">Хөтөлбөрийн үндсэн давуу тал</h2>
+                <div class="adv-grid">
+                    <div class="adv-card"><i>🔍</i><p>ЧХХ өвчлөлийг эрт үе шатанд илрүүлж, хүндрэлээс урьдчилан сэргийлэх</p></div>
+                    <div class="adv-card"><i>🎓</i><p>Ажилчдын эрүүл мэндийн мэдлэг, урьдчилан сэргийлэх зөв дадлыг нэмэгдүүлэх</p></div>
+                    <div class="adv-card"><i>👥</i><p>Байгууллагын эрүүл мэндийн соёлыг дэмжих</p></div>
+                    <div class="adv-card"><i>📉</i><p>ЧХХ-н эрүүл мэндийн эрсдэлээс үүдэлтэй бүтээмжийн алдагдал, эмчилгээний зардлыг бууруулах</p></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="ent-about">
-        <div class="container">
-            <div class="ent-about-grid">
-                <div class="ent-about-left">
-                    <div class="ent-about-item">
-                        <div class="ent-about-item-icon">🏥</div>
-                        <p>Манай эмнэлэг түүх 1993 оноос эхлэлтэй. Монгол Улсын Хүний гавьяат эмч, Анагаах ухааны доктор, профессор Б.Эрдэнэжаргалын "Сонор-Ж" үүдээр олон улсын эрүүл мэндийн үйлчилгээг олон нийтэд хүртээмжтэй хүргэх зорилготойгоор үйл ажиллагаагаа эхлүүлсэн.</p>
-                    </div>
-                    <div class="ent-about-item">
-                        <div class="ent-about-item-icon">👨‍⚕️</div>
-                        <p>Өнөөдөр ЭМЖЖ эмнэлэг 250 гаруй ажилтан, эмч, мэргэжилтэнтэйгээр үйл ажиллагаагаа явуулж, ДуН, БАХА, Сонсгол судлалын чиглэлээр Монгол Улсдаа тэргүүлэгч эмнэлэг болоод байна.</p>
-                    </div>
-                    <div class="ent-about-item">
-                        <div class="ent-about-item-icon">🤝</div>
-                        <p>Бид байгууллагын хамт олны эрүүл мэндийг хамгаалах, урьдчилан сэргийлэх зорилгоор "ENT HEALTH+" хөтөлбөрийг санаачлан хэрэгжүүлж байна.</p>
-                    </div>
-                    <div class="ent-about-item">
-                        <div class="ent-about-item-icon">📋</div>
-                        <p>ЭМЖЖ эмнэлэг нь үйл ажиллагааныхаа цар хүрээг тэлж, салбар эмнэлэг, клиникуудыг байгуулж, иргэдэд хүртээмжтэй, чанартай үйлчилгээг үзүүлж байна.</p>
-                    </div>
-                </div>
-
-                <div class="ent-about-quote">
-                    <blockquote>"Бидэнтэй хамтран ажиллаж буй байгууллагуудын ажилтнуудад чих, хамар, хоолой, сонсголын урьдчилан сэргийлэлт, оношилгоо, эмчилгээний цогц үйлчилгээг хүргэхэд бидний зорилго оршино."</blockquote>
-                    <p>Байгууллагын хамт олны эрүүл мэндийг хамгаалах, урьдчилан сэргийлэх, оношилгоо, эмчилгээний тусламж үйлчилгээг багцалж, хөнгөлөлттэй үнээр үзүүлэх "ENT HEALTH+" хөтөлбөрийг танилцуулж байна.</p>
+        <section class="services">
+            <div class="wrap">
+                <h2 class="section-title">Бид танай байгууллагад зориулсан дараах цогц үйлчилгээг санал болгож байна</h2>
+                <div class="service-grid">
+                    <div class="service-card"><div class="service-no">1</div><h3>Урьдчилан сэргийлэх үзлэг</h3><ul><li>ЧХХ нарийн мэргэжлийн үзлэг</li><li>Эрсдэлийн үнэлгээ</li><li>Эрт үеийн илрүүлэг</li></ul><div class="service-icon">🩺</div></div>
+                    <div class="service-card"><div class="service-no">2</div><h3>Хөнгөлөлттэй багцын үзлэг, оношлогоо</h3><ul><li>Байгууллагад зориулсан тусгай багц үйлчилгээ</li><li>Ажилтны тоонд суурилсан уян хатан үнэ</li><li>Харилцагч байгууллагад зориулсан тусгай үйлчилгээ</li></ul><div class="service-icon">📋</div></div>
+                    <div class="service-card"><div class="service-no">3</div><h3>Чих хамар хоолойн эрүүл мэндийн боловсрол олгох сургалт, зөвлөгөө</h3><ul><li>Мэдлэг</li><li>Дадал</li><li>Асуулт, хариулт</li><li>Зөвлөгөө</li></ul><div class="service-icon">🧑‍🏫</div></div>
+                    <div class="service-card"><div class="service-no">4</div><h3>Байгууллагын ажилтнуудын эрүүл мэндийн үнэлгээний нэгдсэн тайлан</h3><ul><li>Байгууллагын эрүүл мэндийн тайлан</li><li>Эрсдэлийн дүн шинжилгээ</li><li>Хүний нөөцийн эрүүл мэндийн тайлан</li><li>Цаашдын хяналт, зөвлөмж, эмчилгээ</li></ul><div class="service-icon">📄</div></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Advantages -->
-    <section class="ent-advantages">
-        <div class="container">
-            <h2 class="ent-section-title">ХЭТЭЛБЭРИЙН ҮНДСЭН ДАВУУ ТАЛ</h2>
-            <div class="ent-advantages-grid">
-                <div class="ent-advantage-card">
-                    <div class="ent-advantage-icon">🔍</div>
-                    <p>Чих хамар хоолойн эрт илрүүлэлт, урьдчилан сэргийлэлт</p>
-                </div>
-                <div class="ent-advantage-card">
-                    <div class="ent-advantage-icon">🎓</div>
-                    <p>Ажилтнуудын эрүүл мэндийн мэдлэг, урьдчилан сэргийлэлтийн соёлыг дээшлүүлэх</p>
-                </div>
-                <div class="ent-advantage-card">
-                    <div class="ent-advantage-icon">👥</div>
-                    <p>Байгууллагын эрүүл мэндийн соёлыг дэмжих</p>
-                </div>
-                <div class="ent-advantage-card">
-                    <div class="ent-advantage-icon">📊</div>
-                    <p>Чих хамар хоолойн эрүүл мэндийн эрсдэлээс урьдчилан сэргийлэх, эмчилгээний зардлыг бууруулах</p>
-                </div>
+        <section class="pricing">
+            <div class="wrap pricing-grid">
+                <div class="feature-card"><h2>Давуу тал</h2><ul><li>30+ жилийн туршлагатай, мэргэжлийн хамт олон</li><li>Эрүүл мэндийн үйлчилгээний салбарт манлайлагч</li><li>Олон улсын хамтын ажиллагаа туршлага</li><li>Орчин үеийн тоног төхөөрөмж, иж бүрэн үйлчилгээ</li><li>Олон улсын эмнэлгийн стандартад нийцсэн үйлчилгээний чанар</li></ul></div>
+                <div class="price-card"><div><h3>Basic</h3><p>Анхан шатны үзлэг<br>+ зөвлөгөө<br><br>/Энгийн хямдралтай/</p></div><i>👤</i></div>
+                <div class="price-card"><div><h3>Standard</h3><p>Үзлэг, оношлогоо<br>+ зөвлөгөө<br><br>(20-40% багц)<br>+ Нэгтгэл тайлан<br>+ Сургалт</p></div><i>📋</i></div>
+                <div class="price-card premium"><div><h3>Premium</h3><p>Бүрэн оношлогоо<br>+ Сургалт<br><br>+ Нэгтгэл тайлан<br>+ Сургалт<br>+ Сар бүрийн эрүүл мэндийн үйлчилгээ</p></div><i>◇</i></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services -->
-    <section class="ent-services">
-        <div class="container">
-            <h2 class="ent-section-title">БИД ТАНАЙ БАЙГУУЛЛАГАД ЗОРИУЛСАН ДАРААХ ЦОГЦ ҮЙЛЧИЛГЭЭГ САНАЛ БОЛГОЖ БАЙНА</h2>
-            <div class="ent-services-grid">
-                <div class="ent-service-box">
-                    <div class="ent-service-number">1</div>
-                    <h3>Урьдчилан сэргийлэх үзлэг</h3>
-                    <ul>
-                        <li>Чих хамар хоолойн үзлэг</li>
-                        <li>Сонсголын шинжилгээ</li>
-                        <li>Эрүүл мэндийн зөвлөгөө</li>
-                    </ul>
-                </div>
-
-                <div class="ent-service-box">
-                    <div class="ent-service-number">2</div>
-                    <h3>Хөнгөлөлттэй багцын үзлэг, оношлогоо</h3>
-                    <ul>
-                        <li>Байгууллагад зориулсан тусгай багц үйлчилгээ</li>
-                        <li>Ажилтны тоонд суурилсан уян хатан үнэ</li>
-                        <li>Харилцагч байгууллагад зориулсан тусгай үйлчилгээ</li>
-                    </ul>
-                </div>
-
-                <div class="ent-service-box">
-                    <div class="ent-service-number">3</div>
-                    <h3>Чих хамар хоолойн эрүүл мэндийн боловсрол олгох сургалт, зөвлөгөө</h3>
-                    <ul>
-                        <li>Мэдлэг</li>
-                        <li>Дадал</li>
-                        <li>Асуулт, хариулт</li>
-                        <li>Зөвлөгөө</li>
-                    </ul>
-                </div>
-
-                <div class="ent-service-box">
-                    <div class="ent-service-number">4</div>
-                    <h3>Байгууллагын ажилтнуудын эрүүл мэндийн үнэлгээний нэгдсэн тайлан</h3>
-                    <ul>
-                        <li>Байгууллагын эрүүл мэндийн тайлан</li>
-                        <li>Эрсдэлийн дүн шинжилгээ</li>
-                        <li>Хүний нөөцийн эрүүл мэндийн тайлан</li>
-                        <li>Шаардлагатай зөвлөмж, эмчилгээ</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="ent-pricing">
-        <div class="container">
-            <h2 class="ent-section-title">ДАВУУ ТАЛ</h2>
-            <div class="ent-pricing-grid">
-                <div class="ent-pricing-features">
-                    <div class="ent-pricing-feature">30+ жилийн туршлагатай, мэргэжлийн хамт олон</div>
-                    <div class="ent-pricing-feature">Эрүүл мэндийн үйлчилгээний салбарт манлайлагч</div>
-                    <div class="ent-pricing-feature">Олон улсын стандартын тоног төхөөрөмж</div>
-                    <div class="ent-pricing-feature">Орчин үеийн технологи</div>
-                    <div class="ent-pricing-feature">Байгууллагын эрүүл мэндийн стандартын нийцсэн үйлчилгээний чанар</div>
-                </div>
-
-                <div class="ent-pricing-card">
-                    <div class="price-icon">👤</div>
-                    <h3>Basic</h3>
-                    <p>Анхан шатны үзлэг + зөвлөгөө<br>(Энгийн хямдрал)</p>
-                </div>
-
-                <div class="ent-pricing-card">
-                    <div class="price-icon">📋</div>
-                    <h3>Standard</h3>
-                    <p>Үзлэг, оношлогоо + зөвлөгөө<br>(20-40% Багц)<br>+ Нэгтгэл тайлан<br>+ Сургалт</p>
-                </div>
-
-                <div class="ent-pricing-card premium">
-                    <div class="price-icon">💎</div>
-                    <h3>Premium</h3>
-                    <p>Бүрэн оношлогоо + сургалт<br>+ Нэгтгэл тайлан<br>+ Сургалт<br>+ Сар бүрийн эрүүл мэндийн үйлчилгээ</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ENT Care & Wellness -->
-    <section class="ent-care-wellness">
-        <div class="container">
-            <div class="ent-care-wellness-grid">
-                <div class="ent-care-box" id="ent-care">
-                    <div class="ent-care-header">
-                        <h3><span class="icon">💙</span>ENT CARE</h3>
-                        <p>Сонсгол, чих, хамар, залгиурын оношилгоо, эмчилгээний хөнгөлөлттэй багц</p>
-                    </div>
-                    <table class="ent-care-table">
-                        <thead>
-                            <tr>
-                                <th>БАГЦ</th>
-                                <th>ҮНЭ</th>
-                                <th>ТУСЛАМЖ ҮЙЛЧИЛГЭЭ</th>
-                            </tr>
-                        </thead>
+        <section class="wellness-table-section">
+            <div class="wrap">
+                <div class="wellness-table-card">
+                    <div class="wellness-table-head"><i>♧</i><h2>ENT WELLNESS</h2><p>Урьдчилан сэргийлэх үзлэг, эрүүл мэндийн боловсрол, сургалт, байгууллагын эрүүл мэндийн үйлчилгээ</p></div>
+                    <table class="wellness-table">
+                        <thead><tr><th>Багц</th><th>Үнэ</th><th>Тусламж үйлчилгээ</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>E-1 Сонсголын оношилгооны багц</td>
-                                <td>Үнэ: 90,000₮<br>Хөнгөлөлт: -30%</td>
-                                <td>1. Сонсголын эрүүл мэндийн үзлэг<br>2. Сонсголын шинжилгээ<br>3. Бүрэн хувийн тэмдэглэлийн шинжилгээ</td>
-                            </tr>
-                            <tr>
-                                <td>E-2 Сонсголын оношлогын багц</td>
-                                <td>Үнэ: 205,000₮<br>Хөнгөлөлт: -40%</td>
-                                <td>1. Сонсголын эрүүл мэндийн үзлэг<br>2. ABR<br>3. OAE<br>4. Бүрэн хувийн тэмдэглэлийн шинжилгээ</td>
-                            </tr>
-                            <tr>
-                                <td>E-3 Чихний оношлогын багц</td>
-                                <td>Үнэ: 275,000₮<br>Хөнгөлөлт: -20%</td>
-                                <td>1. Чих хамар хоолойн эрүүл мэндийн үзлэг<br>2. Чихний багцын оношилгоо<br>3. Сонсголын шинжилгээ<br>4. КТ оношилгоо</td>
-                            </tr>
+                            <tr><td>N-1<br><small>Залгиур төвөнхийн оношлогооны багц</small></td><td class="price">Үнэ: 175.000₮<br>Хөнгөлөлт -20%</td><td>Залгиур, төвөнхийн оношлогоо</td></tr>
+                            <tr><td>N-2<br><small>Хамрын оношлогооны багц</small></td><td class="price">Үнэ: 260.000₮<br>Хөнгөлөлт -20%</td><td>Хамрын хөндийн оношлогоо</td></tr>
+                            <tr><td>N-3<br><small>Хамрын оношлогооны багц</small></td><td class="price">Үнэ: 95.000₮<br>Хөнгөлөлт -24%</td><td>Хамрын эрүүл мэндийн үнэлгээ</td></tr>
+                            <tr><td>ENT 1<br><small>Урьдчилан сэргийлэх үзлэгийн багц</small></td><td class="price">Үнэ: 90.000₮<br>Хөнгөлөлт -22%</td><td>ЧХХ урьдчилан сэргийлэх үзлэг</td></tr>
+                            <tr><td>ENT 2<br><small>Эрүүл мэндийн сургалтын багц</small></td><td class="price">Үнэ: 150.000₮<br>Хөнгөлөлт -21%</td><td>Сургалт, зөвлөгөө, тайлан</td></tr>
                         </tbody>
                     </table>
-                    <a href="#" class="ent-care-btn">БҮХ БАГЦЫГ ҮЗЭХ</a>
+                    <a href="#" class="table-btn">БҮХ БАГЦЫГ ҮЗЭХ</a>
                 </div>
+            </div>
+        </section>
 
-                <div class="ent-care-box" id="ent-wellness">
-                    <div class="ent-care-header">
-                        <h3><span class="icon">🌿</span>ENT WELLNESS</h3>
-                        <p>Урьдчилан сэргийлэх үзлэг, эрүүл мэндийн боловсрол, сургалт, байгууллагын эрүүл мэндийн үйлчилгээ</p>
-                    </div>
-                    <table class="ent-care-table">
-                        <thead>
-                            <tr>
-                                <th>БАГЦ</th>
-                                <th>ҮНЭ</th>
-                                <th>ТУСЛАМЖ ҮЙЛЧИЛГЭЭ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>N-1 Залгиурын оношлогын багц</td>
-                                <td>Үнэ: 175,000₮<br>Хөнгөлөлт: -20%</td>
-                                <td>Залгиурын оношилгоо</td>
-                            </tr>
-                            <tr>
-                                <td>N-2 Хамрын оношлогын багц</td>
-                                <td>Үнэ: 260,000₮<br>Хөнгөлөлт: -20%</td>
-                                <td>Хамрын оношилгоо</td>
-                            </tr>
-                            <tr>
-                                <td>N-3 Хамрын эмчилгээний багц</td>
-                                <td>Үнэ: 95,000₮<br>Хөнгөлөлт: -24%</td>
-                                <td>Хамрын эмчилгээ</td>
-                            </tr>
-                            <tr>
-                                <td>ENT 1 Урьдчилан сэргийлэх үзлэгийн багц</td>
-                                <td>Үнэ: 90,000₮<br>Хөнгөлөлт: -22%</td>
-                                <td>Урьдчилан сэргийлэх үзлэг</td>
-                            </tr>
-                            <tr>
-                                <td>ENT 2 Эрүүл мэндийн сургалтын багц</td>
-                                <td>Үнэ: 150,000₮<br>Хөнгөлөлт: -21%</td>
-                                <td>Эрүүл мэндийн сургалт</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <a href="#" class="ent-care-btn">БҮХ БАГЦЫГ ҮЗЭХ</a>
-                </div>
+        <section class="partnership">
+            <div class="wrap partnership-grid">
+                <div class="steps-card"><h2 class="section-title">Хамтран ажиллах боломжууд</h2><div class="step-line"><div class="step"><div class="step-no">1</div><i>📅</i><p>Жил бүрийн тогтмол үзлэг</p></div><div class="step"><div class="step-no">2</div><i>👥</i><p>Байгууллагын эрүүл мэндийн өдөрлөг /ENT HEALTH/</p></div><div class="step"><div class="step-no">3</div><i>💙</i><p>Сар бүрийн байгууллагын эрүүл мэндийн үйлчилгээ</p></div><div class="step"><div class="step-no">4</div><i>🤝</i><p>Хамтарсан нийгмийн аян /ENT CARE, ДҮН/</p></div></div></div>
+                <div class="donate-note"><i>💙</i><p>Та бүхэнтэй хамтран ажилласан үйлчилгээний төлбөрийн 1% “ДҮН” хэл заслын сургалтын төвийн үйл ажиллагаанд хандивлагдана.</p></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Partnership -->
-    <section class="ent-partnership">
-        <div class="container">
-            <h2 class="ent-section-title">ХАМТРАН АЖИЛЛАХ БОЛОМЖУУД</h2>
-            <div class="ent-partnership-grid">
-                <div class="ent-partnership-step">
-                    <div class="ent-partnership-number">1</div>
-                    <h4>Жил бүрийн тогтмол үзлэг</h4>
-                    <p>Байгууллагын ажилтнуудад жил бүр тогтмол эрүүл мэндийн үзлэг хийх</p>
-                </div>
-                <div class="ent-partnership-step">
-                    <div class="ent-partnership-number">2</div>
-                    <h4>Байгууллагын эрүүл мэндийн өдөрлөг</h4>
-                    <p>Байгууллагын дотоод эрүүл мэндийн өдөрлөг зохион байгуулах</p>
-                </div>
-                <div class="ent-partnership-step">
-                    <div class="ent-partnership-number">3</div>
-                    <h4>Сар бүрийн эрүүл мэндийн зөвлөгөө</h4>
-                    <p>Сар бүр эрүүл мэндийн зөвлөгөө, мэдээлэл хүргэх</p>
-                </div>
-                <div class="ent-partnership-step">
-                    <div class="ent-partnership-number">4</div>
-                    <h4>Хамтарсан хөтөлбөр</h4>
-                    <p>ENT CARE, ENT WELLNESS хөтөлбөрүүдэд хамрагдах</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="ent-cta">
-        <div class="container">
-            <div class="ent-cta-content">
-                <div class="ent-cta-text">
-                    <h2>БАЙГУУЛЛАГЫНХАА ХАМТ ОЛНЫ<br>ЭРҮҮЛ МЭНДЭД ХАМТДАА ХӨРӨНГӨ ОРУУЛЪЯ!</h2>
-                </div>
-                <div class="ent-cta-buttons">
-                    <a href="#" class="ent-cta-btn">Дэлгэрэнгүй мэдээлэл авах →</a>
-                    <a href="tel:7707-5050" class="ent-cta-phone">📞 7707-5050</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>EMJJ Hospital</h3>
-                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Үндсэн цэс</h4>
-                    <ul>
-                        <li><a href="index.html">Нүүр</a></li>
-                        <li><a href="about.html">Бидний тухай</a></li>
-                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
-                        <li><a href="training.html">Сургалт</a></li>
-                        <li><a href="news.html">Мэдээ</a></li>
-                        <li><a href="branches.html">Салбар байршил</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>ENT Health+</h4>
-                    <ul>
-                        <li><a href="ent-care.html">ENT Care</a></li>
-                        <li><a href="ent-health.html">ENT Wellness</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Холбоо барих</h4>
-                    <ul>
-                        <li><a href="#">📞 1900-9999</a></li>
-                        <li><a href="#">✉️ info@emjj.mn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
-            </div>
-        </div>
-    </footer>
+        <section class="health-cta">
+            <div class="wrap cta-bar"><h2>БАЙГУУЛЛАГЫНХАА ХАМТ ОЛНЫ<br>ЭРҮҮЛ МЭНДЭД ХАМТДАА ХӨРӨНГӨ ОРУУЛЪЯ!</h2><div class="cta-actions"><a href="contact.html" class="cta-btn">ДЭЛГЭРЭНГҮЙ МЭДЭЭЛЭЛ АВАХ →</a><a href="tel:77075050" class="cta-phone">☎ 7707-5050</a></div></div>
+        </section>
+    </main>
 
     <script>
-                // Mobile Menu Functions
-        function toggleMobileMenu() {
-            const navWrapper = document.getElementById('mobileNav');
-            const btn = document.querySelector('.mobile-menu-btn');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            navWrapper.classList.toggle('active');
-            btn.classList.toggle('active');
-            
-            if (overlay) {
-                overlay.classList.toggle('active');
-            }
-            
-            if (navWrapper.classList.contains('active')) {
-                document.body.classList.add('menu-open');
-            } else {
-                document.body.classList.remove('menu-open');
-            }
+        function toggleMenu() {
+            document.getElementById('refNav').classList.toggle('open');
+            document.body.classList.toggle('menu-open');
         }
-
-        function toggleDropdown(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                const dropdown = e.currentTarget.parentElement.querySelector('.dropdown');
-                if (dropdown && dropdown.classList.contains('dropdown')) {
-                    dropdown.classList.toggle('active');
-                }
-            }
-        }
-
-        // Close mobile menu when clicking on a non-dropdown link
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768 && !link.parentElement.classList.contains('has-dropdown')) {
-                    const navWrapper = document.getElementById('mobileNav');
-                    const btn = document.querySelector('.mobile-menu-btn');
-                    const overlay = document.querySelector('.mobile-menu-overlay');
-                    navWrapper.classList.remove('active');
-                    btn.classList.remove('active');
-                    if (overlay) overlay.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                }
-            });
-        });
-
-        // Close mobile menu when clicking overlay
-        document.addEventListener('click', (e) => {
-            const navWrapper = document.getElementById('mobileNav');
-            const btn = document.querySelector('.mobile-menu-btn');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            if (navWrapper.classList.contains('active') && 
-                !navWrapper.contains(e.target) && 
-                !btn.contains(e.target)) {
-                navWrapper.classList.remove('active');
-                btn.classList.remove('active');
-                if (overlay) overlay.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-        });
-        });
-
-        // Language Toggle
-        const translations = {
-            mn: {
-                title: document.title,
-                nav_home: "Нүүр",
-                nav_about: "Бидний тухай",
-                nav_services: "Тусламж үйлчилгээ",
-                nav_training: "Сургалт",
-                nav_news: "Мэдээ",
-                nav_contact: "Холбоо барих",
-                copyright: "© 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан."
-            },
-            en: {
-                nav_home: "Home",
-                nav_about: "About Us",
-                nav_services: "Services",
-                nav_training: "Training",
-                nav_news: "News",
-                nav_contact: "Contact",
-                copyright: "© 2026 EMJJ Hospital. All rights reserved."
-            }
-        };
-
-        let currentLang = localStorage.getItem('emjj-language') || 'mn';
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'mn' ? 'en' : 'mn';
-            localStorage.setItem('emjj-language', currentLang);
-            applyLanguage();
-        }
-
-        function applyLanguage() {
-            const t = translations[currentLang];
-            const btn = document.querySelector('.lang-toggle');
-            if (btn) btn.textContent = currentLang.toUpperCase();
-            
-            const navLinks = document.querySelectorAll('.nav a');
-            if (navLinks[0]) navLinks[0].textContent = t.nav_home;
-            if (navLinks[1]) navLinks[1].textContent = t.nav_about;
-            
-            const footerBottom = document.querySelector('.footer-bottom p');
-            if (footerBottom) footerBottom.textContent = t.copyright;
-        }
-
-        applyLanguage();
     </script>
 </body>
 </html>

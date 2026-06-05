@@ -1,1282 +1,324 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENT CARE - ЭМЖЖ Эмнэлэг</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ========== ENT CARE HERO ========== */
-        .ent-care-hero {
-            background: linear-gradient(135deg, #003d7a 0%, #0054a6 50%, #0077cc 100%);
-            padding: 80px 0 60px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ent-care-hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .ent-care-hero-text h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            line-height: 1.1;
-            color: white;
-        }
-
-        .ent-care-hero-text .subtitle {
-            font-size: 18px;
-            opacity: 0.95;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            font-weight: 600;
-        }
-
-        .ent-care-hero-text .description {
-            font-size: 14px;
-            opacity: 0.9;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .ent-care-logos {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .ent-care-logo-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .ent-care-logo-item img {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            padding: 8px;
-        }
-
-        .ent-care-logo-item span {
-            font-size: 12px;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-
-        .ent-care-hero-image {
-            position: relative;
-        }
-
-        .ent-care-hero-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .ent-care-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255,255,255,0.95);
-            color: var(--primary);
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 14px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }
-
-        /* ========== STATISTICS ========== */
-        .ent-care-stats {
-            padding: 60px 0;
-            background: var(--bg-white);
-        }
-
-        .ent-care-stats-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .ent-care-stats-header h2 {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-dark);
-        }
-
-        .ent-care-stats-header .date-range {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .ent-care-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .ent-care-stat-card {
-            background: var(--bg-light);
-            border-radius: 16px;
-            padding: 30px 20px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .ent-care-stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .ent-care-stat-icon {
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-
-        .ent-care-stat-number {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .ent-care-stat-label {
-            font-size: 13px;
-            color: var(--text-medium);
-            line-height: 1.4;
-        }
-
-        /* ========== TRAINING ALBUM ========== */
-        .ent-care-album {
-            padding: 60px 0;
-            background: var(--bg-light);
-        }
-
-        .ent-care-section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .ent-care-section-header h2 {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-dark);
-        }
-
-        .ent-care-section-header a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .ent-care-album-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            grid-template-rows: repeat(2, 200px);
-            gap: 16px;
-        }
-
-        .ent-care-album-item {
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .ent-care-album-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .ent-care-album-item.large {
-            grid-row: span 2;
-        }
-
-        /* ========== PROCESS ========== */
-        .ent-care-process {
-            padding: 60px 0;
-            background: var(--bg-white);
-        }
-
-        .ent-care-process-title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 40px;
-        }
-
-        .ent-care-process-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 16px;
-            position: relative;
-        }
-
-        .ent-care-process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .ent-care-process-step::after {
-            content: '→';
-            position: absolute;
-            right: -12px;
-            top: 20px;
-            color: var(--primary);
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .ent-care-process-step:last-child::after {
-            display: none;
-        }
-
-        .ent-care-process-number {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 18px;
-            margin: 0 auto 12px;
-        }
-
-        .ent-care-process-step h4 {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-            line-height: 1.3;
-        }
-
-        .ent-care-process-step p {
-            font-size: 12px;
-            color: var(--text-light);
-            line-height: 1.4;
-        }
-
-        /* ========== STORE ========== */
-        .ent-care-store {
-            padding: 60px 0;
-            background: var(--bg-light);
-        }
-
-        .ent-care-store-title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-        }
-
-        .ent-care-store-subtitle {
-            text-align: center;
-            font-size: 14px;
-            color: var(--text-medium);
-            margin-bottom: 40px;
-        }
-
-        .ent-care-store-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-        }
-
-        .ent-care-store-item {
-            background: white;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-            transition: all 0.3s;
-        }
-
-        .ent-care-store-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-        }
-
-        .ent-care-store-item img {
-            width: 100%;
-            height: 120px;
-            object-fit: contain;
-            margin-bottom: 12px;
-        }
-
-        .ent-care-store-item h4 {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-        }
-
-        .ent-care-store-item p {
-            font-size: 11px;
-            color: var(--text-light);
-            line-height: 1.4;
-        }
-
-        /* ========== PARTNERS ========== */
-        .ent-care-partners {
-            padding: 60px 0;
-            background: var(--bg-white);
-        }
-
-        .ent-care-partners-title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 40px;
-        }
-
-        .ent-care-partners-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .ent-care-partner-card {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .ent-care-partner-icon {
-            font-size: 48px;
-            margin-bottom: 12px;
-        }
-
-        .ent-care-partner-number {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-
-        .ent-care-partner-label {
-            font-size: 14px;
-            color: var(--text-medium);
-        }
-
-        /* ========== DONATION ========== */
-        .ent-care-donation {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
-        }
-
-        .ent-care-donation-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .ent-care-donation-content h2 {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-
-        .ent-care-donation-content p {
-            font-size: 14px;
-            color: var(--text-medium);
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .ent-care-donation-features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 30px;
-        }
-
-        .ent-care-donation-feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: var(--text-dark);
-        }
-
-        .ent-care-donation-feature::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .ent-care-donation-table {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        .ent-care-donation-table table {
-            width: 100%;
-        }
-
-        .ent-care-donation-table th {
-            background: var(--bg-light);
-            padding: 12px 16px;
-            text-align: left;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .ent-care-donation-table td {
-            padding: 12px 16px;
-            font-size: 13px;
-            color: var(--text-medium);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .ent-care-donation-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
-        /* ========== NEWS ========== */
-        .ent-care-news {
-            padding: 60px 0;
-            background: var(--bg-white);
-        }
-
-        .ent-care-news-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .ent-care-news-card {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-            transition: all 0.3s;
-        }
-
-        .ent-care-news-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-        }
-
-        .ent-care-news-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-
-        .ent-care-news-content {
-            padding: 16px;
-        }
-
-        .ent-care-news-date {
-            font-size: 12px;
-            color: var(--text-light);
-            margin-bottom: 8px;
-        }
-
-        .ent-care-news-card h3 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .ent-care-news-card p {
-            font-size: 12px;
-            color: var(--text-medium);
-            line-height: 1.5;
-        }
-
-        /* ========== CONTACT ========== */
-        .ent-care-contact {
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-        }
-
-        .ent-care-contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .ent-care-contact-info h3 {
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        .ent-care-contact-info ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .ent-care-contact-info li {
-            margin-bottom: 12px;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .ent-care-contact-info a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .ent-care-contact-form {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-        }
-
-        .ent-care-contact-form h3 {
-            font-size: 18px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .ent-care-form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .ent-care-form-input {
-            padding: 12px 16px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 10px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            width: 100%;
-        }
-
-        .ent-care-form-input::placeholder {
-            color: rgba(255,255,255,0.7);
-        }
-
-        .ent-care-form-textarea {
-            padding: 12px 16px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 10px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            width: 100%;
-            height: 100px;
-            resize: none;
-            margin-bottom: 16px;
-        }
-
-        .ent-care-form-textarea::placeholder {
-            color: rgba(255,255,255,0.7);
-        }
-
-        .ent-care-form-btn {
-            width: 100%;
-            padding: 14px;
-            background: var(--accent-teal);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .ent-care-form-btn:hover {
-            background: #02a8be;
-            transform: translateY(-2px);
-        }
-
-        .ent-care-contact-qr {
-            text-align: center;
-        }
-
-        .ent-care-contact-qr img {
-            width: 120px;
-            height: 120px;
-            background: white;
-            border-radius: 12px;
-            padding: 10px;
-            margin-bottom: 12px;
-        }
-
-        .ent-care-contact-qr p {
-            font-size: 12px;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 1024px) {
-            .ent-care-hero-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .ent-care-stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-care-album-grid {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(3, 180px);
-            }
-
-            .ent-care-album-item.large {
-                grid-row: span 1;
-                grid-column: span 2;
-            }
-
-            .ent-care-process-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-            }
-
-            .ent-care-process-step::after {
-                display: none;
-            }
-
-            .ent-care-store-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .ent-care-news-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-care-contact-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .ent-care-hero-text h1 {
-                font-size: 36px;
-            }
-
-            .ent-care-stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-care-album-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(4, 200px);
-            }
-
-            .ent-care-album-item.large {
-                grid-column: span 1;
-            }
-
-            .ent-care-process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-care-store-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .ent-care-partners-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ent-care-donation-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ent-care-news-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .ent-care-form-grid {
-                grid-template-columns: 1fr;
-            }
+        :root {
+            --blue: #004bb6;
+            --blue-dark: #00378c;
+            --blue-soft: #eaf3ff;
+            --cyan: #0dbbd7;
+            --ink: #07245a;
+            --muted: #5d6f91;
+            --line: #d9e6f8;
+            --bg: #f6faff;
+            --white: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Montserrat, sans-serif; color: var(--ink); background: #fff; line-height: 1.5; }
+        body.menu-open { overflow: hidden; }
+        a { color: inherit; text-decoration: none; }
+        .wrap { width: min(1380px, calc(100% - 56px)); margin: 0 auto; }
+
+        .ref-header { height: 76px; background: rgba(255,255,255,.96); border-bottom: 1px solid #e7eef8; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); }
+        .ref-header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+        .ref-logo { display: flex; align-items: center; gap: 12px; color: var(--blue); font-weight: 800; min-width: 250px; }
+        .ref-logo-mark { width: 44px; height: 44px; border: 3px solid var(--blue); border-radius: 50%; display: grid; place-items: center; font-size: 23px; }
+        .ref-logo-text { font-size: 18px; line-height: 1.05; letter-spacing: -.02em; }
+        .ref-logo-text span { display: block; font-size: 10px; letter-spacing: .02em; color: var(--blue-dark); margin-top: 4px; }
+        .ref-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; }
+        .ref-nav a { font-size: 13px; font-weight: 800; color: var(--blue-dark); text-transform: uppercase; padding: 30px 0 26px; border-bottom: 3px solid transparent; white-space: nowrap; }
+        .ref-nav a.active { color: var(--blue); border-color: var(--blue); }
+        .ref-menu { display: none; width: 46px; height: 46px; border: 0; border-radius: 12px; background: var(--blue-soft); color: var(--blue); align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+        .ref-menu span { width: 22px; height: 2px; background: currentColor; border-radius: 3px; transition: .25s; }
+
+        .care-hero { min-height: 430px; position: relative; overflow: hidden; background: #f7fbff; }
+        .care-hero::after { content: ''; position: absolute; inset: 0 0 0 34%; background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1300&h=620&fit=crop') center / cover no-repeat; }
+        .care-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #fff 0%, #fff 35%, rgba(255,255,255,.92) 48%, rgba(255,255,255,.18) 72%, rgba(255,255,255,0) 100%); z-index: 1; }
+        .care-hero .wrap { position: relative; z-index: 2; min-height: 430px; display: flex; align-items: center; }
+        .hero-copy { width: 510px; padding: 48px 0; }
+        .hero-copy h1 { font-size: clamp(54px, 7vw, 88px); line-height: .95; letter-spacing: -.06em; color: var(--blue); font-weight: 800; margin-bottom: 22px; }
+        .hero-copy h2 { font-size: 24px; line-height: 1.35; color: #061f52; font-weight: 800; margin-bottom: 18px; }
+        .hero-copy p { font-size: 15px; color: #31466f; line-height: 1.8; max-width: 460px; }
+        .hero-partners { display: flex; gap: 30px; align-items: center; margin-top: 32px; }
+        .hero-partner { display: flex; align-items: center; gap: 11px; color: var(--blue); font-weight: 800; font-size: 12px; line-height: 1.25; }
+        .hero-partner i { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--blue); color: #fff; font-style: normal; font-size: 23px; }
+        .hero-sign { position: absolute; z-index: 3; right: 180px; top: 50px; background: rgba(255,255,255,.86); border: 1px solid #cfe0f7; border-radius: 4px; padding: 18px 22px; color: var(--blue); font-size: 18px; font-weight: 800; line-height: 1.3; box-shadow: 0 10px 34px rgba(0,55,140,.12); }
+
+        .split-section { padding: 34px 0 42px; background: #fff; }
+        .split-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 44px; align-items: start; }
+        .section-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 22px; }
+        .section-head h2 { font-size: 22px; color: var(--blue); font-weight: 800; text-transform: uppercase; line-height: 1.1; }
+        .section-head small, .section-head a { color: var(--blue); font-weight: 700; font-size: 12px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .stat-card { border: 1px solid var(--line); border-radius: 14px; background: #fff; text-align: center; padding: 26px 10px 22px; min-height: 180px; box-shadow: 0 8px 30px rgba(0,75,182,.05); }
+        .stat-icon { font-size: 42px; color: var(--blue); margin-bottom: 18px; }
+        .stat-card strong { display: block; color: var(--blue); font-size: 38px; line-height: 1; font-weight: 800; margin-bottom: 16px; }
+        .stat-card p { font-size: 11px; font-weight: 700; color: #23406d; line-height: 1.45; }
+        .note { color: var(--muted); font-size: 12px; margin-top: 20px; display: flex; gap: 8px; align-items: center; }
+        .note::before { content: '✓'; width: 19px; height: 19px; border: 1px solid var(--cyan); color: var(--cyan); border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; flex: 0 0 auto; }
+        .album-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .album-grid img { width: 100%; height: 166px; object-fit: cover; border-radius: 10px; display: block; }
+
+        .process { padding: 30px 0 34px; background: #fff; }
+        .center-title { text-align: center; color: var(--blue); font-size: 22px; font-weight: 800; text-transform: uppercase; margin-bottom: 28px; }
+        .process-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+        .process-step { border: 1px solid var(--line); border-radius: 28px; min-height: 150px; padding: 22px 12px 16px; text-align: center; position: relative; background: #fff; }
+        .process-step:not(:last-child)::after { content: '····›'; position: absolute; top: 60px; right: -24px; color: var(--blue); font-size: 23px; font-weight: 800; letter-spacing: 2px; }
+        .process-no { position: absolute; top: -11px; left: 18px; width: 27px; height: 27px; background: var(--blue); color: #fff; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 800; }
+        .process-icon { font-size: 36px; color: var(--blue); margin-bottom: 14px; }
+        .process-step p { font-size: 12px; color: #203a66; font-weight: 700; line-height: 1.45; }
+
+        .store { padding: 26px 0 38px; background: linear-gradient(180deg, #fff 0%, #f8fbff 100%); }
+        .store-box { border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; background: rgba(255,255,255,.9); }
+        .store-sub { text-align: center; color: var(--blue); font-size: 13px; font-weight: 700; margin: -12px 0 22px; }
+        .store-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+        .product { border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 12px; min-height: 210px; box-shadow: 0 6px 24px rgba(0,75,182,.05); }
+        .product img { width: 100%; height: 110px; border-radius: 8px; object-fit: cover; margin-bottom: 12px; background: #f3f7fc; }
+        .product h3 { color: var(--blue); font-size: 13px; font-weight: 800; margin-bottom: 8px; line-height: 1.25; }
+        .product p { color: #40547a; font-size: 10px; line-height: 1.5; font-weight: 600; }
+
+        .partner-donation { padding: 34px 0 42px; background: #fff; }
+        .partner-donation-grid { display: grid; grid-template-columns: .9fr 1.45fr; gap: 24px; }
+        .soft-card { background: linear-gradient(135deg, #f4f9ff, #fff); border: 1px solid #dfeafa; border-radius: 16px; padding: 28px 24px; box-shadow: 0 10px 38px rgba(0,75,182,.05); }
+        .partners-mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; }
+        .partner-stat { border: 1px solid var(--line); border-radius: 14px; padding: 28px 12px; text-align: center; background: #fff; min-height: 150px; }
+        .partner-stat i { display: block; color: var(--blue); font-size: 38px; font-style: normal; margin-bottom: 12px; }
+        .partner-stat strong { display: block; color: var(--blue); font-size: 34px; font-weight: 800; margin-bottom: 8px; }
+        .partner-stat span { color: #29446f; font-size: 12px; font-weight: 700; line-height: 1.35; }
+        .donation-card { display: grid; grid-template-columns: 1.25fr .9fr; gap: 22px; align-items: start; }
+        .donation-card h2 { color: var(--blue); font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+        .donation-card p { color: #31466f; font-size: 13px; line-height: 1.7; font-weight: 600; margin-bottom: 18px; }
+        .donation-icons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 18px; color: #0c7e9a; font-size: 11px; font-weight: 700; margin-bottom: 18px; }
+        .donation-icons span::before { content: '∞'; margin-right: 6px; color: var(--cyan); font-weight: 800; }
+        .donation-card img { width: 100%; height: 210px; object-fit: cover; border-radius: 12px; }
+        .donation-table { grid-column: 1 / -1; background: #e8f2ff; border-radius: 8px; overflow: hidden; display: grid; grid-template-columns: 1.5fr .7fr 1fr .8fr 1.2fr; font-size: 12px; color: var(--blue-dark); font-weight: 700; }
+        .donation-table div { padding: 11px 12px; border-right: 1px solid #cfe0f7; }
+        .donation-table div:nth-child(n+6) { background: #fff; color: #29446f; font-weight: 600; }
+
+        .news { padding: 30px 0 54px; background: #fff; }
+        .news-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+        .news-card { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 8px 28px rgba(0,75,182,.05); }
+        .news-card img { width: 100%; height: 150px; object-fit: cover; display: block; }
+        .news-body { padding: 16px 14px 18px; }
+        .news-date { color: var(--blue); font-size: 11px; font-weight: 700; margin-bottom: 12px; }
+        .news-card h3 { color: var(--blue-dark); font-size: 13px; line-height: 1.35; font-weight: 800; margin-bottom: 10px; }
+        .news-card p { color: #40547a; font-size: 11px; line-height: 1.55; font-weight: 600; }
+
+        .care-cta { margin: 0 0 28px; }
+        .cta-panel { background: linear-gradient(135deg, #004bb6, #002f84); border-radius: 16px; color: #fff; padding: 34px 36px; display: grid; grid-template-columns: 1fr 1.4fr .8fr; gap: 36px; align-items: start; box-shadow: 0 18px 50px rgba(0,75,182,.22); }
+        .cta-left h2 { font-size: 27px; line-height: 1.25; font-weight: 800; margin-bottom: 22px; }
+        .cta-left li { list-style: none; margin-bottom: 11px; font-size: 15px; font-weight: 600; display: flex; gap: 10px; }
+        .cta-left li::before { content: '✓'; border: 1px solid rgba(255,255,255,.8); border-radius: 50%; width: 20px; height: 20px; display: grid; place-items: center; flex: 0 0 auto; font-size: 11px; }
+        .cta-form h3 { text-align: center; font-size: 18px; font-weight: 800; margin-bottom: 16px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .cta-form input, .cta-form textarea { width: 100%; border: 0; border-radius: 6px; background: #fff; padding: 13px 14px; font-family: Montserrat, sans-serif; font-size: 13px; color: #1c3156; }
+        .cta-form textarea { height: 86px; resize: none; margin-bottom: 12px; }
+        .cta-form button { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 auto; width: 220px; height: 42px; border: 0; border-radius: 8px; background: #12b7c9; color: #fff; font-weight: 800; font-family: Montserrat, sans-serif; }
+        .cta-contact { border-left: 1px solid rgba(255,255,255,.25); padding-left: 32px; }
+        .cta-contact h3 { font-size: 18px; font-weight: 800; margin-bottom: 16px; }
+        .cta-contact p { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+        .qr { width: 116px; height: 116px; border-radius: 10px; background: #fff; color: var(--blue); display: grid; place-items: center; font-size: 50px; margin-top: 16px; }
+        .qr-note { font-size: 11px !important; line-height: 1.4; opacity: .9; max-width: 150px; }
+
+        @media (max-width: 1180px) {
+            .ref-nav { gap: 18px; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .store-grid { grid-template-columns: repeat(4, 1fr); }
+            .news-grid { grid-template-columns: repeat(3, 1fr); }
+            .cta-panel { grid-template-columns: 1fr; }
+            .cta-contact { border-left: 0; padding-left: 0; }
+        }
+        @media (max-width: 900px) {
+            .wrap { width: min(100% - 32px, 1380px); }
+            .ref-menu { display: flex; }
+            .ref-nav { position: fixed; top: 76px; right: -100%; width: 86%; max-width: 360px; height: calc(100vh - 76px); background: #fff; flex-direction: column; align-items: stretch; padding: 24px; box-shadow: -20px 0 50px rgba(0,0,0,.12); transition: right .3s; gap: 0; }
+            .ref-nav.open { right: 0; }
+            .ref-nav a { padding: 16px 0; border-bottom: 1px solid #e9f0fb; }
+            .care-hero::after { inset: 42% 0 0 0; opacity: .45; }
+            .care-hero::before { background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.92) 55%, rgba(255,255,255,.25) 100%); }
+            .care-hero .wrap { align-items: start; }
+            .hero-copy { width: 100%; padding-top: 44px; }
+            .hero-sign { position: relative; right: auto; top: auto; margin-top: 10px; width: max-content; }
+            .split-grid, .partner-donation-grid, .donation-card { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-step::after { display: none; }
+            .store-grid, .news-grid { grid-template-columns: repeat(2, 1fr); }
+            .donation-table { grid-template-columns: 1fr; }
+            .donation-table div { border-right: 0; border-bottom: 1px solid #cfe0f7; }
+        }
+        @media (max-width: 560px) {
+            .ref-logo { min-width: auto; }
+            .ref-logo-text { font-size: 15px; }
+            .ref-logo-mark { width: 38px; height: 38px; }
+            .hero-copy h1 { font-size: 52px; }
+            .hero-copy h2 { font-size: 19px; }
+            .hero-partners { flex-direction: column; align-items: flex-start; gap: 14px; }
+            .stat-grid, .album-grid, .process-grid, .store-grid, .partners-mini, .news-grid, .form-grid { grid-template-columns: 1fr; }
+            .cta-panel { padding: 28px 20px; }
+            .cta-left h2 { font-size: 22px; }
+            .care-hero { min-height: 560px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top-content">
-                    <div class="header-top-left">
-                        <a href="tel:19009999">📞 1900-9999</a>
-                    </div>
-                    <div class="header-top-right">
-                        <button class="lang-toggle" onclick="toggleLanguage()">MN</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-main container">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">EM</div>
-                EMJJ Hospital
+    <header class="ref-header">
+        <div class="wrap ref-header-inner">
+            <a href="index.html" class="ref-logo">
+                <div class="ref-logo-mark">ↄ</div>
+                <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-wrapper" id="mobileNav">
-                <nav>
-                    <ul class="nav">
-                        <li><a href="index.html">Нүүр</a></li>
-                        <li class="has-dropdown">
-                            <a href="about.html">Бидний тухай</a>
-                            <ul class="dropdown">
-                                <li><a href="about.html">Бидний тухай</a></li>
-                                <li><a href="hr.html">Хүний нөөц</a></li>
-                                <li><a href="training.html">Сургалт</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-dropdown">
-                            <a href="ent-health.html">ENT Health+</a>
-                            <ul class="dropdown">
-                                <li><a href="ent-care.html">ENT Care</a></li>
-                                <li><a href="ent-health.html">ENT Wellness</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
-                        <li><a href="news.html">Мэдээ</a></li>
-                        <li><a href="contact.html">Холбоо барих</a></li>
-                        <li class="mobile-actions">
-                            <a href="#donate" class="btn btn-outline">Хандив</a>
-                            <a href="#login" class="btn btn-primary">Нэвтрэх</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header-actions">
-                    <a href="#donate" class="btn btn-outline">Хандив</a>
-                    <a href="#login" class="btn btn-primary">Нэвтрэх</a>
-                </div>
-            </div>
+            <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <nav class="ref-nav" id="refNav">
+                <a href="index.html">Нүүр</a>
+                <a href="about.html">Бидний тухай</a>
+                <a href="services.html">Үйлчилгээ</a>
+                <a href="ent-health.html">ENT Health</a>
+                <a href="ent-care.html" class="active">ENT Care</a>
+                <a href="news.html">Мэдээ мэдээлэл</a>
+                <a href="contact.html">Холбоо барих</a>
+            </nav>
         </div>
     </header>
 
-    <div class="mobile-menu-overlay"></div>
-
-    <!-- Hero -->
-    <section class="ent-care-hero">
-        <div class="container">
-            <div class="ent-care-hero-content">
-                <div class="ent-care-hero-text">
+    <main>
+        <section class="care-hero">
+            <div class="hero-sign">СОНСГОЛОО ХАМГААЛЪЯ<br>ЭРҮҮЛ ИРЭЭДҮЙГ БҮТЭЭЕ!</div>
+            <div class="wrap">
+                <div class="hero-copy">
                     <h1>ENT CARE</h1>
-                    <p class="subtitle">Чих, хамар, хоолойн эрүүл мэндийн<br>боловсрол олгох нийгмийн төсөл</p>
-                    <p class="description">14-18 насны сурагчдын чих, хамар, хоолойн эрүүл мэндийг хамгаалах, эрт илрүүлэх, урьдчилан сэргийлэх зорилгоор ENT CARE төслийг хэрэгжүүлж байна.</p>
-                    <div class="ent-care-logos">
-                        <div class="ent-care-logo-item">
-                            <span>🏛️</span>
-                            <span>Боловсролын<br>ерөнхий газар</span>
-                        </div>
-                        <div class="ent-care-logo-item">
-                            <span>🏥</span>
-                            <span>ЭМЖЖ ЭМНЭЛЭГ<br>Чих хамар хоолойн төв</span>
-                        </div>
+                    <h2>Чих, хамар, хоолойн эрүүл мэндийн<br>боловсрол олгох нийгмийн төсөл</h2>
+                    <p>14-18 насны сурагчдын чих, хамар, хоолойн эрүүл мэндийг хамгаалах, эрт илрүүлэх, урьдчилан сэргийлэх зорилгоор ENT CARE төслийг хэрэгжүүлж байна.</p>
+                    <div class="hero-partners">
+                        <div class="hero-partner"><i>🏛</i><span>БОЛОВСРОЛЫН<br>ЕРӨНХИЙ ГАЗАР</span></div>
+                        <div class="hero-partner"><i>ↄ</i><span>ЭМЖЖ ЭМНЭЛЭГ<br>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
                     </div>
                 </div>
-                <div class="ent-care-hero-image">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="ENT CARE Training">
-                    <div class="ent-care-badge">СОНСГОЛОО ХАМГААЛЪЯ<br>ЭРҮҮЛ ИРЭЭДҮЙГ БҮТЭЭЕ!</div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Statistics -->
-    <section class="ent-care-stats">
-        <div class="container">
-            <div class="ent-care-stats-header">
+        <section class="split-section">
+            <div class="wrap split-grid">
                 <div>
-                    <h2>ХЭРЭГЖИЛТИЙН ҮР ДҮН</h2>
-                    <p class="date-range">2026.02.24 - 03.02</p>
-                </div>
-            </div>
-            <div class="ent-care-stats-grid">
-                <div class="ent-care-stat-card">
-                    <div class="ent-care-stat-icon">🎓</div>
-                    <div class="ent-care-stat-number">2500+</div>
-                    <div class="ent-care-stat-label">Суралцагчид<br>хамрагдсан</div>
-                </div>
-                <div class="ent-care-stat-card">
-                    <div class="ent-care-stat-icon">🎧</div>
-                    <div class="ent-care-stat-number">1500+</div>
-                    <div class="ent-care-stat-label">Цахим авиан тест<br>хийсэн</div>
-                </div>
-                <div class="ent-care-stat-card">
-                    <div class="ent-care-stat-icon">📊</div>
-                    <div class="ent-care-stat-number">450+</div>
-                    <div class="ent-care-stat-label">Шүүргэн оношлогоо<br>тоогоор тест хийсэн</div>
-                </div>
-                <div class="ent-care-stat-card">
-                    <div class="ent-care-stat-icon">✅</div>
-                    <div class="ent-care-stat-number">100%</div>
-                    <div class="ent-care-stat-label">Эрсдэлтэй оюутанд<br>анхан шатны зөвлөгөө<br>хүргэсэн</div>
-                </div>
-            </div>
-            <p style="margin-top: 20px; font-size: 13px; color: var(--text-light); display: flex; align-items: center; gap: 8px;">
-                <span>✓</span> Сургалтын хүрээнд ЧХХ-ийн сургуулиар олгох, сонсголын эрсдэлийг эрт илрүүлнэ.
-            </p>
-        </div>
-    </section>
-
-    <!-- Training Album -->
-    <section class="ent-care-album">
-        <div class="container">
-            <div class="ent-care-section-header">
-                <h2>СУРГАЛТЫН АЛЬБОМ</h2>
-                <a href="#">Бүгдийг харах →</a>
-            </div>
-            <div class="ent-care-album-grid">
-                <div class="ent-care-album-item large">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop" alt="Training session">
-                </div>
-                <div class="ent-care-album-item">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=300&h=200&fit=crop" alt="Medical equipment">
-                </div>
-                <div class="ent-care-album-item">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=300&h=200&fit=crop" alt="ENT examination">
-                </div>
-                <div class="ent-care-album-item">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=200&fit=crop" alt="Doctor consultation">
-                </div>
-                <div class="ent-care-album-item">
-                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=300&h=200&fit=crop" alt="Health check">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section class="ent-care-process">
-        <div class="container">
-            <h2 class="ent-care-process-title">ХАМТЫН АЖИЛЛАГААНЫ ПРОЦЕСС</h2>
-            <div class="ent-care-process-grid">
-                <div class="ent-care-process-step">
-                    <div class="ent-care-process-number">1</div>
-                    <h4>Сургууль хамтран ажиллах хүсэлт илгээх</h4>
-                    <p>Хамтын ажиллагааны хүсэлт илгээх</p>
-                </div>
-                <div class="ent-care-process-step">
-                    <div class="ent-care-process-number">2</div>
-                    <h4>Анхан шатны зөвлөгөө өгөх</h4>
-                    <p>Мэргэжлийн зөвлөгөө</p>
-                </div>
-                <div class="ent-care-process-step">
-                    <div class="ent-care-process-number">3</div>
-                    <h4>Онлайн сонсголын тестэд хамруулах</h4>
-                    <p>Сонсголын чадвар шалгах</p>
-                </div>
-                <div class="ent-care-process-step">
-                    <div class="ent-care-process-number">4</div>
-                    <h4>Тестийн үр дүн, тайлан нэгтгэх</h4>
-                    <p>Дүн шинжилгээ хийх</p>
-                </div>
-                <div class="ent-care-process-step">
-                    <div class="ent-care-process-number">5</div>
-                    <h4>2-3 өдрийн сургалт, зөвлөгөө өгөх</h4>
-                    <p>Боловсрол олгох</p>
-                </div>
-                <div class="ent-care-process-step">
-                    <div class="ent-care-process-number">6</div>
-                    <h4>Эмчийн үзлэг, оношилгоо хийх, зөвлөгөө өгөх</h4>
-                    <p>Мэргэжлийн тусламж</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Store -->
-    <section class="ent-care-store">
-        <div class="container">
-            <h2 class="ent-care-store-title">ENT CARE БУЛАН</h2>
-            <p class="ent-care-store-subtitle">Сургуулийн оюутанд зориулсан эрүүл мэндийн боловсролын хэрэгслүүд</p>
-            <div class="ent-care-store-grid">
-                <div class="ent-care-store-item">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=200&h=150&fit=crop" alt="Microphone">
-                    <h4>Багшийн микрофон</h4>
-                    <p>Дууны ачаалал багатай, хөгжмийн зөвлөгөөг хамгаална</p>
-                </div>
-                <div class="ent-care-store-item">
-                    <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=200&h=150&fit=crop" alt="Speaker">
-                    <h4>Зөөврийн speaker</h4>
-                    <p>Сургалт, мэдээлэл түгээхэд тохиромжтой</p>
-                </div>
-                <div class="ent-care-store-item">
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&h=150&fit=crop" alt="T-shirt">
-                    <h4>ENT CARE футболк</h4>
-                    <p>Мэдлэгийг авах, сонирхол татахад зориулсан</p>
-                </div>
-                <div class="ent-care-store-item">
-                    <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=200&h=150&fit=crop" alt="Pen">
-                    <h4>Брэнд үзэг</h4>
-                    <p>Өдөр тутмын сануулга, эрүүл мэндийн зөвлөгөө</p>
-                </div>
-                <div class="ent-care-store-item">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=200&h=150&fit=crop" alt="Notebook">
-                    <h4>Гарын авлага</h4>
-                    <p>Чих, хамар, хоолойн эрүүл мэндийн зөвлөгөө, мэдээлэл</p>
-                </div>
-                <div class="ent-care-store-item">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&h=150&fit=crop" alt="ENT CARE Kit">
-                    <h4>ENT CARE багц</h4>
-                    <p>Сургалтын материал, бүлэг, постер, бэлэг дурсгал</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners -->
-    <section class="ent-care-partners">
-        <div class="container">
-            <h2 class="ent-care-partners-title">ХАМТРАН АЖИЛЛАСАН БАЙГУУЛЛАГУУД</h2>
-            <div class="ent-care-partners-grid">
-                <div class="ent-care-partner-card">
-                    <div class="ent-care-partner-icon">🏫</div>
-                    <div class="ent-care-partner-number">6</div>
-                    <div class="ent-care-partner-label">Ерөнхий боловсролын<br>сургууль</div>
-                </div>
-                <div class="ent-care-partner-card">
-                    <div class="ent-care-partner-icon">🎓</div>
-                    <div class="ent-care-partner-number">3</div>
-                    <div class="ent-care-partner-label">Политехник коллеж</div>
-                </div>
-                <div class="ent-care-partner-card">
-                    <div class="ent-care-partner-icon">🤝</div>
-                    <div class="ent-care-partner-label">Хамтын ажиллагаа<br>татан татах<br>үргэлжилнэ</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Donation -->
-    <section class="ent-care-donation">
-        <div class="container">
-            <div class="ent-care-donation-grid">
-                <div class="ent-care-donation-content">
-                    <h2>ДҮН 1% ХАНДИВ</h2>
-                    <p>ENT CARE төслийн хүрээнд хамтран ажилласан үйлчилгээний төлбөрийн 1%-ийг "ДҮН" хандивын санд хандивлаж, сургалтын төвийн үйл ажиллагааг дэмжиж, эрүүл мэндийн хандивлалд оруулна.</p>
-                    <div class="ent-care-donation-features">
-                        <div class="ent-care-donation-feature">Хүүхдийн эрүүл мэнд</div>
-                        <div class="ent-care-donation-feature">Хөгжлийн бэрхшээлтэй хүүхдүүд</div>
-                        <div class="ent-care-donation-feature">Тогтвортой хөгжил</div>
-                        <div class="ent-care-donation-feature">Хөгжлийн бэрхшээлтэй хүүхдүүд</div>
-                        <div class="ent-care-donation-feature">Тогтвортой хөгжил</div>
-                        <div class="ent-care-donation-feature">Нийгмийн хариуцлага</div>
+                    <div class="section-head"><div><h2>Хэрэгжилтийн үр дүн</h2><small>2026.02.24 - 03.02</small></div></div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-icon">🎓</div><strong>2500+</strong><p>Суралцагчид<br>хамрагдсан</p></div>
+                        <div class="stat-card"><div class="stat-icon">🎧</div><strong>1500+</strong><p>Цахим авиан тест<br>хийсэн</p></div>
+                        <div class="stat-card"><div class="stat-icon">▥</div><strong>450+</strong><p>Шуугиантай орчинд<br>тоогоор тест хийсэн</p></div>
+                        <div class="stat-card"><div class="stat-icon">👨‍⚕️</div><strong>100%</strong><p>Эрсдэлтэй оролцогчдод<br>анхан шатны зөвлөгөө хүргэсэн</p></div>
                     </div>
-                    <div class="ent-care-donation-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ХАНДИВЫН ТАЙЛАН</th>
-                                    <th>Он</th>
-                                    <th>Байгууллага</th>
-                                    <th>Хандивын дүн</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2026</td>
-                                    <td>ENT CARE төсөл</td>
-                                    <td>1%</td>
-                                    <td>Тухайн үеийн мэдээ</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <p class="note">Сургалтын хүрээнд ЧХХ-ийн суурь мэдлэг олгож, сонсголын эрсдэлийг эрт илрүүллээ.</p>
                 </div>
-                <div class="ent-care-donation-image">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&h=400&fit=crop" alt="Donation">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- News -->
-    <section class="ent-care-news">
-        <div class="container">
-            <div class="ent-care-section-header">
-                <h2>МЭДЭЭ МЭДЭЭЛЭЛ</h2>
-                <a href="news.html">Бүгдийг харах →</a>
-            </div>
-            <div class="ent-care-news-grid">
-                <div class="ent-care-news-card">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop" alt="News 1">
-                    <div class="ent-care-news-content">
-                        <div class="ent-care-news-date">2026.02.24</div>
-                        <h3>БЕГ-тай хамтран ажиллахад саналын бичиг байгууллаа</h3>
-                        <p>ENT CARE төслийн хүрээнд Боловсролын ерөнхий газартай хамтын ажиллагааны санамж бичиг байгууллаа.</p>
-                    </div>
-                </div>
-                <div class="ent-care-news-card">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop" alt="News 2">
-                    <div class="ent-care-news-content">
-                        <div class="ent-care-news-date">2026.03.03</div>
-                        <h3>Дэлхийн сонсгол хамгаалах өдөр 2026</h3>
-                        <p>Дэлхийн сонсгол хамгаалах өдрийг тохиолдуулан олон нийтэд зориулсан үйл ажиллагаа зохион байгууллаа.</p>
-                    </div>
-                </div>
-                <div class="ent-care-news-card">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=250&fit=crop" alt="News 3">
-                    <div class="ent-care-news-content">
-                        <div class="ent-care-news-date">2026.03.05</div>
-                        <h3>2500 суралцагч хамрагдлаа</h3>
-                        <p>6 сургууль, 3 политехник коллежийн 2500 суралцагчид сургалт, сурталчилгаанд хамрагдлаа.</p>
-                    </div>
-                </div>
-                <div class="ent-care-news-card">
-                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=400&h=250&fit=crop" alt="News 4">
-                    <div class="ent-care-news-content">
-                        <div class="ent-care-news-date">2026.03.10</div>
-                        <h3>Сонсголын онлайн тестийн үр дүн</h3>
-                        <p>Цахим авиан болон шуурхай тестээр сонсголын чадвар шалгах үр дүнг нэгтгэлээ.</p>
+                <div>
+                    <div class="section-head"><h2>Сургалтын альбом</h2><a href="#">Бүгдийг харах →</a></div>
+                    <div class="album-grid">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=520&h=330&fit=crop" alt="Онлайн сонсголын тест">
+                        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=520&h=330&fit=crop" alt="Сургалт">
+                        <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=520&h=330&fit=crop" alt="Гарын авлага">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=520&h=330&fit=crop" alt="Зөвлөгөө">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact -->
-    <section class="ent-care-contact">
-        <div class="container">
-            <div class="ent-care-contact-grid">
-                <div class="ent-care-contact-info">
-                    <h3>ТАНАЙ СУРГУУЛЬ<br>ENT CARE ТӨСӨЛД<br>ХАМРАГДАХ БОЛОМЖТОЙ</h3>
-                    <ul>
-                        <li>✓ Эрүүл мэндийн боловсрол олгох сургалт</li>
-                        <li>✓ Онлайн сонсголын скрининг тест</li>
-                        <li>✓ Эмчийн үзлэг, мэргэжлийн зөвлөгөө</li>
-                        <li>✓ Тогтвортой хамтын ажиллагаа</li>
-                    </ul>
+        <section class="process">
+            <div class="wrap">
+                <h2 class="center-title">Хамтын ажиллагааны процесс</h2>
+                <div class="process-grid">
+                    <div class="process-step"><div class="process-no">1</div><div class="process-icon">✈</div><p>Сургууль хамтран ажиллах хүсэлт илгээх</p></div>
+                    <div class="process-step"><div class="process-no">2</div><div class="process-icon">🎧</div><p>Анхан шатны зөвлөгөө өгөх</p></div>
+                    <div class="process-step"><div class="process-no">3</div><div class="process-icon">👂</div><p>Онлайн сонсголын тестэд хамруулах</p></div>
+                    <div class="process-step"><div class="process-no">4</div><div class="process-icon">📈</div><p>Тестийн үр дүн, тайланг нэгтгэж санал солилцох</p></div>
+                    <div class="process-step"><div class="process-no">5</div><div class="process-icon">👥</div><p>2-3 өдрийн сургалт, зөвлөгөө зохион байгуулах</p></div>
+                    <div class="process-step"><div class="process-no">6</div><div class="process-icon">🩺</div><p>Эмчийн үзлэг, оношилгоо хийж зөвлөгөө өгөх</p></div>
                 </div>
-                <div class="ent-care-contact-form">
+            </div>
+        </section>
+
+        <section class="store">
+            <div class="wrap store-box">
+                <h2 class="center-title">ENT CARE булан</h2>
+                <p class="store-sub">Сургуулийн орчинд зориулсан эрүүл мэндийн боловсролын хэрэгслүүд</p>
+                <div class="store-grid">
+                    <div class="product"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=320&h=220&fit=crop" alt="Микрофон"><h3>Багшийн микрофон</h3><p>Дууны ачааллыг бууруулж, хоолойн эрүүл мэндийг хамгаална.</p></div>
+                    <div class="product"><img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=320&h=220&fit=crop" alt="Speaker"><h3>Зөөврийн speaker</h3><p>Сургалт, мэдээлэл түгээхэд тохиромжтой.</p></div>
+                    <div class="product"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=320&h=220&fit=crop" alt="Футболк"><h3>ENT CARE футболк</h3><p>Мэдээллийг олон нийтэд хүргэх брэнд хэрэгсэл.</p></div>
+                    <div class="product"><img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=320&h=220&fit=crop" alt="Үзэг"><h3>Брэнд үзэг</h3><p>Өдөр тутмын сануулга, эрүүл дадал хэвшил.</p></div>
+                    <div class="product"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=320&h=220&fit=crop" alt="Гарын авлага"><h3>Гарын авлага</h3><p>Чих, хамар, хоолойн эрүүл мэндийн зөвлөгөө.</p></div>
+                    <div class="product"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=320&h=220&fit=crop" alt="Булан"><h3>ENT CARE булан</h3><p>Сургалтын материал, постер, QR код, мэдээлэл.</p></div>
+                    <div class="product"><img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=320&h=220&fit=crop" alt="Киоск"><h3>Киоск</h3><p>Онлайн тест, мэдээлэл авах зориулалттай.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partner-donation">
+            <div class="wrap partner-donation-grid">
+                <div class="soft-card">
+                    <h2 class="center-title" style="margin-bottom:0">Хамтран ажилласан байгууллагууд</h2>
+                    <div class="partners-mini">
+                        <div class="partner-stat"><i>🏫</i><strong>6</strong><span>Ерөнхий боловсролын сургууль</span></div>
+                        <div class="partner-stat"><i>🏢</i><strong>3</strong><span>Политехник коллеж</span></div>
+                        <div class="partner-stat"><i>🤝</i><span>Хамтын ажиллагаа тогтвортой үргэлжилнэ</span></div>
+                    </div>
+                </div>
+                <div class="soft-card donation-card">
+                    <div>
+                        <h2>ДҮН 1% ХАНДИВ</h2>
+                        <p>ENT CARE төслийн хүрээнд хамтран ажилласан үйлчилгээний төлбөрийн 1%-ийг “ДҮН” сангийн сургалтын төвийн үйл ажиллагааг дэмжихэд зориулан хандивладаг.</p>
+                        <div class="donation-icons"><span>Хүүхдийн хөгжил</span><span>Хэл ярианы бэрхшээлтэй хүүхдүүд</span><span>Тогтвортой нийгмийн хариуцлага</span><span>Хөгжлийн дэмжлэг</span><span>Эрүүл ирээдүй</span><span>Нийгмийн оролцоо</span></div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=520&h=320&fit=crop" alt="Хандив">
+                    <div class="donation-table">
+                        <div>ХАНДИВЫН ТАЙЛАН</div><div>Он</div><div>Байгууллага</div><div>Хандивын дүн</div><div>Тус үйлдлийг нийт дүнгээс харуулсан.</div>
+                        <div></div><div>2026</div><div>ENT CARE төсөл</div><div>1%</div><div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="wrap">
+                <div class="section-head"><h2>Мэдээ мэдээлэл</h2><a href="news.html">Бүгдийг харах →</a></div>
+                <div class="news-grid">
+                    <article class="news-card"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.02.12</div><h3>БЕГ-тай хамтын ажиллагааны санамж бичиг байгуулав</h3><p>ENT CARE төслийн хүрээнд Боловсролын ерөнхий газартай хамтран ажиллахаар боллоо.</p></div></article>
+                    <article class="news-card"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.03.03</div><h3>Дэлхийн сонсгол хамгаалах өдөр 2026</h3><p>Дэлхийн сонсгол хамгаалах өдрийг тохиолдуулан олон үйл ажиллагаа зохион байгуулав.</p></div></article>
+                    <article class="news-card"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.03.05</div><h3>2500 суралцагч хамрагдлаа</h3><p>6 сургууль, 3 политехник коллежийн 2500 сурагчид сургалт, скрининг тестэд хамрагдав.</p></div></article>
+                    <article class="news-card"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.03.10</div><h3>Сонсголын онлайн тестийн үр дүн</h3><p>Цахим авиан болон шуурхай тестээр сонсголын эрсдэлийг тодорхойллоо.</p></div></article>
+                    <article class="news-card"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.04.02</div><h3>Шинэ сургууль төсөлд нэгдлээ</h3><p>Төслийн хамрах хүрээ өргөжин шинэ сургуулиуд нэгдэж байна.</p></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="care-cta">
+            <div class="wrap cta-panel">
+                <div class="cta-left">
+                    <h2>ТАНАЙ СУРГУУЛЬ<br>ENT CARE ТӨСӨЛД<br>ХАМРАГДАХ БОЛОМЖТОЙ</h2>
+                    <ul><li>Эрүүл мэндийн боловсрол олгох сургалт</li><li>Онлайн сонсголын скрининг тест</li><li>Эмчийн үзлэг, мэргэжлийн зөвлөгөө</li><li>Тогтвортой хамтын ажиллагаа</li></ul>
+                </div>
+                <form class="cta-form">
                     <h3>ХАМТРАН АЖИЛЛАХ ХҮСЭЛТ ИЛГЭЭХ</h3>
-                    <form>
-                        <div class="ent-care-form-grid">
-                            <input type="text" class="ent-care-form-input" placeholder="Сургуулийн нэр">
-                            <input type="text" class="ent-care-form-input" placeholder="Холбогдох хүний нэр">
-                        </div>
-                        <div class="ent-care-form-grid">
-                            <input type="tel" class="ent-care-form-input" placeholder="Утасны дугаар">
-                            <input type="email" class="ent-care-form-input" placeholder="И-мэйл хаяг">
-                        </div>
-                        <textarea class="ent-care-form-textarea" placeholder="Санал хүсэлт, хамтран ажиллах"></textarea>
-                        <button type="submit" class="ent-care-form-btn">
-                            <span>📩</span> ХҮСЭЛТ ИЛГЭЭХ
-                        </button>
-                    </form>
-                </div>
-                <div class="ent-care-contact-qr">
-                    <div style="width: 120px; height: 120px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
-                        <span style="font-size: 60px;">📱</span>
-                    </div>
-                    <p>Дэлгэрэнгүй мэдээллийг<br>scan хийж үз</p>
-                    <div style="margin-top: 20px;">
-                        <h4 style="font-size: 16px; margin-bottom: 12px;">ХОЛБОО БАРИХ</h4>
-                        <p style="font-size: 14px; margin-bottom: 8px;">📞 7707-5050</p>
-                        <p style="font-size: 14px; margin-bottom: 8px;">✉️ entcare@emj.mn</p>
-                        <p style="font-size: 14px; margin-bottom: 8px;">🌐 www.emj.mn</p>
-                    </div>
+                    <div class="form-grid"><input placeholder="Сургуулийн нэр"><input placeholder="Холбогдох хүний нэр"></div>
+                    <div class="form-grid"><input placeholder="Утасны дугаар"><input placeholder="И-мэйл хаяг"></div>
+                    <textarea placeholder="Санал хүсэлт, нэмэлт мэдээлэл"></textarea>
+                    <button type="button">✈ ХҮСЭЛТ ИЛГЭЭХ</button>
+                </form>
+                <div class="cta-contact">
+                    <h3>ХОЛБОО БАРИХ</h3>
+                    <p>☎ 7707-5050</p><p>✉ entcare@emj.mn</p><p>◎ www.emj.mn</p>
+                    <div class="qr">▦</div><p class="qr-note">Дэлгэрэнгүй мэдээллийг scan хийж үз</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>EMJJ Hospital</h3>
-                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Үндсэн цэс</h4>
-                    <ul>
-                        <li><a href="index.html">Нүүр</a></li>
-                        <li><a href="about.html">Бидний тухай</a></li>
-                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
-                        <li><a href="training.html">Сургалт</a></li>
-                        <li><a href="news.html">Мэдээ</a></li>
-                        <li><a href="branches.html">Салбар байршил</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>ENT Health+</h4>
-                    <ul>
-                        <li><a href="ent-care.html">ENT Care</a></li>
-                        <li><a href="ent-health.html">ENT Wellness</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Холбоо барих</h4>
-                    <ul>
-                        <li><a href="#">📞 1900-9999</a></li>
-                        <li><a href="#">✉️ info@emjj.mn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
-            </div>
-        </div>
-    </footer>
+        </section>
+    </main>
 
     <script>
-        // Mobile Menu Functions
-        function toggleMobileMenu() {
-            const navWrapper = document.getElementById('mobileNav');
-            const btn = document.querySelector('.mobile-menu-btn');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            navWrapper.classList.toggle('active');
-            btn.classList.toggle('active');
-            
-            if (overlay) {
-                overlay.classList.toggle('active');
-            }
-            
-            if (navWrapper.classList.contains('active')) {
-                document.body.classList.add('menu-open');
-            } else {
-                document.body.classList.remove('menu-open');
-            }
+        function toggleMenu() {
+            document.getElementById('refNav').classList.toggle('open');
+            document.body.classList.toggle('menu-open');
         }
-
-        function toggleDropdown(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                const dropdown = e.currentTarget.parentElement.querySelector('.dropdown');
-                if (dropdown && dropdown.classList.contains('dropdown')) {
-                    dropdown.classList.toggle('active');
-                }
-            }
-        }
-
-        // Close mobile menu when clicking on a non-dropdown link
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768 && !link.parentElement.classList.contains('has-dropdown')) {
-                    const navWrapper = document.getElementById('mobileNav');
-                    const btn = document.querySelector('.mobile-menu-btn');
-                    const overlay = document.querySelector('.mobile-menu-overlay');
-                    navWrapper.classList.remove('active');
-                    btn.classList.remove('active');
-                    if (overlay) overlay.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                }
-            });
-        });
-
-        // Close mobile menu when clicking overlay
-        document.addEventListener('click', (e) => {
-            const navWrapper = document.getElementById('mobileNav');
-            const btn = document.querySelector('.mobile-menu-btn');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            if (navWrapper.classList.contains('active') && 
-                !navWrapper.contains(e.target) && 
-                !btn.contains(e.target)) {
-                navWrapper.classList.remove('active');
-                btn.classList.remove('active');
-                if (overlay) overlay.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-        });
-
-        // Language Toggle
-        const translations = {
-            mn: {
-                title: document.title,
-                nav_home: "Нүүр",
-                nav_about: "Бидний тухай",
-                nav_services: "Тусламж үйлчилгээ",
-                nav_training: "Сургалт",
-                nav_news: "Мэдээ",
-                nav_contact: "Холбоо барих",
-                copyright: "© 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан."
-            },
-            en: {
-                nav_home: "Home",
-                nav_about: "About Us",
-                nav_services: "Services",
-                nav_training: "Training",
-                nav_news: "News",
-                nav_contact: "Contact",
-                copyright: "© 2026 EMJJ Hospital. All rights reserved."
-            }
-        };
-
-        let currentLang = localStorage.getItem('emjj-language') || 'mn';
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'mn' ? 'en' : 'mn';
-            localStorage.setItem('emjj-language', currentLang);
-            applyLanguage();
-        }
-
-        function applyLanguage() {
-            const t = translations[currentLang];
-            const btn = document.querySelector('.lang-toggle');
-            if (btn) btn.textContent = currentLang.toUpperCase();
-            
-            const navLinks = document.querySelectorAll('.nav a');
-            if (navLinks[0]) navLinks[0].textContent = t.nav_home;
-            if (navLinks[1]) navLinks[1].textContent = t.nav_about;
-            
-            const footerBottom = document.querySelector('.footer-bottom p');
-            if (footerBottom) footerBottom.textContent = t.copyright;
-        }
-
-        applyLanguage();
     </script>
 </body>
 </html>
