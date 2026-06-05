@@ -690,6 +690,11 @@
             box-shadow: 0 10px 30px rgba(0,84,166,0.4);
         }
 
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* ========== BANNERS ========== */
         .banners {
             padding: 80px 0;
@@ -735,6 +740,10 @@
             border-top-color: var(--accent-teal);
         }
 
+        .banner-card {
+            cursor: pointer;
+        }
+
         .banner-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 50px rgba(0,84,166,0.3);
@@ -777,6 +786,10 @@
         .featured-card:nth-child(4) { border-top-color: var(--primary); }
         .featured-card:nth-child(5) { border-top-color: var(--primary); }
         .featured-card:nth-child(6) { border-top-color: var(--accent-teal); }
+
+        .featured-card {
+            cursor: pointer;
+        }
 
         .featured-card:hover {
             transform: translateY(-10px);
@@ -1578,8 +1591,8 @@
                     <h1>Таны эрүүл мэнд<span>бидний зорилго</span></h1>
                     <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг. Бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ үзүүлж байна.</p>
                     <div class="hero-buttons">
-                        <a href="#services" class="btn btn-primary btn-large">Үйлчилгээ үзэх</a>
-                        <a href="#contact" class="btn btn-outline btn-large">Онлайн цаг захиалга</a>
+                        <a href="services.html" class="btn btn-primary btn-large">Үйлчилгээ үзэх</a>
+                        <a href="contact.html#appointment" class="btn btn-outline btn-large">Онлайн цаг захиалга</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -1598,7 +1611,7 @@
                         <div class="carousel-content">
                             <h3>🦻 Signia - Албан ёсны дистрибьютер</h3>
                             <p>EMJJ Hospital нь дэлхийд тэргүүлэгч Signia сонсголын аппаратын албан ёсны дистрибьютер. Хамгийн сүүлийн үеийн технологи бүхий сонсголын аппаратыг мэргэжлийн зөвлөгөөтэйгээр.</p>
-                            <a href="#" class="btn btn-primary">Дэлгэрэнгүй</a>
+                            <a href="services.html" class="btn btn-primary">Дэлгэрэнгүй</a>
                         </div>
                         <div class="carousel-image">
                             <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop" alt="Signia Hearing Aids">
@@ -1651,22 +1664,22 @@
                     <h4>Багц үйлчилгээ</h4>
                 </a>
                 
-                <a href="#" class="quick-link-card">
+                <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
                     <div class="quick-link-icon">👂</div>
                     <h4>Сонсголын тест</h4>
                 </a>
                 
-                <a href="#" class="quick-link-card">
+                <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
                     <div class="quick-link-icon">🛡</div>
                     <h4>Сонсгол хамгаалах өдөр</h4>
                 </a>
                 
-                <a href="#" class="quick-link-card">
+                <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
                     <div class="quick-link-icon">🏥</div>
                     <h4>Тоног төхөөрөмж худалдаа</h4>
                 </a>
                 
-                <a href="#" class="quick-link-card">
+                <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
                     <div class="quick-link-icon">🦻</div>
                     <h4>Сонсголын аппарат</h4>
                 </a>
@@ -1732,23 +1745,23 @@
                 <p>Бидний онцлох үйлчилгээ, хөтөлбөр</p>
             </div>
             <div class="banners-grid">
-                <div class="banner-card">
+                <div class="banner-card" onclick="window.location.href='contact.html'">
                     <h3>Онлайн цаг захиалга</h3>
                     <p>1900-9999 дугаарт холбогдон цаг авах</p>
                 </div>
-                <div class="banner-card">
+                <div class="banner-card" onclick="window.location.href='services.html'">
                     <h3>Signia</h3>
                     <p>Албан ёсны дистрибютер</p>
                 </div>
-                <div class="banner-card">
+                <div class="banner-card" onclick="window.location.href='services.html'">
                     <h3>Хөнгөлөлттэй багц</h3>
                     <p>Үзлэг, оношлогооны багц</p>
                 </div>
-                <div class="banner-card">
+                <div class="banner-card" onclick="window.location.href='ent-care.html'">
                     <h3>ENT CARE</h3>
                     <p>Эрүүл мэндийн цогц үйлчилгээ</p>
                 </div>
-                <div class="banner-card">
+                <div class="banner-card" onclick="alert('Тун удахгүй...')">
                     <h3>1% Хандив</h3>
                     <p>Дун хэл заслын сургалтын төвд</p>
                 </div>
@@ -1764,42 +1777,42 @@
                 <p>Таны эрүүл мэндэд хамгийн хэрэгтэй мэдээлэл</p>
             </div>
             <div class="featured-grid">
-                <div class="featured-card">
+                <div class="featured-card" onclick="window.location.href='about.html'">
                     <div class="featured-image">🏥</div>
                     <div class="featured-content">
                         <h3>Эмнэлгийн танилцуулга</h3>
                         <p>Бидний түүх, үнэт зүйлс, алсын хараа</p>
                     </div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card" onclick="window.location.href='services.html'">
                     <div class="featured-image">👨‍⚕️</div>
                     <div class="featured-content">
                         <h3>Тасгийн танилцуулга</h3>
                         <p>Манай нарийн мэргэжлийн тасгууд</p>
                     </div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card" onclick="window.location.href='training.html'">
                     <div class="featured-image">📚</div>
                     <div class="featured-content">
                         <h3>Сургалт эрдэм шинжилгээ</h3>
                         <p>Мэргэжил дээшлүүлэх сургалтууд</p>
                     </div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card" onclick="alert('Тун удахгүй...')">
                     <div class="featured-image">🔬</div>
                     <div class="featured-content">
                         <h3>Сонсголын аппарат</h3>
                         <p>Сонсголын аппаратны зай борлуулагдаж буй байршлууд</p>
                     </div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card" onclick="alert('Тун удахгүй...')">
                     <div class="featured-image">🌿</div>
                     <div class="featured-content">
                         <h3>Сэргээн засах сувилал</h3>
                         <p>Улаанбаатар хотоос 50 км-т байрлах сувилал</p>
                     </div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card" onclick="alert('Тун удахгүй...')">
                     <div class="featured-image">🤝</div>
                     <div class="featured-content">
                         <h3>B2B Хамтран ажиллагаа</h3>
@@ -1958,7 +1971,7 @@
                     <h2>ДуН хэл заслын сургалтын төв</h2>
                     <p>2015 оноос хойш 11 дэх жилдээ тасралтгүй ажиллаж байгаа Монгол Улсын анхны мэргэжлийн хэл заслын сургалтын төв.</p>
                     <p>"Дунгийн суулгац" хагалгаанд орсон болон сонсголын аппарат тохируулсан хүүхдүүдийг нарийн мэргэжлийн хэл засалч багш, сонсгол судлалын мэргэжлийн эмч нарын тусламжтайгаар сонсгол сэргээх, хэл яриа үүсгэх, оюун ухааныг хөгжүүлэх зорилт тавин ажиллаж байна.</p>
-                    <a href="#" class="btn btn-primary btn-large">Дэлгэрэнгүй</a>
+                    <a href="training.html" class="btn btn-primary btn-large">Дэлгэрэнгүй</a>
                 </div>
             </div>
         </div>
@@ -1986,7 +1999,7 @@
         <div class="container">
             <h2>Бидэнтэй холбоо барих</h2>
             <p>Танд асуулт байна уу? Бид таньд тусалъя. Доорх товчийг дарж бидэнтэй холбоо барина уу.</p>
-            <a href="#" class="btn btn-white btn-large">Холбоо барих</a>
+                    <a href="contact.html" class="btn btn-white btn-large">Холбоо барих</a>
         </div>
     </section>
 
@@ -2014,29 +2027,29 @@
                 <div class="footer-links">
                     <h4>Туслах цэс</h4>
                     <ul>
-                        <li><a href="#">Онлайн цаг захиалга</a></li>
-                        <li><a href="#">Сонсголын тест</a></li>
-                        <li><a href="#">Сэргээн засах сувилал</a></li>
-                        <li><a href="#">Сонсголын аппарат</a></li>
-                        <li><a href="#">B2B</a></li>
+                        <li><a href="contact.html">Онлайн цаг захиалга</a></li>
+                        <li><a href="#" onclick="alert('Тун удахгүй...')">Сонсголын тест</a></li>
+                        <li><a href="#" onclick="alert('Тун удахгүй...')">Сэргээн засах сувилал</a></li>
+                        <li><a href="#" onclick="alert('Тун удахгүй...')">Сонсголын аппарат</a></li>
+                        <li><a href="#" onclick="alert('Тун удахгүй...')">B2B</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Танд тусалъя</h4>
                     <ul>
-                        <li><a href="#">Түгээмэл асуулт</a></li>
-                        <li><a href="#">Цагийн хуваарь</a></li>
-                        <li><a href="#">Санал хүсэлт</a></li>
-                        <li><a href="#">Хандив</a></li>
+                        <li><a href="#" onclick="alert('Тун удахгүй...')">Түгээмэл асуулт</a></li>
+                        <li><a href="#" onclick="alert('Тун удахгүй...')">Цагийн хуваарь</a></li>
+                        <li><a href="contact.html">Санал хүсэлт</a></li>
+                        <li><a href="#" onclick="alert('Тун удахгүй...')">Хандив</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="#">📞 1900-9999</a></li>
-                        <li><a href="#">📞 7034-1111</a></li>
-                        <li><a href="#">✉️ info@emjj.mn</a></li>
-                        <li><a href="#">📍 СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
+                        <li><a href="tel:19009999">📞 1900-9999</a></li>
+                        <li><a href="tel:70341111">📞 7034-1111</a></li>
+                        <li><a href="mailto:info@emjj.mn">✉️ info@emjj.mn</a></li>
+                        <li><a href="#" onclick="alert('СБД, 1-р төрөх эмнэлгийн зүүн талд')">📍 СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
                     </ul>
                 </div>
             </div>

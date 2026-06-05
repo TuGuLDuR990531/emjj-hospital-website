@@ -707,17 +707,17 @@
     <section class="vmv-section">
         <div class="container">
             <div class="vmv-grid">
-                <div class="vmv-card">
+                <div class="vmv-card" onclick="alert('Алсын хараа: Олон улсын жишигт нийцсэн, чих хамар хоолой, сонсгол судлалын үндэсний загвар төв болох.')" style="cursor:pointer;">
                     <div class="vmv-icon">👁</div>
                     <h3>АЛСЫН ХАРАА</h3>
                     <p>Олон улсын жишигт нийцсэн, чих хамар хоолой, сонсгол судлалын үндэсний загвар төв болох.</p>
                 </div>
-                <div class="vmv-card">
+                <div class="vmv-card" onclick="alert('Эрхэм зорилго: Үйлчлүүлэгчдээ эрхэмлэгч тэргүүлэх туршлага, шинэчлэн бүтээх инноваци бүхий эмнэлэг, эрдэм шинжилгээ, сургалтын төв байх.')" style="cursor:pointer;">
                     <div class="vmv-icon">🎯</div>
                     <h3>ЭРХЭМ ЗОРИЛГО</h3>
                     <p>Үйлчлүүлэгчдээ эрхэмлэгч тэргүүлэх туршлага, шинэчлэн бүтээх инноваци бүхий эмнэлэг, эрдэм шинжилгээ, сургалтын төв байх.</p>
                 </div>
-                <div class="vmv-card">
+                <div class="vmv-card" onclick="alert('Үнэт зүйл: Элдэг харилцаа, Манлайлагч хамт олон, Жишиг үйлчлэгээ, Жаргалтай үйлчлүүлэгч')" style="cursor:pointer;">
                     <div class="vmv-icon">💎</div>
                     <h3>ҮНЭТ ЗҮЙЛ</h3>
                     <ul>
@@ -735,8 +735,8 @@
     <section class="tab-section">
         <div class="container">
             <div class="tabs">
-                <button class="tab active">Хүний нөөцийн бодлого</button>
-                <button class="tab">Нээлттэй ажлын байр</button>
+                <button class="tab active" onclick="switchTab(this, 'policy')">Хүний нөөцийн бодлого</button>
+                <button class="tab" onclick="switchTab(this, 'jobs')">Нээлттэй ажлын байр</button>
             </div>
         </div>
     </section>
@@ -839,27 +839,27 @@
     <section class="benefits-section">
         <div class="container">
             <div class="benefits-grid">
-                <div class="benefit-item">
+                <div class="benefit-item" onclick="alert('Бид ажилтнууддаа тогтвортой ажлын байр, таатай орчныг бүрдүүлж өгдөг.')" style="cursor:pointer;">
                     <div class="benefit-icon">✅</div>
                     <p>Тогтвортуй ажлын байр бүхий таатай орчин</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-item" onclick="alert('Бид хөгжил, дэвшлийг дэмжсэн эерэг соёлыг төлөвшүүлдэг.')" style="cursor:pointer;">
                     <div class="benefit-icon">🏆</div>
                     <p>Хөгжил, дэвшилд дэмжигдсэн соёл</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-item" onclick="alert('Бид ажилтнуудаа сурч, хөгжих ерөнхий боломжоор хангадаг.')" style="cursor:pointer;">
                     <div class="benefit-icon">📖</div>
                     <p>Сурч, хөгжих ерөнхий боломж</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-item" onclick="alert('Бид ажил амьдралын тэнцвэрийг хангахад анхаардаг.')" style="cursor:pointer;">
                     <div class="benefit-icon">👥</div>
                     <p>Ажил амьдралын тэнцвэр</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-item" onclick="alert('Бид ажилтнуудынхаа нийгмийн баталгаа, эрүүл мэндийг дэмждэг.')" style="cursor:pointer;">
                     <div class="benefit-icon">❤️</div>
                     <p>Нийгмийн баталгаа, эрүүл мэндийн дэмжлэг</p>
                 </div>
@@ -904,29 +904,29 @@
                 <div class="footer-links">
                     <h4>Туслах цэс</h4>
                     <ul>
-                        <li><a href="#">Онлайн цаг захиалга</a></li>
-                        <li><a href="#">Сонсголын тест</a></li>
-                        <li><a href="#">Сэргээн засах сувилал</a></li>
-                        <li><a href="#">Сонсголын аппарат</a></li>
-                        <li><a href="#">B2B</a></li>
+                        <li><a href="#" onclick="alert('Онлайн цаг захиалга удахгүй нээгдэнэ');return false;">Онлайн цаг захиалга</a></li>
+                        <li><a href="#" onclick="alert('Сонсголын тест удахгүй нээгдэнэ');return false;">Сонсголын тест</a></li>
+                        <li><a href="branches.html">Сэргээн засах сувилал</a></li>
+                        <li><a href="#" onclick="alert('Сонсголын аппаратын мэдээлэл удахгүй нэмэгдэнэ');return false;">Сонсголын аппарат</a></li>
+                        <li><a href="#" onclick="alert('B2B хэлтэст холбогдоно уу: 7034-1111');return false;">B2B</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Танд тусалъя</h4>
                     <ul>
-                        <li><a href="#">Түгээмэл асуулт</a></li>
-                        <li><a href="#">Цагийн хуваарь</a></li>
-                        <li><a href="#">Санал хүсэлт</a></li>
-                        <li><a href="#">Хандив</a></li>
+                        <li><a href="#" onclick="alert('Түгээмэл асуултын хуудас удахгүй нээгдэнэ');return false;">Түгээмэл асуулт</a></li>
+                        <li><a href="#" onclick="alert('Цагийн хуваарь: Да-Ба 08:00-20:00, Бя 10:00-14:00');return false;">Цагийн хуваарь</a></li>
+                        <li><a href="contact.html">Санал хүсэлт</a></li>
+                        <li><a href="#" onclick="alert('Хандив өгөх: Дун хэл заслын сургалтын төвд 1%');return false;">Хандив</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="#">📞 1900-9999</a></li>
-                        <li><a href="#">📞 7034-1111</a></li>
-                        <li><a href="#">✉️ info@emjj.mn</a></li>
-                        <li><a href="#">📍 СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
+                        <li><a href="tel:19009999">📞 1900-9999</a></li>
+                        <li><a href="tel:70341111">📞 7034-1111</a></li>
+                        <li><a href="mailto:info@emjj.mn">✉️ info@emjj.mn</a></li>
+                        <li><a href="branches.html">📍 СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
                     </ul>
                 </div>
             </div>
@@ -937,7 +937,71 @@
         </div>
     </footer>
     <script>
-                // Mobile Menu Functions
+                // Tab switching function
+        function switchTab(btn, tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const policySection = document.querySelector('.policy-section');
+            const trainingSection = document.querySelector('.training-section');
+            const benefitsSection = document.querySelector('.benefits-section');
+            
+            if (tabName === 'policy') {
+                policySection.style.display = 'block';
+                trainingSection.style.display = 'block';
+                benefitsSection.style.display = 'block';
+            } else if (tabName === 'jobs') {
+                policySection.style.display = 'none';
+                trainingSection.style.display = 'none';
+                benefitsSection.style.display = 'none';
+                
+                // Check if jobs section already exists
+                let jobsSection = document.getElementById('jobs-section');
+                if (!jobsSection) {
+                    jobsSection = document.createElement('section');
+                    jobsSection.id = 'jobs-section';
+                    jobsSection.className = 'policy-section';
+                    jobsSection.style.cssText = 'padding:60px 0;background:var(--bg-white);';
+                    jobsSection.innerHTML = `
+                        <div class="container">
+                            <div class="policy-content">
+                                <h3>НЭЭЛТТЭЙ АЖЛЫН БАЙР</h3>
+                                <p>Одоогоор дараах ажлын байруудад ажилтан шалгаруулж авна.</p>
+                                
+                                <div style="margin-top:30px;display:flex;flex-direction:column;gap:20px;">
+                                    <div style="padding:24px;background:linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);border-radius:16px;box-shadow:0 4px 20px rgba(0,84,166,0.1);border-left:5px solid #0054a6;">
+                                        <h4 style="color:#0054a6;margin-bottom:8px;">🔬 Чих Хамар Хоолойн Эмч</h4>
+                                        <p style="margin-bottom:12px;color:var(--text-medium);">Шаардлага: Магистр болон түүнээс дээш зэрэгтэй, 3+ жилийн туршлагатай</p>
+                                        <a href="contact.html" class="btn btn-primary" style="display:inline-block;">Анкет илгээх</a>
+                                    </div>
+                                    
+                                    <div style="padding:24px;background:linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);border-radius:16px;box-shadow:0 4px 20px rgba(0,84,166,0.1);border-left:5px solid #03bfd7;">
+                                        <h4 style="color:#0054a6;margin-bottom:8px;">👩‍⚕️ Сувилагч</h4>
+                                        <p style="margin-bottom:12px;color:var(--text-medium);">Шаардлага: Бакалавр зэрэгтэй, сувилахуйн чиглэлээр 2+ жилийн туршлагатай</p>
+                                        <a href="contact.html" class="btn btn-primary" style="display:inline-block;">Анкет илгээх</a>
+                                    </div>
+                                    
+                                    <div style="padding:24px;background:linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);border-radius:16px;box-shadow:0 4px 20px rgba(0,84,166,0.1);border-left:5px solid #0054a6;">
+                                        <h4 style="color:#0054a6;margin-bottom:8px;">📋 Хүлээн авагч/Бүртгэлийн ажилтан</h4>
+                                        <p style="margin-bottom:12px;color:var(--text-medium);">Шаардлага: Дээд боловсролтой, компьютерын хурдан бичдэг, харилцааны соёлтой</p>
+                                        <a href="contact.html" class="btn btn-primary" style="display:inline-block;">Анкет илгээх</a>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top:30px;text-align:center;">
+                                    <a href="contact.html" class="btn btn-primary btn-large">Бүх ажлын байр харах</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    benefitsSection.parentNode.insertBefore(jobsSection, benefitsSection.nextSibling);
+                } else {
+                    jobsSection.style.display = 'block';
+                }
+            }
+        }
+
+        // Mobile Menu Functions
         function toggleMenu() {
             document.getElementById('refNav').classList.toggle('open');
             document.querySelector('.ref-menu').classList.toggle('active');

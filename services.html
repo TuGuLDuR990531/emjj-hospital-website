@@ -781,7 +781,7 @@
                     <h3>Амбулатори</h3>
                     <div class="service-category-divider"></div>
                     <p>Ерөнхий үзлэг, оношилгоо болон эмчийн зөвлөгөө үйлчилгээ.</p>
-                    <a href="#services-list" class="service-category-btn" onclick="filterByCategory('амбулатори')">
+                    <a href="javascript:void(0)" class="service-category-btn" onclick="filterByCategory('амбулатори')">
                         Дэлгэрэнгүй →
                     </a>
                 </div>
@@ -791,7 +791,7 @@
                     <h3>Мэс засал, мэдээгүйжүүлэг</h3>
                     <div class="service-category-divider"></div>
                     <p>Төрөлжсөн мэс засал болон мэдээгүйжүүлгийн үйлчилгээ.</p>
-                    <a href="#services-list" class="service-category-btn" onclick="filterByCategory('мэс засал')">
+                    <a href="javascript:void(0)" class="service-category-btn" onclick="filterByCategory('мэс засал')">
                         Дэлгэрэнгүй →
                     </a>
                 </div>
@@ -801,7 +801,7 @@
                     <h3>Дүрс оношилгоо</h3>
                     <div class="service-category-divider"></div>
                     <p>Рентген, хэт авиа, MRI, CT зэрэг дүрс оношилгооны үйлчилгээ.</p>
-                    <a href="#services-list" class="service-category-btn" onclick="filterByCategory('дүрс оношилгоо')">
+                    <a href="javascript:void(0)" class="service-category-btn" onclick="filterByCategory('дүрс оношилгоо')">
                         Дэлгэрэнгүй →
                     </a>
                 </div>
@@ -811,7 +811,7 @@
                     <h3>Лаборатори</h3>
                     <div class="service-category-divider"></div>
                     <p>Нарийвчилсан шинжилгээ болон лабораторийн үйлчилгээ.</p>
-                    <a href="#services-list" class="service-category-btn" onclick="filterByCategory('лаборатори')">
+                    <a href="javascript:void(0)" class="service-category-btn" onclick="filterByCategory('лаборатори')">
                         Дэлгэрэнгүй →
                     </a>
                 </div>
@@ -821,7 +821,7 @@
                     <h3>Сонсгол сэргээх</h3>
                     <div class="service-category-divider"></div>
                     <p>Сонсголын оношилгоо, сонсгол сэргээх болон зөвлөгөө үйлчилгээ.</p>
-                    <a href="#services-list" class="service-category-btn" onclick="filterByCategory('сонсгол')">
+                    <a href="javascript:void(0)" class="service-category-btn" onclick="filterByCategory('сонсгол')">
                         Дэлгэрэнгүй →
                     </a>
                 </div>
@@ -868,7 +868,7 @@
                             Баталгаатай үйлчилгээ
                         </div>
                     </div>
-                    <a href="#" class="appointment-btn">
+                    <a href="contact.html" class="appointment-btn">
                         📅 Цаг захиалах →
                     </a>
                 </div>
@@ -900,16 +900,16 @@
                 <div class="footer-links">
                     <h4>Танд тусалъя</h4>
                     <ul>
-                        <li><a href="#">Түгээмэл асуулт</a></li>
-                        <li><a href="#">Цагийн хуваарь</a></li>
-                        <li><a href="#">Санал хүсэлт</a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Түгээмэл асуулт</a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Цагийн хуваарь</a></li>
+                        <li><a href="contact.html">Санал хүсэлт</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="#">📞 1900-9999</a></li>
-                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                        <li><a href="tel:19009999">📞 1900-9999</a></li>
+                        <li><a href="mailto:info@emjj.mn">✉️ info@emjj.mn</a></li>
                     </ul>
                 </div>
             </div>
@@ -983,7 +983,6 @@
                 if (overlay) overlay.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
-        });
         });
 
         // ========== FILTER FUNCTIONS ==========

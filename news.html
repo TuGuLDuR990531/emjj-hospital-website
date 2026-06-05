@@ -63,6 +63,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(0,84,166,0.06);
             position: relative;
+            cursor: pointer;
         }
 
         .news-card::before {
@@ -141,6 +142,7 @@
             font-weight: 600;
             margin-bottom: 12px;
             margin-right: 8px;
+            cursor: pointer;
         }
 
         .news-card:nth-child(1) .news-category,
@@ -233,6 +235,7 @@
             margin-bottom: 40px;
             border: 1px solid rgba(0,84,166,0.08);
             position: relative;
+            cursor: pointer;
         }
 
         .featured-article::before {
@@ -479,6 +482,7 @@
                 <a href="index.html">Нүүр</a>
                 <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
+                <a href="training.html">Сургалт</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html">ENT Health</a>
                     <div class="ref-dropdown-menu">
@@ -504,7 +508,7 @@
     <section class="news-section">
         <div class="container">
             <!-- Featured Article -->
-            <div class="featured-article">
+            <div class="featured-article" onclick="alert('ЭМЖЖ эмнэлэг шинэ эргэлтийн барилга ашиглалтанд орууллаа. Орчин үеийн стандартад нийцсэн шинэ эргэлтийн барилга нь үйлчилгээний хүртээмж, чанарыг нэмэгдүүлж, өвчтөн та бүхэнд илүү тав тухтай орчинг үйлчлэх боломж бүрдлээ.')">
                 <div class="featured-image">
                     <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=500&fit=crop" alt="Featured News">
                 </div>
@@ -515,60 +519,60 @@
                     </div>
                     <h2>ЭМЖЖ эмнэлэг шинэ эргэлтийн барилга ашиглалтанд орууллаа</h2>
                     <p>Орчин үеийн стандартад нийцсэн шинэ эргэлтийн барилга нь үйлчилгээний хүртээмж, чанарыг нэмэгдүүлж, өвчтөн та бүхэнд илүү тав тухтай орчинг үйлчлэх боломж бүрдлээ.</p>
-                    <a href="#" class="service-category-btn">Дэлгэрэнгүй →</a>
+                    <a href="#" class="service-category-btn" onclick="event.preventDefault(); event.stopPropagation(); alert('ЭМЖЖ эмнэлэг шинэ эргэлтийн барилга ашиглалтанд орууллаа. Орчин үеийн стандартад нийцсэн шинэ эргэлтийн барилга нь үйлчилгээний хүртээмж, чанарыг нэмэгдүүлж, өвчтөн та бүхэнд илүү тав тухтай орчинг үйлчлэх боломж бүрдлээ.')">Дэлгэрэнгүй →</a>
                 </div>
             </div>
 
             <!-- Latest News Header -->
             <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-top: 60px; margin-bottom: 30px;">
                 <h2 style="margin: 0;">Сүүлийн мэдээ</h2>
-                <a href="#" class="read-more" style="font-size: 15px;">Бүгдийг харах →</a>
+                <a href="#" class="read-more" style="font-size: 15px;" onclick="event.preventDefault(); alert('Бүх мэдээнүүд удахгүй жагсаалтад нэмэгдэнэ.')">Бүгдийг харах →</a>
             </div>
 
             <!-- News Grid -->
             <div class="news-grid">
-                <div class="news-card">
+                <div class="news-card" onclick="alert('БНСУ-ын Бундэг эмнэлэгтэй хамтын ажиллагааг өргөжүүллээ. Тэнцвэрийн эмгэгийн оношилгоо, эмчилгээний чиглэлээр хамтарсан сургалт, судалгааг хөгжүүлнэ.')">
                     <div class="news-image">
                         <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop" alt="News 1">
                     </div>
                     <div class="news-content">
-                        <span class="news-category" style="background: rgba(0,84,166,0.1); color: var(--primary);">Олон улсын хамтын ажиллагаа</span>
+                        <span class="news-category" style="background: rgba(0,84,166,0.1); color: var(--primary);" onclick="event.stopPropagation(); alert('Олон улсын хамтын ажиллагааны ангиллын мэдээнүүд удахгүй шүүлтүүрээр харах боломжтой болно.')">Олон улсын хамтын ажиллагаа</span>
                         <div class="news-date">📅 2025.05.08</div>
                         <h3>БНСУ-ын Бундэг эмнэлэгтэй хамтын ажиллагааг өргөжүүллээ</h3>
                         <p>Тэнцвэрийн эмгэгийн оношилгоо, эмчилгээний чиглэлээр хамтарсан сургалт, судалгааг хөгжүүлнэ.</p>
                     </div>
                 </div>
 
-                <div class="news-card">
+                <div class="news-card" onclick="alert('Чих хамар хоолойн эмгэгийн орчин үеийн оношилгоо сургалт амжилттай боллоо. Эмч, мэргэжилтнүүдийн мэдлэг чадварыг дээшлүүлэх зорилготой сургалтад 120 гаруй хүн хамрагдлаа.')">
                     <div class="news-image">
                         <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&h=400&fit=crop" alt="News 2">
                     </div>
                     <div class="news-content">
-                        <span class="news-category" style="background: linear-gradient(135deg, rgba(3,191,215,0.12) 0%, rgba(0,84,166,0.12) 100%); color: #03bfd7;">Сургалт, эрдэм шинжилгээ</span>
+                        <span class="news-category" style="background: linear-gradient(135deg, rgba(3,191,215,0.12) 0%, rgba(0,84,166,0.12) 100%); color: #03bfd7;" onclick="event.stopPropagation(); alert('Сургалт, эрдэм шинжилгээний ангиллын мэдээнүүд удахгүй шүүлтүүрээр харах боломжтой болно.')">Сургалт, эрдэм шинжилгээ</span>
                         <div class="news-date">📅 2025.04.28</div>
                         <h3>"Чих хамар хоолойн эмгэгийн орчин үеийн оношилгоо" сургалт амжилттай боллоо</h3>
                         <p>Эмч, мэргэжилтнүүдийн мэдлэг чадварыг дээшлүүлэх зорилготой сургалтад 120 гаруй хүн хамрагдлаа.</p>
                     </div>
                 </div>
 
-                <div class="news-card">
+                <div class="news-card" onclick="alert('Чихний бичил мэс заслын шинэ технологийг нэвтрүүллээ. Давхцалт микроскоп, багаж тоног төхөөрөмжөөр чихний мэс заслын үр дүнг сайжруулж байна.')">
                     <div class="news-image">
                         <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" alt="News 3">
                     </div>
                     <div class="news-content">
-                        <span class="news-category" style="background: rgba(0,84,166,0.1); color: var(--primary);">Эмнэлгийн мэдээ</span>
+                        <span class="news-category" style="background: rgba(0,84,166,0.1); color: var(--primary);" onclick="event.stopPropagation(); alert('Эмнэлгийн мэдээний ангиллын мэдээнүүд удахгүй шүүлтүүрээр харах боломжтой болно.')">Эмнэлгийн мэдээ</span>
                         <div class="news-date">📅 2025.04.15</div>
                         <h3>Чихний бичил мэс заслын шинэ технологийг нэвтрүүллээ</h3>
                         <p>Давхцалт микроскоп, багаж тоног төхөөрөмжөөр чихний мэс заслын үр дүнг сайжруулж байна.</p>
                     </div>
                 </div>
 
-                <div class="news-card">
+                <div class="news-card" onclick="alert('Чих шуугих шалтгаан, эмчилгээ. Чих шуугих нь олон шалтгаантай. Эрсдэл хүчин зүйлс, эмчилгээний аргачлалын талаар зөвлөгөө.')">
                     <div class="news-image">
                         <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop" alt="News 4">
                     </div>
                     <div class="news-content">
-                        <span class="news-category" style="background: linear-gradient(135deg, rgba(249,157,51,0.12) 0%, rgba(3,191,215,0.12) 100%); color: #f99d33;">Эмчийн зөвлөгөө</span>
+                        <span class="news-category" style="background: linear-gradient(135deg, rgba(249,157,51,0.12) 0%, rgba(3,191,215,0.12) 100%); color: #f99d33;" onclick="event.stopPropagation(); alert('Эмчийн зөвлөгөөний ангиллын мэдээнүүд удахгүй шүүлтүүрээр харах боломжтой болно.')">Эмчийн зөвлөгөө</span>
                         <div class="news-date">📅 2025.04.05</div>
                         <h3>Чих шуугих шалтгаан, эмчилгээ</h3>
                         <p>Чих шуугих нь олон шалтгаантай. Эрсдэл хүчин зүйлс, эмчилгээний аргачлалын талаар зөвлөгөө.</p>
@@ -602,16 +606,16 @@
                 <div class="footer-links">
                     <h4>Танд тусалъя</h4>
                     <ul>
-                        <li><a href="#">Түгээмэл асуулт</a></li>
-                        <li><a href="#">Цагийн хуваарь</a></li>
-                        <li><a href="#">Санал хүсэлт</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Түгээмэл асуулт хариулт удахгүй нэмэгдэнэ.')">Түгээмэл асуулт</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Цагийн хуваарь: Да-Ба 08:00-17:00')">Цагийн хуваарь</a></li>
+                        <li><a href="contact.html">Санал хүсэлт</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="#">📞 1900-9999</a></li>
-                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                        <li><a href="tel:19009999">📞 1900-9999</a></li>
+                        <li><a href="mailto:info@emjj.mn">✉️ info@emjj.mn</a></li>
                     </ul>
                 </div>
             </div>
@@ -676,7 +680,7 @@
             const btn = document.querySelector('.mobile-menu-btn');
             const overlay = document.querySelector('.mobile-menu-overlay');
             
-            if (navWrapper.classList.contains('active') && 
+            if (navWrapper && navWrapper.classList.contains('active') && 
                 !navWrapper.contains(e.target) && 
                 !btn.contains(e.target)) {
                 navWrapper.classList.remove('active');
@@ -684,7 +688,6 @@
                 if (overlay) overlay.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
-        });
         });
 
         const translations = {

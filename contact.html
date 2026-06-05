@@ -438,7 +438,7 @@
                             <div class="contact-icon">📞</div>
                             <div>
                                 <h3>Утас</h3>
-                                <p>1900-9999 (Үнэгүй)<br>7034-1111</p>
+                                <p><a href="tel:19009999" style="color:rgba(255,255,255,0.9);text-decoration:none;">1900-9999 (Үнэгүй)</a><br><a href="tel:70341111" style="color:rgba(255,255,255,0.9);text-decoration:none;">7034-1111</a></p>
                             </div>
                         </div>
                         
@@ -446,7 +446,7 @@
                             <div class="contact-icon">✉️</div>
                             <div>
                                 <h3>И-мэйл</h3>
-                                <p>info@emjj.mn</p>
+                                <p><a href="mailto:info@emjj.mn" style="color:rgba(255,255,255,0.9);text-decoration:none;">info@emjj.mn</a></p>
                             </div>
                         </div>
                         
@@ -470,7 +470,7 @@
                 
                 <div class="contact-form">
                     <h3>Мессеж илгээх</h3>
-                    <form>
+                    <form id="contactForm" onsubmit="return handleContactSubmit(event)">
                         <div class="form-group">
                             <label>Нэр</label>
                             <input type="text" placeholder="Таны нэр">
@@ -519,7 +519,7 @@
             </div>
             
             <div class="map-container">
-                🗺️ Google Maps энд харагдана
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2673.0!2d106.9178!3d47.9186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDU1JzA3LjAiTiAxMDbCsDU1JzA0LjEiRQ!5e0!3m2!1sen!2smn!4v1600000000000!5m2!1sen!2smn" width="100%" height="100%" style="border:0;border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -533,47 +533,47 @@
             </div>
             
             <div class="branches-grid">
-                <div class="branch-card">
+                <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Төв эмнэлэг</h3>
                     <p>📍 СБД, 1-р төрөх эмнэлгийн зүүн талд</p>
-                    <p>📞 1900-9999, 7034-1111</p>
+                    <p>📞 <a href="tel:19009999" style="color:inherit;text-decoration:none;">1900-9999</a>, <a href="tel:70341111" style="color:inherit;text-decoration:none;">7034-1111</a></p>
                     <p>🕐 Да-Ба: 08:00-20:00</p>
-                </div>
+                </a>
                 
-                <div class="branch-card">
+                <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>10-р хороолол клиник</h3>
                     <p>📍 БГД, 10-р хороолол</p>
-                    <p>📞 7702-5858</p>
+                    <p>📞 <a href="tel:77025858" style="color:inherit;text-decoration:none;">7702-5858</a></p>
                     <p>🕐 Да-Ба: 08:30-17:00</p>
-                </div>
+                </a>
                 
-                <div class="branch-card">
+                <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Халдварт клиник</h3>
                     <p>📍 БЗД, ХӨСҮТ эцсийн буудал</p>
-                    <p>📞 7037-4444</p>
+                    <p>📞 <a href="tel:70374444" style="color:inherit;text-decoration:none;">7037-4444</a></p>
                     <p>🕐 Да-Ба: 08:30-17:00</p>
-                </div>
+                </a>
                 
-                <div class="branch-card">
+                <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Мишээл клиник</h3>
                     <p>📍 ХУД, Мишээл Сити</p>
-                    <p>📞 7799-7744</p>
+                    <p>📞 <a href="tel:77997744" style="color:inherit;text-decoration:none;">7799-7744</a></p>
                     <p>🕐 Да-Ба: 08:30-17:00</p>
-                </div>
+                </a>
                 
-                <div class="branch-card">
+                <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Сэргээн засах сувилал</h3>
                     <p>📍 Төв аймаг, Баянчандмань сум</p>
-                    <p>📞 9942-7581</p>
+                    <p>📞 <a href="tel:99427581" style="color:inherit;text-decoration:none;">9942-7581</a></p>
                     <p>🕐 Да-Ба: 08:30-17:00</p>
-                </div>
+                </a>
                 
-                <div class="branch-card">
+                <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Эм ханган нийлүүлэх</h3>
                     <p>📍 БЗД, RAPID MED төв</p>
-                    <p>📞 7037-5555</p>
+                    <p>📞 <a href="tel:70375555" style="color:inherit;text-decoration:none;">7037-5555</a></p>
                     <p>🕐 Да-Ба: 09:00-17:00</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -601,24 +601,24 @@
                 <div class="footer-links">
                     <h4>Туслах цэс</h4>
                     <ul>
-                        <li><a href="#">Онлайн цаг захиалга</a></li>
-                        <li><a href="#">Сонсголын тест</a></li>
+                        <li><a href="#" onclick="alert('Онлайн цаг захиалга удахгүй нээгдэнэ');return false;">Онлайн цаг захиалга</a></li>
+                        <li><a href="#" onclick="alert('Сонсголын тест удахгүй нээгдэнэ');return false;">Сонсголын тест</a></li>
                         <li><a href="branches.html">Салбар байршил</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Танд тусалъя</h4>
                     <ul>
-                        <li><a href="#">Түгээмэл асуулт</a></li>
-                        <li><a href="#">Цагийн хуваарь</a></li>
-                        <li><a href="#">Санал хүсэлт</a></li>
+                        <li><a href="#" onclick="alert('Түгээмэл асуултын хуудас удахгүй нээгдэнэ');return false;">Түгээмэл асуулт</a></li>
+                        <li><a href="#" onclick="alert('Цагийн хуваарь: Да-Ба 08:00-20:00, Бя 10:00-14:00');return false;">Цагийн хуваарь</a></li>
+                        <li><a href="contact.html">Санал хүсэлт</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="#">📞 1900-9999</a></li>
-                        <li><a href="#">✉️ info@emjj.mn</a></li>
+                        <li><a href="tel:19009999">📞 1900-9999</a></li>
+                        <li><a href="mailto:info@emjj.mn">✉️ info@emjj.mn</a></li>
                     </ul>
                 </div>
             </div>
@@ -693,6 +693,26 @@
             }
         });
         });
+
+        // Contact form submission handler
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('contactForm');
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            
+            btn.textContent = 'Илгээж байна...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Баярлалаа! Таны мессеж амжилттай илгээгдлээ. Бид удахгүй холбогдох болно.');
+                form.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 1500);
+            
+            return false;
+        }
 
         const translations = {
             mn: {

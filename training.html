@@ -197,6 +197,7 @@
             border: 1px solid rgba(0,84,166,0.08);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .program-card::after {
@@ -356,6 +357,7 @@
             box-shadow: 0 8px 30px rgba(0,84,166,0.1);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(0,84,166,0.08);
+            cursor: pointer;
         }
 
         .direction-card:hover {
@@ -488,6 +490,7 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .partner-card::before {
@@ -579,6 +582,7 @@
             box-shadow: 0 4px 15px rgba(0,84,166,0.08);
             transition: all 0.3s ease;
             border: 1px solid rgba(0,84,166,0.06);
+            cursor: pointer;
         }
 
         .specialty-item:hover {
@@ -843,8 +847,9 @@
             <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
                 <a href="index.html">Нүүр</a>
-                <a href="about.html" class="active">Бидний тухай</a>
+                <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
+                <a href="training.html" class="active">Сургалт</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html">ENT Health</a>
                     <div class="ref-dropdown-menu">
@@ -909,27 +914,27 @@
                 <p>Бид олон төрлийн сургалтын хөтөлбөрийг санал болгож байна</p>
             </div>
             <div class="programs-grid">
-                <div class="program-card">
+                <div class="program-card" onclick="alert('Төрсөлтийн өмнөх оюутны сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="program-icon">&#127891;</div>
                     <h4>Төрсөлтийн өмнөх оюутны сургалт</h4>
                     <p>АШУУИС, "Ач" АУИС-ийн чих хамар хоолойн тэнхмийн оюутны сургалт</p>
                 </div>
-                <div class="program-card">
+                <div class="program-card" onclick="alert('Төрсөлтийн дараах нарийн мэргэжлийн зээлилгэх сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="program-icon">&#128104;&#8205;&#9877;&#65039;</div>
                     <h4>Төрсөлтийн дараах нарийн мэргэжлийн зээлилгэх сургалт</h4>
                     <p>Резидент болон чих, хамар, хоолой, сонсгол судлалын нарийн мэргэжилтэн</p>
                 </div>
-                <div class="program-card">
+                <div class="program-card" onclick="alert('Эрдэм шинжилгээний ажлын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="program-icon">&#128300;</div>
                     <h4>Эрдэм шинжилгээний ажил</h4>
                     <p>Докторант, магистрантын судалгаа, нарийн мэргэжлийн төслөөс хөгжүүлэх</p>
                 </div>
-                <div class="program-card">
+                <div class="program-card" onclick="alert('Дотоод болон гадаадын мэргэжил дээшлүүлэх сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="program-icon">&#127757;</div>
                     <h4>Дотоод болон гадаадын мэргэжил дээшлүүлэх сургалт</h4>
                     <p>Богино болон урт хугацааны сургалт</p>
                 </div>
-                <div class="program-card">
+                <div class="program-card" onclick="alert('Олон улсын семинар зохион байгуулах талаар удахгүй мэдээлэл нэмэгдэнэ.')">
                     <div class="program-icon">&#127942;</div>
                     <h4>Олон улсын семинар зохион байгуулах</h4>
                     <p>Дотоод, гадаадын семинарыг илтгэл тавих</p>
@@ -962,7 +967,7 @@
                 <h2>СУРГАЛТЫН ЧИГЛЭЛҮҮД</h2>
             </div>
             <div class="directions-grid">
-                <div class="direction-card">
+                <div class="direction-card" onclick="window.location.href='contact.html'">
                     <div class="direction-number">01</div>
                     <div class="direction-image">&#127891;</div>
                     <div class="direction-content">
@@ -974,7 +979,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="direction-card">
+                <div class="direction-card" onclick="window.location.href='contact.html'">
                     <div class="direction-number">02</div>
                     <div class="direction-image">&#128104;&#8205;&#9877;&#65039;</div>
                     <div class="direction-content">
@@ -986,7 +991,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="direction-card">
+                <div class="direction-card" onclick="window.location.href='contact.html'">
                     <div class="direction-number">03</div>
                     <div class="direction-image">&#128300;</div>
                     <div class="direction-content">
@@ -1010,22 +1015,22 @@
                 <p>Хамтын ажиллагаат гадаадын их сургууль, эмнэлэгүүдэд мэргэжил дээшлүүлэх сургалтад хамруулж, танилцах дадлага хийлгэдэг.</p>
             </div>
             <div class="partners-grid">
-                <div class="partner-card">
+                <div class="partner-card" onclick="alert('БНСУ-ын Сөүлийн үндэсний их сургуулийн Бунданг эмнэлэгтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="partner-flag">&#127472;&#127479;</div>
                     <h4>БНСУ</h4>
                     <p>Сөүлийн үндэсний их сургуулийн Бунданг эмнэлэг</p>
                 </div>
-                <div class="partner-card">
+                <div class="partner-card" onclick="alert('ХБНГУ-ын Вюрцбургийн их сургууль, HELOS эмнэлэгтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="partner-flag">&#127465;&#127466;</div>
                     <h4>ХБНГУ</h4>
                     <p>Вюрцбургийн их сургууль, HELOS эмнэлэг</p>
                 </div>
-                <div class="partner-card">
+                <div class="partner-card" onclick="alert('Heinz Kurz фирмтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="partner-flag">&#127465;&#127466;</div>
                     <h4>ХБНГУ</h4>
                     <p>Heinz Kurz фирм</p>
                 </div>
-                <div class="partner-card">
+                <div class="partner-card" onclick="alert('БНСУ-ын HANNA, SOREE, AUO-ийн их сургуультай хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="partner-flag">&#127472;&#127479;</div>
                     <h4>БНСУ</h4>
                     <p>HANNA, SOREE, AUO-ийн их сургууль</p>
@@ -1042,23 +1047,23 @@
                 <p>Дараах чиглэлээр мэргэжил дээшлүүлэх сургалт явуулж байна</p>
             </div>
             <div class="specialties-grid">
-                <div class="specialty-item">
+                <div class="specialty-item" onclick="alert('Толгой хүзүүний мэс засал судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="specialty-icon">&#128066;</div>
                     <span>Толгой хүзүүний мэс засал судлал</span>
                 </div>
-                <div class="specialty-item">
+                <div class="specialty-item" onclick="alert('Тэнцвэр судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="specialty-icon">&#129504;</div>
                     <span>Тэнцвэр судлал</span>
                 </div>
-                <div class="specialty-item">
+                <div class="specialty-item" onclick="alert('Хамар судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="specialty-icon">&#128067;</div>
                     <span>Хамар судлал</span>
                 </div>
-                <div class="specialty-item">
+                <div class="specialty-item" onclick="alert('Чих хамар хоолой судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="specialty-icon">&#128066;</div>
                     <span>Чих хамар хоолой судлал</span>
                 </div>
-                <div class="specialty-item">
+                <div class="specialty-item" onclick="alert('Хүзүүний эхо сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
                     <div class="specialty-icon">&#127911;</div>
                     <span>Хүзүүний эхо</span>
                 </div>
@@ -1103,29 +1108,29 @@
                 <div class="footer-links">
                     <h4>Туслах цэс</h4>
                     <ul>
-                        <li><a href="#">Онлайн цаг захиалга</a></li>
-                        <li><a href="#">Сонсголын тест</a></li>
-                        <li><a href="#">Сэргээн засах сувилал</a></li>
-                        <li><a href="#">Сонсголын аппарат</a></li>
-                        <li><a href="#">B2B</a></li>
+                        <li><a href="contact.html">Онлайн цаг захиалга</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Сонсголын тест хуудас удахгүй нээгдэнэ.')">Сонсголын тест</a></li>
+                        <li><a href="contact.html">Сэргээн засах сувилал</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Сонсголын аппаратын мэдээлэл удахгүй нэмэгдэнэ.')">Сонсголын аппарат</a></li>
+                        <li><a href="contact.html">B2B</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Танд тусалъя</h4>
                     <ul>
-                        <li><a href="#">Түгээмэл асуулт</a></li>
-                        <li><a href="#">Цагийн хуваарь</a></li>
-                        <li><a href="#">Санал хүсэлт</a></li>
-                        <li><a href="#">Хандив</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Түгээмэл асуулт хариулт удахгүй нэмэгдэнэ.')">Түгээмэл асуулт</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Цагийн хуваарь: Да-Ба 08:00-17:00')">Цагийн хуваарь</a></li>
+                        <li><a href="contact.html">Санал хүсэлт</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Хандивын мэдээлэл удахгүй нэмэгдэнэ.')">Хандив</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="#">&#128222; 1900-9999</a></li>
-                        <li><a href="#">&#128222; 7034-1111</a></li>
-                        <li><a href="#">&#9993; info@emjj.mn</a></li>
-                        <li><a href="#">&#128205; СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
+                        <li><a href="tel:19009999">&#128222; 1900-9999</a></li>
+                        <li><a href="tel:70341111">&#128222; 7034-1111</a></li>
+                        <li><a href="mailto:info@emjj.mn">&#9993; info@emjj.mn</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('СБД, 1-р төрөх эмнэлгийн зүүн талд')">&#128205; СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
                     </ul>
                 </div>
             </div>
@@ -1191,7 +1196,7 @@
             const btn = document.querySelector('.mobile-menu-btn');
             const overlay = document.querySelector('.mobile-menu-overlay');
             
-            if (navWrapper.classList.contains('active') && 
+            if (navWrapper && navWrapper.classList.contains('active') && 
                 !navWrapper.contains(e.target) && 
                 !btn.contains(e.target)) {
                 navWrapper.classList.remove('active');
@@ -1199,7 +1204,6 @@
                 if (overlay) overlay.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
-        });
         });
 
         const translations = {
