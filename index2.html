@@ -146,6 +146,52 @@
             border-radius: 2px;
         }
 
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 8px 0;
+            min-width: 160px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: all 0.2s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            color: var(--text-secondary);
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: var(--glass-hover);
+            color: #fff;
+        }
+
+        .nav-dropdown-menu a.active {
+            color: var(--accent-cyan);
+        }
+
         .header-actions {
             display: flex;
             align-items: center;
@@ -751,7 +797,13 @@
             </a>
             <nav>
                 <ul class="nav">
-                    <li><a href="index.html" class="active">НҮҮР</a></li>
+                    <li class="nav-dropdown">
+                        <a href="index.html" class="active">НҮҮР ▾</a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="index.html" class="active">НҮҮР 1</a></li>
+                            <li><a href="index2.html">НҮҮР 2</a></li>
+                        </ul>
+                    </li>
                     <li><a href="about.html">БИДНИЙ ТУХАЙ</a></li>
                     <li><a href="services.html">ҮЙЛЧИЛГЭЭ</a></li>
                     <li><a href="ent-health.html">ENT HEALTH</a></li>
