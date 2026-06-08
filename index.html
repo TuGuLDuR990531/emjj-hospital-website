@@ -34,15 +34,18 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
 
 
         /* ========== HERO ========== */
         .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
             padding: 120px 0;
             position: relative;
             overflow: hidden;
@@ -95,7 +98,7 @@
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 28px;
@@ -156,7 +159,7 @@
 
         .hero-image img {
             width: 100%;
-            height: 480px;
+            height: 560px;
             object-fit: cover;
             display: block;
         }
@@ -186,7 +189,7 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
+            gap: 60px;
             text-align: center;
         }
 
@@ -396,7 +399,7 @@
         }
 
         .services-title h2 {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 800;
             color: var(--text-dark);
             margin-bottom: 16px;
@@ -438,14 +441,14 @@
         .services-categories-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 24px;
+            gap: 32px;
         }
 
         .service-category-card {
             background: white;
             border: 2px solid var(--border);
             border-radius: 24px;
-            padding: 40px 24px;
+            padding: 48px 28px;
             text-align: center;
             transition: all 0.3s;
             display: flex;
@@ -478,15 +481,15 @@
         }
 
         .service-category-icon {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
-            font-size: 48px;
+            margin-bottom: 28px;
+            font-size: 56px;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(0,84,166,0.15);
         }
@@ -697,13 +700,13 @@
         .banners-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            gap: 30px;
         }
 
         .banner-card {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             border-radius: 16px;
-            padding: 30px 20px;
+            padding: 40px 24px;
             text-align: center;
             color: white;
             transition: all 0.3s;
@@ -743,7 +746,7 @@
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 40px;
         }
 
         .featured-card {
@@ -768,7 +771,7 @@
 
         .featured-image {
             width: 100%;
-            height: 200px;
+            height: 240px;
             background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
             display: flex;
             align-items: center;
@@ -777,7 +780,7 @@
         }
 
         .featured-content {
-            padding: 30px;
+            padding: 36px;
         }
 
         .featured-content h3 {
@@ -806,7 +809,7 @@
         }
 
         .ent-care-text h2 {
-            font-size: 40px;
+            font-size: 44px;
             font-weight: 800;
             margin-bottom: 24px;
             color: var(--primary);
@@ -874,7 +877,7 @@
         .branches-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            gap: 32px;
         }
 
         .branch-card {
@@ -997,7 +1000,7 @@
         }
 
         .language-center-text h2 {
-            font-size: 40px;
+            font-size: 44px;
             font-weight: 800;
             margin-bottom: 24px;
             color: var(--primary);
@@ -1090,7 +1093,7 @@
         }
 
         .cta h2 {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 800;
             margin-bottom: 20px;
         }
@@ -1206,6 +1209,10 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
             .dropdown {
                 position: static;
                 opacity: 1;

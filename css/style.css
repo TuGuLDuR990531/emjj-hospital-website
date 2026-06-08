@@ -30,9 +30,9 @@ body.menu-open {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 /* ========== REFERENCE HEADER (used by all pages) ========== */
@@ -1237,7 +1237,7 @@ body.menu-open {
   }
   
   .container {
-    padding: 0 16px;
+    padding: 0 24px;
   }
   
   .nav-wrapper {
