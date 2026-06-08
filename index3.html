@@ -3,71 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>НҮҮР 2 - EMJJ Hospital</title>
+    <title>НҮҮР 3 - EMJJ Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.06);
-            --glass-border: rgba(255, 255, 255, 0.12);
-            --glass-hover: rgba(255, 255, 255, 0.1);
-            --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.7);
-            --text-muted: rgba(255, 255, 255, 0.5);
-            --accent-blue: #60a5fa;
-            --accent-cyan: #22d3ee;
+            --primary: #0054a6;
+            --primary-dark: #003d7a;
+            --accent-cyan: #03bfd7;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6b7280;
+            --bg-white: #ffffff;
+            --bg-light: #f0f7ff;
+            --border: #e2e8f0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(180deg, #0a1628 0%, #1e3a5f 30%, #2d1b69 60%, #0f172a 100%);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Ambient background glows */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -20%;
-            right: -10%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: -10%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(34, 211, 238, 0.1) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
+            color: var(--text-dark);
+            background: var(--bg-white);
+            line-height: 1.6;
         }
 
         .wrap {
             width: min(1400px, calc(100% - 80px));
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         /* ========== HEADER ========== */
         .header {
-            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(20px);
-            background: rgba(10, 22, 40, 0.6);
-            border-bottom: 1px solid var(--glass-border);
         }
 
         .header-inner {
@@ -75,6 +47,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 40px;
+            height: 76px;
         }
 
         .logo {
@@ -82,23 +55,23 @@
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: #fff;
+            color: var(--primary);
         }
 
         .logo-mark {
             width: 44px;
             height: 44px;
-            border: 2px solid rgba(255,255,255,0.3);
+            background: var(--primary);
             border-radius: 50%;
             display: grid;
             place-items: center;
-            font-size: 20px;
+            color: white;
+            font-size: 18px;
             font-weight: 700;
-            color: var(--accent-cyan);
         }
 
         .logo-text {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             letter-spacing: 1px;
         }
@@ -107,7 +80,7 @@
             display: block;
             font-size: 11px;
             font-weight: 500;
-            color: var(--text-muted);
+            color: var(--text-light);
             letter-spacing: 2px;
             margin-top: 2px;
         }
@@ -120,7 +93,7 @@
         }
 
         .nav a {
-            color: var(--text-secondary);
+            color: var(--text-medium);
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
@@ -132,7 +105,7 @@
         }
 
         .nav a:hover, .nav a.active {
-            color: #fff;
+            color: var(--primary);
         }
 
         .nav a.active::after {
@@ -142,7 +115,7 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: var(--accent-cyan);
+            background: var(--primary);
             border-radius: 2px;
         }
 
@@ -154,12 +127,12 @@
             position: absolute;
             top: calc(100% + 10px);
             left: 0;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            background: white;
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 8px 0;
             min-width: 160px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             opacity: 0;
             visibility: hidden;
             transform: translateY(-6px);
@@ -180,16 +153,16 @@
             font-size: 12px;
             font-weight: 600;
             white-space: nowrap;
-            color: var(--text-secondary);
+            color: var(--text-medium);
         }
 
         .nav-dropdown-menu a:hover {
-            background: var(--glass-hover);
-            color: #fff;
+            background: var(--bg-light);
+            color: var(--primary);
         }
 
         .nav-dropdown-menu a.active {
-            color: var(--accent-cyan);
+            color: var(--primary);
         }
 
         .header-actions {
@@ -200,8 +173,8 @@
 
         .lang-toggle {
             background: transparent;
-            border: 1px solid var(--glass-border);
-            color: #fff;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
             padding: 8px 16px;
             border-radius: 20px;
             font-family: 'Montserrat', sans-serif;
@@ -212,46 +185,63 @@
         }
 
         .lang-toggle:hover {
-            background: var(--glass-hover);
-            border-color: var(--accent-cyan);
+            background: var(--primary);
+            color: white;
         }
 
         .phone-btn {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            color: #fff;
+            background: var(--primary);
+            color: white;
             padding: 10px 20px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 14px;
             font-weight: 600;
             transition: all 0.3s;
-            backdrop-filter: blur(10px);
         }
 
         .phone-btn:hover {
-            background: var(--glass-hover);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+            background: var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(0,84,166,0.3);
         }
 
         /* ========== HERO ========== */
         .hero {
-            padding: 80px 0 60px;
-            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #e8f4ff 100%);
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-label {
+            color: var(--accent-cyan);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(36px, 5vw, 64px);
+            font-size: clamp(32px, 4vw, 48px);
             font-weight: 300;
-            line-height: 1.2;
-            letter-spacing: 2px;
+            line-height: 1.3;
             margin-bottom: 24px;
-            text-transform: uppercase;
+            color: var(--text-dark);
         }
 
         .hero h1 strong {
@@ -261,9 +251,9 @@
 
         .hero p {
             font-size: 16px;
-            color: var(--text-secondary);
+            color: var(--text-medium);
             max-width: 500px;
-            margin: 0 auto 40px;
+            margin: 0 auto 32px;
             line-height: 1.7;
         }
 
@@ -271,36 +261,79 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: transparent;
-            border: 1px solid var(--glass-border);
-            color: #fff;
+            background: var(--primary);
+            color: white;
             padding: 14px 32px;
             border-radius: 30px;
             text-decoration: none;
             font-size: 14px;
             font-weight: 600;
             transition: all 0.3s;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,84,166,0.3);
         }
 
         .hero-btn:hover {
-            background: var(--glass-hover);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,84,166,0.4);
         }
 
-        /* ========== GLASS CARD ========== */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+        .hero-scroll {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .hero-scroll i {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            font-size: 16px;
+            font-style: normal;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll span {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
             border-radius: 24px;
-            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,84,166,0.15);
         }
 
-        /* ========== SERVICE ICONS BAR ========== */
+        /* ========== SERVICE BAR ========== */
         .service-bar {
-            margin-bottom: 24px;
+            margin: -40px 0 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .service-bar-inner {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            padding: 40px;
         }
 
         .service-bar-grid {
@@ -314,13 +347,13 @@
             flex-direction: column;
             align-items: center;
             gap: 12px;
-            padding: 30px 16px;
+            padding: 20px 16px;
             text-align: center;
-            border-right: 1px solid var(--glass-border);
+            border-right: 1px solid var(--border);
             transition: all 0.3s;
             cursor: pointer;
             text-decoration: none;
-            color: var(--text-secondary);
+            color: var(--text-medium);
         }
 
         .service-bar-item:last-child {
@@ -328,8 +361,7 @@
         }
 
         .service-bar-item:hover {
-            background: var(--glass-hover);
-            color: #fff;
+            color: var(--primary);
         }
 
         .service-bar-item i {
@@ -339,97 +371,101 @@
             place-items: center;
             font-size: 24px;
             font-style: normal;
-            background: rgba(255,255,255,0.08);
+            background: var(--bg-light);
             border-radius: 12px;
+            color: var(--primary);
         }
 
         .service-bar-item span {
             font-size: 12px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.4;
         }
 
-        /* ========== STATS BAR ========== */
-        .stats-bar {
-            margin-top: 24px;
+        /* ========== STATS SECTION ========== */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 24px;
+            padding: 50px;
+            color: white;
+            margin-bottom: 40px;
         }
 
-        .stats-bar-grid {
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 40px;
-            padding: 30px 20px;
         }
 
-        .stat-bar-item {
+        .stat-item {
             display: flex;
             align-items: center;
             gap: 16px;
             padding: 0 20px;
-            border-right: 1px solid var(--glass-border);
+            border-right: 1px solid rgba(255,255,255,0.2);
         }
 
-        .stat-bar-item:last-child {
+        .stat-item:last-child {
             border-right: none;
         }
 
-        .stat-bar-item i {
-            font-size: 32px;
+        .stat-item i {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            font-size: 24px;
             font-style: normal;
-            opacity: 0.7;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
         }
 
-        .stat-bar-item strong {
+        .stat-item strong {
             display: block;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
-            color: #fff;
             line-height: 1;
+            margin-bottom: 4px;
         }
 
-        .stat-bar-item span {
-            font-size: 12px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .stat-item span {
+            font-size: 13px;
+            opacity: 0.8;
         }
 
         /* ========== FEATURE GRID ========== */
+        .feature-section {
+            margin: 60px 0;
+        }
+
         .feature-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 24px;
-            margin: 60px 0;
         }
 
         .feature-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            background: white;
+            border: 1px solid var(--border);
             border-radius: 24px;
             padding: 32px;
             transition: all 0.3s;
         }
 
         .feature-card:hover {
-            background: var(--glass-hover);
-            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transform: translateY(-4px);
         }
 
         .feature-card h3 {
             font-size: 16px;
             font-weight: 700;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
         }
 
         .feature-card p {
             font-size: 13px;
-            color: var(--text-secondary);
+            color: var(--text-medium);
             line-height: 1.7;
             margin-bottom: 20px;
         }
@@ -439,8 +475,8 @@
             align-items: center;
             gap: 8px;
             background: transparent;
-            border: 1px solid var(--glass-border);
-            color: #fff;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
             padding: 10px 20px;
             border-radius: 20px;
             text-decoration: none;
@@ -450,78 +486,54 @@
         }
 
         .feature-card .btn:hover {
-            background: var(--glass-hover);
-            border-color: var(--accent-cyan);
+            background: var(--primary);
+            color: white;
         }
 
-        /* Calendar mockup */
-        .calendar-mock {
-            background: rgba(0,0,0,0.2);
-            border-radius: 16px;
-            padding: 20px;
+        .feature-image {
+            text-align: center;
             margin: 20px 0;
-            font-size: 13px;
         }
 
-        .calendar-header {
+        .feature-image span {
+            font-size: 80px;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
             font-weight: 600;
-        }
-
-        .calendar-days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
-            text-align: center;
-            font-size: 11px;
-        }
-
-        .calendar-days div {
-            padding: 6px;
-            border-radius: 6px;
-        }
-
-        .calendar-days .active {
-            background: var(--accent-blue);
-            color: #fff;
-        }
-
-        .time-slots {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .time-slots span {
-            background: rgba(255,255,255,0.08);
-            padding: 8px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 12px;
+            color: var(--text-medium);
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s;
         }
 
-        .time-slots span:hover, .time-slots span.active {
-            background: var(--accent-blue);
-            color: #fff;
+        .service-list li:hover {
+            color: var(--primary);
         }
 
-        /* ========== SERVICES ROW ========== */
-        .services-row {
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ========== NEWS ========== */
+        .news-section {
             margin: 60px 0;
         }
 
         .section-header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
-            position: relative;
         }
 
         .section-header h2 {
@@ -529,13 +541,10 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-align: center;
         }
 
         .section-header a {
-            position: absolute;
-            right: 0;
-            color: var(--text-muted);
+            color: var(--text-light);
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
@@ -546,54 +555,7 @@
         }
 
         .section-header a:hover {
-            color: var(--accent-cyan);
-        }
-
-        .services-row-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-        }
-
-        .service-item {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 24px 16px;
-            text-align: center;
-            transition: all 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            color: var(--text-secondary);
-        }
-
-        .service-item:hover {
-            background: var(--glass-hover);
-            border-color: rgba(255,255,255,0.2);
-            color: #fff;
-        }
-
-        .service-item i {
-            width: 48px;
-            height: 48px;
-            display: grid;
-            place-items: center;
-            font-size: 24px;
-            font-style: normal;
-            margin: 0 auto 12px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 12px;
-        }
-
-        .service-item span {
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        /* ========== NEWS ========== */
-        .news-section {
-            margin: 60px 0;
+            color: var(--primary);
         }
 
         .news-grid {
@@ -603,9 +565,8 @@
         }
 
         .news-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            background: white;
+            border: 1px solid var(--border);
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.3s;
@@ -614,18 +575,12 @@
         }
 
         .news-card:hover {
-            background: var(--glass-hover);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transform: translateY(-6px);
         }
 
         .news-image {
             height: 180px;
-            background: linear-gradient(135deg, rgba(96,165,250,0.2), rgba(34,211,238,0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            position: relative;
             overflow: hidden;
         }
 
@@ -647,8 +602,8 @@
         }
 
         .news-tag {
-            background: rgba(96, 165, 250, 0.2);
-            color: var(--accent-blue);
+            background: var(--bg-light);
+            color: var(--primary);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 11px;
@@ -657,20 +612,28 @@
 
         .news-date {
             font-size: 12px;
-            color: var(--text-muted);
+            color: var(--text-light);
         }
 
         .news-card h3 {
             font-size: 15px;
             font-weight: 600;
             line-height: 1.5;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .news-card p {
+            font-size: 13px;
+            color: var(--text-medium);
+            line-height: 1.6;
             margin-bottom: 12px;
         }
 
-        .news-card .read-more {
+        .read-more {
             font-size: 12px;
             font-weight: 600;
-            color: var(--accent-cyan);
+            color: var(--primary);
             display: flex;
             align-items: center;
             gap: 6px;
@@ -678,44 +641,43 @@
 
         /* ========== CTA BAR ========== */
         .cta-bar {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            border-radius: 24px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 40px;
+            align-items: center;
             margin: 40px 0 80px;
+            color: white;
         }
 
-        .cta-info {
+        .cta-item {
             display: flex;
             align-items: center;
             gap: 16px;
         }
 
-        .cta-info i {
+        .cta-item i {
             width: 48px;
             height: 48px;
             display: grid;
             place-items: center;
-            background: rgba(96, 165, 250, 0.2);
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
             font-size: 20px;
             font-style: normal;
         }
 
-        .cta-info h3 {
-            font-size: 16px;
+        .cta-item h3 {
+            font-size: 14px;
             font-weight: 700;
             margin-bottom: 4px;
         }
 
-        .cta-info p {
+        .cta-item p {
             font-size: 13px;
-            color: var(--text-muted);
+            opacity: 0.7;
         }
 
         .cta-phone {
@@ -724,69 +686,73 @@
 
         .cta-phone strong {
             display: block;
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 700;
-            color: #fff;
+            color: var(--accent-cyan);
+            line-height: 1;
         }
 
         .cta-phone span {
             font-size: 13px;
-            color: var(--text-muted);
+            opacity: 0.7;
         }
 
-        .cta-action {
-            width: 48px;
-            height: 48px;
+        .cta-social {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .cta-social a {
+            width: 40px;
+            height: 40px;
             display: grid;
             place-items: center;
-            background: rgba(96, 165, 250, 0.2);
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
             transition: all 0.3s;
         }
 
-        .cta-action:hover {
-            background: var(--accent-blue);
-            color: #fff;
+        .cta-social a:hover {
+            background: var(--accent-cyan);
         }
 
         /* ========== FOOTER ========== */
         .footer {
-            border-top: 1px solid var(--glass-border);
+            border-top: 1px solid var(--border);
             padding: 40px 0;
             text-align: center;
         }
 
         .footer p {
             font-size: 13px;
-            color: var(--text-muted);
+            color: var(--text-light);
         }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-image { order: -1; }
+            .hero-image img { height: 300px; }
             .service-bar-grid { grid-template-columns: repeat(3, 1fr); }
             .service-bar-item:nth-child(3) { border-right: none; }
-            .service-bar-item:nth-child(4), .service-bar-item:nth-child(5), .service-bar-item:nth-child(6) { border-top: 1px solid var(--glass-border); }
-            .stats-bar-grid { grid-template-columns: repeat(2, 1fr); }
-            .stat-bar-item:nth-child(2) { border-right: none; }
-            .stat-bar-item:nth-child(3), .stat-bar-item:nth-child(4) { border-top: 1px solid var(--glass-border); padding-top: 20px; margin-top: 20px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-item:nth-child(2) { border-right: none; }
             .feature-grid { grid-template-columns: 1fr; }
-            .services-row-grid { grid-template-columns: repeat(3, 1fr); }
             .news-grid { grid-template-columns: 1fr; }
+            .cta-bar { grid-template-columns: 1fr; text-align: center; }
             .nav { display: none; }
-            .header-actions .lang-toggle { display: none; }
         }
 
         @media (max-width: 768px) {
             .wrap { width: calc(100% - 32px); }
-            .hero h1 { font-size: 28px; }
             .service-bar-grid { grid-template-columns: repeat(2, 1fr); }
-            .service-bar-item { border-right: none; border-bottom: 1px solid var(--glass-border); }
-            .stats-bar-grid { grid-template-columns: 1fr; }
-            .stat-bar-item { border-right: none; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px; }
-            .services-row-grid { grid-template-columns: repeat(2, 1fr); }
-            .cta-bar { flex-direction: column; text-align: center; gap: 20px; }
+            .service-bar-item { border-right: none; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 20px; }
         }
     </style>
 </head>
@@ -802,137 +768,136 @@
             <nav>
                 <ul class="nav">
                     <li class="nav-dropdown">
-                        <a href="index.html" class="active">НҮҮР ▾</a>
+                        <a href="index.html" class="active">Нүүр ▾</a>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="index.html" class="active">НҮҮР 1</a></li>
+                            <li><a href="index.html">НҮҮР 1</a></li>
                             <li><a href="index2.html">НҮҮР 2</a></li>
+                            <li><a href="index3.html" class="active">НҮҮР 3</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html">БИДНИЙ ТУХАЙ</a></li>
-                    <li><a href="services.html">ҮЙЛЧИЛГЭЭ</a></li>
-                    <li><a href="ent-health.html">ENT HEALTH</a></li>
-                    <li><a href="news.html">МЭДЭЭ МЭДЭЭЛЭЛ</a></li>
-                    <li><a href="contact.html">ХОЛБОО БАРИХ</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="services.html">Үйлчилгээ</a></li>
+                    <li><a href="ent-health.html">ENT Health</a></li>
+                    <li><a href="news.html">Мэдээ мэдээлэл</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
                 <button class="lang-toggle">MN</button>
-                <a href="tel:19009999" class="phone-btn">1900-9999</a>
+                <a href="tel:19009999" class="phone-btn">📞 1900-9999</a>
             </div>
         </div>
     </header>
 
     <!-- Hero -->
     <section class="hero">
-        <div class="wrap">
-            <h1>СОНСГОЛ, ТЭНЦВЭР,<br><strong>АМЬСГАЛЫН ЭРҮҮЛ МЭНДИЙН ТӨВ</strong></h1>
-            <p>Дэвшилтэт технологи, мэргэжлийн баг хамт олон,<br>хүний төлөө хандлагаар дээдлэнэ.</p>
-            <a href="services.html" class="hero-btn">ДЭЛГЭРЭНГҮЙ ҮЗЭХ →</a>
+        <div class="wrap hero-inner">
+            <div class="hero-content">
+                <div class="hero-label">EMJJ HOSPITAL</div>
+                <h1>СОНСГОЛ, ТЭНЦВЭР,<br><strong>АМЬСГАЛЫН ЭРҮҮЛ МЭНДИЙН ТӨВ</strong></h1>
+                <p>Дэвшилтэт технологи, мэргэжлийн баг хамт олон, хүний төлөө хандлагаар дээдлэнэ.</p>
+                <a href="services.html" class="hero-btn">ДЭЛГЭРЭНГҮЙ ҮЗЭХ →</a>
+                <div class="hero-scroll">
+                    <i>↓</i>
+                    <span>ДООШ СКРОЛЛ ХИЙХ</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop" alt="EMJJ Hospital">
+            </div>
         </div>
     </section>
 
-    <!-- Service Icons Bar + Stats -->
-    <section class="wrap">
-        <div class="glass-card service-bar">
+    <!-- Service Bar -->
+    <section class="wrap service-bar">
+        <div class="service-bar-inner">
             <div class="service-bar-grid">
                 <a href="contact.html" class="service-bar-item">
                     <i>📅</i>
-                    <span>ЦАГ<br>ЗАХИАЛГА</span>
+                    <span>Цаг захиалга</span>
                 </a>
                 <a href="services.html" class="service-bar-item">
                     <i>📋</i>
-                    <span>БАГЦ<br>ҮЙЛЧИЛГЭЭ</span>
+                    <span>Багц үйлчилгээ</span>
                 </a>
                 <a href="services.html" class="service-bar-item">
                     <i>👂</i>
-                    <span>СОНСГОЛЫН<br>ТЕСТ</span>
+                    <span>Сонсголын тест</span>
                 </a>
                 <a href="news.html" class="service-bar-item">
                     <i>🛡️</i>
-                    <span>СОНСГОЛ<br>ХАМГААЛАХ ӨДӨР</span>
+                    <span>Сонсгол хамгаалах өдөр</span>
                 </a>
                 <a href="services.html" class="service-bar-item">
                     <i>🔧</i>
-                    <span>ТӨНӨГ<br>ТӨХӨӨРӨМЖ<br>ХУДАЛДАА</span>
+                    <span>Төхөөрөмж худалдаа</span>
                 </a>
                 <a href="services.html" class="service-bar-item">
                     <i>🦻</i>
-                    <span>СОНСГОЛЫН<br>АППАРАТ</span>
+                    <span>Сонсголын аппарат</span>
                 </a>
-            </div>
-        </div>
-
-        <div class="glass-card stats-bar">
-            <div class="stats-bar-grid">
-                <div class="stat-bar-item">
-                    <i>👥</i>
-                    <div>
-                        <strong>25+</strong>
-                        <span>ЖИЛИЙН ТУРШЛАГА</span>
-                    </div>
-                </div>
-                <div class="stat-bar-item">
-                    <i>👤</i>
-                    <div>
-                        <strong>50,000+</strong>
-                        <span>ҮЙЛЧЛҮҮЛЭГЧ</span>
-                    </div>
-                </div>
-                <div class="stat-bar-item">
-                    <i>🏆</i>
-                    <div>
-                        <strong>100+</strong>
-                        <span>МЭРГЭЖИЛТЭН</span>
-                    </div>
-                </div>
-                <div class="stat-bar-item">
-                    <i>🏥</i>
-                    <div>
-                        <strong>4</strong>
-                        <span>САЛБАР ЭМНЭЛЭГ</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature Grid -->
+    <!-- Stats + Appointment -->
     <section class="wrap">
-        <div class="feature-grid">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+            <!-- Stats -->
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <i>👥</i>
+                        <div>
+                            <strong>25+</strong>
+                            <span>Жилийн туршлага</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i>👤</i>
+                        <div>
+                            <strong>50,000+</strong>
+                            <span>Үйлчлүүлэгч</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i>🏆</i>
+                        <div>
+                            <strong>100+</strong>
+                            <span>Мэргэжсэн эмч, мэргэжилтэн</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i>🏥</i>
+                        <div>
+                            <strong>4</strong>
+                            <span>Салбар эмнэлэг</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Online Appointment -->
-            <div class="feature-card">
+            <div class="feature-card" style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
                 <h3>ОНЛАЙН ЦАГ ЗАХИАЛГА</h3>
-                <div class="calendar-mock">
-                    <div class="calendar-header">
-                        <span>←</span>
-                        <span>2024 оны 5-р сар</span>
-                        <span>→</span>
-                    </div>
-                    <div class="calendar-days">
-                        <div>Да</div><div>Мя</div><div>Лх</div><div>Пү</div><div>Ба</div><div>Бя</div><div>Ня</div>
-                        <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
-                        <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
-                        <div>13</div><div>14</div><div>15</div><div class="active">16</div><div>17</div><div>18</div><div>19</div>
-                    </div>
-                    <div style="margin-top:12px; font-size:12px; color:rgba(255,255,255,0.5);">Цаг сонгох</div>
-                    <div class="time-slots">
-                        <span>09:00</span>
-                        <span class="active">10:00</span>
-                        <span>11:00</span>
-                        <span>15:00</span>
-                        <span>16:00</span>
-                        <span>16:00</span>
-                    </div>
+                <p>Танд тохиромжтой цагтаа сонгон захиалаарай.</p>
+                <div class="feature-image">
+                    <span>🌿</span>
                 </div>
                 <a href="contact.html" class="btn">ЦАГ ЗАХИАЛАХ →</a>
             </div>
+        </div>
+    </section>
 
+    <!-- Feature Cards -->
+    <section class="wrap feature-section">
+        <div class="feature-grid">
             <!-- Signia -->
             <div class="feature-card">
-                <h3>SIGNIA АЛБАН ЁСНЫ ДИСТРИБЬЮТОР</h3>
+                <h3>Signia албан ёсны дистрибьютор</h3>
                 <p>Дэлхийн тэргүүлэгч Signia сонсголын аппаратын албан ёсны дистрибьютер. Хамгийн сүүлийн үеийн технологи бүхий сонсголын аппаратуудыг мэргэжлийн зөвлөгөөгөөр түгээж байна.</p>
-                <div style="text-align:center; margin: 20px 0;">
-                    <span style="font-size:64px;">🦻</span>
+                <div class="feature-image">
+                    <span>🦻</span>
                 </div>
                 <a href="services.html" class="btn">ДЭЛГЭРЭНГҮЙ →</a>
             </div>
@@ -941,45 +906,28 @@
             <div class="feature-card">
                 <h3>АСУУЛТ БАЙНА УУ?</h3>
                 <p>Бид танд туслахад бэлэн байна.</p>
-                <div style="text-align:center; margin: 30px 0;">
-                    <div style="font-size:28px; font-weight:700; margin-bottom:8px;">1900-9999</div>
-                    <div style="font-size:13px; color:var(--text-muted);">08:00 - 20:00 ЦАГИЙН ХООРОНД</div>
+                <div style="text-align: center; margin: 20px 0;">
+                    <div style="font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">📞 1900-9999</div>
+                    <div style="font-size: 13px; color: var(--text-light);">08:00 - 20:00 цагийн хооронд</div>
                 </div>
-                <div style="text-align:center; margin: 20px 0;">
-                    <span style="font-size:80px; opacity:0.3;">🎧</span>
+                <div class="feature-image">
+                    <span>🎧</span>
                 </div>
-                <a href="contact.html" class="btn">ДУУДЛАГА ХИЙХ 📞</a>
+                <a href="contact.html" class="btn">ДУУДЛАГА ХИЙХ →</a>
             </div>
-        </div>
-    </section>
 
-    <!-- Services Row -->
-    <section class="wrap services-row">
-        <div class="section-header">
-            <h2>ҮЙЛЧИЛГЭЭНИЙ ЧИГЛЭЛ</h2>
-            <a href="services.html">БҮХ ҮЙЛЧИЛГЭЭГ ҮЗЭХ →</a>
-        </div>
-        <div class="services-row-grid">
-            <a href="services.html" class="service-item">
-                <i>👂</i>
-                <span>ЧИХНИЙ ЭМГЭГ</span>
-            </a>
-            <a href="services.html" class="service-item">
-                <i>👃</i>
-                <span>ХАМРЫН ЭМГЭГ</span>
-            </a>
-            <a href="services.html" class="service-item">
-                <i>🗣️</i>
-                <span>ХООЛОЙН ЭМГЭГ</span>
-            </a>
-            <a href="services.html" class="service-item">
-                <i>⚖️</i>
-                <span>ТЭНЦВЭРИЙН ЭМГЭГ</span>
-            </a>
-            <a href="services.html" class="service-item">
-                <i>✂️</i>
-                <span>ТОЛГОЙН ХҮҮНИЙ МЭС ЗАСАЛ</span>
-            </a>
+            <!-- Services -->
+            <div class="feature-card">
+                <h3>ҮЙЛЧИЛГЭЭНИЙ ЧИГЛЭЛ</h3>
+                <ul class="service-list">
+                    <li>Чихний эмгэг <span>→</span></li>
+                    <li>Хамрын эмгэг <span>→</span></li>
+                    <li>Хоолойн эмгэг <span>→</span></li>
+                    <li>Тэнцвэрийн эмгэг <span>→</span></li>
+                    <li>Толгойн хүүний мэс засал <span>→</span></li>
+                </ul>
+                <a href="services.html" class="btn" style="margin-top: 16px;">БҮХ ҮЙЛЧИЛГЭЭ →</a>
+            </div>
         </div>
     </section>
 
@@ -1000,6 +948,7 @@
                         <span class="news-date">2024.05.10</span>
                     </div>
                     <h3>Сонсголын тест гэж юу вэ?</h3>
+                    <p>Сонсголын эрт илрүүлэлтийн ач холбогдол, тестийн талаар.</p>
                     <span class="read-more">Дэлгэрэнгүй →</span>
                 </div>
             </a>
@@ -1013,6 +962,7 @@
                         <span class="news-date">2024.05.08</span>
                     </div>
                     <h3>Чих шуугиух шалтгаан ба шийдэл</h3>
+                    <p>Чих шуугиух нь олон шалтгаантай байж болох ба...</p>
                     <span class="read-more">Дэлгэрэнгүй →</span>
                 </div>
             </a>
@@ -1026,6 +976,7 @@
                         <span class="news-date">2024.05.01</span>
                     </div>
                     <h3>Далайн түвшнээс өндөрт гарахад анхаарах зүйлс</h3>
+                    <p>Өндөрлөг газар аялах үед анхаарах зүйлс.</p>
                     <span class="read-more">Дэлгэрэнгүй →</span>
                 </div>
             </a>
@@ -1035,7 +986,7 @@
     <!-- CTA Bar -->
     <div class="wrap">
         <div class="cta-bar">
-            <div class="cta-info">
+            <div class="cta-item">
                 <i>🎧</i>
                 <div>
                     <h3>АСУУЛТ БАЙНА УУ?</h3>
@@ -1046,7 +997,11 @@
                 <strong>1900-9999</strong>
                 <span>08:00 - 20:00 цагийн хооронд</span>
             </div>
-            <div class="cta-action">📞</div>
+            <div class="cta-social">
+                <a href="#">f</a>
+                <a href="#">📷</a>
+                <a href="#">▶</a>
+            </div>
         </div>
     </div>
 
