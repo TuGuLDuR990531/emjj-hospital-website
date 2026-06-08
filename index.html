@@ -14,7 +14,7 @@
             --accent-teal: #03bfd7;
             --text-dark: #1a1a1a;
             --text-medium: #4a4a4a;
-            --text-light: #6b7280;
+            --text-light: #4a5568;
             --bg-white: #ffffff;
             --bg-light: #f8fafc;
             --border: #e5e7eb;
@@ -34,9 +34,9 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
 
@@ -44,6 +44,9 @@
         /* ========== HERO ========== */
         .hero {
             padding: 120px 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
             background: linear-gradient(135deg, #0054a6 0%, #003d7a 40%, #0054a6 70%, #03bfd7 100%);
@@ -95,7 +98,7 @@
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 64px;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 28px;
@@ -156,7 +159,7 @@
 
         .hero-image img {
             width: 100%;
-            height: 480px;
+            height: 560px;
             object-fit: cover;
             display: block;
         }
@@ -445,14 +448,14 @@
         .services-categories-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 24px;
+            gap: 32px;
         }
 
         .service-category-card {
             background: white;
             border: 2px solid var(--border);
             border-radius: 24px;
-            padding: 40px 24px;
+            padding: 48px 28px;
             text-align: center;
             transition: all 0.3s;
             display: flex;
@@ -704,7 +707,7 @@
         .banners-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            gap: 30px;
         }
 
         .banner-card {
@@ -718,26 +721,6 @@
             position: relative;
             overflow: hidden;
             border-top: 3px solid var(--accent-teal);
-        }
-
-        .banner-card:nth-child(2) {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-top-color: white;
-        }
-
-        .banner-card:nth-child(3) {
-            background: linear-gradient(135deg, var(--accent-teal) 0%, #02a8bd 100%);
-            border-top-color: var(--primary);
-        }
-
-        .banner-card:nth-child(4) {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #002a5c 100%);
-            border-top-color: var(--accent-teal);
-        }
-
-        .banner-card:nth-child(5) {
-            background: linear-gradient(135deg, #0054a6 0%, var(--accent-teal) 100%);
-            border-top-color: var(--accent-teal);
         }
 
         .banner-card {
@@ -769,7 +752,7 @@
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 40px;
         }
 
         .featured-card {
@@ -907,7 +890,7 @@
         .branches-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            gap: 32px;
         }
 
         .branch-card {
@@ -1386,7 +1369,7 @@
             }
 
             .appointment-content {
-                padding: 30px;
+            padding: 36px;
             }
         }
 
