@@ -222,7 +222,8 @@
 
         .service-category-card {
             background: white;
-            border: 2px solid var(--border);
+            border: 2px solid #0054a6;
+            border-bottom: 5px solid #0054a6;
             border-radius: 24px;
             padding: 40px 24px;
             text-align: center;
@@ -235,61 +236,15 @@
         .service-category-card:hover {
             transform: translateY(-12px);
             box-shadow: 0 25px 60px rgba(0,84,166,0.2);
-        }
-        
-        .service-category-card:nth-child(1) {
-            border-color: #0054a6;
-            border-bottom: 5px solid #0054a6;
-        }
-        
-        .service-category-card:nth-child(1):hover {
-            border-color: #03bfd7;
-            border-bottom-color: #0054a6;
-        }
-        
-        .service-category-card:nth-child(2) {
-            border-color: #03bfd7;
-            border-bottom: 5px solid #03bfd7;
-        }
-        
-        .service-category-card:nth-child(2):hover {
             border-color: #0054a6;
             border-bottom-color: #0054a6;
-        }
-        
-        .service-category-card:nth-child(3) {
-            border-color: #03bfd7;
-            border-bottom: 5px solid #03bfd7;
-        }
-        
-        .service-category-card:nth-child(3):hover {
-            border-color: #0054a6;
-            border-bottom-color: #0054a6;
-        }
-        
-        .service-category-card:nth-child(4) {
-            border-color: #0054a6;
-            border-bottom: 5px solid #0054a6;
-        }
-        
-        .service-category-card:nth-child(4):hover {
-            border-color: #03bfd7;
-            border-bottom-color: #0054a6;
-        }
-        
-        .service-category-card:nth-child(5) {
-            border-color: #f99d33;
-            border-bottom: 5px solid #f99d33;
-        }
-        
-        .service-category-card:nth-child(5):hover {
-            border-color: #0054a6;
-            border-bottom-color: #03bfd7;
         }
 
         .service-category-icon {
             width: 100px;
             height: 100px;
+            background: linear-gradient(135deg, #e8f4fd 0%, #b8ddf9 100%);
+            color: #0054a6;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -297,31 +252,6 @@
             margin-bottom: 24px;
             font-size: 48px;
             transition: all 0.3s;
-        }
-        
-        .service-category-card:nth-child(1) .service-category-icon {
-            background: linear-gradient(135deg, #e8f4fd 0%, #b8ddf9 100%);
-            color: #0054a6;
-        }
-        
-        .service-category-card:nth-child(2) .service-category-icon {
-            background: linear-gradient(135deg, #e6f9fc 0%, #b8f0f7 100%);
-            color: #03bfd7;
-        }
-        
-        .service-category-card:nth-child(3) .service-category-icon {
-            background: linear-gradient(135deg, #e6f9fc 0%, #b8f0f7 100%);
-            color: #03bfd7;
-        }
-        
-        .service-category-card:nth-child(4) .service-category-icon {
-            background: linear-gradient(135deg, #e8f4fd 0%, #b8ddf9 100%);
-            color: #0054a6;
-        }
-        
-        .service-category-card:nth-child(5) .service-category-icon {
-            background: linear-gradient(135deg, #fff5e6 0%, #ffe4b8 100%);
-            color: #f99d33;
         }
         
         .service-category-card:hover .service-category-icon {

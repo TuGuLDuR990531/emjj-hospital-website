@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMJJ Hospital - ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр тэргүүлэгч эмнэлэг</title>
+    <title>EMJJ Hospital - ???, ????, ??????? ????? ??????? ????????? ?????????? ???????</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -218,13 +218,6 @@
             font-size: 16px;
             opacity: 0.95;
             font-weight: 600;
-        }
-
-        .stat-item:nth-child(1) h3 {
-            background: linear-gradient(135deg, white 0%, var(--accent-orange) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         /* ========== SERVICES FILTER ========== */
@@ -720,28 +713,9 @@
             border-top: 3px solid var(--accent-teal);
         }
 
-        .banner-card:nth-child(2) {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-top-color: white;
-        }
-
-        .banner-card:nth-child(3) {
-            background: linear-gradient(135deg, var(--accent-teal) 0%, #02a8bd 100%);
-            border-top-color: var(--primary);
-        }
-
-        .banner-card:nth-child(4) {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #002a5c 100%);
-            border-top-color: var(--accent-teal);
-        }
-
-        .banner-card:nth-child(5) {
-            background: linear-gradient(135deg, #0054a6 0%, var(--accent-teal) 100%);
-            border-top-color: var(--accent-teal);
-        }
-
-        .banner-card {
-            cursor: pointer;
+        .banner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,84,166,0.3);
         }
 
         .banner-card:hover {
@@ -781,11 +755,7 @@
             border-top: 4px solid var(--primary);
         }
 
-        .featured-card:nth-child(2) { border-top-color: var(--accent-orange); }
-        .featured-card:nth-child(3) { border-top-color: var(--accent-teal); }
-        .featured-card:nth-child(4) { border-top-color: var(--primary); }
-        .featured-card:nth-child(5) { border-top-color: var(--primary); }
-        .featured-card:nth-child(6) { border-top-color: var(--accent-teal); }
+
 
         .featured-card {
             cursor: pointer;
@@ -877,9 +847,6 @@
             transition: all 0.3s;
         }
 
-        .ent-module:nth-child(2) { border-left-color: var(--accent-teal); }
-        .ent-module:nth-child(3) { border-left-color: var(--accent-teal); }
-        .ent-module:nth-child(4) { border-left-color: var(--primary); }
 
         .ent-module:hover {
             transform: translateX(5px);
@@ -919,9 +886,6 @@
             border-top: 4px solid var(--primary);
         }
 
-        .branch-card:nth-child(2) { border-top-color: var(--accent-teal); }
-        .branch-card:nth-child(3) { border-top-color: var(--accent-teal); }
-        .branch-card:nth-child(4) { border-top-color: var(--primary); }
 
         .branch-card:hover {
             transform: translateY(-10px);
@@ -1561,14 +1525,14 @@
     <header class="ref-header">
         <div class="container ref-header-inner">
             <a href="index.html" class="ref-logo">
-                <div class="ref-logo-mark">ↄ</div>
-                <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
+                <div class="ref-logo-mark">?</div>
+                <div class="ref-logo-text">???? ???????<span>??? ????? ??????? ???</span></div>
             </a>
-            <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <button class="ref-menu" aria-label="????" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
-                <a href="index.html" class="active">Нүүр</a>
-                <a href="about.html">Бидний тухай</a>
-                <a href="services.html">Үйлчилгээ</a>
+                <a href="index.html" class="active">????</a>
+                <a href="about.html">?????? ?????</a>
+                <a href="services.html">?????????</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html">ENT Health</a>
                     <div class="ref-dropdown-menu">
@@ -1576,8 +1540,8 @@
                         <a href="ent-care.html">ENT Care</a>
                     </div>
                 </div>
-                <a href="news.html">Мэдээ мэдээлэл</a>
-                <a href="contact.html">Холбоо барих</a>
+                <a href="news.html">????? ????????</a>
+                <a href="contact.html">?????? ?????</a>
                 <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
             </nav>
         </div>
@@ -1587,12 +1551,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="hero-badge">Эрүүл мэндийн дэд бүтэц</span>
-                    <h1>Таны эрүүл мэнд<span>бидний зорилго</span></h1>
-                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг. Бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ үзүүлж байна.</p>
+                    <span class="hero-badge">????? ??????? ??? ?????</span>
+                    <h1>???? ????? ????<span>?????? ???????</span></h1>
+                    <p>???, ????, ??????? ????? ??????? ????????? ?????? ?????? ?????????? ???????. ??? ???? ????? ?????????? ??????? ?????????? ?? ???????? ?????? ?????.</p>
                     <div class="hero-buttons">
-                        <a href="services.html" class="btn btn-primary btn-large">Үйлчилгээ үзэх</a>
-                        <a href="contact.html#appointment" class="btn btn-outline btn-large">Онлайн цаг захиалга</a>
+                        <a href="services.html" class="btn btn-primary btn-large">????????? ????</a>
+                        <a href="contact.html#appointment" class="btn btn-outline btn-large">?????? ??? ????????</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -1609,9 +1573,9 @@
                 <div class="carousel-track" id="carouselTrack">
                     <div class="carousel-slide">
                         <div class="carousel-content">
-                            <h3>🦻 Signia - Албан ёсны дистрибьютер</h3>
-                            <p>EMJJ Hospital нь дэлхийд тэргүүлэгч Signia сонсголын аппаратын албан ёсны дистрибьютер. Хамгийн сүүлийн үеийн технологи бүхий сонсголын аппаратыг мэргэжлийн зөвлөгөөтэйгээр.</p>
-                            <a href="services.html" class="btn btn-primary">Дэлгэрэнгүй</a>
+                            <h3>?? Signia - ????? ???? ????????????</h3>
+                            <p>EMJJ Hospital ?? ??????? ?????????? Signia ????????? ????????? ????? ???? ????????????. ??????? ??????? ????? ????????? ????? ????????? ????????? ?????????? ???????????????.</p>
+                            <a href="services.html" class="btn btn-primary">???????????</a>
                         </div>
                         <div class="carousel-image">
                             <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop" alt="Signia Hearing Aids">
@@ -1620,9 +1584,9 @@
                     
                     <div class="carousel-slide">
                         <div class="carousel-content">
-                            <h3>📱 Онлайн цаг захиалга</h3>
-                            <p>1900-9999 дугаарт холбогдон эсвэл онлайнаар цаг захиалаарай. Бид 7 хоногийн 6 өдөр, 08:00-20:00 цагийн хооронд үйлчилж байна.</p>
-                            <a href="contact.html" class="btn btn-primary">Цаг захиалах</a>
+                            <h3>?? ?????? ??? ????????</h3>
+                            <p>1900-9999 ??????? ????????? ????? ????????? ??? ???????????. ??? 7 ???????? 6 ????, 08:00-20:00 ?????? ??????? ??????? ?????.</p>
+                            <a href="contact.html" class="btn btn-primary">??? ????????</a>
                         </div>
                         <div class="carousel-image">
                             <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=400&h=300&fit=crop" alt="Online Appointment">
@@ -1631,9 +1595,9 @@
                     
                     <div class="carousel-slide">
                         <div class="carousel-content">
-                            <h3>🏥 4 салбар, 1 цэгт</h3>
-                            <p>Төв эмнэлэг, 10-р хороолол, Халдварт, Мишээл клиник - бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ.</p>
-                            <a href="branches.html" class="btn btn-primary">Салбарууд</a>
+                            <h3>?? 4 ??????, 1 ????</h3>
+                            <p>??? ???????, 10-? ????????, ????????, ?????? ?????? - ??? ???? ????? ?????????? ??????? ?????????? ?? ????????.</p>
+                            <a href="branches.html" class="btn btn-primary">?????????</a>
                         </div>
                         <div class="carousel-image">
                             <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop" alt="EMJJ Branches">
@@ -1655,33 +1619,33 @@
         <div class="container">
             <div class="quick-links-grid">
                 <a href="contact.html" class="quick-link-card">
-                    <div class="quick-link-icon">📅</div>
-                    <h4>Цаг захиалга</h4>
+                    <div class="quick-link-icon">??</div>
+                    <h4>??? ????????</h4>
                 </a>
                 
                 <a href="services.html" class="quick-link-card">
-                    <div class="quick-link-icon">📦</div>
-                    <h4>Багц үйлчилгээ</h4>
+                    <div class="quick-link-icon">??</div>
+                    <h4>???? ?????????</h4>
                 </a>
                 
-                <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
-                    <div class="quick-link-icon">👂</div>
-                    <h4>Сонсголын тест</h4>
+                <a href="#" class="quick-link-card" onclick="alert('??? ???????...')">
+                    <div class="quick-link-icon">??</div>
+                    <h4>????????? ????</h4>
                 </a>
                 
-                <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
-                    <div class="quick-link-icon">🛡</div>
-                    <h4>Сонсгол хамгаалах өдөр</h4>
+                <a href="#" class="quick-link-card" onclick="alert('??? ???????...')">
+                    <div class="quick-link-icon">??</div>
+                    <h4>??????? ????????? ????</h4>
                 </a>
                 
-                <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
-                    <div class="quick-link-icon">🏥</div>
-                    <h4>Тоног төхөөрөмж худалдаа</h4>
+                <a href="#" class="quick-link-card" onclick="alert('??? ???????...')">
+                    <div class="quick-link-icon">??</div>
+                    <h4>????? ????????? ????????</h4>
                 </a>
                 
-                <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
-                    <div class="quick-link-icon">🦻</div>
-                    <h4>Сонсголын аппарат</h4>
+                <a href="#" class="quick-link-card" onclick="alert('??? ???????...')">
+                    <div class="quick-link-icon">??</div>
+                    <h4>????????? ???????</h4>
                 </a>
             </div>
         </div>
@@ -1719,19 +1683,19 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <h3>25+</h3>
-                    <p>Жилийн туршлага</p>
+                    <p>?????? ????????</p>
                 </div>
                 <div class="stat-item">
                     <h3>50,000+</h3>
-                    <p>Үйлчлүүлэгч</p>
+                    <p>???????????</p>
                 </div>
                 <div class="stat-item">
                     <h3>100+</h3>
-                    <p>Мэргэжилтэн</p>
+                    <p>???????????</p>
                 </div>
                 <div class="stat-item">
                     <h3>4</h3>
-                    <p>Салбар</p>
+                    <p>??????</p>
                 </div>
             </div>
         </div>
@@ -1741,29 +1705,29 @@
     <section class="banners">
         <div class="container">
             <div class="section-header">
-                <h2>Онцлох</h2>
-                <p>Бидний онцлох үйлчилгээ, хөтөлбөр</p>
+                <h2>??????</h2>
+                <p>?????? ?????? ?????????, ????????</p>
             </div>
             <div class="banners-grid">
                 <div class="banner-card" onclick="window.location.href='contact.html'">
-                    <h3>Онлайн цаг захиалга</h3>
-                    <p>1900-9999 дугаарт холбогдон цаг авах</p>
+                    <h3>?????? ??? ????????</h3>
+                    <p>1900-9999 ??????? ????????? ??? ????</p>
                 </div>
                 <div class="banner-card" onclick="window.location.href='services.html'">
                     <h3>Signia</h3>
-                    <p>Албан ёсны дистрибютер</p>
+                    <p>????? ???? ???????????</p>
                 </div>
                 <div class="banner-card" onclick="window.location.href='services.html'">
-                    <h3>Хөнгөлөлттэй багц</h3>
-                    <p>Үзлэг, оношлогооны багц</p>
+                    <h3>???????????? ????</h3>
+                    <p>?????, ??????????? ????</p>
                 </div>
                 <div class="banner-card" onclick="window.location.href='ent-care.html'">
                     <h3>ENT CARE</h3>
-                    <p>Эрүүл мэндийн цогц үйлчилгээ</p>
+                    <p>????? ??????? ???? ?????????</p>
                 </div>
-                <div class="banner-card" onclick="alert('Тун удахгүй...')">
-                    <h3>1% Хандив</h3>
-                    <p>Дун хэл заслын сургалтын төвд</p>
+                <div class="banner-card" onclick="alert('??? ???????...')">
+                    <h3>1% ??????</h3>
+                    <p>??? ??? ?????? ????????? ????</p>
                 </div>
             </div>
         </div>
@@ -1773,50 +1737,50 @@
     <section class="featured-sections">
         <div class="container">
             <div class="section-header">
-                <h2>Онцлох 6 цэс</h2>
-                <p>Таны эрүүл мэндэд хамгийн хэрэгтэй мэдээлэл</p>
+                <h2>?????? 6 ???</h2>
+                <p>???? ????? ?????? ??????? ???????? ????????</p>
             </div>
             <div class="featured-grid">
                 <div class="featured-card" onclick="window.location.href='about.html'">
-                    <div class="featured-image">🏥</div>
+                    <div class="featured-image">??</div>
                     <div class="featured-content">
-                        <h3>Эмнэлгийн танилцуулга</h3>
-                        <p>Бидний түүх, үнэт зүйлс, алсын хараа</p>
+                        <h3>????????? ???????????</h3>
+                        <p>?????? ????, ???? ?????, ????? ?????</p>
                     </div>
                 </div>
                 <div class="featured-card" onclick="window.location.href='services.html'">
-                    <div class="featured-image">👨‍⚕️</div>
+                    <div class="featured-image">?????</div>
                     <div class="featured-content">
-                        <h3>Тасгийн танилцуулга</h3>
-                        <p>Манай нарийн мэргэжлийн тасгууд</p>
+                        <h3>??????? ???????????</h3>
+                        <p>????? ?????? ?????????? ???????</p>
                     </div>
                 </div>
                 <div class="featured-card" onclick="window.location.href='training.html'">
-                    <div class="featured-image">📚</div>
+                    <div class="featured-image">??</div>
                     <div class="featured-content">
-                        <h3>Сургалт эрдэм шинжилгээ</h3>
-                        <p>Мэргэжил дээшлүүлэх сургалтууд</p>
+                        <h3>??????? ????? ?????????</h3>
+                        <p>???????? ?????????? ??????????</p>
                     </div>
                 </div>
-                <div class="featured-card" onclick="alert('Тун удахгүй...')">
-                    <div class="featured-image">🔬</div>
+                <div class="featured-card" onclick="alert('??? ???????...')">
+                    <div class="featured-image">??</div>
                     <div class="featured-content">
-                        <h3>Сонсголын аппарат</h3>
-                        <p>Сонсголын аппаратны зай борлуулагдаж буй байршлууд</p>
+                        <h3>????????? ???????</h3>
+                        <p>????????? ????????? ??? ???????????? ??? ?????????</p>
                     </div>
                 </div>
-                <div class="featured-card" onclick="alert('Тун удахгүй...')">
-                    <div class="featured-image">🌿</div>
+                <div class="featured-card" onclick="alert('??? ???????...')">
+                    <div class="featured-image">??</div>
                     <div class="featured-content">
-                        <h3>Сэргээн засах сувилал</h3>
-                        <p>Улаанбаатар хотоос 50 км-т байрлах сувилал</p>
+                        <h3>??????? ????? ???????</h3>
+                        <p>??????????? ?????? 50 ??-? ??????? ???????</p>
                     </div>
                 </div>
-                <div class="featured-card" onclick="alert('Тун удахгүй...')">
-                    <div class="featured-image">🤝</div>
+                <div class="featured-card" onclick="alert('??? ???????...')">
+                    <div class="featured-image">??</div>
                     <div class="featured-content">
-                        <h3>B2B Хамтран ажиллагаа</h3>
-                        <p>Байгууллагатай хамтран ажиллах</p>
+                        <h3>B2B ??????? ?????????</h3>
+                        <p>?????????????? ??????? ???????</p>
                     </div>
                 </div>
             </div>
@@ -1829,24 +1793,24 @@
             <div class="ent-care-content">
                 <div class="ent-care-text">
                     <h2>ENT CARE</h2>
-                    <p>Эрүүл мэндийн цогц үйлчилгээ - Чих, Хамар, Хоолой, Сонсгол судлалын чиглэлээр олон улсын стандартад нийцсэн үйлчилгээ.</p>
-                    <p>Бид олон улсын жишигт нийцсэн дэвшилтэт технологи бүхий тоног төхөөрөмжийг ашиглан бүх насны хүн амд нэг цэгт үзүүлж байна.</p>
+                    <p>????? ??????? ???? ????????? - ???, ?????, ??????, ??????? ???????? ????????? ???? ????? ?????????? ??????? ?????????.</p>
+                    <p>??? ???? ????? ?????? ??????? ????????? ????????? ????? ????? ???????????? ??????? ??? ????? ??? ??? ??? ???? ?????? ?????.</p>
                     <div class="ent-modules">
                         <div class="ent-module">
                             <h4>E-Commerce</h4>
-                            <p>Merch, ENT Care бүтээгдэхүүн</p>
+                            <p>Merch, ENT Care ????????????</p>
                         </div>
                         <div class="ent-module">
-                            <h4>3D Модел</h4>
-                            <p>ДуН бүтцийн 3D загвар</p>
+                            <h4>3D ?????</h4>
+                            <p>??? ??????? 3D ??????</p>
                         </div>
                         <div class="ent-module">
-                            <h4>Киоск</h4>
-                            <p>Бүртгэлийн автомат</p>
+                            <h4>?????</h4>
+                            <p>?????????? ???????</p>
                         </div>
                         <div class="ent-module">
-                            <h4>Багш - Микрофон</h4>
-                            <p>Сургалтын тоног төхөөрөмж</p>
+                            <h4>???? - ????????</h4>
+                            <p>????????? ????? ?????????</p>
                         </div>
                     </div>
                 </div>
@@ -1861,28 +1825,28 @@
     <section class="branches">
         <div class="container">
             <div class="section-header">
-                <h2>Салбар байршил</h2>
-                <p>Манай 4 салбар танд үйлчилж байна</p>
+                <h2>?????? ???????</h2>
+                <p>????? 4 ?????? ???? ??????? ?????</p>
             </div>
             <div class="branches-grid">
                 <div class="branch-card">
                     <div class="branch-card-image">
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop" alt="ЭМЖЖ Төв эмнэлэг">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop" alt="???? ??? ???????">
                     </div>
                     <div class="branch-card-content">
-                        <h3>ЭМЖЖ Төв эмнэлэг</h3>
+                        <h3>???? ??? ???????</h3>
                         <div class="branch-info">
                             <div class="branch-info-item">
-                                <span class="icon">📍</span>
-                                <span>СБД, 1-р төрөх эмнэлгийн зүүн талд</span>
+                                <span class="icon">??</span>
+                                <span>???, 1-? ????? ????????? ???? ????</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon">📞</span>
+                                <span class="icon">??</span>
                                 <span>1900-9999, 7034-1111</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon">🕐</span>
-                                <span>Да-Ба: 08:00-20:00<br>Бя: 10:00-14:00</span>
+                                <span class="icon">??</span>
+                                <span>??-??: 08:00-20:00<br>??: 10:00-14:00</span>
                             </div>
                         </div>
                     </div>
@@ -1890,22 +1854,22 @@
 
                 <div class="branch-card">
                     <div class="branch-card-image">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Мишээл клиник">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="?????? ??????">
                     </div>
                     <div class="branch-card-content">
-                        <h3>Мишээл клиник</h3>
+                        <h3>?????? ??????</h3>
                         <div class="branch-info">
                             <div class="branch-info-item">
-                                <span class="icon">📍</span>
-                                <span>ХУД, Мишээл Сити цогцолбор, М1 блок, 3 давхар</span>
+                                <span class="icon">??</span>
+                                <span>???, ?????? ???? ?????????, ?1 ????, 3 ??????</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon">📞</span>
+                                <span class="icon">??</span>
                                 <span>1900-9999, 7799-7744</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon">🕐</span>
-                                <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
+                                <span class="icon">??</span>
+                                <span>??-??: 08:00-17:00<br>??: 10:00-14:00</span>
                             </div>
                         </div>
                     </div>
@@ -1913,22 +1877,22 @@
 
                 <div class="branch-card">
                     <div class="branch-card-image">
-                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop" alt="10-р хороолол клиник">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop" alt="10-? ???????? ??????">
                     </div>
                     <div class="branch-card-content">
-                        <h3>10-р хороолол клиник</h3>
+                        <h3>10-? ???????? ??????</h3>
                         <div class="branch-info">
                             <div class="branch-info-item">
-                                <span class="icon">📍</span>
-                                <span>БГД, 10-р хорооллын "Хаан банк"-ны баруун талд, 89-р байрны 1 давхар</span>
+                                <span class="icon">??</span>
+                                <span>???, 10-? ????????? "???? ????"-?? ?????? ????, 89-? ?????? 1 ??????</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon">📞</span>
+                                <span class="icon">??</span>
                                 <span>1900-9999, 7702-5858</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon">🕐</span>
-                                <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
+                                <span class="icon">??</span>
+                                <span>??-??: 08:00-17:00<br>??: 10:00-14:00</span>
                             </div>
                         </div>
                     </div>
@@ -1936,22 +1900,22 @@
 
                 <div class="branch-card">
                     <div class="branch-card-image">
-                        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop" alt="Халдварт клиник">
+                        <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop" alt="???????? ??????">
                     </div>
                     <div class="branch-card-content">
-                        <h3>Халдварт клиник</h3>
+                        <h3>???????? ??????</h3>
                         <div class="branch-info">
                             <div class="branch-info-item">
-                                <span class="icon">📍</span>
-                                <span>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төвийн 5 давхар</span>
+                                <span class="icon">??</span>
+                                <span>???, ????? ?????? ?????? RAPID MED ?????? 5 ??????</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon">📞</span>
+                                <span class="icon">??</span>
                                 <span>1900-9999, 7037-4444</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon">🕐</span>
-                                <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
+                                <span class="icon">??</span>
+                                <span>??-??: 08:00-17:00<br>??: 10:00-14:00</span>
                             </div>
                         </div>
                     </div>
@@ -1968,10 +1932,10 @@
                     <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop" alt="Language Center">
                 </div>
                 <div class="language-center-text">
-                    <h2>ДуН хэл заслын сургалтын төв</h2>
-                    <p>2015 оноос хойш 11 дэх жилдээ тасралтгүй ажиллаж байгаа Монгол Улсын анхны мэргэжлийн хэл заслын сургалтын төв.</p>
-                    <p>"Дунгийн суулгац" хагалгаанд орсон болон сонсголын аппарат тохируулсан хүүхдүүдийг нарийн мэргэжлийн хэл засалч багш, сонсгол судлалын мэргэжлийн эмч нарын тусламжтайгаар сонсгол сэргээх, хэл яриа үүсгэх, оюун ухааныг хөгжүүлэх зорилт тавин ажиллаж байна.</p>
-                    <a href="training.html" class="btn btn-primary btn-large">Дэлгэрэнгүй</a>
+                    <h2>??? ??? ?????? ????????? ???</h2>
+                    <p>2015 ????? ???? 11 ??? ?????? ?????????? ??????? ?????? ?????? ????? ????? ?????????? ??? ?????? ????????? ???.</p>
+                    <p>"??????? ???????" ?????????? ????? ????? ????????? ??????? ??????????? ??????????? ?????? ?????????? ??? ?????? ????, ??????? ???????? ?????????? ??? ????? ?????????????? ??????? ???????, ??? ???? ??????, ???? ??????? ????????? ?????? ????? ??????? ?????.</p>
+                    <a href="training.html" class="btn btn-primary btn-large">???????????</a>
                 </div>
             </div>
         </div>
@@ -1981,15 +1945,15 @@
     <section class="partners">
         <div class="container">
             <div class="section-header">
-                <h2>Хамтран ажиллагч байгууллага</h2>
-                <p>Олон улсын хэмжээнд хамтран ажиллаж байна</p>
+                <h2>??????? ???????? ???????????</h2>
+                <p>???? ????? ???????? ??????? ??????? ?????</p>
             </div>
             <div class="partners-grid">
                 <div class="partner-logo">Signia</div>
                 <div class="partner-logo">ENT CARE</div>
                 <div class="partner-logo">RAPID MED</div>
                 <div class="partner-logo">B2B</div>
-                <div class="partner-logo">ЭМЖЖ</div>
+                <div class="partner-logo">????</div>
             </div>
         </div>
     </section>
@@ -1997,9 +1961,9 @@
     <!-- CTA -->
     <section class="cta" id="contact">
         <div class="container">
-            <h2>Бидэнтэй холбоо барих</h2>
-            <p>Танд асуулт байна уу? Бид таньд тусалъя. Доорх товчийг дарж бидэнтэй холбоо барина уу.</p>
-                    <a href="contact.html" class="btn btn-white btn-large">Холбоо барих</a>
+            <h2>???????? ?????? ?????</h2>
+            <p>???? ?????? ????? ??? ??? ????? ???????. ????? ??????? ???? ???????? ?????? ?????? ??.</p>
+                    <a href="contact.html" class="btn btn-white btn-large">?????? ?????</a>
         </div>
     </section>
 
@@ -2009,53 +1973,53 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>EMJJ Hospital</h3>
-                    <p>ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг. Бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ үзүүлж байна.</p>
+                    <p>???, ????, ??????? ????? ??????? ????????? ?????? ?????? ?????????? ???????. ??? ???? ????? ?????????? ??????? ?????????? ?? ???????? ?????? ?????.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Үндсэн цэс</h4>
+                    <h4>?????? ???</h4>
                     <ul>
-                        <li><a href="index.html">Нүүр</a></li>
-                        <li><a href="about.html">Бидний тухай</a></li>
+                        <li><a href="index.html">????</a></li>
+                        <li><a href="about.html">?????? ?????</a></li>
                         <li><a href="ent-care.html">ENT Care</a></li>
                         <li><a href="ent-wellness.html">ENT Wellness</a></li>
-                        <li><a href="services.html">Тусламж үйлчилгээ</a></li>
-                        <li><a href="training.html">Сургалт</a></li>
-                        <li><a href="news.html">Мэдээ</a></li>
-                        <li><a href="branches.html">Салбар байршил</a></li>
+                        <li><a href="services.html">??????? ?????????</a></li>
+                        <li><a href="training.html">???????</a></li>
+                        <li><a href="news.html">?????</a></li>
+                        <li><a href="branches.html">?????? ???????</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Туслах цэс</h4>
+                    <h4>?????? ???</h4>
                     <ul>
-                        <li><a href="contact.html">Онлайн цаг захиалга</a></li>
-                        <li><a href="#" onclick="alert('Тун удахгүй...')">Сонсголын тест</a></li>
-                        <li><a href="#" onclick="alert('Тун удахгүй...')">Сэргээн засах сувилал</a></li>
-                        <li><a href="#" onclick="alert('Тун удахгүй...')">Сонсголын аппарат</a></li>
-                        <li><a href="#" onclick="alert('Тун удахгүй...')">B2B</a></li>
+                        <li><a href="contact.html">?????? ??? ????????</a></li>
+                        <li><a href="#" onclick="alert('??? ???????...')">????????? ????</a></li>
+                        <li><a href="#" onclick="alert('??? ???????...')">??????? ????? ???????</a></li>
+                        <li><a href="#" onclick="alert('??? ???????...')">????????? ???????</a></li>
+                        <li><a href="#" onclick="alert('??? ???????...')">B2B</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Танд тусалъя</h4>
+                    <h4>???? ???????</h4>
                     <ul>
-                        <li><a href="#" onclick="alert('Тун удахгүй...')">Түгээмэл асуулт</a></li>
-                        <li><a href="#" onclick="alert('Тун удахгүй...')">Цагийн хуваарь</a></li>
-                        <li><a href="contact.html">Санал хүсэлт</a></li>
-                        <li><a href="#" onclick="alert('Тун удахгүй...')">Хандив</a></li>
+                        <li><a href="#" onclick="alert('??? ???????...')">???????? ??????</a></li>
+                        <li><a href="#" onclick="alert('??? ???????...')">?????? ???????</a></li>
+                        <li><a href="contact.html">????? ??????</a></li>
+                        <li><a href="#" onclick="alert('??? ???????...')">??????</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Холбоо барих</h4>
+                    <h4>?????? ?????</h4>
                     <ul>
-                        <li><a href="tel:19009999">📞 1900-9999</a></li>
-                        <li><a href="tel:70341111">📞 7034-1111</a></li>
-                        <li><a href="mailto:info@emjj.mn">✉️ info@emjj.mn</a></li>
-                        <li><a href="#" onclick="alert('СБД, 1-р төрөх эмнэлгийн зүүн талд')">📍 СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
+                        <li><a href="tel:19009999">?? 1900-9999</a></li>
+                        <li><a href="tel:70341111">?? 7034-1111</a></li>
+                        <li><a href="mailto:info@emjj.mn">?? info@emjj.mn</a></li>
+                        <li><a href="#" onclick="alert('???, 1-? ????? ????????? ???? ????')">?? ???, 1-? ????? ????????? ???? ????</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
-                <p>Хандив: Дун хэл заслын сургалтын төвд 1%</p>
+                <p>&copy; 2026 EMJJ Hospital. ??? ??? ??????? ?????????????.</p>
+                <p>??????: ??? ??? ?????? ????????? ???? 1%</p>
             </div>
         </div>
     </footer>
@@ -2063,28 +2027,28 @@
         // Language Toggle
         const translations = {
             mn: {
-                title: "EMJJ Hospital - ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр тэргүүлэгч эмнэлэг",
-                nav_home: "Нүүр",
-                nav_about: "Бидний тухай",
-                nav_services: "Тусламж үйлчилгээ",
-                nav_training: "Сургалт",
-                nav_news: "Мэдээ",
-                nav_contact: "Холбоо барих",
-                nav_branches: "Салбар байршил",
-                hero_title: "Таны сонсголыг\nхамгаалъя",
-                hero_subtitle: "ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг",
-                cta_appointment: "Цаг захиалга",
-                cta_services: "Үйлчилгээ",
-                stats_patients: "Үйлчлүүлэгч",
-                stats_experience: "Жилийн туршлага",
-                stats_doctors: "Нарийн мэргэжлийн эмч",
-                stats_branches: "Салбар",
-                footer_about: "ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг. Бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ үзүүлж байна.",
-                footer_menu: "Үндсэн цэс",
-                footer_help: "Танд тусалъя",
-                footer_contact: "Холбоо барих",
-                copyright: "© 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.",
-                donation: "Хандив: Дун хэл заслын сургалтын төвд 1%"
+                title: "EMJJ Hospital - ???, ????, ??????? ????? ??????? ????????? ?????????? ???????",
+                nav_home: "????",
+                nav_about: "?????? ?????",
+                nav_services: "??????? ?????????",
+                nav_training: "???????",
+                nav_news: "?????",
+                nav_contact: "?????? ?????",
+                nav_branches: "?????? ???????",
+                hero_title: "???? ?????????\n?????????",
+                hero_subtitle: "???, ????, ??????? ????? ??????? ????????? ?????? ?????? ?????????? ???????",
+                cta_appointment: "??? ????????",
+                cta_services: "?????????",
+                stats_patients: "???????????",
+                stats_experience: "?????? ????????",
+                stats_doctors: "?????? ?????????? ???",
+                stats_branches: "??????",
+                footer_about: "???, ????, ??????? ????? ??????? ????????? ?????? ?????? ?????????? ???????. ??? ???? ????? ?????????? ??????? ?????????? ?? ???????? ?????? ?????.",
+                footer_menu: "?????? ???",
+                footer_help: "???? ???????",
+                footer_contact: "?????? ?????",
+                copyright: "� 2026 EMJJ Hospital. ??? ??? ??????? ?????????????.",
+                donation: "??????: ??? ??? ?????? ????????? ???? 1%"
             },
             en: {
                 title: "EMJJ Hospital - Leading ENT, Audiology & Speech Therapy Center",
@@ -2107,7 +2071,7 @@
                 footer_menu: "Main Menu",
                 footer_help: "Need Help?",
                 footer_contact: "Contact Us",
-                copyright: "© 2026 EMJJ Hospital. All rights reserved.",
+                copyright: "� 2026 EMJJ Hospital. All rights reserved.",
                 donation: "Donation: 1% to Hearing Training Center"
             }
         };
