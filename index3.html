@@ -530,8 +530,8 @@
         }
 
         .section-header {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
             margin-bottom: 30px;
         }
@@ -541,6 +541,8 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-align: center;
+            grid-column: 2;
         }
 
         .section-header a {
@@ -552,6 +554,8 @@
             align-items: center;
             gap: 6px;
             transition: all 0.3s;
+            grid-column: 3;
+            justify-self: end;
         }
 
         .section-header a:hover {
