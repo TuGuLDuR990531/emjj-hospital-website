@@ -7,146 +7,143 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        :root { --primary:#0054a6; --primary-dark:#003d7a; --bg-light:#f8fafc; --accent-teal:#03bfd7; --accent-orange:#f99d33; --text-dark:#1a1a1a; --text-medium:#4a4a4a; --text-light:#6b7280; --border:#e5e7eb; --bg-white:#ffffff; }
-        * { box-sizing:border-box; margin:0; padding:0; }
-        body { font-family: "Montserrat", sans-serif; color: var(--text-dark); background: var(--bg-white); line-height: 1.6; }
-        body.menu-open { overflow:hidden; }
-        a { color:inherit; text-decoration:none; }
-        .wrap { width:min(1400px, calc(100% - 80px)); margin:0 auto; }
-
-        .health-hero { background:linear-gradient(135deg, #0054a6 0%, #0077cc 40%, #03bfd7 100%); min-height:480px; color:#fff; position:relative; overflow:hidden; }
-        .health-hero::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 30% 30%, rgba(0,84,166,.2), transparent 40%), radial-gradient(circle at 80% 60%, rgba(3,191,215,.25), transparent 40%), linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,.05) 100%); }
-        .health-hero::after { content:''; position:absolute; width:400px; height:400px; border-radius:50%; background:rgba(3,191,215,.1); bottom:-120px; right:-80px; filter:blur(50px); }
-        .health-hero .wrap { min-height:480px; display:grid; grid-template-columns:1.1fr .85fr; align-items:center; position:relative; z-index:1; }
-        .health-hero h1 { font-size:72px; line-height:1; letter-spacing:-.04em; font-weight:800; margin-bottom:22px; text-shadow:0 4px 20px rgba(0,0,0,.12); }
-        .health-hero p { font-size:26px; font-weight:700; line-height:1.45; max-width:620px; margin-bottom:40px; }
-        .hero-icons { display:grid; grid-template-columns:repeat(4, 130px); gap:32px; }
-        .hero-icon { text-align:center; font-weight:800; font-size:14px; line-height:1.3; }
-        .hero-icon i { display:grid; place-items:center; width:72px; height:72px; border:2px solid rgba(255,255,255,.65); border-radius:50%; margin:0 auto 10px; font-style:normal; font-size:32px; background:rgba(255,255,255,.1); backdrop-filter:blur(4px); }
-        .hero-doctor { align-self:end; justify-self:center; width:min(440px, 100%); height:420px; object-fit:cover; object-position:top center; filter:drop-shadow(0 25px 45px rgba(0,0,0,.25)); border-radius:24px 24px 0 0; }
-
-        .intro { padding:64px 0 54px; background:linear-gradient(180deg, #fff, #f0f9ff); }
-        .intro-grid { display:grid; grid-template-columns:1.25fr .85fr; gap:72px; align-items:start; }
-        .intro-list { display:grid; gap:28px; }
-        .intro-item { display:grid; grid-template-columns:48px 1fr; gap:18px; align-items:start; }
-        .intro-item i { width:38px; height:38px; border:2px solid #d6e7ff; border-radius:12px; display:grid; place-items:center; color:var(--primary); font-size:20px; font-style:normal; background:linear-gradient(135deg, #eaf4ff, #fff); }
-        .intro-item p { font-size:14px; color: var(--text-medium); line-height:1.75; font-weight:600; }
-        .quote { background:linear-gradient(135deg, #0054a6, #0077cc); border-radius:20px; padding:40px 42px; min-height:270px; color:#fff; box-shadow:0 16px 48px rgba(0,84,166,.2); position:relative; overflow:hidden; }
-        .quote::before { content:'"'; font-size:64px; line-height:.6; color:rgba(3,191,215,.7); font-weight:800; display:block; margin-bottom:6px; }
-        .quote strong { display:block; font-size:16px; line-height:1.65; margin-bottom:24px; }
-        .quote p { font-size:14px; line-height:1.7; color:rgba(255,255,255,.85); font-weight:600; }
-
-        .section-title { text-align:center; color:var(--primary); font-size:26px; text-transform:uppercase; font-weight:800; margin:0 0 36px; line-height:1.25; }
-        .section-subtitle { text-align:center; color:var(--text-medium); font-size:16px; font-weight:600; max-width:900px; margin:-20px auto 36px; line-height:1.7; }
-        .advantages { padding:32px 0 56px; background:linear-gradient(180deg, #f0f9ff, #fff); }
-        .adv-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; }
-        .adv-card { border-radius:16px; padding:32px 26px; text-align:center; min-height:190px; box-shadow:0 10px 32px rgba(0,84,166,.1); border:none; transition:transform .3s, box-shadow .3s; position:relative; overflow:hidden; background:linear-gradient(135deg, #0054a6, #0077cc); color:#fff; }
-        .adv-card:hover { transform:translateY(-6px); box-shadow:0 16px 44px rgba(0,84,166,.18); }
-        .adv-card i { display:block; font-size:48px; font-style:normal; margin-bottom:18px; }
-        .adv-card p { font-size:14px; font-weight:700; line-height:1.55; }
-
-        .why-section { padding:0 0 54px; }
-        .why-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; }
-        .why-card { background:#fff; border:1px solid var(--border); border-radius:16px; padding:28px 24px; text-align:center; transition:transform .3s, box-shadow .3s; }
-        .why-card:hover { transform:translateY(-6px); box-shadow:0 14px 36px rgba(0,84,166,.12); }
-        .why-card strong { display:block; font-size:32px; font-weight:800; color:var(--primary); margin-bottom:8px; }
-        .why-card span { font-size:13px; color:var(--text-medium); font-weight:600; line-height:1.5; }
-
-        .services { padding:0 0 54px; }
-        .service-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-        .service-card { border-radius:20px; padding:28px 24px 28px; min-height:360px; position:relative; transition:transform .3s, box-shadow .3s; overflow:hidden; border:none; background:linear-gradient(180deg, #eaf4ff, #d4e9ff); }
-        .service-card:hover { transform:translateY(-6px); box-shadow:0 14px 36px rgba(0,84,166,.15); }
-        .service-no { width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, #0054a6, #0077cc); color:#fff; display:grid; place-items:center; font-weight:800; font-size:16px; margin-bottom:14px; box-shadow:0 4px 12px rgba(0,84,166,.2); }
-        .service-card h3 { color:var(--primary-dark); font-size:16px; line-height:1.35; font-weight:800; min-height:60px; margin-bottom:18px; }
-        .service-card li { list-style:none; color: var(--text-medium); font-size:13px; font-weight:600; line-height:1.55; margin-bottom:12px; display:flex; gap:8px; }
-        .service-card li::before { content:'✓'; color:var(--accent-teal); font-weight:800; }
-        .service-icon { position:absolute; left:50%; bottom:22px; transform:translateX(-50%); width:90px; height:90px; border-radius:50%; background:#fff; display:grid; place-items:center; color:var(--primary); font-size:44px; box-shadow:0 12px 30px rgba(0,84,166,.15); }
-
-        .pricing { padding:0 0 58px; }
-        .pricing-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; align-items:stretch; }
-        .price-card { border-radius:20px; padding:36px 28px; display:flex; flex-direction:column; justify-content:flex-start; min-height:520px; transition:transform .3s, box-shadow .3s; background:linear-gradient(135deg, #0054a6, #0077cc); color:#fff; box-shadow:0 10px 28px rgba(0,84,166,.25); }
-        .price-card:hover { transform:translateY(-6px); }
-        .price-card.featured { background:linear-gradient(135deg, #0054a6, #03bfd7); box-shadow:0 14px 36px rgba(0,84,166,.35); }
-        .price-card h3 { font-size:26px; font-weight:800; margin-bottom:8px; }
-        .price-card .subtitle { font-size:14px; opacity:.9; font-weight:600; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid rgba(255,255,255,.2); }
-        .price-card ul { list-style:none; margin-bottom:24px; }
-        .price-card li { font-size:13px; line-height:1.6; margin-bottom:10px; display:flex; gap:8px; }
-        .price-card li::before { content:'✓'; font-weight:800; flex:0 0 auto; }
-        .price-card .discount { margin-top:auto; background:rgba(255,255,255,.15); border-radius:12px; padding:14px; text-align:center; font-size:14px; font-weight:700; }
-
-        .monthly-section { padding:0 0 58px; }
-        .monthly-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
-        .monthly-card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:28px 24px; transition:transform .3s, box-shadow .3s; }
-        .monthly-card:hover { transform:translateY(-6px); box-shadow:0 14px 36px rgba(0,84,166,.1); }
-        .monthly-card h3 { color:var(--primary); font-size:16px; font-weight:800; margin-bottom:16px; min-height:44px; }
-        .monthly-card ul { list-style:none; }
-        .monthly-card li { color:var(--text-medium); font-size:13px; font-weight:600; line-height:1.55; margin-bottom:10px; display:flex; gap:8px; }
-        .monthly-card li::before { content:'•'; color:var(--accent-teal); font-weight:800; }
-
-        .events-section { padding:0 0 58px; }
-        .events-card { background:linear-gradient(135deg, #f0f9ff, #e6f4ff); border:1px solid #c8e4ff; border-radius:20px; padding:36px; }
-        .events-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; }
-        .event-item { background:#fff; border-radius:12px; padding:18px; text-align:center; box-shadow:0 4px 12px rgba(0,84,166,.08); }
-        .event-item i { display:block; font-size:32px; margin-bottom:10px; font-style:normal; }
-        .event-item span { font-size:13px; font-weight:700; color:var(--text-medium); line-height:1.4; }
-
-        .rehab-section { padding:0 0 58px; }
-        .rehab-card { display:grid; grid-template-columns:1fr 1fr; gap:36px; background:linear-gradient(135deg, #f0f9ff, #e6f4ff); border:1px solid #c8e4ff; border-radius:20px; padding:36px; overflow:hidden; }
-        .rehab-content h3 { color:var(--primary); font-size:22px; font-weight:800; margin-bottom:16px; }
-        .rehab-content p { color:var(--text-medium); font-size:14px; font-weight:600; line-height:1.7; margin-bottom:20px; }
-        .rehab-list { list-style:none; }
-        .rehab-list li { color:var(--text-medium); font-size:13px; font-weight:600; line-height:1.6; margin-bottom:8px; display:flex; gap:8px; }
-        .rehab-list li::before { content:'✓'; color:var(--accent-teal); font-weight:800; }
-        .rehab-image { border-radius:16px; overflow:hidden; }
-        .rehab-image img { width:100%; height:100%; object-fit:cover; min-height:300px; }
-
-        .partnership { padding:0 0 48px; }
-        .partnership-grid { display:grid; grid-template-columns:1.4fr .75fr; gap:36px; align-items:stretch; }
-        .steps-card { background:linear-gradient(135deg, #f0f9ff, #e6f4ff); border:1px solid #c8e4ff; border-radius:20px; padding:32px; }
-        .step-line { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; position:relative; }
-        .step { text-align:center; position:relative; padding-top:20px; }
-        .step::before { content:''; position:absolute; top:11px; left:50%; width:100%; height:1px; background:linear-gradient(90deg, #0054a6, #03bfd7); z-index:0; }
-        .step:last-child::before { display:none; }
-        .step-no { position:relative; z-index:1; width:34px; height:34px; background:linear-gradient(135deg, #0054a6, #03bfd7); color:#fff; border-radius:50%; display:grid; place-items:center; font-size:14px; font-weight:800; margin:0 auto 12px; box-shadow:0 4px 12px rgba(0,84,166,.2); }
-        .step i { display:block; color:var(--primary); font-size:38px; font-style:normal; margin-bottom:10px; }
-        .step p { color: var(--text-medium); font-size:13px; line-height:1.45; font-weight:700; }
-        .donate-note { display:flex; align-items:center; gap:24px; color:#fff; font-weight:700; font-size:15px; line-height:1.65; background:linear-gradient(135deg, #0054a6, #03bfd7); border-radius:20px; padding:32px; box-shadow:0 10px 28px rgba(0,84,166,.15); }
-        .donate-note i { width:68px; height:68px; border-radius:50%; display:grid; place-items:center; color:#0054a6; font-size:34px; font-style:normal; background:#fff; flex:0 0 auto; box-shadow:0 4px 14px rgba(0,0,0,.1); }
-
-        .health-cta { padding:0 0 48px; }
-        .cta-bar { border-radius:20px; background:linear-gradient(135deg, #0054a6 0%, #0077cc 50%, #03bfd7 100%); color:#fff; min-height:100px; padding:26px 36px; display:flex; justify-content:space-between; align-items:center; gap:20px; box-shadow:0 16px 44px rgba(0,84,166,.25); position:relative; overflow:hidden; }
-        .cta-bar::before { content:''; position:absolute; top:-50%; right:-10%; width:300px; height:300px; border-radius:50%; background:rgba(0,84,166,.15); filter:blur(50px); }
-        .cta-bar h2 { font-size:24px; line-height:1.25; font-weight:800; position:relative; z-index:1; }
-        .cta-actions { display:flex; align-items:center; gap:24px; position:relative; z-index:1; }
-        .cta-btn { background:#fff; color:var(--primary); height:44px; padding:0 28px; border-radius:24px; display:flex; align-items:center; gap:10px; font-size:13px; font-weight:800; transition:all .3s; box-shadow:0 4px 14px rgba(0,0,0,.12); }
-        .cta-btn:hover { background:#03bfd7; color:#fff; transform:translateY(-2px); box-shadow:0 6px 20px rgba(3,191,215,.3); }
-        .cta-phone { color:#fff; font-size:20px; font-weight:800; white-space:nowrap; transition:color .3s; }
-        .cta-phone:hover { color:#03bfd7; }
-
-        .contact-email { text-align:center; padding:0 0 48px; }
-        .contact-email a { display:inline-flex; align-items:center; gap:10px; color:var(--primary); font-size:18px; font-weight:700; transition:color .3s; }
-        .contact-email a:hover { color:var(--accent-teal); }
-
-        @media (max-width: 1040px) {
-            .health-hero .wrap, .intro-grid, .partnership-grid, .rehab-card { grid-template-columns:1fr; }
-            .hero-doctor { display:none; }
-            .hero-icons, .adv-grid, .service-grid, .pricing-grid, .why-grid, .monthly-grid, .events-grid { grid-template-columns:repeat(2,1fr); }
+        :root {
+            --ew-primary: #0054a6;
+            --ew-primary-dark: #003d7a;
+            --ew-teal: #03bfd7;
+            --ew-orange: #f99d33;
+            --ew-dark: #0f172a;
+            --ew-text: #1e293b;
+            --ew-text-medium: #475569;
+            --ew-text-light: #64748b;
+            --ew-border: #e2e8f0;
+            --ew-bg: #f8fafc;
         }
-        @media (max-width: 900px) {
-            .wrap { width:min(100% - 32px, 1400px); }
-            .health-hero h1 { font-size:48px; }
-            .health-hero p { font-size:19px; }
-            .cta-bar { flex-direction:column; align-items:flex-start; }
-            .cta-actions { flex-direction:column; align-items:flex-start; gap:12px; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--ew-text); background: #fff; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .ew-container { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
+
+        /* Breadcrumb */
+        .ew-breadcrumb { padding: 16px 0; font-size: 12px; color: var(--ew-text-light); font-weight: 600; }
+        .ew-breadcrumb a { color: var(--ew-text-light); transition: color 0.2s; }
+        .ew-breadcrumb a:hover { color: var(--ew-primary); }
+        .ew-breadcrumb span { margin: 0 8px; color: var(--ew-text-light); }
+
+        /* Hero */
+        .ew-hero { background: linear-gradient(180deg, #fff 0%, #f1f5f9 100%); padding: 20px 0 0; position: relative; overflow: hidden; }
+        .ew-hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+        .ew-hero-badge { display: inline-block; background: #e0f2fe; color: var(--ew-primary); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .ew-hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; color: var(--ew-primary); line-height: 1.1; margin-bottom: 16px; }
+        .ew-hero-subtitle { font-size: 20px; font-weight: 700; color: var(--ew-text); margin-bottom: 16px; line-height: 1.4; }
+        .ew-hero-text { font-size: 14px; color: var(--ew-text-medium); line-height: 1.7; max-width: 540px; margin-bottom: 32px; }
+
+        .ew-hero-image { position: relative; height: 420px; border-radius: 24px; overflow: hidden; }
+        .ew-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .ew-goals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; padding-bottom: 40px; }
+        .ew-goal { background: #fff; border: 1px solid var(--ew-border); border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s; }
+        .ew-goal:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,84,166,0.1); }
+        .ew-goal i { width: 52px; height: 52px; display: grid; place-items: center; margin: 0 auto 12px; border: 2px solid #bfdbfe; border-radius: 50%; font-size: 24px; font-style: normal; color: var(--ew-primary); background: #eff6ff; }
+        .ew-goal span { font-size: 13px; font-weight: 700; color: var(--ew-text); line-height: 1.4; display: block; }
+
+        /* Why section */
+        .ew-why { background: var(--ew-primary); color: #fff; padding: 64px 0; }
+        .ew-why-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: center; }
+        .ew-why h2 { font-size: 28px; font-weight: 800; line-height: 1.25; margin-bottom: 20px; }
+        .ew-why-text { font-size: 14px; line-height: 1.75; opacity: 0.9; }
+        .ew-why-text strong { display: block; margin-top: 16px; font-weight: 700; }
+        .ew-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .ew-stat { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 28px 16px; text-align: center; }
+        .ew-stat i { font-size: 36px; font-style: normal; margin-bottom: 12px; display: block; }
+        .ew-stat strong { font-size: 32px; font-weight: 800; display: block; margin-bottom: 6px; }
+        .ew-stat span { font-size: 12px; font-weight: 600; opacity: 0.9; line-height: 1.4; display: block; }
+
+        /* Services */
+        .ew-services { padding: 70px 0; background: #fff; }
+        .ew-section-title { text-align: center; font-size: 26px; font-weight: 800; color: var(--ew-primary); margin-bottom: 40px; text-transform: uppercase; }
+        .ew-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .ew-service-card { background: #fff; border: 1px solid var(--ew-border); border-radius: 20px; padding: 28px 22px; transition: transform 0.3s, box-shadow 0.3s; }
+        .ew-service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,84,166,0.1); }
+        .ew-service-card h3 { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: var(--ew-primary); margin-bottom: 18px; min-height: 44px; }
+        .ew-service-card h3 i { width: 36px; height: 36px; display: grid; place-items: center; border: 2px solid #bfdbfe; border-radius: 10px; font-size: 18px; font-style: normal; color: var(--ew-primary); background: #eff6ff; flex-shrink: 0; }
+        .ew-service-card li { font-size: 13px; color: var(--ew-text-medium); margin-bottom: 10px; padding-left: 18px; position: relative; font-weight: 600; line-height: 1.5; }
+        .ew-service-card li::before { content: '✓'; position: absolute; left: 0; color: var(--ew-teal); font-weight: 800; }
+
+        /* Pricing */
+        .ew-pricing { padding: 70px 0; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+        .ew-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .ew-price-card { background: #fff; border: 1px solid var(--ew-border); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
+        .ew-price-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,84,166,0.1); }
+        .ew-price-card.featured { border: 2px solid var(--ew-primary); }
+        .ew-price-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--ew-border); }
+        .ew-price-header i { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; font-size: 22px; font-style: normal; background: #eff6ff; color: var(--ew-primary); }
+        .ew-price-header h3 { font-size: 18px; font-weight: 800; color: var(--ew-primary); }
+        .ew-price-header p { font-size: 12px; color: var(--ew-text-light); font-weight: 600; margin-top: 2px; }
+        .ew-price-card.orange .ew-price-header i { background: #fff7ed; color: var(--ew-orange); }
+        .ew-price-card.orange .ew-price-header h3 { color: var(--ew-orange); }
+        .ew-price-card.orange { border-color: var(--ew-orange); }
+        .ew-price-card.teal .ew-price-header i { background: #ecfeff; color: var(--ew-teal); }
+        .ew-price-card.teal .ew-price-header h3 { color: var(--ew-teal); }
+        .ew-price-card.teal { border-color: var(--ew-teal); }
+        .ew-price-card ul { margin-bottom: 24px; flex-grow: 1; }
+        .ew-price-card li { font-size: 13px; color: var(--ew-text-medium); margin-bottom: 10px; padding-left: 18px; position: relative; font-weight: 600; line-height: 1.5; }
+        .ew-price-card li::before { content: '✓'; position: absolute; left: 0; color: var(--ew-teal); font-weight: 800; }
+        .ew-price-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; border-radius: 10px; border: 1.5px solid var(--ew-primary); color: var(--ew-primary); font-size: 13px; font-weight: 700; transition: all 0.3s; background: #fff; }
+        .ew-price-btn:hover { background: var(--ew-primary); color: #fff; }
+        .ew-price-card.orange .ew-price-btn { border-color: var(--ew-orange); color: var(--ew-orange); }
+        .ew-price-card.orange .ew-price-btn:hover { background: var(--ew-orange); color: #fff; }
+        .ew-price-card.teal .ew-price-btn { border-color: var(--ew-teal); color: var(--ew-teal); }
+        .ew-price-card.teal .ew-price-btn:hover { background: var(--ew-teal); color: #fff; }
+        .ew-pricing-note { text-align: center; font-size: 13px; color: var(--ew-text-light); margin-top: 24px; font-weight: 600; }
+        .ew-pricing-note i { color: var(--ew-primary); margin-right: 6px; }
+
+        /* CTA */
+        .ew-cta { padding: 0 0 70px; }
+        .ew-cta-bar { background: linear-gradient(135deg, var(--ew-primary) 0%, var(--ew-primary-dark) 100%); border-radius: 20px; padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; gap: 30px; color: #fff; }
+        .ew-cta-left { display: flex; align-items: center; gap: 20px; }
+        .ew-cta-left i { width: 56px; height: 56px; display: grid; place-items: center; background: rgba(255,255,255,0.15); border-radius: 50%; font-size: 26px; font-style: normal; }
+        .ew-cta-left h3 { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+        .ew-cta-left p { font-size: 13px; opacity: 0.9; }
+        .ew-cta-right { display: flex; align-items: center; gap: 24px; }
+        .ew-cta-contact { display: flex; flex-direction: column; gap: 6px; }
+        .ew-cta-contact a { font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .ew-cta-btn { background: var(--ew-teal); color: #fff; padding: 12px 24px; border-radius: 10px; font-size: 13px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+        .ew-cta-btn:hover { background: #0891b2; transform: translateY(-2px); }
+
+        /* Footer override */
+        .ew-footer { background: var(--ew-dark); color: #fff; padding: 60px 0 24px; }
+        .ew-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+        .ew-footer-brand h3 { font-size: 22px; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .ew-footer-brand h3 i { width: 40px; height: 40px; display: grid; place-items: center; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; font-size: 20px; font-style: normal; }
+        .ew-footer-brand p { font-size: 13px; color: #94a3b8; line-height: 1.7; }
+        .ew-footer-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 18px; color: #fff; }
+        .ew-footer-col li { margin-bottom: 10px; }
+        .ew-footer-col a { font-size: 13px; color: #94a3b8; transition: color 0.2s; }
+        .ew-footer-col a:hover { color: #fff; }
+        .ew-footer-contact li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #94a3b8; margin-bottom: 12px; line-height: 1.6; }
+        .ew-footer-contact i { font-style: normal; flex-shrink: 0; margin-top: 2px; }
+        .ew-footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 12px; color: #64748b; }
+
+        @media (max-width: 1024px) {
+            .ew-hero-inner { grid-template-columns: 1fr; }
+            .ew-hero-image { height: 320px; order: -1; }
+            .ew-goals { grid-template-columns: repeat(2, 1fr); }
+            .ew-why-inner { grid-template-columns: 1fr; }
+            .ew-services-grid { grid-template-columns: repeat(2, 1fr); }
+            .ew-pricing-grid { grid-template-columns: 1fr; }
+            .ew-footer-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (max-width: 600px) {
-            .health-hero { min-height:460px; }
-            .health-hero .wrap { min-height:460px; }
-            .hero-icons, .adv-grid, .service-grid, .pricing-grid, .why-grid, .monthly-grid, .events-grid, .step-line { grid-template-columns:1fr; }
-            .intro-item { grid-template-columns:38px 1fr; }
-            .quote, .feature-card, .steps-card, .donate-note, .events-card, .rehab-card { padding:22px; }
-            .section-title { font-size:20px; }
-            .cta-bar h2 { font-size:20px; }
+
+        @media (max-width: 640px) {
+            .ew-goals, .ew-services-grid { grid-template-columns: 1fr; }
+            .ew-stats { grid-template-columns: repeat(2, 1fr); }
+            .ew-cta-bar { flex-direction: column; align-items: flex-start; }
+            .ew-cta-right { flex-direction: column; align-items: flex-start; }
+            .ew-footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -160,72 +157,108 @@
             <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
                 <a href="index.html">Нүүр</a>
-                <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
+                <a href="doctors.html">Эмч, мэргэжилтнүүд</a>
+                <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
-                    <a href="ent-health.html">ENT Health</a>
+                    <a href="ent-health.html" class="active">ENT Health</a>
                     <div class="ref-dropdown-menu">
                         <a href="ent-wellness.html" class="active">ENT Wellness</a>
                         <a href="ent-care.html">ENT Care</a>
                     </div>
                 </div>
-                <a href="news.html">Мэдээ мэдээлэл</a>
+                <a href="about.html">Бидний тухай</a>
                 <a href="contact.html">Холбоо барих</a>
             </nav>
+            <div style="display:flex;align-items:center;gap:16px;margin-left:auto;">
+                <a href="tel:70341111" style="font-size:14px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:6px;">📞 7034-1111</a>
+                <a href="contact.html" class="btn btn-primary" style="border-radius:8px;">Цаг авах</a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="health-hero">
-            <div class="wrap">
-                <div>
-                    <h1>ENT WELLNESS</h1>
-                    <p>Байгууллагын чих, хамар, хоолойн эрүүл мэндийн цогц хөтөлбөр</p>
-                    <div class="hero-icons">
-                        <div class="hero-icon"><i>🔍</i>Эрт илрүүлэг</div>
-                        <div class="hero-icon"><i>👥</i>Эрүүл ажилтан</div>
-                        <div class="hero-icon"><i>🛡</i>Бүтээмж<br>нэмэгдэнэ</div>
-                        <div class="hero-icon"><i>📉</i>Зардал<br>буурна</div>
+        <section class="ew-hero">
+            <div class="ew-container">
+                <div class="ew-breadcrumb">
+                    <a href="index.html">Нүүр</a><span>/</span>
+                    <a href="ent-health.html">ENT Health</a><span>/</span>
+                    <span style="color:var(--ew-primary);">ENT Wellness</span>
+                </div>
+
+                <div class="ew-hero-inner">
+                    <div class="ew-hero-content">
+                        <span class="ew-hero-badge">Байгууллагын эрүүл мэнд</span>
+                        <h1>ENT WELLNESS</h1>
+                        <p class="ew-hero-subtitle">Байгууллагын чих, хамар, хоолойн эрүүл мэндийн цогц хөтөлбөр</p>
+                        <p class="ew-hero-text">Чих, хамар, хоолойн (ЧХХ) өвчлөл нь ажилтны ажлын бүтээмж буурах, хөдөлмөрийн чадвар түр алдах, эмчилгээний зардал нэмэгдэх гол шалтгаануудын нэг болдог. ЭМЖЖ эмнэлэг нь байгууллагын ажилтнуудын ЧХХ-ийн эрүүл мэндийг хамгаалах, эрт илрүүлэг хийх, урьдчилан сэргийлэх, эрүүл мэндийн боловсрол олгох зорилготой ENT WELLNESS хөтөлбөрийг санал болгож байна.</p>
+                    </div>
+                    <div class="ew-hero-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&h=500&fit=crop" alt="ENT Wellness">
                     </div>
                 </div>
-                <img class="hero-doctor" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=520&h=620&fit=crop" alt="ENT Wellness doctor">
-            </div>
-        </section>
 
-        <section class="intro">
-            <div class="wrap intro-grid">
-                <div>
-                    <p class="section-subtitle" style="text-align:left; margin:0 0 28px;">Чих, хамар, хоолойн (ЧХХ) өвчлөл нь ажилтны ажлын бүтээмж буурах, хөдөлмөрийн чадвар түр алдах, эмчилгээний зардал нэмэгдэх гол шалтгаануудын нэг болдог. ЭМЖЖ эмнэлэг нь байгууллагын ажилтнуудын ЧХХ-ийн эрүүл мэндийг хамгаалах, эрт илрүүлэг хийх, урьдчилан сэргийлэх, эрүүл мэндийн боловсрол олгох зорилготой ENT WELLNESS хөтөлбөрийг санал болгож байна.</p>
-                    <div class="intro-list">
-                        <div class="intro-item"><i>🔍</i><p><strong>Эрт илрүүлэг</strong> — ЧХХ-ийн өвчлөл, эмгэг өөрчлөлтийг эрт үе шатанд илрүүлж, хүндрэлээс урьдчилан сэргийлнэ.</p></div>
-                        <div class="intro-item"><i>🎓</i><p><strong>Эрүүл мэдлэг, зөв дадал</strong> — Ажилтнуудад эрүүл мэндийн боловсрол олгож, урьдчилан сэргийлэх зөв дадал хэвшүүлнэ.</p></div>
-                        <div class="intro-item"><i>👥</i><p><strong>Эрүүл хамт олон</strong> — Байгууллагын эрүүл мэндийн соёлыг төлөвшүүлж, ажилтнуудын эрүүл мэндийн оролцоог нэмэгдүүлнэ.</p></div>
-                        <div class="intro-item"><i>📈</i><p><strong>Тогтвортой бүтээмж</strong> — Өвчлөлийн улмаас үүсэх ажлын бүтээмжийн алдагдал болон эмчилгээний зардлыг бууруулна.</p></div>
+                <div class="ew-goals">
+                    <div class="ew-goal">
+                        <i>🔍</i>
+                        <span>Эрт илрүүлэг</span>
+                    </div>
+                    <div class="ew-goal">
+                        <i>🎓</i>
+                        <span>Эрүүл мэдлэг, зөв дадал</span>
+                    </div>
+                    <div class="ew-goal">
+                        <i>👥</i>
+                        <span>Эрүүл хамт олон</span>
+                    </div>
+                    <div class="ew-goal">
+                        <i>📈</i>
+                        <span>Тогтвортой бүтээмж</span>
                     </div>
                 </div>
-                <div class="quote"><strong>ЭМЖЖ эмнэлэг нь 33 жилийн туршлагатай үндэсний хэмжээний төрөлжсөн нарийн мэргэжлийн эмнэлэг бөгөөд эрүүл мэндийн салбарт тогтвортой хөгжиж ирсэн байгууллага юм.</strong><p>Бид зөвхөн эмчилгээ бус итгэлцэл, хариуцлага, мэргэжлийн ёс зүйг эрхэмлэн ажилладаг.</p></div>
             </div>
         </section>
 
-        <section class="why-section">
-            <div class="wrap">
-                <h2 class="section-title">Яагаад ЭМЖЖ эмнэлгийг сонгох вэ?</h2>
-                <div class="why-grid">
-                    <div class="why-card"><strong>250+</strong><span>эмч, ажилтан, албан хаагч</span></div>
-                    <div class="why-card"><strong>70%</strong><span>эмч, мэргэжилтнүүд нь эрдмийн зэрэг, цолтой</span></div>
-                    <div class="why-card"><strong>33</strong><span>жилийн туршлага, мэргэшсэн баг</span></div>
-                    <div class="why-card"><strong>100%</strong><span>магадлан итгэмжлэгдсэн эмнэлэг</span></div>
+        <section class="ew-why">
+            <div class="ew-container">
+                <div class="ew-why-inner">
+                    <div>
+                        <h2>ЯАГААД ЭМЖЖ ЭМНЭЛГИЙГ СОНГОХ ВЭ?</h2>
+                        <p class="ew-why-text">ЭМЖЖ эмнэлэг нь 33 жилийн туршлагатай үндэсний хэмжээний төрөлжсөн нарийн мэргэжлийн эмнэлэг бөгөөд эрүүл мэндийн салбарт тогтвортой хөгжиж ирсэн байгууллага юм.</p>
+                        <p class="ew-why-text"><strong>Бид зөвхөн эмчилгээ бус итгэлцэл, хариуцлага, мэргэжлийн ёс зүйг эрхэмлэн ажилладаг.</strong></p>
+                    </div>
+                    <div class="ew-stats">
+                        <div class="ew-stat">
+                            <i>👥</i>
+                            <strong>250+</strong>
+                            <span>эмч, ажилтан, албан хаагч</span>
+                        </div>
+                        <div class="ew-stat">
+                            <i>🎓</i>
+                            <strong>70%</strong>
+                            <span>эмч, мэргэжилтнүүдийн эрдмийн зэрэг, цолтой</span>
+                        </div>
+                        <div class="ew-stat">
+                            <i>🏆</i>
+                            <strong>33</strong>
+                            <span>жилийн туршлага, мэргэшсэн баг</span>
+                        </div>
+                        <div class="ew-stat">
+                            <i>✓</i>
+                            <strong>100%</strong>
+                            <span>магадлан итгэмжлэгдсэн эмнэлэг</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="services">
-            <div class="wrap">
-                <h2 class="section-title">Байгууллагад зориулсан үйлчилгээ</h2>
-                <div class="service-grid">
-                    <div class="service-card" onclick="location.href='contact.html'" style="cursor:pointer">
-                        <div class="service-no">1</div>
-                        <h3>Урьдчилан сэргийлэх үзлэг, оношлогоо</h3>
+        <section class="ew-services">
+            <div class="ew-container">
+                <h2 class="ew-section-title">БАЙГУУЛЛАГАД ЗОРИУЛСАН ҮЙЛЧИЛГЭЭ</h2>
+                <div class="ew-services-grid">
+                    <div class="ew-service-card">
+                        <h3><i>🛡️</i>Урьдчилан сэргийлэх үзлэг, оношлогоо</h3>
                         <ul>
                             <li>ЧХХ-ийн нарийн мэргэжлийн үзлэг</li>
                             <li>Эрсдэлийн үнэлгээ</li>
@@ -233,63 +266,68 @@
                             <li>Шаардлагатай оношлогоо</li>
                             <li>Эмчилгээний төлөвлөгөө боловсруулах</li>
                         </ul>
-                        <div class="service-icon">🩺</div>
                     </div>
-                    <div class="service-card" onclick="location.href='contact.html'" style="cursor:pointer">
-                        <div class="service-no">2</div>
-                        <h3>Эрүүл мэндийн боловсрол</h3>
+                    <div class="ew-service-card">
+                        <h3><i>🎓</i>Эрүүл мэндийн боловсрол</h3>
                         <ul>
                             <li>Сургалт, зөвлөгөө</li>
                             <li>Асуулт, хариултын уулзалт</li>
                             <li>Эрүүл дадал хэвшүүлэх хөтөлбөр</li>
                             <li>Урьдчилан сэргийлэх зөвлөмж</li>
                         </ul>
-                        <div class="service-icon">🎓</div>
                     </div>
-                    <div class="service-card" onclick="location.href='contact.html'" style="cursor:pointer">
-                        <div class="service-no">3</div>
-                        <h3>Байгууллагын тусгай үйлчилгээ</h3>
+                    <div class="ew-service-card">
+                        <h3><i>🏢</i>Байгууллагын тусгай үйлчилгээ</h3>
                         <ul>
                             <li>Ажилтны тоонд суурилсан уян хатан үнэ</li>
                             <li>Хөнгөлөлттэй багцын үзлэг, оношлогоо</li>
                             <li>Харилцагч байгууллагын онцгой нөхцөл</li>
                             <li>Байгууллагын ЧХХ-н эрүүл мэндийн нэгдсэн тайлан</li>
                         </ul>
-                        <div class="service-icon">🏢</div>
                     </div>
-                    <div class="service-card" onclick="location.href='contact.html'" style="cursor:pointer">
-                        <div class="service-no">4</div>
-                        <h3>Тайлан, дүн шинжилгээ</h3>
+                    <div class="ew-service-card">
+                        <h3><i>📊</i>Тайлан, дүн шинжилгээ</h3>
                         <ul>
                             <li>Байгууллагын ЧХХ-н эрүүл мэндийн ерөнхий үнэлгээ</li>
                             <li>Эрсдэлийн дүн шинжилгээ</li>
                             <li>Хүний нөөцийн эрүүл мэндийн тайлан</li>
                             <li>Цаашдын хяналт, зөвлөмж, эмчилгээ</li>
                         </ul>
-                        <div class="service-icon">📊</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="pricing">
-            <div class="wrap">
-                <h2 class="section-title">Хөтөлбөрийн багцууд</h2>
-                <div class="pricing-grid">
-                    <div class="price-card" onclick="location.href='contact.html'" style="cursor:pointer">
-                        <h3>BASIC</h3>
-                        <div class="subtitle">Анхан шатны урьдчилан сэргийлэх үйлчилгээ</div>
+        <section class="ew-pricing">
+            <div class="ew-container">
+                <h2 class="ew-section-title">ХӨТӨЛБӨРИЙН БАГЦУУД</h2>
+                <div class="ew-pricing-grid">
+                    <div class="ew-price-card">
+                        <div class="ew-price-header">
+                            <i>🛡️</i>
+                            <div>
+                                <h3>BASIC</h3>
+                                <p>Анхан шатны урьдчилан сэргийлэх үйлчилгээ</p>
+                            </div>
+                        </div>
                         <ul>
                             <li>ЧХХ-н үзлэг</li>
                             <li>Эмчийн зөвлөгөө /шаардлагатай тохиолдолд эмчилгээ/</li>
                             <li>Хөнгөлөлттэй үйлчилгээ</li>
                             <li>Ажилтнуудын ЧХХ-н үзлэгийн дүгнэлт /нэгтгэсэн тайлан/</li>
+                            <li>Сувиллын үйлчилгээний 5%-ийн хөнгөлөлт</li>
                         </ul>
-                        <div class="discount">Сувиллын үйлчилгээний 5%-ийн хөнгөлөлт</div>
+                        <a href="contact.html" class="ew-price-btn">🖥️ Үнийг асуух</a>
                     </div>
-                    <div class="price-card featured" onclick="location.href='contact.html'" style="cursor:pointer">
-                        <h3>STANDARD</h3>
-                        <div class="subtitle">Эрүүл мэндийн үнэлгээ, эрт илрүүлгийн цогц үйлчилгээ</div>
+
+                    <div class="ew-price-card featured">
+                        <div class="ew-price-header">
+                            <i>⭐</i>
+                            <div>
+                                <h3>STANDARD</h3>
+                                <p>Эрүүл мэндийн үнэлгээ, эрт илрүүлгийн цогц үйлчилгээ</p>
+                            </div>
+                        </div>
                         <ul>
                             <li>ЧХХ-ийн нарийн мэргэжлийн үзлэг, оношлогоо</li>
                             <li>Эмчийн зөвлөгөө /шаардлагатай тохиолдолд эмчилгээ/</li>
@@ -297,12 +335,19 @@
                             <li>ЧХХ-н эрүүл мэндийн боловсрол олгох сургалт</li>
                             <li>Байгууллагын ЧХХ-н үзлэгийн дүгнэлт /нэгтгэсэн тайлан/</li>
                             <li>Цаашдын хяналт, зөвлөмж, эмчилгээ</li>
+                            <li>Сувиллын үйлчилгээний 10%-ийн хөнгөлөлт</li>
                         </ul>
-                        <div class="discount">Сувиллын үйлчилгээний 10%-ийн хөнгөлөлт</div>
+                        <a href="contact.html" class="ew-price-btn">🖥️ Үнийг асуух</a>
                     </div>
-                    <div class="price-card" onclick="location.href='contact.html'" style="cursor:pointer">
-                        <h3>PREMIUM</h3>
-                        <div class="subtitle">Байгууллагын ЧХХ-н эрүүл мэндийн удирдлагын цогц шийдэл</div>
+
+                    <div class="ew-price-card teal">
+                        <div class="ew-price-header">
+                            <i>👑</i>
+                            <div>
+                                <h3>PREMIUM</h3>
+                                <p>Байгууллагын ЧХХ-н эрүүл мэндийн удирдлагын цогц шийдэл</p>
+                            </div>
+                        </div>
                         <ul>
                             <li>Бүрэн үзлэг, оношлогоо /ЧХХ, Дотор, Лаборатори, Тэнцвэр, Сонсгол, Хамар харшил, Дүрс оношлогоо/</li>
                             <li>Нарийвчилсан эрсдэлийн үнэлгээ</li>
@@ -310,162 +355,74 @@
                             <li>Эрүүл мэндийн боловсрол олгох сургалт /№1 өдрийн арга хэмжээ/</li>
                             <li>Байгууллагын ЧХХ-н эрүүл мэндийн дэлгэрэнгүй тайлан</li>
                             <li>Цаашдын хяналт, зөвлөмж, эмчилгээ</li>
+                            <li>Сувиллын үйлчилгээний 15%-ийн хөнгөлөлт</li>
                             <li>Сар бүрийн эрүүл мэндийн идэвхжүүлэлтийн аян</li>
                         </ul>
-                        <div class="discount">Сувиллын үйлчилгээний 15%-ийн хөнгөлөлт</div>
+                        <a href="contact.html" class="ew-price-btn">🖥️ Үнийг асуух</a>
+                    </div>
+                </div>
+                <p class="ew-pricing-note"><i>ⓘ</i>Багцын үнэ нь ажилтны тоо болон байгууллагын онцлогоос хамаарч уян хатан тохирно.</p>
+            </div>
+        </section>
+
+        <section class="ew-cta">
+            <div class="ew-container">
+                <div class="ew-cta-bar">
+                    <div class="ew-cta-left">
+                        <i>✉️</i>
+                        <div>
+                            <h3>ХАМТДАА ЭРҮҮЛ АЖЛЫН БАЙРЫГ БҮТЭЭЦГЭЭЕ</h3>
+                            <p>Бид танай байгууллагын эрүүл мэндийн найдвартай түнш байна.</p>
+                        </div>
+                    </div>
+                    <div class="ew-cta-right">
+                        <div class="ew-cta-contact">
+                            <a href="mailto:marketing@emjjhospital.mn">✉️ marketing@emjjhospital.mn</a>
+                            <a href="tel:70341111">📞 7034-1111</a>
+                        </div>
+                        <a href="contact.html" class="ew-cta-btn">Хамтран ажиллах →</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="monthly-section">
-            <div class="wrap">
-                <h2 class="section-title">Сар бүрийн эрүүл мэндийн дэмжих үйлчилгээ</h2>
-                <p class="section-subtitle">Ажилтнуудын эрүүл мэндийг тогтвортой хамгаалах, өвчлөлийн эрсдэлийг бууруулах зорилгоор жилийн турш хэрэгжих дараах үйлчилгээг үзүүлнэ.</p>
-                <div class="monthly-grid">
-                    <div class="monthly-card">
-                        <h3>Дархлаа дэмжих хөтөлбөр</h3>
-                        <ul>
-                            <li>Жилд 3 удаагийн дархлаажуулалтын аян</li>
-                            <li>Улирлын өвчлөлөөс урьдчилан сэргийлэх зөвлөгөө</li>
-                            <li>Дархлаа дэмжих мэдээлэл, зөвлөмж</li>
-                        </ul>
-                    </div>
-                    <div class="monthly-card">
-                        <h3>Чих, хамар, хоолойн эрүүл мэндийн арчилгаа</h3>
-                        <ul>
-                            <li>Хамар арчилгаа, цэвэрлэгээний бүтээгдэхүүний хөнгөлөлттэй хангамж</li>
-                            <li>Хамар, дайвар хөндийн үрэвслээс урьдчилан сэргийлэх зөвлөгөө</li>
-                            <li>Амьсгалын замын эрүүл мэндийг дэмжих зөвлөмж</li>
-                        </ul>
-                    </div>
-                    <div class="monthly-card">
-                        <h3>Харшлын эрсдэлээс урьдчилан сэргийлэх үйлчилгээ</h3>
-                        <ul>
-                            <li>Харшлын талаарх мэдлэг олгох сургалт</li>
-                            <li>Эрсдэлт бүлгийн ажилтнуудад зөвлөгөө өгөх</li>
-                            <li>Улирлын чанартай харшлын үеийн зөвлөмж, мэдээлэл</li>
-                        </ul>
-                    </div>
-                    <div class="monthly-card">
-                        <h3>Эрүүл мэндийн боловсрол, идэвхжүүлэлтийн аян</h3>
-                        <ul>
-                            <li>"Сонсголоо хамгаалъя" аян</li>
-                            <li>"Эрүүл амьсгал – Эрүүл амьдрал" өдөрлөг</li>
-                            <li>"Харшлаас сэргийлье" мэдээллийн хөтөлбөр</li>
-                            <li>Эрүүл амьдралын хэв маягийг дэмжих арга хэмжээ</li>
-                        </ul>
-                    </div>
-                    <div class="monthly-card">
-                        <h3>Эрүүл хооллолт, амьдралын хэв маягийн зөвлөгөө</h3>
-                        <ul>
-                            <li>Эрүүл хооллолтын сургалт</li>
-                            <li>Хоол зүйчийн зөвлөгөө</li>
-                            <li>Ажилтны эрүүл дадлыг төлөвшүүлэх зөвлөмж</li>
-                        </ul>
-                    </div>
-                    <div class="monthly-card">
-                        <h3>Байгууллагын эрүүл мэндийн орчныг дэмжих үйлчилгээ</h3>
-                        <ul>
-                            <li>Артерийн даралт хэмжих төхөөрөмж байрлуулах боломж</li>
-                            <li>Эрүүл мэндийн булан, мэдээллийн самбарын зөвлөмж</li>
-                            <li>Ажилтнуудын эрүүл мэндийн хяналт, идэвхжүүлэлтийг дэмжих үйлчилгээ</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="events-section">
-            <div class="wrap">
-                <h2 class="section-title">Сар бүрийн эрүүл мэндийн идэвхжүүлэлтийн аян</h2>
-                <p class="section-subtitle">PREMIUM багцад багтсан сар бүрийн идэвхжүүлэлтийн аяны сэдвүүд</p>
-                <div class="events-card">
-                    <div class="events-grid">
-                        <div class="event-item"><i>💉</i><span>Дархлаажуулалт /3 удаа/</span></div>
-                        <div class="event-item"><i>🌿</i><span>Хамар арчилгааны бүтээгдэхүүн</span></div>
-                        <div class="event-item"><i>🛡️</i><span>Урьдчилан сэргийлэх зөвлөгөө</span></div>
-                        <div class="event-item"><i>🌸</i><span>Харшил</span></div>
-                        <div class="event-item"><i>🏃</i><span>Эрүүл мэндийн идэвхжүүлэх арга хэмжээ</span></div>
-                        <div class="event-item"><i>👂</i><span>Сонсголоо хамгаалъя</span></div>
-                        <div class="event-item"><i>🩺</i><span>Артерийн даралт үзэх төхөөрөмж</span></div>
-                        <div class="event-item"><i>🥗</i><span>Эрүүл хооллолт сургалт, зөвлөгөө</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="rehab-section">
-            <div class="wrap">
-                <h2 class="section-title">Эрүүл мэндээ сэргээж, эрч хүчээ сэлбэх хамгийн тохиромжтой орчин</h2>
-                <div class="rehab-card">
-                    <div class="rehab-content">
-                        <h3>ЭМЖЖ сэргээн засах сувилал</h3>
-                        <p>Улаанбаатар хотоос 50 км зайд, Төв аймгийн Баянчандмань сумын Дарцагт уулын энгэрт байрлах ЭМЖЖ сэргээн засах сувилал нь байгалийн үзэсгэлэнт орчинд амарч, сувилуулах боломжийг бүрдүүлдэг.</p>
-                        <h3 style="font-size:16px; margin:20px 0 12px;">Сувиллын давуу тал</h3>
-                        <ul class="rehab-list">
-                            <li>50 ортой хүчин чадал</li>
-                            <li>Энгийн, хагас люкс, бүтэн люкс өрөө</li>
-                            <li>Өвөл, зуны шавар гэрийн сонголт</li>
-                            <li>Ахмад настан, хөгжлийн бэрхшээлтэй иргэдэд зориулсан орчин</li>
-                        </ul>
-                        <h3 style="font-size:16px; margin:20px 0 12px;">Сэргээн засах эмчилгээ</h3>
-                        <ul class="rehab-list">
-                            <li>Физик эмчилгээ</li>
-                            <li>Хөдөлгөөн засал</li>
-                            <li>Шавар эмчилгээ</li>
-                            <li>Усан эмчилгээ</li>
-                        </ul>
-                        <h3 style="font-size:16px; margin:20px 0 12px;">Уламжлалт эмчилгээ</h3>
-                        <ul class="rehab-list">
-                            <li>Бариа засал, бумба, зүү эмчилгээ</li>
-                            <li>Төөнүүр, дэвтээлэг, шивүүр, жин засал</li>
-                        </ul>
-                        <p style="margin-top:20px;"><strong>Эрүүл хүнс, байгалийн орчин:</strong> Өөрсдийн аж ахуйгаас бэлтгэсэн органик хүнс, эмчилгээний хоол, гүүний саам, цагаан идээгээр үйлчилдэг.</p>
-                    </div>
-                    <div class="rehab-image">
-                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700&h=500&fit=crop" alt="ЭМЖЖ сэргээн засах сувилал">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="partnership">
-            <div class="wrap partnership-grid">
-                <div class="steps-card">
-                    <h2 class="section-title">Хамтран ажиллах боломжууд</h2>
-                    <div class="step-line">
-                        <div class="step"><div class="step-no">1</div><i>📅</i><p>Жил бүрийн тогтмол үзлэг</p></div>
-                        <div class="step"><div class="step-no">2</div><i>👥</i><p>Байгууллагын эрүүл мэндийн өдөрлөг /ENT HEALTH/</p></div>
-                        <div class="step"><div class="step-no">3</div><i>💙</i><p>Сар бүрийн байгууллагын эрүүл мэндийн үйлчилгээ</p></div>
-                        <div class="step"><div class="step-no">4</div><i>🤝</i><p>Хамтарсан нийгмийн аян /ENT CARE, ДҮН/</p></div>
-                    </div>
-                </div>
-                <div class="donate-note">
-                    <i>💙</i>
-                    <p>Та бүхэнтэй хамтран ажилласан үйлчилгээний төлбөрийн 1% “ДҮН” хэл заслын сургалтын төвийн үйл ажиллагаанд хандивлагдана.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="health-cta">
-            <div class="wrap cta-bar">
-                <h2>ХАМТДАА ЭРҮҮЛ АЖЛЫН БАЙРЫГ БҮТЭЭЦГЭЭЕ</h2>
-                <div class="cta-actions">
-                    <a href="contact.html" class="cta-btn">ДЭЛГЭРЭНГҮЙ МЭДЭЭЛЭЛ АВАХ →</a>
-                    <a href="tel:77075050" class="cta-phone">☎ 7707-5050</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="contact-email">
-            <a href="mailto:marketing@emjj.mn">✉ marketing@emjj.mn</a>
-        </div>
     </main>
 
-    <footer class="footer">
-        <div class="wrap">
-            <p>© 2024 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.</p>
+    <footer class="ew-footer">
+        <div class="ew-container">
+            <div class="ew-footer-grid">
+                <div class="ew-footer-brand">
+                    <h3><i>ↄ</i>ЭМЖЖ ЭМНЭЛЭГ</h3>
+                    <p>Чих, хамар, хоолой, сонсгол, тэнцвэрийн нарийн мэргэжлийн эмнэлэг</p>
+                </div>
+                <div class="ew-footer-col">
+                    <h4>ҮЙЛЧИЛГЭЭ</h4>
+                    <ul>
+                        <li><a href="services.html">Амбулаторийн үйлчилгээ</a></li>
+                        <li><a href="services.html">Мэс заслын үйлчилгээ</a></li>
+                        <li><a href="services.html">Оношлогоо, шинжилгээ</a></li>
+                        <li><a href="services.html">Тэнцвэрийн лаборатори</a></li>
+                    </ul>
+                </div>
+                <div class="ew-footer-col">
+                    <h4>ЭМЧ, МЭРГЭЖИЛТНҮҮД</h4>
+                    <ul>
+                        <li><a href="doctors.html">Эмч нарын баг</a></li>
+                        <li><a href="doctors.html">Мэргэжилтнүүд</a></li>
+                        <li><a href="training.html">Ажлын байр</a></li>
+                    </ul>
+                </div>
+                <div class="ew-footer-col ew-footer-contact">
+                    <h4>ХОЛБОО БАРИХ</h4>
+                    <ul>
+                        <li><i>📍</i>Улаанбаатар хот, Сүхбаатар дүүрэг, 11-р хороо, ЭМЖЖ эмнэлэг</li>
+                        <li><i>✉️</i>info@emjjhospital.mn</li>
+                        <li><i>📞</i>7034-1111</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ew-footer-bottom">
+                © 2025 ЭМЖЖ эмнэлэг. Бүх эрх хуулиар хамгаалагдсан.
+            </div>
         </div>
     </footer>
 
