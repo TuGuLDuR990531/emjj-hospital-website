@@ -43,12 +43,16 @@
 
         .ew-hero-image { position: relative; height: 420px; border-radius: 24px; overflow: hidden; }
         .ew-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+        .ew-hero-logo { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,.95); padding: 12px 18px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+        .ew-hero-logo span { display: block; font-size: 11px; font-weight: 700; color: var(--ew-primary); }
+        .ew-hero-logo strong { font-size: 16px; font-weight: 800; color: var(--ew-teal); }
 
         .ew-goals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; padding-bottom: 40px; }
         .ew-goal { background: #fff; border: 1px solid var(--ew-border); border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s; }
         .ew-goal:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,84,166,0.1); }
         .ew-goal i { width: 52px; height: 52px; display: grid; place-items: center; margin: 0 auto 12px; border: 2px solid #bfdbfe; border-radius: 50%; font-size: 24px; font-style: normal; color: var(--ew-primary); background: #eff6ff; }
-        .ew-goal span { font-size: 13px; font-weight: 700; color: var(--ew-text); line-height: 1.4; display: block; }
+        .ew-goal strong { font-size: 13px; font-weight: 700; color: var(--ew-primary); display: block; margin-bottom: 6px; }
+        .ew-goal span { font-size: 12px; font-weight: 600; color: var(--ew-text-medium); line-height: 1.4; display: block; }
 
         /* Why section */
         .ew-why { background: var(--ew-primary); color: #fff; padding: 64px 0; }
@@ -64,34 +68,34 @@
 
         /* Services */
         .ew-services { padding: 70px 0; background: #fff; }
-        .ew-section-title { text-align: center; font-size: 26px; font-weight: 800; color: var(--ew-primary); margin-bottom: 40px; text-transform: uppercase; }
+        .ew-section-title { text-align: center; font-size: 24px; font-weight: 800; color: var(--ew-primary); margin-bottom: 40px; text-transform: uppercase; }
         .ew-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .ew-service-card { background: #fff; border: 1px solid var(--ew-border); border-radius: 20px; padding: 28px 22px; transition: transform 0.3s, box-shadow 0.3s; }
         .ew-service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,84,166,0.1); }
         .ew-service-card h3 { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: var(--ew-primary); margin-bottom: 18px; min-height: 44px; }
         .ew-service-card h3 i { width: 36px; height: 36px; display: grid; place-items: center; border: 2px solid #bfdbfe; border-radius: 10px; font-size: 18px; font-style: normal; color: var(--ew-primary); background: #eff6ff; flex-shrink: 0; }
-        .ew-service-card li { font-size: 13px; color: var(--ew-text-medium); margin-bottom: 10px; padding-left: 18px; position: relative; font-weight: 600; line-height: 1.5; }
-        .ew-service-card li::before { content: '✓'; position: absolute; left: 0; color: var(--ew-teal); font-weight: 800; }
+        .ew-service-card li { font-size: 13px; color: var(--ew-text-medium); margin-bottom: 10px; padding-left: 14px; position: relative; font-weight: 600; line-height: 1.5; }
+        .ew-service-card li::before { content: '•'; position: absolute; left: 0; color: var(--ew-teal); font-weight: 800; }
 
         /* Pricing */
-        .ew-pricing { padding: 70px 0; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+        .ew-pricing { padding: 70px 0; background: #fff; }
         .ew-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .ew-price-card { background: #fff; border: 1px solid var(--ew-border); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
-        .ew-price-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,84,166,0.1); }
+        .ew-price-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
         .ew-price-card.featured { border: 2px solid var(--ew-primary); }
+        .ew-price-card.orange { border-color: var(--ew-orange); }
+        .ew-price-card.teal { border-color: var(--ew-teal); }
         .ew-price-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--ew-border); }
         .ew-price-header i { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; font-size: 22px; font-style: normal; background: #eff6ff; color: var(--ew-primary); }
-        .ew-price-header h3 { font-size: 18px; font-weight: 800; color: var(--ew-primary); }
-        .ew-price-header p { font-size: 12px; color: var(--ew-text-light); font-weight: 600; margin-top: 2px; }
         .ew-price-card.orange .ew-price-header i { background: #fff7ed; color: var(--ew-orange); }
-        .ew-price-card.orange .ew-price-header h3 { color: var(--ew-orange); }
-        .ew-price-card.orange { border-color: var(--ew-orange); }
         .ew-price-card.teal .ew-price-header i { background: #ecfeff; color: var(--ew-teal); }
+        .ew-price-header h3 { font-size: 18px; font-weight: 800; color: var(--ew-primary); }
+        .ew-price-card.orange .ew-price-header h3 { color: var(--ew-orange); }
         .ew-price-card.teal .ew-price-header h3 { color: var(--ew-teal); }
-        .ew-price-card.teal { border-color: var(--ew-teal); }
+        .ew-price-header p { font-size: 12px; color: var(--ew-text-light); font-weight: 600; margin-top: 2px; }
         .ew-price-card ul { margin-bottom: 24px; flex-grow: 1; }
-        .ew-price-card li { font-size: 13px; color: var(--ew-text-medium); margin-bottom: 10px; padding-left: 18px; position: relative; font-weight: 600; line-height: 1.5; }
-        .ew-price-card li::before { content: '✓'; position: absolute; left: 0; color: var(--ew-teal); font-weight: 800; }
+        .ew-price-card li { font-size: 13px; color: var(--ew-text-medium); margin-bottom: 10px; padding-left: 14px; position: relative; font-weight: 600; line-height: 1.5; }
+        .ew-price-card li::before { content: '•'; position: absolute; left: 0; color: var(--ew-teal); font-weight: 800; }
         .ew-price-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; border-radius: 10px; border: 1.5px solid var(--ew-primary); color: var(--ew-primary); font-size: 13px; font-weight: 700; transition: all 0.3s; background: #fff; }
         .ew-price-btn:hover { background: var(--ew-primary); color: #fff; }
         .ew-price-card.orange .ew-price-btn { border-color: var(--ew-orange); color: var(--ew-orange); }
@@ -100,6 +104,42 @@
         .ew-price-card.teal .ew-price-btn:hover { background: var(--ew-teal); color: #fff; }
         .ew-pricing-note { text-align: center; font-size: 13px; color: var(--ew-text-light); margin-top: 24px; font-weight: 600; }
         .ew-pricing-note i { color: var(--ew-primary); margin-right: 6px; }
+
+        /* Monthly services */
+        .ew-monthly { padding: 70px 0; background: linear-gradient(180deg, #f8fafc 0%, #fff 100%); }
+        .ew-monthly-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .ew-monthly-card { background: #fff; border: 1px solid var(--ew-border); border-radius: 16px; padding: 24px 20px; text-align: center; transition: all .3s; }
+        .ew-monthly-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,84,166,.08); }
+        .ew-monthly-card i { width: 56px; height: 56px; display: grid; place-items: center; margin: 0 auto 14px; border-radius: 50%; font-size: 26px; font-style: normal; background: #fff7ed; color: var(--ew-orange); }
+        .ew-monthly-card h3 { font-size: 14px; font-weight: 700; color: var(--ew-text); margin-bottom: 8px; line-height: 1.4; }
+        .ew-monthly-card p { font-size: 12px; color: var(--ew-text-medium); line-height: 1.6; font-weight: 600; }
+        .ew-monthly-cta { text-align: center; margin-top: 28px; }
+        .ew-monthly-cta a { display: inline-flex; align-items: center; gap: 8px; background: var(--ew-orange); color: #fff; padding: 12px 24px; border-radius: 10px; font-size: 13px; font-weight: 700; transition: all .3s; }
+        .ew-monthly-cta a:hover { background: #e08a2a; transform: translateY(-2px); }
+
+        /* Rehab */
+        .ew-rehab { padding: 70px 0; background: #fff; }
+        .ew-rehab-card { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: center; background: linear-gradient(135deg, #f0f9ff, #fff); border: 1px solid var(--ew-border); border-radius: 24px; padding: 40px; }
+        .ew-rehab-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .ew-rehab-images img { width: 100%; height: 160px; object-fit: cover; border-radius: 16px; }
+        .ew-rehab-images img:first-child { grid-column: 1 / -1; height: 200px; }
+        .ew-rehab-content h2 { font-size: 24px; font-weight: 800; color: var(--ew-primary); margin-bottom: 12px; }
+        .ew-rehab-content > p { font-size: 14px; color: var(--ew-text-medium); line-height: 1.7; margin-bottom: 24px; font-weight: 600; }
+        .ew-rehab-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .ew-rehab-item h4 { font-size: 14px; font-weight: 700; color: var(--ew-primary); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .ew-rehab-item h4 i { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; background: #eff6ff; font-size: 14px; font-style: normal; }
+        .ew-rehab-item ul { margin-bottom: 16px; }
+        .ew-rehab-item li { font-size: 12px; color: var(--ew-text-medium); margin-bottom: 6px; padding-left: 12px; position: relative; font-weight: 600; }
+        .ew-rehab-item li::before { content: '•'; position: absolute; left: 0; color: var(--ew-teal); font-weight: 800; }
+
+        /* Benefits */
+        .ew-benefits { padding: 70px 0; background: linear-gradient(180deg, #fff 0%, #f8fafc 100%); }
+        .ew-benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .ew-benefit-card { background: #fff; border: 1px solid var(--ew-border); border-radius: 20px; padding: 28px; text-align: center; transition: all .3s; }
+        .ew-benefit-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,84,166,.1); }
+        .ew-benefit-card i { width: 60px; height: 60px; display: grid; place-items: center; margin: 0 auto 16px; border-radius: 50%; font-size: 26px; font-style: normal; background: #eff6ff; color: var(--ew-primary); }
+        .ew-benefit-card h3 { font-size: 16px; font-weight: 700; color: var(--ew-primary); margin-bottom: 10px; }
+        .ew-benefit-card p { font-size: 13px; color: var(--ew-text-medium); line-height: 1.6; font-weight: 600; }
 
         /* CTA */
         .ew-cta { padding: 0 0 70px; }
@@ -135,11 +175,15 @@
             .ew-why-inner { grid-template-columns: 1fr; }
             .ew-services-grid { grid-template-columns: repeat(2, 1fr); }
             .ew-pricing-grid { grid-template-columns: 1fr; }
+            .ew-monthly-grid { grid-template-columns: repeat(2, 1fr); }
+            .ew-rehab-card { grid-template-columns: 1fr; }
+            .ew-rehab-grid { grid-template-columns: 1fr; }
+            .ew-benefits-grid { grid-template-columns: 1fr; }
             .ew-footer-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 640px) {
-            .ew-goals, .ew-services-grid { grid-template-columns: 1fr; }
+            .ew-goals, .ew-services-grid, .ew-monthly-grid { grid-template-columns: 1fr; }
             .ew-stats { grid-template-columns: repeat(2, 1fr); }
             .ew-cta-bar { flex-direction: column; align-items: flex-start; }
             .ew-cta-right { flex-direction: column; align-items: flex-start; }
@@ -194,26 +238,34 @@
                         <p class="ew-hero-text">Чих, хамар, хоолойн (ЧХХ) өвчлөл нь ажилтны ажлын бүтээмж буурах, хөдөлмөрийн чадвар түр алдах, эмчилгээний зардал нэмэгдэх гол шалтгаануудын нэг болдог. ЭМЖЖ эмнэлэг нь байгууллагын ажилтнуудын ЧХХ-ийн эрүүл мэндийг хамгаалах, эрт илрүүлэг хийх, урьдчилан сэргийлэх, эрүүл мэндийн боловсрол олгох зорилготой ENT WELLNESS хөтөлбөрийг санал болгож байна.</p>
                     </div>
                     <div class="ew-hero-image">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&h=500&fit=crop" alt="ENT Wellness">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&h=500&fit=crop" alt="ENT Wellness">
+                        <div class="ew-hero-logo">
+                            <span>ЭМЖЖ</span>
+                            <strong>ENT Wellness+</strong>
+                        </div>
                     </div>
                 </div>
 
                 <div class="ew-goals">
                     <div class="ew-goal">
                         <i>🔍</i>
-                        <span>Эрт илрүүлэг</span>
+                        <strong>Эрт илрүүлэг</strong>
+                        <span>ЧХХ өвчлөлийг эрт үе шатанд илрүүлж, урьдчилан сэргийлнэ</span>
                     </div>
                     <div class="ew-goal">
-                        <i>🎓</i>
-                        <span>Эрүүл мэдлэг, зөв дадал</span>
+                        <i>📋</i>
+                        <strong>Мэдлэг, зөв дадал</strong>
+                        <span>Эрүүл мэндийн боловсрол, урьдчилан сэргийлэх зөв дадал хэвшүүлнэ</span>
                     </div>
                     <div class="ew-goal">
                         <i>👥</i>
-                        <span>Эрүүл хамт олон</span>
+                        <strong>Эрүүл хамт олон</i>
+                        <span>Байгууллагын эрүүл мэндийн соёлыг дэмжиж, оролцоог нэмэгдүүлнэ</span>
                     </div>
                     <div class="ew-goal">
                         <i>📈</i>
-                        <span>Тогтвортой бүтээмж</span>
+                        <strong>Тогтвортой бүтээмж</strong>
+                        <span>ЧХХ-н эрсдэлээс үүдэлтэй алдагдал, зардлыг бууруулна</span>
                     </div>
                 </div>
             </div>
@@ -240,11 +292,11 @@
                         </div>
                         <div class="ew-stat">
                             <i>🏆</i>
-                            <strong>33</strong>
+                            <strong>33+</strong>
                             <span>жилийн туршлага, мэргэшсэн баг</span>
                         </div>
                         <div class="ew-stat">
-                            <i>✓</i>
+                            <i>🛡️</i>
                             <strong>100%</strong>
                             <span>магадлан итгэмжлэгдсэн эмнэлэг</span>
                         </div>
@@ -317,7 +369,7 @@
                             <li>Ажилтнуудын ЧХХ-н үзлэгийн дүгнэлт /нэгтгэсэн тайлан/</li>
                             <li>Сувиллын үйлчилгээний 5%-ийн хөнгөлөлт</li>
                         </ul>
-                        <a href="contact.html" class="ew-price-btn">🖥️ Үнийг асуух</a>
+                        <a href="contact.html" class="ew-price-btn">Дэлгэрэнгүй үзэх →</a>
                     </div>
 
                     <div class="ew-price-card featured">
@@ -337,7 +389,7 @@
                             <li>Цаашдын хяналт, зөвлөмж, эмчилгээ</li>
                             <li>Сувиллын үйлчилгээний 10%-ийн хөнгөлөлт</li>
                         </ul>
-                        <a href="contact.html" class="ew-price-btn">🖥️ Үнийг асуух</a>
+                        <a href="contact.html" class="ew-price-btn">Дэлгэрэнгүй үзэх →</a>
                     </div>
 
                     <div class="ew-price-card teal">
@@ -358,10 +410,135 @@
                             <li>Сувиллын үйлчилгээний 15%-ийн хөнгөлөлт</li>
                             <li>Сар бүрийн эрүүл мэндийн идэвхжүүлэлтийн аян</li>
                         </ul>
-                        <a href="contact.html" class="ew-price-btn">🖥️ Үнийг асуух</a>
+                        <a href="contact.html" class="ew-price-btn">Дэлгэрэнгүй үзэх →</a>
                     </div>
                 </div>
                 <p class="ew-pricing-note"><i>ⓘ</i>Багцын үнэ нь ажилтны тоо болон байгууллагын онцлогоос хамаарч уян хатан тохирно.</p>
+            </div>
+        </section>
+
+        <section class="ew-monthly">
+            <div class="ew-container">
+                <h2 class="ew-section-title">САР БҮРИЙН ЭРҮҮЛ МЭНДИЙН ДЭМЖИХ ҮЙЛЧИЛГЭЭ (PREMIUM)</h2>
+                <div class="ew-monthly-grid">
+                    <div class="ew-monthly-card">
+                        <i>💉</i>
+                        <h3>Дархлаажуулалтын аян (3 удаа)</h3>
+                        <p>Улирлын өвчлөлөөс урьдчилан сэргийлэх</p>
+                    </div>
+                    <div class="ew-monthly-card">
+                        <i>🌿</i>
+                        <h3>Хамар арчилгааны бүтээгдэхүүн</h3>
+                        <p>Хөнгөлөлттэй хангамж, зөвлөгөө</p>
+                    </div>
+                    <div class="ew-monthly-card">
+                        <i>🛡️</i>
+                        <h3>Урьдчилан сэргийлэх зөвлөгөө</h3>
+                        <p>ЧХХ өвчнөөс сэргийлэх зөвлөмж</p>
+                    </div>
+                    <div class="ew-monthly-card">
+                        <i>🌸</i>
+                        <h3>Харшлын талаарх зөвлөгөө</h3>
+                        <p>Мэдлэг олгох, эрсдэлт бүлэгт зөвлөгөө өгөх</p>
+                    </div>
+                    <div class="ew-monthly-card">
+                        <i>🏃</i>
+                        <h3>Эрүүл мэндийн идэвхжүүлэлтийн аян</h3>
+                        <p>"Сонсголоо хамгаалъя" өдөрлөг, арга хэмжээ</p>
+                    </div>
+                    <div class="ew-monthly-card">
+                        <i>🩺</i>
+                        <h3>Артерийн даралт үзэх төхөөрөмж</h3>
+                        <p>Байгууллагад байрлуулах боломж, хяналт</p>
+                    </div>
+                    <div class="ew-monthly-card">
+                        <i>🥗</i>
+                        <h3>Эрүүл хооллолт сургалт, зөвлөгөө</h3>
+                        <p>Хоол зүйчийн зөвлөгөө, ажилтны дадал төлөвшүүлэх</p>
+                    </div>
+                    <div class="ew-monthly-card">
+                        <i>🧪</i>
+                        <h3>Эрүүл мэндийн скрининг, сорил</h3>
+                        <p>Урьдчилан сэргийлэх зориулалттай бүтээгдэхүүн</p>
+                    </div>
+                </div>
+                <div class="ew-monthly-cta">
+                    <a href="contact.html">Дэлгэрэнгүй →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="ew-rehab">
+            <div class="ew-container">
+                <h2 class="ew-section-title">ЭМЖЖ СЭРГЭЭН ЗАСАХ СУВИЛАЛ</h2>
+                <div class="ew-rehab-card">
+                    <div class="ew-rehab-images">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=300&fit=crop" alt="Сувиллын орчин">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=300&h=200&fit=crop" alt="Сувиллын өрөө">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&h=200&fit=crop" alt="Эмчилгээ">
+                    </div>
+                    <div class="ew-rehab-content">
+                        <h2>Эрүүл мэндээ сэргээж, эрч хүчээ сэлбэх хамгийн тохиромжтой орчин</h2>
+                        <p>Улаанбаатар хотоос 50 км зайд, Төв аймгийн Баянчандмань сумын Дарцагт уулын энгэрт байрлах ЭМЖЖ сэргээн засах сувилал нь байгалийн үзэсгэлэнт орчинд амарч, сувилуулах боломжийг бүрдүүлдэг.</p>
+                        <div class="ew-rehab-grid">
+                            <div class="ew-rehab-item">
+                                <h4><i>🏨</i>Сувиллын давуу тал</h4>
+                                <ul>
+                                    <li>50 ортой хүчин чадал</li>
+                                    <li>Энгийн, хагас люкс, бүтэн люкс өрөө</li>
+                                    <li>Өвөл, зуны шавар гэрийн сонголт</li>
+                                    <li>Ахмад настан, хөгжлийн бэрхшээлтэй иргэдэд зориулсан орчин</li>
+                                </ul>
+                            </div>
+                            <div class="ew-rehab-item">
+                                <h4><i>💆</i>Сэргээн засах эмчилгээ</h4>
+                                <ul>
+                                    <li>Физик эмчилгээ</li>
+                                    <li>Хөдөлгөөн засал</li>
+                                    <li>Шавар эмчилгээ</li>
+                                    <li>Усан эмчилгээ</li>
+                                </ul>
+                            </div>
+                            <div class="ew-rehab-item">
+                                <h4><i>🌿</i>Уламжлалт эмчилгээ</h4>
+                                <ul>
+                                    <li>Бариа засал, бумба, зүү эмчилгээ</li>
+                                    <li>Төөнүүр, дэвтээлэг, шивүүр, жин засал</li>
+                                </ul>
+                            </div>
+                            <div class="ew-rehab-item">
+                                <h4><i>🍃</i>Эрүүл хүнс, байгалийн орчин</h4>
+                                <ul>
+                                    <li>Өөрсдийн аж ахуйгаас бэлтгэсэн органик хүнс</li>
+                                    <li>Эмчилгээний хоол, гүүний саам, цагаан идээ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ew-benefits">
+            <div class="ew-container">
+                <h2 class="ew-section-title">ХӨТӨЛБӨРИЙН ҮР ДАВУУ ТАЛ</h2>
+                <div class="ew-benefits-grid">
+                    <div class="ew-benefit-card">
+                        <i>🤒</i>
+                        <h3>Хөдөлмөрийн чадвар алдахаас сэргийлнэ</h3>
+                        <p>Байгууллагын уян хатан ажиллах чадварыг алдагдуулах чих, хамар, хоолойн өвчлөлөөс урьдчилан сэргийлнэ.</p>
+                    </div>
+                    <div class="ew-benefit-card">
+                        <i>📈</i>
+                        <h3>Ажилтны оролцоо, хандлагыг нэмэгдүүлнэ</h3>
+                        <p>Эрүүл ажилтан бүтээмжтэй ажилладаг. Эрүүл мэндийн соёлыг төлөвшүүлж, ажлын байрны сэтгэл ханамжийг дээшлүүлнэ.</p>
+                    </div>
+                    <div class="ew-benefit-card">
+                        <i>💰</i>
+                        <h3>Эмчилгээний зардлыг бууруулна</h3>
+                        <p>Эрт илрүүлэг, урьдчилан сэргийлэх үзлэг нь хүндрэлээс сэргийлж, урт хугацааны эмчилгээний зардлыг хэмнэнэ.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
