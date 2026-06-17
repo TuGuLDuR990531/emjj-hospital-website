@@ -138,6 +138,37 @@
             .services-title h2 { font-size: 28px; }
         }
         .page-header { background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%) !important; }
+        .variant-switcher {
+            position: relative;
+            display: inline-block;
+            margin-top: 16px;
+        }
+        .variant-switcher select {
+            appearance: none;
+            background: rgba(255,255,255,0.95);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 10px;
+            padding: 10px 36px 10px 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0054a6;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .variant-switcher::after {
+            content: '';
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid #0054a6;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -170,6 +201,12 @@
         <div class="container">
             <h1>Тусламж үйлчилгээ</h1>
             <p>Бид олон улсын стандартад нийцсэн, орчин үеийн тоног төхөөрөмжтэй үйлчилгээг санал болгож байна</p>
+            <div class="variant-switcher">
+                <select id="variantSwitcher" onchange="switchVariant(this.value)" aria-label="Хуудасны хувилбар сонгох">
+                    <option value="services.html" selected>Хувилбар 1</option>
+                    <option value="services-v2.html">Хувилбар 2</option>
+                </select>
+            </div>
         </div>
     </section>
 
@@ -682,6 +719,12 @@
 
         function scrollToAppointment() {
             document.getElementById('appointment-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function switchVariant(url) {
+            if (url && url !== window.location.pathname.split('/').pop()) {
+                window.location.href = url;
+            }
         }
 
         window.addEventListener('scroll', () => {
