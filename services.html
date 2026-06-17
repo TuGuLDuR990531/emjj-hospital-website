@@ -4,155 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тусламж үйлчилгээ - EMJJ Hospital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        body { font-family: 'Montserrat', sans-serif; }
-        
-        .nav a { white-space: nowrap; }
-        .mobile-actions { display: none !important; }
-        @media (max-width: 768px) { .mobile-actions { display: flex !important; } }
-
-        /* ========== SERVICES SEARCH ========== */
-        .services-search { padding: 60px 0 40px; background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%); }
-        .search-module { background: white; border-radius: 24px; padding: 40px; box-shadow: 0 10px 40px rgba(0,84,166,0.1); }
-        .search-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
-        .search-header-icon { width: 56px; height: 56px; background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 26px; box-shadow: 0 6px 20px rgba(0,84,166,0.4); }
-        .search-header-text h3 { font-size: 22px; font-weight: 800; color: var(--text-dark); margin-bottom: 4px; }
-        .search-header-text p { font-size: 13px; color: #374151; }
-
-        .search-filters { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: 16px; margin-bottom: 24px; }
-        .filter-group { display: flex; flex-direction: column; gap: 6px; }
-        .filter-group label { font-size: 12px; font-weight: 700; color: var(--text-dark); }
-        .filter-select { padding: 12px 14px; border: 2px solid var(--border); border-radius: 10px; background: white; font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--text-medium); cursor: pointer; transition: all 0.3s; }
-        .filter-select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,84,166,0.1); }
-        .search-btn { background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%); color: white; border: none; padding: 12px 28px; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s; align-self: flex-end; box-shadow: 0 6px 20px rgba(0,84,166,0.3); }
-        .search-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,84,166,0.4); }
-
-        .additional-filters { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid var(--border); }
-        .additional-filters label { font-size: 13px; font-weight: 700; color: var(--text-dark); margin-right: 4px; }
-        .filter-chip { padding: 10px 18px; border: 2px solid var(--border); border-radius: 10px; background: white; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-medium); cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px; }
-        .filter-chip:hover, .filter-chip.active { border-color: #0054a6; color: #ffffff; background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%); box-shadow: 0 6px 20px rgba(0,84,166,0.3); transform: translateY(-2px); }
-        .clear-filters { margin-left: auto; color: var(--primary); font-size: 13px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; background: none; border: none; font-family: 'Montserrat', sans-serif; }
-        .clear-filters:hover { text-decoration: underline; }
-
-        /* ========== SERVICES RESULTS ========== */
-        .services-results { padding: 60px 0; background: var(--bg-white); min-height: 400px; }
-        .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-        .results-header h2 { font-size: 24px; font-weight: 800; color: var(--text-dark); }
-        .results-count { font-size: 14px; color: var(--text-light); font-weight: 600; }
-        .results-count strong { color: var(--primary); }
-
-        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .service-card { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s; }
-        .service-card:hover { box-shadow: 0 12px 40px rgba(0,84,166,0.1); border-color: #bfdbfe; }
-        .service-card-header { padding: 20px 24px; cursor: pointer; display: flex; align-items: flex-start; gap: 16px; }
-        .service-card-icon { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; font-size: 22px; background: #eff6ff; color: var(--primary); flex-shrink: 0; }
-        .service-card-title { flex-grow: 1; }
-        .service-card-title h3 { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; line-height: 1.4; }
-        .service-card-meta { display: flex; flex-wrap: wrap; gap: 8px; }
-        .service-card-meta span { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; background: #f1f5f9; color: var(--text-medium); }
-        .service-card-meta span.category-tag { background: var(--primary); color: #fff; }
-        .service-card-toggle { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #f1f5f9; color: var(--primary); font-size: 16px; transition: all 0.3s; flex-shrink: 0; margin-left: auto; }
-        .service-card.expanded .service-card-toggle { transform: rotate(180deg); background: var(--primary); color: #fff; }
-        .service-card-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-        .service-card.expanded .service-card-body { max-height: 500px; }
-        .service-card-content { padding: 0 24px 24px 88px; }
-        .service-card-content p { font-size: 13px; color: var(--text-medium); line-height: 1.7; margin-bottom: 16px; }
-        .service-card-content .service-doctors { margin-bottom: 16px; }
-        .service-card-content .service-doctors strong { display: block; font-size: 12px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
-        .service-card-content .doctor-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .service-card-content .doctor-tag { font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 20px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
-        .service-card-actions { display: flex; gap: 12px; }
-        .service-card-actions a { display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; transition: all 0.3s; }
-        .btn-book { background: var(--primary); color: #fff; }
-        .btn-book:hover { background: var(--primary-dark); transform: translateY(-2px); }
-        .btn-phone { background: #f1f5f9; color: var(--text-dark); }
-        .btn-phone:hover { background: #e2e8f0; }
-
-        .no-results { text-align: center; padding: 80px 20px; color: var(--text-light); display: none; }
-        .no-results.show { display: block; }
-        .no-results i { font-size: 48px; display: block; margin-bottom: 16px; font-style: normal; }
-        .no-results h3 { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
-        .no-results p { font-size: 14px; }
-
-        /* ========== SERVICES CATEGORIES ========== */
-        .services-categories { padding: 80px 0; background: var(--bg-white); }
-        .services-title { text-align: center; margin-bottom: 60px; }
-        .services-title h2 { font-size: 42px; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; }
-        .services-title p { color: #374151; font-size: 17px; max-width: 600px; margin: 0 auto; line-height: 1.7; }
-        .services-categories-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
-        .service-category-card { background: white; border: 2px solid #0054a6; border-bottom: 5px solid #0054a6; border-radius: 24px; padding: 40px 24px; text-align: center; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; font-family: 'Montserrat', sans-serif; cursor: pointer; }
-        .service-category-card:hover { transform: translateY(-12px); box-shadow: 0 25px 60px rgba(0,84,166,0.2); }
-        .service-category-icon { width: 100px; height: 100px; background: linear-gradient(135deg, #e8f4fd 0%, #b8ddf9 100%); color: #0054a6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 40px; transition: all 0.3s; }
-        .service-category-card:hover .service-category-icon { background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%) !important; color: white !important; transform: scale(1.1); box-shadow: 0 8px 25px rgba(0,84,166,0.35); }
-        .service-category-card h3 { font-size: 16px; font-weight: 800; color: var(--text-dark); margin-bottom: 12px; line-height: 1.3; }
-        .service-category-divider { width: 40px; height: 4px; background: linear-gradient(90deg, #0054a6, #03bfd7); border-radius: 2px; margin-bottom: 12px; }
-        .service-category-card p { font-size: 12px; color: #374151; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
-        .service-category-btn { background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%); color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,84,166,0.25); font-family: 'Montserrat', sans-serif; }
-        .service-category-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,84,166,0.4); }
-
-        /* ========== STICKY APPOINTMENT BAR ========== */
-        .sticky-appointment { position: fixed; bottom: 0; left: 0; right: 0; background: var(--primary); color: white; z-index: 999; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); transition: all 0.3s; }
-        .sticky-appointment.hidden { transform: translateY(100%); }
-        .sticky-appointment-narrow { padding: 16px 0; }
-        .sticky-appointment-content { display: flex; justify-content: space-between; align-items: center; }
-        .sticky-appointment-text { font-weight: 600; font-size: 15px; }
-        .sticky-appointment .btn { padding: 10px 24px; font-size: 14px; }
-
-        /* ========== APPOINTMENT SECTION ========== */
-        .appointment-section { padding: 80px 0; background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%); }
-        .appointment-content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; background: white; border-radius: 24px; padding: 60px; box-shadow: 0 10px 40px rgba(0,84,166,0.1); }
-        .appointment-image { text-align: center; }
-        .appointment-image img { max-width: 100%; height: auto; border-radius: 20px; }
-        .appointment-text h2 { font-size: 28px; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-        .appointment-text h2 .icon { width: 46px; height: 46px; background: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 22px; }
-        .appointment-text p { font-size: 15px; color: var(--text-medium); line-height: 1.7; margin-bottom: 24px; }
-        .appointment-features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-        .appointment-feature { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-medium); }
-        .appointment-feature .check { width: 24px; height: 24px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; flex-shrink: 0; }
-        .appointment-btn { background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; box-shadow: 0 8px 25px rgba(0,84,166,0.35); }
-        .appointment-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,84,166,0.4); }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 1024px) {
-            .services-categories-grid { grid-template-columns: repeat(3, 1fr); }
-            .search-filters { grid-template-columns: repeat(2, 1fr); }
-            .search-btn { grid-column: span 2; justify-content: center; }
-            .services-grid { grid-template-columns: 1fr; }
-            .appointment-content { grid-template-columns: 1fr; padding: 40px; }
+        .services-page { background: var(--bg-page); }
+        .services-hero { padding: 70px 0 90px; }
+        .filter-section { padding-bottom: 40px; margin-top: -40px; position: relative; z-index: 2; }
+        .quick-categories { padding: 60px 0; background: var(--bg-page); }
+        .quick-categories .scroll-row { gap: 20px; }
+        .category-card {
+            background: white;
+            border: 1px solid var(--border-soft);
+            border-radius: 14px;
+            min-height: 112px;
+            min-width: 220px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 16px rgba(0,84,166,0.05);
         }
-        @media (max-width: 768px) {
-            .services-categories-grid { grid-template-columns: repeat(2, 1fr); }
-            .search-filters { grid-template-columns: 1fr; }
-            .search-btn { grid-column: span 1; width: 100%; }
-            .additional-filters { flex-direction: column; align-items: stretch; }
-            .filter-chip { width: 100%; justify-content: center; }
-            .clear-filters { margin-left: 0; justify-content: center; }
-            .search-module { padding: 28px; }
-            .service-card-content { padding-left: 24px; }
-            .service-card-header { padding: 18px 20px; }
-        }
-        @media (max-width: 480px) {
-            .services-categories-grid { grid-template-columns: 1fr; }
-            .services-title h2 { font-size: 28px; }
-        }
-        .page-header { background: linear-gradient(135deg, #0054a6 0%, #03bfd7 100%) !important; }
-        .variant-switcher {
-            position: relative;
-            display: inline-block;
-            margin-top: 16px;
-        }
+        .category-card:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,84,166,0.1); border-color: var(--border-medium); }
+        .category-card .icon-circle { width: 56px; height: 56px; border-radius: 14px; }
+        .category-card .icon-circle svg { width: 26px; height: 26px; }
+        .category-card-title { font-size: 15px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+        .category-card-count { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+        .services-results { padding: 40px 0 80px; background: var(--bg-page); min-height: 400px; }
+        .service-card { min-height: 280px; }
+        .service-card .icon-circle { width: 64px; height: 64px; border-radius: 16px; }
+        .service-card .icon-circle svg { width: 28px; height: 28px; }
+        .service-doctors { margin-top: auto; padding-top: 16px; }
+        .service-doctors strong { display: block; font-size: 12px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+        .doctor-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .doctor-tag { font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 20px; background: #E6FAFC; color: #008C9A; }
+        .service-meta-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 13px; color: var(--text-secondary); }
+        .service-meta-list span { display: inline-flex; align-items: center; gap: 5px; }
+        .service-card-footer { margin-top: auto; padding-top: 16px; }
+        .variant-switcher { display: inline-block; margin-top: 16px; position: relative; }
         .variant-switcher select {
             appearance: none;
             background: rgba(255,255,255,0.95);
             border: 1px solid rgba(255,255,255,0.5);
             border-radius: 10px;
             padding: 10px 36px 10px 14px;
-            font-family: 'Montserrat', sans-serif;
             font-size: 13px;
             font-weight: 700;
-            color: #0054a6;
+            color: var(--emjj-blue);
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
@@ -166,23 +65,70 @@
             height: 0;
             border-left: 4px solid transparent;
             border-right: 4px solid transparent;
-            border-top: 4px solid #0054a6;
+            border-top: 4px solid var(--emjj-blue);
             pointer-events: none;
+        }
+        .sticky-filter-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 998;
+            box-shadow: 0 8px 24px rgba(0,84,166,0.25);
+        }
+        @media (max-width: 768px) {
+            .services-hero { padding: 45px 0 55px; }
+            .filter-section { padding-bottom: 24px; }
+            .quick-categories { padding: 32px 0; }
+            .category-card { min-width: 170px; padding: 14px; }
+            .category-card .icon-circle { width: 48px; height: 48px; border-radius: 12px; }
+            .category-card .icon-circle svg { width: 22px; height: 22px; }
+            .services-results { padding: 24px 0 48px; }
+            .results-toolbar { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .results-toolbar h2 { font-size: 18px; }
+            .results-toolbar-actions { width: 100%; }
+            .results-toolbar-actions select { width: 100%; }
+            .service-card { padding: 18px; gap: 12px; }
+            .service-card-header { align-items: flex-start; }
+            .service-card .icon-circle { width: 48px; height: 48px; border-radius: 12px; }
+            .service-card .icon-circle svg { width: 22px; height: 22px; }
+            .service-card-title h3 { font-size: 15px; margin-bottom: 8px; }
+            .service-card-desc { font-size: 13px; }
+            .service-meta-list { font-size: 12px; }
+            .service-doctors strong { font-size: 11px; }
+            .doctor-tag { font-size: 11px; padding: 4px 8px; }
+            .service-card-footer { flex-direction: column; }
+            .service-card-footer .btn { width: 100%; }
+            .pagination { margin-top: 24px; }
+            .cta-section-content { text-align: center; }
+            .cta-section-actions { width: 100%; flex-direction: column; }
+            .cta-section-actions .btn { width: 100%; }
+            .sticky-filter-btn.show { display: inline-flex; }
+        }
+        @media (max-width: 480px) {
+            .services-hero h1 { font-size: 28px; }
+            .filter-panel { padding: 18px; border-radius: 16px; }
+            .category-card { min-width: 150px; }
+            .category-card-title { font-size: 13px; }
+            .category-card-count { font-size: 11px; }
         }
     </style>
 </head>
-<body>
+<body class="services-page">
     <header class="ref-header">
         <div class="container ref-header-inner">
             <a href="index.html" class="ref-logo">
                 <div class="ref-logo-mark">ↄ</div>
                 <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <button class="ref-menu" aria-label="Цэс" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
                 <a href="index.html">Нүүр</a>
                 <a href="about.html">Бидний тухай</a>
                 <a href="services.html" class="active">Үйлчилгээ</a>
+                <a href="doctors.html">Эмч, мэргэжилтнүүд</a>
+                <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html">ENT Health</a>
                     <div class="ref-dropdown-menu">
@@ -190,17 +136,29 @@
                         <a href="ent-care.html">ENT Care</a>
                     </div>
                 </div>
-                <a href="news.html">Мэдээ мэдээлэл</a>
                 <a href="contact.html">Холбоо барих</a>
                 <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
+                <div class="mobile-actions">
+                    <a href="tel:70341111" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                    <a href="contact.html" class="btn btn-outline">Цаг авах</a>
+                </div>
             </nav>
+            <div class="header-actions">
+                <a href="tel:70341111" class="phone-link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                <a href="contact.html" class="btn btn-primary">Цаг авах</a>
+            </div>
         </div>
     </header>
 
-    <section class="page-header">
+    <section class="page-hero services-hero">
         <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Нүүр</a>
+                <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Тусламж үйлчилгээ</span>
+            </nav>
             <h1>Тусламж үйлчилгээ</h1>
-            <p>Бид олон улсын стандартад нийцсэн, орчин үеийн тоног төхөөрөмжтэй үйлчилгээг санал болгож байна</p>
+            <p>Бид танд чанартай, хүртээмжтэй эрүүл мэндийн тусламж үйлчилгээг үзүүлнэ.</p>
             <div class="variant-switcher">
                 <select id="variantSwitcher" onchange="switchVariant(this.value)" aria-label="Хуудасны хувилбар сонгох">
                     <option value="services.html" selected>Хувилбар 1</option>
@@ -210,20 +168,19 @@
         </div>
     </section>
 
-    <section class="services-search">
+    <section class="filter-section">
         <div class="container">
-            <div class="search-module">
-                <div class="search-header">
-                    <div class="search-header-icon">⚕️</div>
-                    <div class="search-header-text">
+            <div class="filter-panel">
+                <div class="filter-panel-header">
+                    <div class="icon-circle small"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    <div>
                         <h3>Үйлчилгээ хайх</h3>
                         <p>Танд хэрэгтэй эрүүл мэндийн үйлчилгээг хялбар, хурдан олоорой.</p>
                     </div>
                 </div>
-
-                <div class="search-filters">
+                <div class="filter-row">
                     <div class="filter-group">
-                        <label>Тусламж үйлчилгээ</label>
+                        <label for="filterCategory">Үйлчилгээний бүлэг</label>
                         <select class="filter-select" id="filterCategory">
                             <option value="">Бүх ангилал</option>
                             <option value="амбулатори">Амбулторийн тусламж үйлчилгээ</option>
@@ -233,19 +190,19 @@
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>Тасаг / Чиглэл</label>
+                        <label for="filterSubcategory">Дэд төрөл</label>
                         <select class="filter-select" id="filterSubcategory" disabled>
                             <option value="">Тасаг сонгох</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>Эмч</label>
+                        <label for="filterDoctor">Эмч</label>
                         <select class="filter-select" id="filterDoctor" disabled>
                             <option value="">Эмч сонгох</option>
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label>Салбар</label>
+                        <label for="filterBranch">Салбар</label>
                         <select class="filter-select" id="filterBranch">
                             <option value="">Бүх салбар</option>
                             <option value="төв">ЭМЖЖ - ТӨВ ЭМНЭЛЭГ</option>
@@ -255,117 +212,90 @@
                             <option value="сувилал">Сэргээн засах сувилал</option>
                         </select>
                     </div>
-                    <button class="search-btn" onclick="applyFilters()">
-                        🔍 Хайх
+                </div>
+                <div class="filter-row" style="grid-template-columns: 1fr auto;">
+                    <div class="filter-group" style="margin-bottom:0;">
+                        <label for="filterKeyword" class="hidden">Хайх</label>
+                        <input type="text" class="filter-input" id="filterKeyword" placeholder="Үйлчилгээ, эмч, шинжилгээний нэрээр хайх">
+                    </div>
+                    <button class="btn-search" onclick="applyFilters()">
+                        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        Хайх
                     </button>
                 </div>
-
-                <div class="additional-filters">
-                    <label>Нэмэлт шүүлтүүр:</label>
-                    <button class="filter-chip" onclick="toggleChip(this, 'online')">💻 Онлайн цаг захиалга</button>
-                    <button class="filter-chip" onclick="toggleChip(this, 'emd')">🛡️ ЭМД даатгал</button>
-                    <button class="filter-chip" onclick="toggleChip(this, 'child')">👶 Хүүхэд</button>
-                    <button class="clear-filters" onclick="clearAllFilters()">🔄 Шүүлтүүр цэвэрлэх</button>
+                <div class="filter-chips">
+                    <span style="font-size:13px;font-weight:700;color:var(--text-primary);">Нэмэлт шүүлтүүр:</span>
+                    <button class="filter-chip" data-chip="online" onclick="toggleChip(this, 'online')">Зөвхөн цаг авах боломжтой</button>
+                    <button class="filter-chip" data-chip="doctor" onclick="toggleChip(this, 'doctor')">Эмчтэй үйлчилгээ</button>
+                    <button class="filter-chip" data-chip="diagnostic" onclick="toggleChip(this, 'diagnostic')">Оношлогоо</button>
+                    <button class="filter-chip" data-chip="surgery" onclick="toggleChip(this, 'surgery')">Мэс ажилбар</button>
+                    <button class="filter-chip" data-chip="lab" onclick="toggleChip(this, 'lab')">Шинжилгээ</button>
+                    <button class="filter-clear" onclick="clearAllFilters()">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        Шүүлтүүр цэвэрлэх
+                    </button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-categories">
+        <div class="container">
+            <div class="scroll-row" id="quickCategories">
+                <!-- Injected by JS -->
             </div>
         </div>
     </section>
 
     <section class="services-results" id="services-results">
         <div class="container">
-            <div class="results-header">
-                <h2>Үйлчилгээний жагсаалт</h2>
-                <span class="results-count">Нийт <strong id="resultCount">0</strong> үйлчилгээ олдлоо</span>
+            <div class="results-toolbar">
+                <h2>Үйлчилгээний үр дүн <span class="count" id="resultCountWrap">(<strong id="resultCount">0</strong>)</span></h2>
+                <div class="results-toolbar-actions">
+                    <select class="filter-select" id="sortSelect" onchange="applyFilters()" style="min-width:180px;height:44px;">
+                        <option value="new">Шинэ эхэлсэн эхний</option>
+                        <option value="name">Нэрээр эрэмбэлэх</option>
+                        <option value="popular">Их хайгдсан</option>
+                        <option value="bookable">Цаг авах боломжтой эхний</option>
+                    </select>
+                </div>
             </div>
-            <div class="services-grid" id="servicesGrid">
+            <div class="grid-3" id="servicesGrid">
                 <!-- Service cards injected via JS -->
             </div>
-            <div class="no-results" id="noResults">
-                <i>🔍</i>
-                <h3>Үйлчилгээ олдсонгүй</h3>
-                <p>Өөр шүүлтүүр сонгоно уу эсвэл бүх ангиллыг харуулна уу.</p>
+            <div class="empty-state hidden" id="noResults">
+                <div class="empty-state-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                <h3>Тохирох үйлчилгээ олдсонгүй</h3>
+                <p>Шүүлтүүрээ өөрчилж дахин хайна уу.</p>
+                <button class="btn btn-secondary mt-2" onclick="clearAllFilters()">Шүүлтүүр цэвэрлэх</button>
+            </div>
+            <div class="pagination" id="pagination">
+                <button class="page-btn" onclick="changePage(-1)">&lt;</button>
+                <button class="page-btn active" onclick="goToPage(1)">1</button>
+                <button class="page-btn" onclick="changePage(1)">&gt;</button>
             </div>
         </div>
     </section>
 
-    <section class="services-categories">
+    <section class="cta-section">
         <div class="container">
-            <div class="services-title">
-                <h2>Тусламж үйлчилгээ</h2>
-                <p>Бид танд чанартай, хүртээмжтэй эрүүл мэндийн тусламж үйлчилгээг үзүүлнэ.</p>
-            </div>
-
-            <div class="services-categories-grid">
-                <div class="service-category-card" data-category="амбулатори" onclick="selectCategory('амбулатори')">
-                    <div class="service-category-icon">🩺</div>
-                    <h3>Амбулторийн тусламж үйлчилгээ</h3>
-                    <div class="service-category-divider"></div>
-                    <p>Ерөнхий үзлэг, оношилгоо болон эмчийн зөвлөгөө үйлчилгээ.</p>
-                    <a href="javascript:void(0)" class="service-category-btn">Дэлгэрэнгүй →</a>
+            <div class="cta-section-content">
+                <div class="cta-section-text">
+                    <h2>Цаг авахыг хүсэж байна уу?</h2>
+                    <p>Та манай үйлчилгээнд цаг авахыг хүсвэл доорх товчийг дарж захиална уу.</p>
                 </div>
-
-                <div class="service-category-card" data-category="хэвтүүлэн" onclick="selectCategory('хэвтүүлэн')">
-                    <div class="service-category-icon">🔪</div>
-                    <h3>Хэвтүүлэн эмчлэх</h3>
-                    <div class="service-category-divider"></div>
-                    <p>Мэс засал болон мэдээгүйжүүлгийн үйлчилгээ.</p>
-                    <a href="javascript:void(0)" class="service-category-btn">Дэлгэрэнгүй →</a>
-                </div>
-
-                <div class="service-category-card" data-category="үйл онош" onclick="selectCategory('үйл онош')">
-                    <div class="service-category-icon">🖥️</div>
-                    <h3>Үйл онош</h3>
-                    <div class="service-category-divider"></div>
-                    <p>Лаборатори, дүрс оношлогоо болон нарийвчилсан шинжилгээ.</p>
-                    <a href="javascript:void(0)" class="service-category-btn">Дэлгэрэнгүй →</a>
-                </div>
-
-                <div class="service-category-card" data-category="сувилал" onclick="selectCategory('сувилал')">
-                    <div class="service-category-icon">🌿</div>
-                    <h3>Сэргээн засах сувилал</h3>
-                    <div class="service-category-divider"></div>
-                    <p>Уламжлалт болон сэргээн засах эмчилгээний үйлчилгээ.</p>
-                    <a href="javascript:void(0)" class="service-category-btn">Дэлгэрэнгүй →</a>
+                <div class="cta-section-actions">
+                    <a href="contact.html" class="btn btn-white btn-large">Цаг авах</a>
+                    <a href="tel:70341111" class="btn btn-outline btn-large" style="color:white;border-color:rgba(255,255,255,0.6);">7034-1111</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="sticky-appointment" id="stickyAppointment">
-        <div class="sticky-appointment-narrow">
-            <div class="container">
-                <div class="sticky-appointment-content">
-                    <span class="sticky-appointment-text">📅 Цаг захиалах - Онлайн захиалга өгөх</span>
-                    <a href="#appointment-section" class="btn btn-primary" onclick="scrollToAppointment()">Захиалах</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="appointment-section" id="appointment-section">
-        <div class="container">
-            <div class="appointment-content">
-                <div class="appointment-image">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400&h=400&fit=crop" alt="Calendar">
-                </div>
-                <div class="appointment-text">
-                    <h2>
-                        <span class="icon">📅</span>
-                        Цаг захиалах
-                    </h2>
-                    <p>Та манай үйлчилгээнд цаг авахыг хүсвэл дараах товчийг дарж захиална уу.</p>
-                    <div class="appointment-features">
-                        <div class="appointment-feature"><span class="check">✓</span>Хялбар, хурдан</div>
-                        <div class="appointment-feature"><span class="check">✓</span>Тохиромжтой цаг сонголт</div>
-                        <div class="appointment-feature"><span class="check">✓</span>Баталгаатай үйлчилгээ</div>
-                    </div>
-                    <a href="contact.html" class="appointment-btn">
-                        📅 Цаг захиалах →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <button class="btn btn-primary sticky-filter-btn" id="stickyFilterBtn" onclick="document.getElementById('filterCategory').focus(); document.querySelector('.filter-section').scrollIntoView({behavior:'smooth'});">
+        <svg viewBox="0 0 24 24" width="18" height="18"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        Шүүлтүүр
+    </button>
 
     <footer class="footer">
         <div class="container">
@@ -379,27 +309,28 @@
                     <ul>
                         <li><a href="index.html">Нүүр</a></li>
                         <li><a href="about.html">Бидний тухай</a></li>
+                        <li><a href="ent-health.html">ENT Health</a></li>
                         <li><a href="ent-care.html">ENT Care</a></li>
                         <li><a href="ent-wellness.html">ENT Wellness</a></li>
                         <li><a href="services.html">Тусламж үйлчилгээ</a></li>
                         <li><a href="training.html">Сургалт</a></li>
                         <li><a href="news.html">Мэдээ</a></li>
-                        <li><a href="branches.html">Салбар байршил</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Танд тусалъя</h4>
                     <ul>
-                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Түгээмэл асуулт</a></li>
-                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Цагийн хуваарь</a></li>
+                        <li><a href="branches.html">Салбар байршил</a></li>
                         <li><a href="contact.html">Санал хүсэлт</a></li>
+                        <li><a href="hr.html">Нээлттэй ажлын байр</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="tel:19009999">📞 1900-9999</a></li>
-                        <li><a href="mailto:info@emjj.mn">✉️ info@emjj.mn</a></li>
+                        <li><a href="tel:19009999"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 1900-9999</a></li>
+                        <li><a href="tel:70341111"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a></li>
+                        <li><a href="mailto:info@emjj.mn"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@emjj.mn</a></li>
                     </ul>
                 </div>
             </div>
@@ -431,105 +362,156 @@
             'сувилал': ['Уламжлалт эмчилгээ', 'Сэргээн засах эмчилгээ']
         };
 
+        const categoryLabels = {
+            'амбулатори': 'Амбулторийн тусламж үйлчилгээ',
+            'хэвтүүлэн': 'Хэвтүүлэн эмчлэх',
+            'үйл онош': 'Үйл онош',
+            'сувилал': 'Сэргээн засах сувилал'
+        };
+
+        const quickCategories = [
+            { key: 'амбулатори', label: 'Амбулаторийн үзлэг', icon: 'stethoscope', count: 0 },
+            { key: 'хэвтүүлэн', label: 'Мэс засал, мэдээгүйжүүлэг', icon: 'surgery', count: 0 },
+            { key: 'үйл онош', label: 'Дүрс оношлогоо', icon: 'mri', count: 0 },
+            { key: 'үйл онош-lab', label: 'Лаборатори шинжилгээ', icon: 'lab', count: 0 },
+            { key: 'амбулатори-ear', label: 'Сонсгол сэргээх', icon: 'ear', count: 0 },
+            { key: 'сувилал', label: 'Сэргээн засах сувилал', icon: 'heart-hands', count: 0 }
+        ];
+
+        const icons = {
+            stethoscope: '<path d="M4.93 4.93A9.94 9.94 0 0 0 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10a9.94 9.94 0 0 0-2.93-7.07"/><path d="M14.83 14.83a4 4 0 0 1-5.66 0"/><path d="M9.17 9.17a4 4 0 0 1 5.66 0"/><path d="M12 2v4"/>',
+            surgery: '<path d="M2 22l10-10"/><path d="M9 5l13 13"/><circle cx="17" cy="5" r="3"/><circle cx="5" cy="19" r="3"/>',
+            mri: '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+            lab: '<path d="M10 2h4"/><path d="M12 2v12"/><path d="M17 14l-1.5 6h-7L7 14"/><path d="M5 14h14"/>',
+            ear: '<path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M10 17c0-2 1-3 3-3s3 1 3 3-1 3-3 3"/><path d="M6 8v1a3 3 0 0 0 3 3"/>',
+            'heart-hands': '<path d="M19.5 12.572L21 11l-7.5-7.5A4 4 0 0 0 8 9.5c0 2.3 1.5 4 3 5.5l-3 3c-1-1.5-3-3.5-3-5.5a7 7 0 0 1 12-5.1L21 11l-1.5 1.572"/><path d="M12.5 13.5l-3 3c1.5 1 3.5 3 5.5 3a4 4 0 0 0 2.8-6.8"/>',
+            building: '<rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/>',
+            'user-doctor': '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M12 3v2"/><path d="M12 9v2"/>',
+            calendar: '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+            search: '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
+            'map-pin': '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
+            clock: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+            filter: '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>',
+            refresh: '<path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>'
+        };
+
+        function icon(name) {
+            return `<svg viewBox="0 0 24 24">${icons[name] || icons.search}</svg>`;
+        }
+
         const servicesData = [
             // ===== АМБУЛАТОРИ =====
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Чих хамар хоолойн эмчийн үзлэг', description: 'Чих, хамар, хоолойн эрүүл мэндийн ерөнхий үзлэг, оношлогоо, зөвлөгөө.', doctors: [...doctorsBySubcategory['Чих, Сонсгол'], ...doctorsBySubcategory['ЧХХ ерөнхий']], branches: branches, icon: '👂' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Сонсголын эмчийн үзлэг', description: 'Чихний үзлэг, сонсголын шинжилгээнүүдийг дүгнэн сонсгол нөхөн сэргээх, эмчлэх зөвлөгөө өгнө.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '👂' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Сонсголын бичлэг', description: 'Насанд хүрэгсэд болон 5-аас дээш насны хүүхдэд цэвэр авианы аудиометрээр сонсгол бууралтын зэрэг болон хэлбэрийг тогтооно.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '📊' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Сонсголын багц шинжилгээ', description: 'Сонсгол бууралтын түвшин, зэрэг, байрлал, дунгаас хойших эмгэг зэргийг оношилно. ASSR, ABR, OAE, тимпанометр зэрэг шинжилгээнүүд хийгдэнэ.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '🔬' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Сонсголын аппарат тохируулга', description: 'Сонсгол бууралтын түвшинд тохируулан компьютер программаар сонсголын аппаратыг тохируулна.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '🦻' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Чихний хатуу, зөөлөн хэв', description: 'Сонсголын аппарат тохируулахын өмнө тухайн хүний чихнээс хэв авч, сканнердан хатуу болон зөөлөн материалаар хэвлэж хийдэг.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '👂' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Дунгийн суулгац тохируулга', description: 'Cochlear фирмийн дунгийн суулгацын Speech processor-ийн тохиргоог хийнэ. Мягмар, Пүрэв гаригуудад тохируулна.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 1), icon: '🔧' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'BAHA тохируулга', description: 'Ясан дамжуулалтын сонсгол шалгасан бичлэгийн дагуу BAHA аппаратны тохиргоог хийнэ.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 1), icon: '🦻' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Хүүхдийн сонсголын screening', description: 'Нярай болон бага насны хүүхдийн сонсгол бууралттай эсэхийг тандах шинжилгээ.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '👶' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'BERA', description: 'Сонсголын мэдрэлийн эмгэгүүдийг оношлох зорилгоор хийгдэнэ. Урьдчилан цаг авна.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '🧠' },
-            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'ASSR', description: 'Бага насны хүүхдийн сонсголыг шалгах, хөдөлмөрийн чадвар алдалтыг тогтоох зорилгоор хийгдэнэ.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '📈' },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Чих хамар хоолойн эмчийн үзлэг', description: 'Чих, хамар, хоолойн эрүүл мэндийн ерөнхий үзлэг, оношлогоо, зөвлөгөө.', doctors: [...doctorsBySubcategory['Чих, Сонсгол'], ...doctorsBySubcategory['ЧХХ ерөнхий']], branches: branches, icon: 'stethoscope', tags: ['үзлэг','эмч','оношлогоо'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Сонсголын эмчийн үзлэг', description: 'Чихний үзлэг, сонсголын шинжилгээнүүдийг дүгнэн сонсгол нөхөн сэргээх, эмчлэх зөвлөгөө өгнө.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'ear', tags: ['сонсгол','үзлэг'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Сонсголын бичлэг', description: 'Насанд хүрэгсэд болон 5-аас дээш насны хүүхдэд цэвэр авианы аудиометрээр сонсгол бууралтын зэрэг болон хэлбэрийг тогтооно.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'ear', tags: ['сонсгол','бичлэг'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Сонсголын багц шинжилгээ', description: 'Сонсгол бууралтын түвшин, зэрэг, байрлал, дунгаас хойших эмгэг зэргийг оношилно. ASSR, ABR, OAE, тимпанометр зэрэг шинжилгээнүүд хийгдэнэ.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'ear', tags: ['сонсгол','шинжилгээ'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Сонсголын аппарат тохируулга', description: 'Сонсгол бууралтын түвшинд тохируулан компьютер программаар сонсголын аппаратыг тохируулна.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'ear', tags: ['сонсгол','аппарат'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Чихний хатуу, зөөлөн хэв', description: 'Сонсголын аппарат тохируулахын өмнө тухайн хүний чихнээс хэв авч, сканнердан хатуу болон зөөлөн материалаар хэвлэж хийдэг.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'ear', tags: ['чих','хэв'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Дунгийн суулгац тохируулга', description: 'Cochlear фирмийн дунгийн суулгацын Speech processor-ийн тохиргоог хийнэ. Мягмар, Пүрэв гаригуудад тохируулна.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 1), icon: 'ear', tags: ['дунгийн суулгац','тохируулга'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'BAHA тохируулга', description: 'Ясан дамжуулалтын сонсгол шалгасан бичлэгийн дагуу BAHA аппаратны тохиргоог хийнэ.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 1), icon: 'ear', tags: ['BAHA','сонсгол'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'Хүүхдийн сонсголын screening', description: 'Нярай болон бага насны хүүхдийн сонсгол бууралттай эсэхийг тандах шинжилгээ.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'ear', tags: ['хүүхэд','сонсгол','screening'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'BERA', description: 'Сонсголын мэдрэлийн эмгэгүүдийг оношлох зорилгоор хийгдэнэ. Урьдчилан цаг авна.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'ear', tags: ['BERA','сонсгол'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Чих, Сонсгол', name: 'ASSR', description: 'Бага насны хүүхдийн сонсголыг шалгах, хөдөлмөрийн чадвар алдалтыг тогтоох зорилгоор хийгдэнэ.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'ear', tags: ['ASSR','сонсгол'], bookable: true },
 
-            { category: 'амбулатори', subcategory: 'Тэнцвэр', name: 'Тэнцвэрийн багц шинжилгээ, эмчийн үзлэг', description: 'Захын тэнцвэрийн эмгэгүүдийг оношлох, ялган оношлох, эмчлэх, нөхөн сэргээх зорилготой хийгддэг шинжилгээ. Урьдчилан цаг авах шаардлагатай.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(0, 4), icon: '⚖️' },
-            { category: 'амбулатори', subcategory: 'Тэнцвэр', name: 'Хэнгэргэн хөндийд тариа хийх', description: 'Сонсгол болон тэнцвэрийн эмчийн заалтаар хийгдэнэ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(0, 4), icon: '💉' },
+            { category: 'амбулатори', subcategory: 'Тэнцвэр', name: 'Тэнцвэрийн багц шинжилгээ, эмчийн үзлэг', description: 'Захын тэнцвэрийн эмгэгүүдийг оношлох, ялган оношлох, эмчлэх, нөхөн сэргээх зорилготой хийгддэг шинжилгээ. Урьдчилан цаг авах шаардлагатай.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['тэнцвэр','шинжилгээ'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Тэнцвэр', name: 'Хэнгэргэн хөндийд тариа хийх', description: 'Сонсгол болон тэнцвэрийн эмчийн заалтаар хийгдэнэ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['тариа','тэнцвэр'], bookable: true },
 
-            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Хамар, харшлын эмчийн үзлэг', description: 'Хамрын амьсгалын замын өвчлөл, харшлын эмгэгүүдийг оношлох, эмчлэх үзлэг.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '👃' },
-            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Риноманометр', description: 'Хамрын хөндийн эзэлхүүн ба агаарын урсгалыг хэмждэг шинжилгээ.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '📊' },
-            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Үнэрлэхүй шалгах', description: 'Хамрын үнэрлэхүйг тусгай үнэр шингээсэн саваанууд ашиглан үнэлдэг шинжилгээ.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🌸' },
-            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Амтлахуй шалгах', description: 'Стандарт 4 амтыг бэлтгэн амтлахуйг шинжилдэг арга.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '👅' },
-            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Харшлын сорил /хүнсний/', description: 'Арьсанд хатгах сорилоор харшил төрүүлэгчийг илрүүлэх сорил.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🌿' },
-            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Харшлын сорил /амьсгалын/', description: 'Арьсанд хатгах сорилоор амьсгалын замын харшил төрүүлэгчийг илрүүлэх.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🫁' },
-            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Харшлын сорил /багц/', description: 'Харшлын сорилын багц шинжилгээ.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🔬' },
+            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Хамар, харшлын эмчийн үзлэг', description: 'Хамрын амьсгалын замын өвчлөл, харшлын эмгэгүүдийг оношлох, эмчлэх үзлэг.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['хамар','харшил','үзлэг'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Риноманометр', description: 'Хамрын хөндийн эзэлхүүн ба агаарын урсгалыг хэмждэг шинжилгээ.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['хамар','шинжилгээ'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Үнэрлэхүй шалгах', description: 'Хамрын үнэрлэхүйг тусгай үнэр шингээсэн саваанууд ашиглан үнэлдэг шинжилгээ.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['хамар','үнэрлэхүй'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Амтлахуй шалгах', description: 'Стандарт 4 амтыг бэлтгэн амтлахуйг шинжилдэг арга.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['амтлахуй','шинжилгээ'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Харшлын сорил /хүнсний/', description: 'Арьсанд хатгах сорилоор харшил төрүүлэгчийг илрүүлэх сорил.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'lab', tags: ['харшил','сорил'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Харшлын сорил /амьсгалын/', description: 'Арьсанд хатгах сорилоор амьсгалын замын харшил төрүүлэгчийг илрүүлэх.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'lab', tags: ['харшил','сорил'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Хамар, Харшил', name: 'Харшлын сорил /багц/', description: 'Харшлын сорилын багц шинжилгээ.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'lab', tags: ['харшил','багц'], bookable: true },
 
-            { category: 'амбулатори', subcategory: 'Залгиур, төвөнх', name: 'Төвөнх залгиурын үзлэг, шинжилгээ', description: 'Төвөнх, залгиурын эмгэгүүдийг оношлох, эмчлэх үзлэг болон шинжилгээ.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: '🗣️' },
-            { category: 'амбулатори', subcategory: 'Залгиур, төвөнх', name: 'Төвөнх дурандах', description: 'Төвөнхийн зарим эмгэгүүдийг оношлох, эмчлэх зорилгоор унтуулгатай ажилбарууд хийгддэг.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: '🔍' },
+            { category: 'амбулатори', subcategory: 'Залгиур, төвөнх', name: 'Төвөнх залгиурын үзлэг, шинжилгээ', description: 'Төвөнх, залгиурын эмгэгүүдийг оношлох, эмчлэх үзлэг болон шинжилгээ.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['төвөнх','үзлэг'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Залгиур, төвөнх', name: 'Төвөнх дурандах', description: 'Төвөнхийн зарим эмгэгүүдийг оношлох, эмчлэх зорилгоор унтуулгатай ажилбарууд хийгддэг.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['төвөнх','дурандах'], bookable: true },
 
-            { category: 'амбулатори', subcategory: 'Дотор', name: 'Дотрын эмчийн үзлэг', description: 'Дотрын төрөлжсөн үзлэг, оношлогоо, зөвлөгөө.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: '🫀' },
-            { category: 'амбулатори', subcategory: 'Дотор', name: 'Зүрхний цахилгаан бичлэг', description: 'Зүрхний цахилгаан дамжуулах чанар дээр үндэслэн зүрхний хэм алдагдал, булчингийн цусан хангамжийн алдагдлыг үнэлэх аюулгүй, өвдөлтгүй шинжилгээ.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: '❤️' },
-            { category: 'амбулатори', subcategory: 'Дотор', name: '24 цагийн зүрхний цахилгаан бичлэг /Холтер/', description: 'Зүрхний цахилгаан идэвхийг 24 цаг тасралтгүй бичиж, өдөр тутмын амьдралын явцад илрэх зүрхний өөрчлөлтийг илрүүлдэг.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: '⏱️' },
-            { category: 'амбулатори', subcategory: 'Дотор', name: 'Зүрхний өнгөт хэт авиан /эхо/ шинжилгээ', description: 'Хэт авиан долгион ашиглан зүрхний хана, хөндийн хэмжээ, хавхлагуудын нээгдэх хаагдах байдал, цусны урсгалын чиглэл хурдыг харуулдаг.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: '🫀' },
-            { category: 'амбулатори', subcategory: 'Дотор', name: 'Спирометр', description: 'Уушгины үйл ажиллагаа болон амьсгалын багтаамжийг үнэлдэг шинжилгээ.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: '🫁' },
+            { category: 'амбулатори', subcategory: 'Дотор', name: 'Дотрын эмчийн үзлэг', description: 'Дотрын төрөлжсөн үзлэг, оношлогоо, зөвлөгөө.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['дотор','үзлэг'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Дотор', name: 'Зүрхний цахилгаан бичлэг', description: 'Зүрхний цахилгаан дамжуулах чанар дээр үндэслэн зүрхний хэм алдагдал, булчингийн цусан хангамжийн алдагдлыг үнэлэх аюулгүй, өвдөлтгүй шинжилгээ.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['зүрх','ЭКГ'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Дотор', name: '24 цагийн зүрхний цахилгаан бичлэг /Холтер/', description: 'Зүрхний цахилгаан идэвхийг 24 цаг тасралтгүй бичиж, өдөр тутмын амьдралын явцад илрэх зүрхний өөрчлөлтийг илрүүлдэг.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['зүрх','холтер'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Дотор', name: 'Зүрхний өнгөт хэт авиан /эхо/ шинжилгээ', description: 'Хэт авиан долгион ашиглан зүрхний хана, хөндийн хэмжээ, хавхлагуудын нээгдэх хаагдах байдал, цусны урсгалын чиглэл хурдыг харуулдаг.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: 'mri', tags: ['зүрх','эхо'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Дотор', name: 'Спирометр', description: 'Уушгины үйл ажиллагаа болон амьсгалын багтаамжийг үнэлдэг шинжилгээ.', doctors: doctorsBySubcategory['Дотор'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['уушги','спирометр'], bookable: true },
 
-            { category: 'амбулатори', subcategory: 'Дүрс оношлогоо', name: 'Хамрын компьютер томографи', description: 'Хамар дайвар хөндийн эмгэг, гэмтэл зэргийг оношлох, хянах зорилготой дэлгэрэнгүй шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🖥️' },
-            { category: 'амбулатори', subcategory: 'Дүрс оношлогоо', name: 'Чамархайн ясны компьютер томографи', description: 'Чамархай ясны буюу чихний эмгэг, гэмтэл, төрөлхийн бүтцийн эмгэг зэргийг оношлох дэлгэрэнгүй шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🖥️' },
-            { category: 'амбулатори', subcategory: 'Дүрс оношлогоо', name: 'СВСТ Чих, хамар', description: 'Хамар дайвар хөндийн болон чихний эмгэгүүдийг урьдчилсан байдлаар оношлох, туяаны ачаалал хамгийн бага шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🔍' },
-            { category: 'амбулатори', subcategory: 'Дүрс оношлогоо', name: 'Рентген', description: 'Хамар дайвар хөндийн болон цээжний эмгэгийн тойм зураг, аденойдын зэргийг оношлох ерөнхий шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '📷' },
+            { category: 'амбулатори', subcategory: 'Дүрс оношлогоо', name: 'Хамрын компьютер томографи', description: 'Хамар дайвар хөндийн эмгэг, гэмтэл зэргийг оношлох, хянах зорилготой дэлгэрэнгүй шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'mri', tags: ['хамар','КТ'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Дүрс оношлогоо', name: 'Чамархайн ясны компьютер томографи', description: 'Чамархай ясны буюу чихний эмгэг, гэмтэл, төрөлхийн бүтцийн эмгэг зэргийг оношлох дэлгэрэнгүй шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'mri', tags: ['чамархай','КТ'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Дүрс оношлогоо', name: 'СВСТ Чих, хамар', description: 'Хамар дайвар хөндийн болон чихний эмгэгүүдийг урьдчилсан байдлаар оношлох, туяаны ачаалал хамгийн бага шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'mri', tags: ['СВСТ','чих','хамар'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Дүрс оношлогоо', name: 'Рентген', description: 'Хамар дайвар хөндийн болон цээжний эмгэгийн тойм зураг, аденойдын зэргийг оношлох ерөнхий шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'mri', tags: ['рентген','хамар'], bookable: true },
 
-            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Цусны дэлгэрэнгүй шинжилгээ', description: 'ЦДШ - цусны ерөнхий шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🩸' },
-            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Цусны бүлэг, резус фактор', description: 'Цусны бүлэг болон резус факторыг тодорхойлох.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🩸' },
-            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Коагулограммын шинжилгээ', description: 'Цус бүлэгнэлтийн шинжилгээ (APTT, PT, INR, TT, Fbg).', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🔬' },
-            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Биохимийн шинжилгээний багц', description: 'Элэг, цөс, бөөр, нойр булчирхай, өөх тос, микроэлементүүдийн үзүүлэлтүүд.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🧪' },
-            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Түргэвчилсэн шинжилгээ', description: 'HBsAg, HCV, HIV, TP илрүүлэх шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '⚡' },
-            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Бамбайн дааврууд', description: 'TSH, T3, T4 зэрэг бамбайн дааврын шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🔬' },
-
-            { category: 'амбулатори', subcategory: 'Хэсгийн эмчилгээ', name: 'УВЧ /чих, хамар/', description: 'Физик эмчилгээний арга.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '💆' },
-            { category: 'амбулатори', subcategory: 'Хэсгийн эмчилгээ', name: 'Лазер /чих, хамар/', description: 'Лазер эмчилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🔴' },
-            { category: 'амбулатори', subcategory: 'Хэсгийн эмчилгээ', name: 'Утлага', description: 'Хэсэг газарт эмийн бодис, тосны эмчилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🔥' },
-            { category: 'амбулатори', subcategory: 'Хэсгийн эмчилгээ', name: 'Өдрийн эмийн эмчилгээ', description: 'Дусал, булчин, судас тариа болон эмийн сорилын эмчилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '💊' },
+            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Цусны дэлгэрэнгүй шинжилгээ', description: 'ЦДШ - цусны ерөнхий шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['цус','лаборатори'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Цусны бүлэг, резус фактор', description: 'Цусны бүлэг болон резус факторыг тодорхойлох.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['цус','бүлэг'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Коагулограммын шинжилгээ', description: 'Цус бүлэгнэлтийн шинжилгээ (APTT, PT, INR, TT, Fbg).', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['цус','коагулограмм'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Биохимийн шинжилгээний багц', description: 'Элэг, цөс, бөөр, нойр булчирхай, өөх тос, микроэлементүүдийн үзүүлэлтүүд.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['биохим','лаборатори'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Түргэвчилсэн шинжилгээ', description: 'HBsAg, HCV, HIV, TP илрүүлэх шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['түргэвчилсэн','лаборатори'], bookable: true },
+            { category: 'амбулатори', subcategory: 'Лаборатори', name: 'Бамбайн дааврууд', description: 'TSH, T3, T4 зэрэг бамбайн дааврын шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['бамбай','даавар'], bookable: true },
 
             // ===== ХЭВТҮҮЛЭН ЭМЧЛЭХ =====
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын таславч тэгшлэх мэс засал', description: 'Хамрын таславчийг мэс заслын аргаар тэгшилж, хамрын амьсгал сэргээх мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын самалдаг багасгах мэс засал', description: 'Хамрын самалдагийг багасгаж хамрын амьсгал сэргээх мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын ясны хугарал засах мэс засал', description: 'Хамрын ясны хугарал засаж амьсгал сэргээх мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын дайвар хөндийн дурангийн мэс засал', description: 'Хамрын дайвар хөндийн архаг үрэвсэл, уйланхай, ургацагтай тохиолдолд дурангийн мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын хөндийн ургацаг авах', description: 'Хамрын хөндийн ургацаг авах мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Чихний хэнгэрэг нөхөх мэс засал', description: 'Дуран болон микроскопоор хэнгэрэг нөхөх мэс засал.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Чихний цэвэрлэх мэс засал + протез', description: 'Сонсголын яс нөхөн сэргээх мэс засал.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хэнгэргэн хальсыг зүсэж агааржуулах гуурс тавих', description: 'Дунд чихний архаг шүүдэст үрэвсэл, дахилтат үрэвслүүдийн үед хийгддэг мэс ажилбар.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'BAHA', description: 'Төрөлхийн гадна дунд чихний дутуу хөгжилтэй, дамжуулах замын сонсгол бууралттай хүнд суулгадаг ясан дамжуулалтын сонсголын суулгац.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 1), icon: '🦻' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Дунгийн суулгац /Cochlear implant/', description: 'Сонсголын хүнд хэлбэрийн бууралттай хүнд /Дүлий/ мэс засал болон дунгийн суулгац аппаратын тусламжтай сонсгол оруулах.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 1), icon: '🔧' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Тагнайн гүйлсэн булчирхай авах мэс засал', description: 'Гүйлсэн булчирхайн архаг дахилтат, бөглөрөлтөт үрэвслийг бүрэн эмчлэх арга.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Нармайн гүйлсэн булчирхай авах мэс засал', description: 'Аденойд булчирхай авах мэс засал. Хамрын амьсгал сэргээх, архаг дахилтат үрэвслийг эмчлэх зорилготой.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: '🔪' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Архаг ларингит, дууны хөвч төвөнхийн мэс засал', description: 'Төвөнхийн бичил мэс засал. Оношлогоо эмчилгээ, дуу авиаг нөхөн сэргээх зорилгоор хийгддэг.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: '🔪' },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын таславч тэгшлэх мэс засал', description: 'Хамрын таславчийг мэс заслын аргаар тэгшилж, хамрын амьсгал сэргээх мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','хамар'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын самалдаг багасгах мэс засал', description: 'Хамрын самалдагийг багасгаж хамрын амьсгал сэргээх мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','хамар'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын ясны хугарал засах мэс засал', description: 'Хамрын ясны хугарал засаж амьсгал сэргээх мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','хамар'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын дайвар хөндийн дурангийн мэс засал', description: 'Хамрын дайвар хөндийн архаг үрэвсэл, уйланхай, ургацагтай тохиолдолд дурангийн мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','хамар'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хамрын хөндийн ургацаг авах', description: 'Хамрын хөндийн ургацаг авах мэс засал.', doctors: doctorsBySubcategory['Хамар, Харшил'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','хамар'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Чихний хэнгэрэг нөхөх мэс засал', description: 'Дуран болон микроскопоор хэнгэрэг нөхөх мэс засал.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','чих'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Чихний цэвэрлэх мэс засал + протез', description: 'Сонсголын яс нөхөн сэргээх мэс засал.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','чих'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Хэнгэргэн хальсыг зүсэж агааржуулах гуурс тавих', description: 'Дунд чихний архаг шүүдэст үрэвсэл, дахилтат үрэвслүүдийн үед хийгддэг мэс ажилбар.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','чих'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'BAHA', description: 'Төрөлхийн гадна дунд чихний дутуу хөгжилтэй, дамжуулах замын сонсгол бууралттай хүнд суулгадаг ясан дамжуулалтын сонсголын суулгац.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 1), icon: 'surgery', tags: ['BAHA','мэс засал'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Дунгийн суулгац /Cochlear implant/', description: 'Сонсголын хүнд хэлбэрийн бууралттай хүнд /Дүлий/ мэс засал болон дунгийн суулгац аппаратын тусламжтай сонсгол оруулах.', doctors: doctorsBySubcategory['Чих, Сонсгол'], branches: branches.slice(0, 1), icon: 'surgery', tags: ['дунгийн суулгац','мэс засал'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Тагнайн гүйлсэн булчирхай авах мэс засал', description: 'Гүйлсэн булчирхайн архаг дахилтат, бөглөрөлтөт үрэвслийг бүрэн эмчлэх арга.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','тагнай'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Нармайн гүйлсэн булчирхай авах мэс засал', description: 'Аденойд булчирхай авах мэс засал. Хамрын амьсгал сэргээх, архаг дахилтат үрэвслийг эмчлэх зорилготой.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','аденойд'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэс засал', name: 'Архаг ларингит, дууны хөвч төвөнхийн мэс засал', description: 'Төвөнхийн бичил мэс засал. Оношлогоо эмчилгээ, дуу авиаг нөхөн сэргээх зорилгоор хийгддэг.', doctors: doctorsBySubcategory['Залгиур, төвөнх'], branches: branches.slice(0, 4), icon: 'surgery', tags: ['мэс засал','төвөнх'], bookable: true },
 
-            { category: 'хэвтүүлэн', subcategory: 'Мэдээгүйжүүлэг', name: 'Ерөнхий мэдээгүйжүүлэг', description: 'Мэс заслын үед өвдөлт мэдрэхүйг түр хугацаанд арилгах, аюулгүй нөхцөл бүрдүүлэх.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '💉' },
-            { category: 'хэвтүүлэн', subcategory: 'Мэдээгүйжүүлэг', name: 'Орон нутгийн мэдээгүйжүүлэг', description: 'Тодорхой хэсгийг мэдээ алдуулах мэдээгүйжүүлгийн арга.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '💉' },
+            { category: 'хэвтүүлэн', subcategory: 'Мэдээгүйжүүлэг', name: 'Ерөнхий мэдээгүйжүүлэг', description: 'Мэс заслын үед өвдөлт мэдрэхүйг түр хугацаанд арилгах, аюулгүй нөхцөл бүрдүүлэх.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['мэдээгүйжүүлэг'], bookable: true },
+            { category: 'хэвтүүлэн', subcategory: 'Мэдээгүйжүүлэг', name: 'Орон нутгийн мэдээгүйжүүлэг', description: 'Тодорхой хэсгийг мэдээ алдуулах мэдээгүйжүүлгийн арга.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'stethoscope', tags: ['мэдээгүйжүүлэг'], bookable: true },
 
             // ===== ҮЙЛ ОНОШ =====
-            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Гематологийн шинжилгээ', description: 'Цусны ерөнхий дэлгэрэнгүй шинжилгээ, ESR, коагулограмм.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🩸' },
-            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Биохимийн шинжилгээ', description: 'Элэг, цөс, бөөр, нойр булчирхай, өөх тос, микроэлементүүд.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🧪' },
-            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Иммунологийн шинжилгээ', description: 'EBV, бамбайн дааврууд, Витамин Д, нийт IgE зэрэг.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🔬' },
-            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Микробиологийн шинжилгээ', description: 'Шээс, арчдас, цэр, MRSA илрүүлэг.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🦠' },
-            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Хагалгааны багц шинжилгээ', description: 'Хамар, чих, хоолойн мэс заслын өмнөх багц шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '✅' },
+            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Гематологийн шинжилгээ', description: 'Цусны ерөнхий дэлгэрэнгүй шинжилгээ, ESR, коагулограмм.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['лаборатори','цус'], bookable: true },
+            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Биохимийн шинжилгээ', description: 'Элэг, цөс, бөөр, нойр булчирхай, өөх тос, микроэлементүүд.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['лаборатори','биохим'], bookable: true },
+            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Иммунологийн шинжилгээ', description: 'EBV, бамбайн дааврууд, Витамин Д, нийт IgE зэрэг.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['лаборатори','иммунологи'], bookable: true },
+            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Микробиологийн шинжилгээ', description: 'Шээс, арчдас, цэр, MRSA илрүүлэг.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['лаборатори','микробиологи'], bookable: true },
+            { category: 'үйл онош', subcategory: 'Лаборатори', name: 'Хагалгааны багц шинжилгээ', description: 'Хамар, чих, хоолойн мэс заслын өмнөх багц шинжилгээ.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'lab', tags: ['лаборатори','багц'], bookable: true },
 
-            { category: 'үйл онош', subcategory: 'Дүрс оношлогоо', name: 'Компьютер томографи', description: 'Хамар, дайвар хөндий, чамархай ясны дэлгэрэнгүй дүрс оношлогоо.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🖥️' },
-            { category: 'үйл онош', subcategory: 'Дүрс оношлогоо', name: 'СВСТ Чих, хамар', description: 'Туяаны ачаалал багатай, урьдчилсан оношлогоо.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '🔍' },
-            { category: 'үйл онош', subcategory: 'Дүрс оношлогоо', name: 'Рентген', description: 'Хамар дайвар хөндийн болон цээжний тойм зураг.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: '📷' },
+            { category: 'үйл онош', subcategory: 'Дүрс оношлогоо', name: 'Компьютер томографи', description: 'Хамар, дайвар хөндий, чамархай ясны дэлгэрэнгүй дүрс оношлогоо.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'mri', tags: ['дүрс оношлогоо','КТ'], bookable: true },
+            { category: 'үйл онош', subcategory: 'Дүрс оношлогоо', name: 'СВСТ Чих, хамар', description: 'Туяаны ачаалал багатай, урьдчилсан оношлогоо.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'mri', tags: ['дүрс оношлогоо','СВСТ'], bookable: true },
+            { category: 'үйл онош', subcategory: 'Дүрс оношлогоо', name: 'Рентген', description: 'Хамар дайвар хөндийн болон цээжний тойм зураг.', doctors: doctorsBySubcategory['ЧХХ ерөнхий'], branches: branches.slice(0, 4), icon: 'mri', tags: ['дүрс оношлогоо','рентген'], bookable: true },
 
             // ===== СУВИЛАЛ =====
-            { category: 'сувилал', subcategory: 'Уламжлалт эмчилгээ', name: 'Бариа засал', description: 'Уламжлалт аргаар бариа засал хийх.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: '💆' },
-            { category: 'сувилал', subcategory: 'Уламжлалт эмчилгээ', name: 'Бумба', description: 'Уламжлалт бумба эмчилгээ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: '🔥' },
-            { category: 'сувилал', subcategory: 'Уламжлалт эмчилгээ', name: 'Зүү эмчилгээ', description: 'Зүүний эмчилгээ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: '📍' },
-            { category: 'сувилал', subcategory: 'Уламжлалт эмчилгээ', name: 'Шавар эмчилгээ', description: 'Эмчилгээний шавраар эмчлэх.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: '🧖' },
-            { category: 'сувилал', subcategory: 'Сэргээн засах эмчилгээ', name: 'Физик эмчилгээ', description: 'Физик эмчилгээний аппарат, дасгал эмчилгээ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: '🏃' },
-            { category: 'сувилал', subcategory: 'Сэргээн засах эмчилгээ', name: 'Хөдөлгөөн засал', description: 'Хөдөлгөөний эмчилгээ, дасгалжуулалт.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: '🤸' },
-            { category: 'сувилал', subcategory: 'Сэргээн засах эмчилгээ', name: 'Усан эмчилгээ', description: 'Усан эмчилгээний бусад хэлбэр.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: '💧' },
-            { category: 'сувилал', subcategory: 'Сэргээн засах эмчилгээ', name: 'Эрүүл хүнс, амралт', description: 'Өөрсдийн аж ахуйгаас бэлтгэсэн органик хүнс, эмчилгээний хоол, гүүний саам, цагаан идээ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: '🥗' }
+            { category: 'сувилал', subcategory: 'Уламжлалт эмчилгээ', name: 'Бариа засал', description: 'Уламжлалт аргаар бариа засал хийх.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: 'heart-hands', tags: ['сувилал','бариа'], bookable: true },
+            { category: 'сувилал', subcategory: 'Уламжлалт эмчилгээ', name: 'Бумба', description: 'Уламжлалт бумба эмчилгээ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: 'heart-hands', tags: ['сувилал','бумба'], bookable: true },
+            { category: 'сувилал', subcategory: 'Уламжлалт эмчилгээ', name: 'Зүү эмчилгээ', description: 'Зүүний эмчилгээ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: 'heart-hands', tags: ['сувилал','зүү'], bookable: true },
+            { category: 'сувилал', subcategory: 'Уламжлалт эмчилгээ', name: 'Шавар эмчилгээ', description: 'Эмчилгээний шавраар эмчлэх.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: 'heart-hands', tags: ['сувилал','шавар'], bookable: true },
+            { category: 'сувилал', subcategory: 'Сэргээн засах эмчилгээ', name: 'Физик эмчилгээ', description: 'Физик эмчилгээний аппарат, дасгал эмчилгээ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: 'heart-hands', tags: ['сувилал','физик'], bookable: true },
+            { category: 'сувилал', subcategory: 'Сэргээн засах эмчилгээ', name: 'Хөдөлгөөн засал', description: 'Хөдөлгөөний эмчилгээ, дасгалжуулалт.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: 'heart-hands', tags: ['сувилал','хөдөлгөөн'], bookable: true },
+            { category: 'сувилал', subcategory: 'Сэргээн засах эмчилгээ', name: 'Усан эмчилгээ', description: 'Усан эмчилгээний бусад хэлбэр.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: 'heart-hands', tags: ['сувилал','усан'], bookable: true },
+            { category: 'сувилал', subcategory: 'Сэргээн засах эмчилгээ', name: 'Эрүүл хүнс, амралт', description: 'Өөрсдийн аж ахуйгаас бэлтгэсэн органик хүнс, эмчилгээний хоол, гүүний саам, цагаан идээ.', doctors: doctorsBySubcategory['Тэнцвэр'], branches: branches.slice(4), icon: 'heart-hands', tags: ['сувилал','хүнс'], bookable: true }
         ];
+
+        // Compute quick category counts
+        quickCategories.forEach(qc => {
+            if (qc.key === 'үйл онош-lab') {
+                qc.count = servicesData.filter(s => s.category === 'үйл онош' && s.subcategory === 'Лаборатори').length;
+            } else if (qc.key === 'амбулатори-ear') {
+                qc.count = servicesData.filter(s => s.category === 'амбулатори' && s.subcategory === 'Чих, Сонсгол').length;
+            } else {
+                qc.count = servicesData.filter(s => s.category === qc.key).length;
+            }
+        });
 
         // ===== FILTER LOGIC =====
         const filterCategory = document.getElementById('filterCategory');
         const filterSubcategory = document.getElementById('filterSubcategory');
         const filterDoctor = document.getElementById('filterDoctor');
         const filterBranch = document.getElementById('filterBranch');
+        const filterKeyword = document.getElementById('filterKeyword');
         const servicesGrid = document.getElementById('servicesGrid');
         const resultCount = document.getElementById('resultCount');
+        const resultCountWrap = document.getElementById('resultCountWrap');
         const noResults = document.getElementById('noResults');
+        const pagination = document.getElementById('pagination');
+        const sortSelect = document.getElementById('sortSelect');
+
+        let currentPage = 1;
+        const pageSize = 9;
+        let activeFilters = {};
 
         function populateSubcategories() {
             const category = filterCategory.value;
@@ -537,7 +519,10 @@
             filterSubcategory.disabled = !category;
             if (category && subcategoriesByCategory[category]) {
                 subcategoriesByCategory[category].forEach(sub => {
-                    filterSubcategory.innerHTML += `<option value="${sub}">${sub}</option>`;
+                    const opt = document.createElement('option');
+                    opt.value = sub;
+                    opt.textContent = sub;
+                    filterSubcategory.appendChild(opt);
                 });
             }
             populateDoctors();
@@ -560,99 +545,166 @@
             if (doctors.length) {
                 filterDoctor.disabled = false;
                 doctors.forEach(doc => {
-                    filterDoctor.innerHTML += `<option value="${doc}">${doc}</option>`;
+                    const opt = document.createElement('option');
+                    opt.value = doc;
+                    opt.textContent = doc;
+                    filterDoctor.appendChild(opt);
                 });
             }
         }
 
-        function getIconForService(service) {
-            return service.icon || '⚕️';
-        }
-
         function getCategoryLabel(cat) {
-            const labels = {
-                'амбулатори': 'Амбултори',
-                'хэвтүүлэн': 'Хэвтүүлэн',
-                'үйл онош': 'Үйл онош',
-                'сувилал': 'Сувилал'
-            };
-            return labels[cat] || cat;
+            return categoryLabels[cat] || cat;
         }
 
-        function renderServices(services) {
-            servicesGrid.innerHTML = '';
-            resultCount.textContent = services.length;
-            if (services.length === 0) {
-                noResults.classList.add('show');
-                return;
-            }
-            noResults.classList.remove('show');
-
-            services.forEach((service, index) => {
-                const card = document.createElement('div');
-                card.className = 'service-card';
-                card.innerHTML = `
-                    <div class="service-card-header" onclick="toggleCard(this)">
-                        <div class="service-card-icon">${getIconForService(service)}</div>
-                        <div class="service-card-title">
-                            <h3>${service.name}</h3>
-                            <div class="service-card-meta">
-                                <span class="category-tag">${getCategoryLabel(service.category)}</span>
-                                <span>${service.subcategory}</span>
-                            </div>
-                        </div>
-                        <div class="service-card-toggle">⌄</div>
+        function renderQuickCategories() {
+            const container = document.getElementById('quickCategories');
+            container.innerHTML = quickCategories.map(qc => `
+                <div class="category-card" onclick="selectCategory('${qc.key}', '${qc.label}')">
+                    <div class="icon-circle">${icon(qc.icon)}</div>
+                    <div>
+                        <div class="category-card-title">${qc.label}</div>
+                        <div class="category-card-count">${qc.count} үйлчилгээ</div>
                     </div>
-                    <div class="service-card-body">
-                        <div class="service-card-content">
-                            <p>${service.description}</p>
-                            <div class="service-doctors">
-                                <strong>Хариуцах эмч нар:</strong>
-                                <div class="doctor-tags">
-                                    ${service.doctors.map(doc => `<span class="doctor-tag">${doc}</span>`).join('')}
-                                </div>
-                            </div>
-                            <div class="service-card-actions">
-                                <a href="contact.html" class="btn-book">📅 Цаг авах</a>
-                                <a href="tel:19009999" class="btn-phone">📞 1900-9999</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                servicesGrid.appendChild(card);
-            });
+                </div>
+            `).join('');
         }
 
-        function applyFilters() {
+        function matchesKeyword(service, keyword) {
+            if (!keyword) return true;
+            const k = keyword.toLowerCase();
+            return service.name.toLowerCase().includes(k) ||
+                   service.description.toLowerCase().includes(k) ||
+                   service.subcategory.toLowerCase().includes(k) ||
+                   service.doctors.some(d => d.toLowerCase().includes(k)) ||
+                   (service.tags && service.tags.some(t => t.toLowerCase().includes(k)));
+        }
+
+        function filterServices() {
             const category = filterCategory.value;
             const subcategory = filterSubcategory.value;
             const doctor = filterDoctor.value;
             const branch = filterBranch.value;
+            const keyword = filterKeyword.value.trim();
 
-            const filtered = servicesData.filter(service => {
+            const branchMap = {
+                'төв': 'ЭМЖЖ - ТӨВ ЭМНЭЛЭГ',
+                '10-р хороолол': 'ЭМЖЖ - 10-р хороолол клиник',
+                'халдварт': 'ЭМЖЖ - Халдварт клиник',
+                'мишээл': 'ЭМЖЖ - Мишээл клиник',
+                'сувилал': 'Сэргээн засах сувилал'
+            };
+
+            let filtered = servicesData.filter(service => {
                 if (category && service.category !== category) return false;
                 if (subcategory && service.subcategory !== subcategory) return false;
                 if (doctor && !service.doctors.includes(doctor)) return false;
-                if (branch) {
-                    const branchMap = {
-                        'төв': 'ЭМЖЖ - ТӨВ ЭМНЭЛЭГ',
-                        '10-р хороолол': 'ЭМЖЖ - 10-р хороолол клиник',
-                        'халдварт': 'ЭМЖЖ - Халдварт клиник',
-                        'мишээл': 'ЭМЖЖ - Мишээл клиник',
-                        'сувилал': 'Сэргээн засах сувилал'
-                    };
-                    if (!service.branches.includes(branchMap[branch])) return false;
-                }
+                if (branch && !service.branches.includes(branchMap[branch])) return false;
+                if (activeFilters['online'] && !service.bookable) return false;
+                if (activeFilters['doctor'] && service.doctors.length === 0) return false;
+                if (activeFilters['diagnostic'] && !['Дүрс оношлогоо','Лаборатори'].includes(service.subcategory)) return false;
+                if (activeFilters['surgery'] && service.category !== 'хэвтүүлэн') return false;
+                if (activeFilters['lab'] && service.subcategory !== 'Лаборатори') return false;
+                if (!matchesKeyword(service, keyword)) return false;
                 return true;
             });
 
-            renderServices(filtered);
+            // Sort
+            const sort = sortSelect.value;
+            if (sort === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name, 'mn'));
+            } else if (sort === 'bookable') {
+                filtered.sort((a, b) => (b.bookable ? 1 : 0) - (a.bookable ? 1 : 0));
+            }
+            // 'new' and 'popular' use natural data order
+
+            return filtered;
+        }
+
+        function renderPagination(total) {
+            const pages = Math.ceil(total / pageSize) || 1;
+            let html = `<button class="page-btn" onclick="changePage(-1)" ${currentPage === 1 ? 'disabled style="opacity:0.5"' : ''}>&lt;</button>`;
+            for (let i = 1; i <= pages; i++) {
+                html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+            }
+            html += `<button class="page-btn" onclick="changePage(1)" ${currentPage === pages ? 'disabled style="opacity:0.5"' : ''}>&gt;</button>`;
+            pagination.innerHTML = html;
+            pagination.style.display = pages <= 1 ? 'none' : 'flex';
+        }
+
+        function renderServices() {
+            const filtered = filterServices();
+            const total = filtered.length;
+            resultCount.textContent = total;
+            resultCountWrap.style.display = total ? 'inline' : 'none';
+
+            if (total === 0) {
+                servicesGrid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                pagination.style.display = 'none';
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            const start = (currentPage - 1) * pageSize;
+            const pageItems = filtered.slice(start, start + pageSize);
+
+            servicesGrid.innerHTML = pageItems.map(service => `
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="icon-circle">${icon(service.icon)}</div>
+                        <div class="service-card-title">
+                            <h3>${service.name}</h3>
+                            <div class="service-card-meta">
+                                <span class="badge badge-primary">${getCategoryLabel(service.category)}</span>
+                                <span class="badge badge-teal">${service.subcategory}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="service-card-desc">${service.description}</p>
+                    <div class="service-meta-list">
+                        <span><svg viewBox="0 0 24 24" width="14" height="14"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> ${service.doctors.length} эмч</span>
+                        <span><svg viewBox="0 0 24 24" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ${service.branches.length} салбар</span>
+                    </div>
+                    <div class="service-doctors">
+                        <strong>Хариуцах эмч нар:</strong>
+                        <div class="doctor-tags">
+                            ${service.doctors.slice(0, 4).map(doc => `<span class="doctor-tag">${doc}</span>`).join('')}
+                            ${service.doctors.length > 4 ? `<span class="doctor-tag">+${service.doctors.length - 4}</span>` : ''}
+                        </div>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="contact.html" class="btn btn-primary">Цаг авах</a>
+                        <a href="tel:19009999" class="btn btn-secondary">1900-9999</a>
+                    </div>
+                </div>
+            `).join('');
+
+            renderPagination(total);
+        }
+
+        function applyFilters() {
+            currentPage = 1;
+            renderServices();
             document.getElementById('services-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        function selectCategory(category) {
-            filterCategory.value = category;
-            populateSubcategories();
+        function selectCategory(key, label) {
+            let category = key;
+            if (key === 'үйл онош-lab') {
+                filterCategory.value = 'үйл онош';
+                populateSubcategories();
+                filterSubcategory.value = 'Лаборатори';
+                populateDoctors();
+            } else if (key === 'амбулатори-ear') {
+                filterCategory.value = 'амбулатори';
+                populateSubcategories();
+                filterSubcategory.value = 'Чих, Сонсгол';
+                populateDoctors();
+            } else {
+                filterCategory.value = category;
+                populateSubcategories();
+            }
             applyFilters();
         }
 
@@ -661,18 +713,36 @@
             populateSubcategories();
             filterDoctor.value = '';
             filterBranch.value = '';
+            filterKeyword.value = '';
+            activeFilters = {};
             document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
-            renderServices(servicesData);
+            currentPage = 1;
+            renderServices();
         }
 
         function toggleChip(btn, type) {
             btn.classList.toggle('active');
-            // Demo chips - no backend filtering for now
+            activeFilters[type] = btn.classList.contains('active');
         }
 
-        function toggleCard(header) {
-            const card = header.closest('.service-card');
-            card.classList.toggle('expanded');
+        function changePage(dir) {
+            const filtered = filterServices();
+            const pages = Math.ceil(filtered.length / pageSize) || 1;
+            currentPage = Math.max(1, Math.min(pages, currentPage + dir));
+            renderServices();
+            document.getElementById('services-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            renderServices();
+            document.getElementById('services-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function switchVariant(url) {
+            if (url && url !== window.location.pathname.split('/').pop()) {
+                window.location.href = url;
+            }
         }
 
         filterCategory.addEventListener('change', () => {
@@ -683,9 +753,22 @@
             populateDoctors();
             filterDoctor.value = '';
         });
+        filterKeyword.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') applyFilters();
+        });
 
-        // ===== INITIAL RENDER =====
-        renderServices(servicesData);
+        // Sticky filter button on mobile
+        const stickyBtn = document.getElementById('stickyFilterBtn');
+        const filterSection = document.querySelector('.filter-section');
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth > 768) return;
+            const rect = filterSection.getBoundingClientRect();
+            if (rect.bottom < 0) {
+                stickyBtn.classList.add('show');
+            } else {
+                stickyBtn.classList.remove('show');
+            }
+        });
 
         // ===== MOBILE MENU =====
         function toggleMenu() {
@@ -717,32 +800,10 @@
             });
         });
 
-        function scrollToAppointment() {
-            document.getElementById('appointment-section').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function switchVariant(url) {
-            if (url && url !== window.location.pathname.split('/').pop()) {
-                window.location.href = url;
-            }
-        }
-
-        window.addEventListener('scroll', () => {
-            const stickyBar = document.getElementById('stickyAppointment');
-            const appointmentSection = document.getElementById('appointment-section');
-            if (!stickyBar || !appointmentSection) return;
-            const rect = appointmentSection.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                stickyBar.classList.add('hidden');
-            } else {
-                stickyBar.classList.remove('hidden');
-            }
-        });
-
         // ===== LANGUAGE TOGGLE =====
         const translations = {
-            mn: { nav_home: "Нүүр", nav_about: "Бидний тухай", nav_services: "Тусламж үйлчилгээ", nav_news: "Мэдээ", nav_contact: "Холбоо барих" },
-            en: { nav_home: "Home", nav_about: "About Us", nav_services: "Services", nav_news: "News", nav_contact: "Contact" }
+            mn: { nav_home: "Нүүр", nav_about: "Бидний тухай", nav_services: "Үйлчилгээ", nav_doctors: "Эмч, мэргэжилтнүүд", nav_news: "Мэдээ", nav_ent: "ENT Health", nav_contact: "Холбоо барих" },
+            en: { nav_home: "Home", nav_about: "About Us", nav_services: "Services", nav_doctors: "Doctors", nav_news: "News", nav_ent: "ENT Health", nav_contact: "Contact" }
         };
         let currentLang = localStorage.getItem('emjj-language') || 'mn';
         function toggleLanguage() {
@@ -758,10 +819,16 @@
             if (navLinks[0]) navLinks[0].textContent = t.nav_home;
             if (navLinks[1]) navLinks[1].textContent = t.nav_about;
             if (navLinks[2]) navLinks[2].textContent = t.nav_services;
-            if (navLinks[3]) navLinks[3].textContent = t.nav_news;
-            if (navLinks[4]) navLinks[4].textContent = t.nav_contact;
+            if (navLinks[3]) navLinks[3].textContent = t.nav_doctors;
+            if (navLinks[4]) navLinks[4].textContent = t.nav_news;
+            if (navLinks[5]) navLinks[5].textContent = t.nav_ent;
+            if (navLinks[6]) navLinks[6].textContent = t.nav_contact;
         }
         applyLanguage();
+
+        // ===== INITIAL RENDER =====
+        renderQuickCategories();
+        renderServices();
     </script>
 </body>
 </html>

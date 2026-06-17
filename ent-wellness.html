@@ -192,31 +192,37 @@
     </style>
 </head>
 <body>
+        <!-- Header -->
     <header class="ref-header">
-        <div class="wrap ref-header-inner">
+        <div class="container ref-header-inner">
             <a href="index.html" class="ref-logo">
                 <div class="ref-logo-mark">ↄ</div>
                 <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <button class="ref-menu" aria-label="Цэс" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
                 <a href="index.html">Нүүр</a>
+                <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
                 <a href="doctors.html">Эмч, мэргэжилтнүүд</a>
                 <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html" class="active">ENT Health</a>
                     <div class="ref-dropdown-menu">
-                        <a href="ent-wellness.html" class="active">ENT Wellness</a>
+                        <a href="ent-wellness.html">ENT Wellness</a>
                         <a href="ent-care.html">ENT Care</a>
                     </div>
                 </div>
-                <a href="about.html">Бидний тухай</a>
                 <a href="contact.html">Холбоо барих</a>
+                <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
+                <div class="mobile-actions">
+                    <a href="tel:70341111" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                    <a href="contact.html" class="btn btn-outline">Цаг авах</a>
+                </div>
             </nav>
-            <div style="display:flex;align-items:center;gap:16px;margin-left:auto;">
-                <a href="tel:70341111" style="font-size:14px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:6px;">📞 7034-1111</a>
-                <a href="contact.html" class="btn btn-primary" style="border-radius:8px;">Цаг авах</a>
+            <div class="header-actions">
+                <a href="tel:70341111" class="phone-link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                <a href="contact.html" class="btn btn-primary">Цаг авах</a>
             </div>
         </div>
     </header>
@@ -248,22 +254,22 @@
 
                 <div class="ew-goals">
                     <div class="ew-goal">
-                        <i>🔍</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></i>
                         <strong>Эрт илрүүлэг</strong>
                         <span>ЧХХ өвчлөлийг эрт үе шатанд илрүүлж, урьдчилан сэргийлнэ</span>
                     </div>
                     <div class="ew-goal">
-                        <i>📋</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg></i>
                         <strong>Мэдлэг, зөв дадал</strong>
                         <span>Эрүүл мэндийн боловсрол, урьдчилан сэргийлэх зөв дадал хэвшүүлнэ</span>
                     </div>
                     <div class="ew-goal">
-                        <i>👥</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></i>
                         <strong>Эрүүл хамт олон</i>
                         <span>Байгууллагын эрүүл мэндийн соёлыг дэмжиж, оролцоог нэмэгдүүлнэ</span>
                     </div>
                     <div class="ew-goal">
-                        <i>📈</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></i>
                         <strong>Тогтвортой бүтээмж</strong>
                         <span>ЧХХ-н эрсдэлээс үүдэлтэй алдагдал, зардлыг бууруулна</span>
                     </div>
@@ -281,22 +287,22 @@
                     </div>
                     <div class="ew-stats">
                         <div class="ew-stat">
-                            <i>👥</i>
+                            <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></i>
                             <strong>250+</strong>
                             <span>эмч, ажилтан, албан хаагч</span>
                         </div>
                         <div class="ew-stat">
-                            <i>🎓</i>
+                            <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></i>
                             <strong>70%</strong>
                             <span>эмч, мэргэжилтнүүдийн эрдмийн зэрэг, цолтой</span>
                         </div>
                         <div class="ew-stat">
-                            <i>🏆</i>
+                            <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M9 22v-4a3 3 0 0 1 6 0v4"/><path d="M7 9v7a5 5 0 0 0 10 0V9"/></svg></i>
                             <strong>33+</strong>
                             <span>жилийн туршлага, мэргэшсэн баг</span>
                         </div>
                         <div class="ew-stat">
-                            <i>🛡️</i>
+                            <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>️</i>
                             <strong>100%</strong>
                             <span>магадлан итгэмжлэгдсэн эмнэлэг</span>
                         </div>
@@ -310,7 +316,7 @@
                 <h2 class="ew-section-title">БАЙГУУЛЛАГАД ЗОРИУЛСАН ҮЙЛЧИЛГЭЭ</h2>
                 <div class="ew-services-grid">
                     <div class="ew-service-card">
-                        <h3><i>🛡️</i>Урьдчилан сэргийлэх үзлэг, оношлогоо</h3>
+                        <h3><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>️</i>Урьдчилан сэргийлэх үзлэг, оношлогоо</h3>
                         <ul>
                             <li>ЧХХ-ийн нарийн мэргэжлийн үзлэг</li>
                             <li>Эрсдэлийн үнэлгээ</li>
@@ -320,7 +326,7 @@
                         </ul>
                     </div>
                     <div class="ew-service-card">
-                        <h3><i>🎓</i>Эрүүл мэндийн боловсрол</h3>
+                        <h3><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></i>Эрүүл мэндийн боловсрол</h3>
                         <ul>
                             <li>Сургалт, зөвлөгөө</li>
                             <li>Асуулт, хариултын уулзалт</li>
@@ -329,7 +335,7 @@
                         </ul>
                     </div>
                     <div class="ew-service-card">
-                        <h3><i>🏢</i>Байгууллагын тусгай үйлчилгээ</h3>
+                        <h3><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/></svg></i>Байгууллагын тусгай үйлчилгээ</h3>
                         <ul>
                             <li>Ажилтны тоонд суурилсан уян хатан үнэ</li>
                             <li>Хөнгөлөлттэй багцын үзлэг, оношлогоо</li>
@@ -338,7 +344,7 @@
                         </ul>
                     </div>
                     <div class="ew-service-card">
-                        <h3><i>📊</i>Тайлан, дүн шинжилгээ</h3>
+                        <h3><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/><path d="M3 20h18"/></svg></i>Тайлан, дүн шинжилгээ</h3>
                         <ul>
                             <li>Байгууллагын ЧХХ-н эрүүл мэндийн ерөнхий үнэлгээ</li>
                             <li>Эрсдэлийн дүн шинжилгээ</li>
@@ -356,7 +362,7 @@
                 <div class="ew-pricing-grid">
                     <div class="ew-price-card">
                         <div class="ew-price-header">
-                            <i>🛡️</i>
+                            <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>️</i>
                             <div>
                                 <h3>BASIC</h3>
                                 <p>Анхан шатны урьдчилан сэргийлэх үйлчилгээ</p>
@@ -394,7 +400,7 @@
 
                     <div class="ew-price-card teal">
                         <div class="ew-price-header">
-                            <i>👑</i>
+                            <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 16L3 8l5 2 4-6 4 6 5-2-2 8H5z"/><path d="M5 16v4h14v-4"/></svg></i>
                             <div>
                                 <h3>PREMIUM</h3>
                                 <p>Байгууллагын ЧХХ-н эрүүл мэндийн удирдлагын цогц шийдэл</p>
@@ -422,42 +428,42 @@
                 <h2 class="ew-section-title">САР БҮРИЙН ЭРҮҮЛ МЭНДИЙН ДЭМЖИХ ҮЙЛЧИЛГЭЭ (PREMIUM)</h2>
                 <div class="ew-monthly-grid">
                     <div class="ew-monthly-card">
-                        <i>💉</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 2l4 4-7 7-4-4 7-7z"/><path d="M7 21l-2-2"/><path d="M14 11l-3 3"/></svg></i>
                         <h3>Дархлаажуулалтын аян (3 удаа)</h3>
                         <p>Улирлын өвчлөлөөс урьдчилан сэргийлэх</p>
                     </div>
                     <div class="ew-monthly-card">
-                        <i>🌿</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6.5 21c3.5-4 2.5-8 8.5-12.5-4 1-6.5 3-8 6"/><path d="M17.5 21c-3.5-4-2.5-8-8.5-12.5 4 1 6.5 3 8 6"/></svg></i>
                         <h3>Хамар арчилгааны бүтээгдэхүүн</h3>
                         <p>Хөнгөлөлттэй хангамж, зөвлөгөө</p>
                     </div>
                     <div class="ew-monthly-card">
-                        <i>🛡️</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>️</i>
                         <h3>Урьдчилан сэргийлэх зөвлөгөө</h3>
                         <p>ЧХХ өвчнөөс сэргийлэх зөвлөмж</p>
                     </div>
                     <div class="ew-monthly-card">
-                        <i>🌸</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 7.5a4.5 4.5 0 0 1 4.5-4.5 4.5 4.5 0 0 1 4.5 4.5 4.5 4.5 0 0 1-4.5 4.5"/><path d="M12 7.5a4.5 4.5 0 0 0-4.5-4.5A4.5 4.5 0 0 0 3 7.5a4.5 4.5 0 0 0 4.5 4.5"/><path d="M12 16.5a4.5 4.5 0 0 1 4.5 4.5 4.5 4.5 0 0 1-4.5 4.5 4.5 4.5 0 0 1-4.5-4.5 4.5 4.5 0 0 1 4.5-4.5z"/><circle cx="12" cy="12" r="2"/></svg></i>
                         <h3>Харшлын талаарх зөвлөгөө</h3>
                         <p>Мэдлэг олгох, эрсдэлт бүлэгт зөвлөгөө өгөх</p>
                     </div>
                     <div class="ew-monthly-card">
-                        <i>🏃</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="13" cy="4" r="2"/><path d="M7 21l3-4"/><path d="M16 21l-2-4"/><path d="M10 17l-3-3 4-5 4 2"/></svg></i>
                         <h3>Эрүүл мэндийн идэвхжүүлэлтийн аян</h3>
                         <p>"Сонсголоо хамгаалъя" өдөрлөг, арга хэмжээ</p>
                     </div>
                     <div class="ew-monthly-card">
-                        <i>🩺</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4.5 10a2.5 2.5 0 0 1 0-5"/><path d="M19.5 10a2.5 2.5 0 0 0 0-5"/><path d="M2 10v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2"/><path d="M14 10v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2"/></svg></i>
                         <h3>Артерийн даралт үзэх төхөөрөмж</h3>
                         <p>Байгууллагад байрлуулах боломж, хяналт</p>
                     </div>
                     <div class="ew-monthly-card">
-                        <i>🥗</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="M5.6 5.6l12.8 12.8"/><path d="M18.4 5.6L5.6 18.4"/></svg></i>
                         <h3>Эрүүл хооллолт сургалт, зөвлөгөө</h3>
                         <p>Хоол зүйчийн зөвлөгөө, ажилтны дадал төлөвшүүлэх</p>
                     </div>
                     <div class="ew-monthly-card">
-                        <i>🧪</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M8 2v8l-4 8h16l-4-8V2"/><path d="M9 2h6"/></svg></i>
                         <h3>Эрүүл мэндийн скрининг, сорил</h3>
                         <p>Урьдчилан сэргийлэх зориулалттай бүтээгдэхүүн</p>
                     </div>
@@ -482,7 +488,7 @@
                         <p>Улаанбаатар хотоос 50 км зайд, Төв аймгийн Баянчандмань сумын Дарцагт уулын энгэрт байрлах ЭМЖЖ сэргээн засах сувилал нь байгалийн үзэсгэлэнт орчинд амарч, сувилуулах боломжийг бүрдүүлдэг.</p>
                         <div class="ew-rehab-grid">
                             <div class="ew-rehab-item">
-                                <h4><i>🏨</i>Сувиллын давуу тал</h4>
+                                <h4><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M2 21h20"/><path d="M7 21v-7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v7"/><path d="M10 9V5a2 2 0 0 1 4 0v4"/></svg></i>Сувиллын давуу тал</h4>
                                 <ul>
                                     <li>50 ортой хүчин чадал</li>
                                     <li>Энгийн, хагас люкс, бүтэн люкс өрөө</li>
@@ -491,7 +497,7 @@
                                 </ul>
                             </div>
                             <div class="ew-rehab-item">
-                                <h4><i>💆</i>Сэргээн засах эмчилгээ</h4>
+                                <h4><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="10" r="4"/><path d="M6 21v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3"/><path d="M15 7l3-2"/><path d="M9 7L6 5"/></svg></i>Сэргээн засах эмчилгээ</h4>
                                 <ul>
                                     <li>Физик эмчилгээ</li>
                                     <li>Хөдөлгөөн засал</li>
@@ -500,14 +506,14 @@
                                 </ul>
                             </div>
                             <div class="ew-rehab-item">
-                                <h4><i>🌿</i>Уламжлалт эмчилгээ</h4>
+                                <h4><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6.5 21c3.5-4 2.5-8 8.5-12.5-4 1-6.5 3-8 6"/><path d="M17.5 21c-3.5-4-2.5-8-8.5-12.5 4 1 6.5 3 8 6"/></svg></i>Уламжлалт эмчилгээ</h4>
                                 <ul>
                                     <li>Бариа засал, бумба, зүү эмчилгээ</li>
                                     <li>Төөнүүр, дэвтээлэг, шивүүр, жин засал</li>
                                 </ul>
                             </div>
                             <div class="ew-rehab-item">
-                                <h4><i>🍃</i>Эрүүл хүнс, байгалийн орчин</h4>
+                                <h4><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11 20A7 7 0 0 1 4 13c0-7 11-11 11-11s-2 9-2 11a7 7 0 0 0 7 7"/><path d="M11 20v2"/></svg></i>Эрүүл хүнс, байгалийн орчин</h4>
                                 <ul>
                                     <li>Өөрсдийн аж ахуйгаас бэлтгэсэн органик хүнс</li>
                                     <li>Эмчилгээний хоол, гүүний саам, цагаан идээ</li>
@@ -524,17 +530,17 @@
                 <h2 class="ew-section-title">ХӨТӨЛБӨРИЙН ҮР ДАВУУ ТАЛ</h2>
                 <div class="ew-benefits-grid">
                     <div class="ew-benefit-card">
-                        <i>🤒</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><path d="M16 4l-2 2"/></svg></i>
                         <h3>Хөдөлмөрийн чадвар алдахаас сэргийлнэ</h3>
                         <p>Байгууллагын уян хатан ажиллах чадварыг алдагдуулах чих, хамар, хоолойн өвчлөлөөс урьдчилан сэргийлнэ.</p>
                     </div>
                     <div class="ew-benefit-card">
-                        <i>📈</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></i>
                         <h3>Ажилтны оролцоо, хандлагыг нэмэгдүүлнэ</h3>
                         <p>Эрүүл ажилтан бүтээмжтэй ажилладаг. Эрүүл мэндийн соёлыг төлөвшүүлж, ажлын байрны сэтгэл ханамжийг дээшлүүлнэ.</p>
                     </div>
                     <div class="ew-benefit-card">
-                        <i>💰</i>
+                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><ellipse cx="12" cy="12" rx="10" ry="6"/><path d="M15 12h.01"/><path d="M9 12h.01"/></svg></i>
                         <h3>Эмчилгээний зардлыг бууруулна</h3>
                         <p>Эрт илрүүлэг, урьдчилан сэргийлэх үзлэг нь хүндрэлээс сэргийлж, урт хугацааны эмчилгээний зардлыг хэмнэнэ.</p>
                     </div>
@@ -546,7 +552,7 @@
             <div class="ew-container">
                 <div class="ew-cta-bar">
                     <div class="ew-cta-left">
-                        <i>✉️</i>
+                        <i><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> </i>
                         <div>
                             <h3>ХАМТДАА ЭРҮҮЛ АЖЛЫН БАЙРЫГ БҮТЭЭЦГЭЭЕ</h3>
                             <p>Бид танай байгууллагын эрүүл мэндийн найдвартай түнш байна.</p>
@@ -554,8 +560,8 @@
                     </div>
                     <div class="ew-cta-right">
                         <div class="ew-cta-contact">
-                            <a href="mailto:marketing@emjjhospital.mn">✉️ marketing@emjjhospital.mn</a>
-                            <a href="tel:70341111">📞 7034-1111</a>
+                            <a href="mailto:marketing@emjjhospital.mn"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> marketing@emjjhospital.mn</a>
+                            <a href="tel:70341111"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                         </div>
                         <a href="contact.html" class="ew-cta-btn">Хамтран ажиллах →</a>
                     </div>
@@ -591,9 +597,9 @@
                 <div class="ew-footer-col ew-footer-contact">
                     <h4>ХОЛБОО БАРИХ</h4>
                     <ul>
-                        <li><i>📍</i>Улаанбаатар хот, Сүхбаатар дүүрэг, 11-р хороо, ЭМЖЖ эмнэлэг</li>
-                        <li><i>✉️</i>info@emjjhospital.mn</li>
-                        <li><i>📞</i>7034-1111</li>
+                        <li><i><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </i>Улаанбаатар хот, Сүхбаатар дүүрэг, 11-р хороо, ЭМЖЖ эмнэлэг</li>
+                        <li><i><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> </i>info@emjjhospital.mn</li>
+                        <li><i><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </i>7034-1111</li>
                     </ul>
                 </div>
             </div>
@@ -635,5 +641,11 @@
             });
         });
     </script>
+<script>
+    function toggleLanguage() {
+        alert('Хэл солих функц удахгүй нэмэгдэнэ.');
+    }
+</script>
+
 </body>
 </html>
