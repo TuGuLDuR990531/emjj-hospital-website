@@ -14,10 +14,10 @@
             --accent-teal: #03bfd7;
             --text-dark: #1a1a1a;
             --text-medium: #4a4a4a;
-            --text-light: #4a5568;
+            --text-light: #556070;
             --bg-white: #ffffff;
-            --bg-light: #f8fafc;
-            --border: #e5e7eb;
+            --bg-light: #f5f7fa;
+            --border: #e2e6ec;
         }
 
         * {
@@ -34,50 +34,40 @@
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 24px;
         }
 
-
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
         /* ========== HERO ========== */
         .hero {
-            padding: 120px 0;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #0054a6 0%, #003d7a 40%, #0054a6 70%, #03bfd7 100%);
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(3,191,215,0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
+            top: -20%;
+            right: -10%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(3,191,215,0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(3,191,215,0.12) 0%, transparent 60%);
             pointer-events: none;
         }
 
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 64px;
             align-items: center;
             position: relative;
             z-index: 1;
@@ -85,313 +75,237 @@
 
         .hero-badge {
             display: inline-flex;
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #e88a1a 100%);
+            background: var(--accent-orange);
             color: white;
-            padding: 10px 24px;
+            padding: 8px 18px;
             border-radius: 30px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 4px 15px rgba(249,157,51,0.4);
+            letter-spacing: 1.5px;
         }
 
         .hero h1 {
-            font-size: 64px;
+            font-size: 52px;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 28px;
+            line-height: 1.12;
+            margin-bottom: 24px;
             color: white;
         }
 
         .hero h1 span {
-            color: var(--accent-teal);
             display: block;
+            color: var(--accent-teal);
             margin-top: 8px;
         }
 
-        .hero p {
-            font-size: 18px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 36px;
-            line-height: 1.8;
+        .hero-text > p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.88);
+            margin-bottom: 32px;
+            line-height: 1.7;
             max-width: 520px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
         .hero-buttons .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: var(--accent-orange);
             border: none;
-            box-shadow: 0 6px 20px rgba(0,84,166,0.4);
-            transition: all 0.3s;
+            box-shadow: 0 4px 14px rgba(249,157,51,0.35);
+            transition: all 0.25s;
         }
 
         .hero-buttons .btn-primary:hover {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,84,166,0.5);
+            background: #e88a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249,157,51,0.45);
         }
 
         .hero-buttons .btn-outline {
             background: transparent;
-            border: 2px solid rgba(255,255,255,0.5);
+            border: 2px solid rgba(255,255,255,0.45);
             color: white;
-            transition: all 0.3s;
+            transition: all 0.25s;
         }
 
         .hero-buttons .btn-outline:hover {
             background: rgba(255,255,255,0.1);
             border-color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .hero-image {
-            position: relative;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0,84,166,0.3), 0 0 0 4px rgba(255,255,255,0.1);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.22);
         }
 
         .hero-image img {
             width: 100%;
-            height: 560px;
+            height: 460px;
             object-fit: cover;
-            display: block;
         }
 
-        /* ========== STATS ========== */
-        .stats {
-            background: linear-gradient(135deg, var(--primary) 0%, #003d7a 50%, var(--primary) 100%);
-            padding: 60px 0;
-            color: white;
+        /* ========== BANNER CAROUSEL ========== */
+        .banner-carousel {
+            background: var(--bg-light);
+        }
+
+        .carousel-container {
             position: relative;
             overflow: hidden;
+            height: 460px;
         }
 
-        .stats::before {
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.6s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-slide::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(3,191,215,0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(3,191,215,0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item {
-            position: relative;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0,35,70,0.86) 0%, rgba(0,35,70,0.68) 45%, rgba(0,35,70,0.35) 100%);
             z-index: 1;
-            padding: 20px;
-            border-radius: 16px;
-            transition: all 0.3s;
         }
 
-        .stat-item:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-5px);
+        .carousel-slide .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
         }
 
-        .stat-item h3 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            background: linear-gradient(135deg, white 0%, var(--accent-teal) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-item p {
-            font-size: 16px;
-            opacity: 0.95;
-            font-weight: 600;
-        }
-
-        .stat-item:nth-child(1) h3 {
-            background: linear-gradient(135deg, white 0%, var(--accent-orange) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* ========== SERVICES FILTER ========== */
-        /* ========== SERVICES SEARCH ========== */
-        .services-search {
-            padding: 60px 0 40px;
-            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 50%, #81d4fa 100%);
-        }
-
-        .search-module {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,84,166,0.1);
-        }
-
-        .search-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 30px;
-        }
-
-        .search-header-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-teal) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .carousel-content {
+            max-width: 680px;
             color: white;
-            font-size: 28px;
-            box-shadow: 0 4px 15px rgba(0,84,166,0.25);
+            padding: 40px 0;
         }
 
-        .search-header-text h3 {
-            font-size: 24px;
+        .carousel-content h3 {
+            font-size: 38px;
             font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-        }
-
-        .search-header-text p {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .search-filters {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr) auto;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .filter-group {
+            margin-bottom: 16px;
+            line-height: 1.2;
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            align-items: center;
+            gap: 14px;
         }
 
-        .filter-group label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-dark);
+        .carousel-content h3 svg {
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            stroke: var(--accent-teal);
+            stroke-width: 1.75;
+            fill: none;
         }
 
-        .filter-select {
-            padding: 14px 16px;
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            background: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            color: var(--text-medium);
-            cursor: pointer;
-            transition: all 0.3s;
+        .carousel-content p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 28px;
+            line-height: 1.7;
+            max-width: 560px;
         }
 
-        .filter-select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(0,84,166,0.1);
-        }
-
-        .search-btn {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        .carousel-content .btn-primary {
+            background: var(--accent-orange);
             color: white;
             border: none;
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-family: 'Montserrat', sans-serif;
+            padding: 14px 28px;
+            border-radius: 8px;
             font-weight: 700;
             font-size: 15px;
-            cursor: pointer;
-            display: flex;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s;
-            align-self: flex-end;
-            box-shadow: 0 4px 15px rgba(0,84,166,0.25);
+            transition: all 0.25s;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
         }
 
-        .search-btn:hover {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        .carousel-content .btn-primary:hover {
+            background: #e88a1a;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,84,166,0.35);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
         }
 
-        .additional-filters {
+        .carousel-dots {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
+            gap: 10px;
+            z-index: 3;
         }
 
-        .additional-filters label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-right: 8px;
-        }
-
-        .filter-chip {
-            padding: 10px 20px;
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            background: white;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-medium);
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.45);
             cursor: pointer;
             transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .filter-chip:hover,
-        .filter-chip.active {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(0,84,166,0.08);
-        }
-
-        .clear-filters {
-            margin-left: auto;
-            color: var(--primary);
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: none;
             border: none;
-            font-family: 'Montserrat', sans-serif;
         }
 
-        .clear-filters:hover {
-            text-decoration: underline;
+        .carousel-dot.active {
+            background: var(--accent-orange);
+            width: 28px;
+            border-radius: 5px;
+        }
+
+        /* ========== SECTION HEADER ========== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .section-header h2::before,
+        .section-header h2::after {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-teal) 100%);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 16px;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
         /* ========== SERVICES CATEGORIES ========== */
@@ -402,45 +316,20 @@
 
         .services-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 48px;
         }
 
         .services-title h2 {
-            font-size: 42px;
+            font-size: 36px;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .services-title .title-decoration {
-            display: flex;
-            gap: 6px;
-        }
-
-        .services-title .title-decoration span {
-            width: 8px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 50%;
-            opacity: 0.5;
-        }
-
-        .services-title .title-decoration span:nth-child(2) {
-            background: var(--accent-teal);
-        }
-
-        .services-title .title-decoration span:nth-child(3) {
-            background: var(--accent-teal);
+            margin-bottom: 12px;
         }
 
         .services-title p {
             color: var(--text-light);
-            font-size: 17px;
-            max-width: 600px;
+            font-size: 16px;
+            max-width: 560px;
             margin: 0 auto;
             line-height: 1.7;
         }
@@ -448,380 +337,437 @@
         .services-categories-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 32px;
+            gap: 20px;
         }
 
         .service-category-card {
             background: white;
-            border: 2px solid var(--border);
-            border-radius: 24px;
-            padding: 48px 28px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 20px;
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.25s;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-teal) 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
+            text-decoration: none;
+            color: inherit;
         }
 
         .service-category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0,84,166,0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,84,166,0.1);
             border-color: var(--primary);
         }
 
-        .service-category-card:hover::before {
-            opacity: 1;
-        }
-
         .service-category-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+            width: 68px;
+            height: 68px;
+            background: rgba(0,84,166,0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
-            font-size: 48px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,84,166,0.15);
+            margin-bottom: 18px;
+            transition: all 0.25s;
         }
 
         .service-category-card:hover .service-category-icon {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-teal) 100%);
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(0,84,166,0.3);
+            background: var(--primary);
         }
 
-        .service-category-card:hover .service-category-icon img,
+        .service-category-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--primary);
+            stroke-width: 1.5;
+            fill: none;
+            transition: all 0.25s;
+        }
+
         .service-category-card:hover .service-category-icon svg {
-            filter: brightness(0) invert(1);
+            stroke: white;
         }
 
         .service-category-card h3 {
-            font-size: 18px;
-            font-weight: 800;
+            font-size: 16px;
+            font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             line-height: 1.3;
-        }
-
-        .service-category-divider {
-            width: 40px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 2px;
-            margin-bottom: 16px;
         }
 
         .service-category-card p {
             font-size: 13px;
             color: var(--text-light);
-            line-height: 1.7;
-            margin-bottom: 24px;
+            line-height: 1.6;
+            margin-bottom: 18px;
             flex-grow: 1;
         }
 
         .service-category-btn {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 10px;
+            background: transparent;
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 13px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,84,166,0.2);
+            gap: 6px;
+            transition: all 0.25s;
+            border: 1.5px solid var(--primary);
         }
 
         .service-category-btn:hover {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,84,166,0.35);
+            background: var(--primary);
+            color: white;
+        }
+
+        .service-category-btn svg {
+            width: 14px;
+            height: 14px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
         }
 
         /* ========== APPOINTMENT SECTION ========== */
         .appointment-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #0054a6 0%, #003d7a 50%, #0054a6 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .appointment-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(3,191,215,0.1) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .appointment-section::after {
-            content: '';
-            position: absolute;
-            bottom: -40%;
-            left: -15%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(3,191,215,0.08) 0%, transparent 60%);
-            pointer-events: none;
+            background: var(--bg-light);
         }
 
         .appointment-content {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 48px;
             align-items: center;
             background: white;
-            border-radius: 24px;
-            padding: 60px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 1;
-            border-top: 4px solid var(--accent-teal);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
         }
 
         .appointment-image {
-            text-align: center;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e8f4fc 0%, #d6ebf7 100%);
         }
 
         .appointment-image img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
         }
 
         .appointment-text h2 {
             font-size: 32px;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            margin-bottom: 16px;
+            line-height: 1.25;
         }
 
-        .appointment-text h2 .icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-teal) 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(0,84,166,0.2);
-        }
-
-        .appointment-text p {
+        .appointment-text > p {
             font-size: 16px;
             color: var(--text-medium);
             line-height: 1.7;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .appointment-features {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 28px;
         }
 
         .appointment-feature {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 15px;
+            gap: 10px;
+            font-size: 14px;
             color: var(--text-medium);
         }
 
         .appointment-feature .check {
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--primary) 100%);
+            width: 22px;
+            height: 22px;
+            background: var(--accent-teal);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 14px;
             flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0,84,166,0.2);
+        }
+
+        .appointment-feature .check svg {
+            width: 12px;
+            height: 12px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
         }
 
         .appointment-btn {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: var(--primary);
             color: white;
-            padding: 18px 36px;
-            border-radius: 12px;
+            padding: 16px 32px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15px;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            transition: all 0.3s;
+            gap: 10px;
+            transition: all 0.25s;
             border: none;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
-            box-shadow: 0 6px 20px rgba(0,84,166,0.3);
         }
 
         .appointment-btn:hover {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,84,166,0.4);
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,84,166,0.25);
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+        .appointment-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: white;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* ========== QUICK LINKS ========== */
+        .quick-links {
+            padding: 48px 0;
+            background: var(--bg-white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+        }
+
+        .quick-link-card {
+            text-align: center;
+            padding: 22px 14px;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            transition: all 0.25s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,84,166,0.08);
+            border-color: var(--primary);
+        }
+
+        .quick-link-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(0,84,166,0.08);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            transition: all 0.25s;
+        }
+
+        .quick-link-card:hover .quick-link-icon {
+            background: var(--primary);
+        }
+
+        .quick-link-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--primary);
+            stroke-width: 1.5;
+            fill: none;
+            transition: all 0.25s;
+        }
+
+        .quick-link-card:hover .quick-link-icon svg {
+            stroke: white;
+        }
+
+        .quick-link-card h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.35;
+        }
+
+        /* ========== STATS ========== */
+        .stats {
+            background: var(--primary);
+            padding: 56px 0;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 16px;
+        }
+
+        .stat-item h3 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: white;
+            line-height: 1.1;
+        }
+
+        .stat-item p {
+            font-size: 15px;
+            opacity: 0.9;
+            font-weight: 500;
         }
 
         /* ========== BANNERS ========== */
         .banners {
-            padding: 80px 0;
+            padding: 64px 0;
             background: var(--bg-white);
         }
 
         .banners-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 30px;
+            gap: 16px;
         }
 
         .banner-card {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: 16px;
-            padding: 30px 20px;
+            background: var(--primary);
+            border-radius: 12px;
+            padding: 22px 16px;
             text-align: center;
             color: white;
-            transition: all 0.3s;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            border-top: 3px solid var(--accent-teal);
-        }
-
-        .banner-card {
+            transition: all 0.25s;
             cursor: pointer;
         }
 
         .banner-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,84,166,0.3);
+            background: var(--primary-dark);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,84,166,0.2);
         }
 
         .banner-card h3 {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            line-height: 1.3;
         }
 
         .banner-card p {
-            font-size: 13px;
-            opacity: 0.9;
+            font-size: 12px;
+            opacity: 0.85;
+            line-height: 1.5;
         }
 
-        /* ========== FEATURED 6 SECTIONS ========== */
+        /* ========== FEATURED SECTIONS ========== */
         .featured-sections {
-            padding: 100px 0;
+            padding: 80px 0;
             background: var(--bg-light);
         }
 
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 24px;
         }
 
         .featured-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: all 0.3s;
-            border-top: 4px solid var(--primary);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            transition: all 0.25s;
+            border-top: 3px solid var(--primary);
+            cursor: pointer;
         }
 
         .featured-card:nth-child(2) { border-top-color: var(--accent-orange); }
         .featured-card:nth-child(3) { border-top-color: var(--accent-teal); }
         .featured-card:nth-child(4) { border-top-color: var(--primary); }
-        .featured-card:nth-child(5) { border-top-color: var(--primary); }
-        .featured-card:nth-child(6) { border-top-color: var(--accent-teal); }
-
-        .featured-card {
-            cursor: pointer;
-        }
+        .featured-card:nth-child(5) { border-top-color: var(--accent-teal); }
+        .featured-card:nth-child(6) { border-top-color: var(--accent-orange); }
 
         .featured-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,84,166,0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,84,166,0.1);
         }
 
         .featured-image {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+            height: 180px;
+            background: var(--bg-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+        }
+
+        .featured-image svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--primary);
+            stroke-width: 1.5;
+            fill: none;
         }
 
         .featured-content {
-            padding: 30px;
+            padding: 24px;
         }
 
         .featured-content h3 {
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
         }
 
         .featured-content p {
             font-size: 14px;
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.65;
         }
 
-        /* ========== ENT CARE SECTION ========== */
+        /* ========== ENT CARE ========== */
         .ent-care {
-            padding: 100px 0;
+            padding: 80px 0;
             background: var(--bg-white);
         }
 
         .ent-care-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 48px;
             align-items: center;
         }
 
         .ent-care-text h2 {
-            font-size: 40px;
+            font-size: 36px;
             font-weight: 800;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: var(--primary);
             display: flex;
             align-items: center;
@@ -831,48 +777,46 @@
         .ent-care-text h2::before {
             content: '';
             display: inline-block;
-            width: 6px;
-            height: 40px;
+            width: 5px;
+            height: 36px;
             background: linear-gradient(180deg, var(--primary) 0%, var(--accent-teal) 100%);
             border-radius: 3px;
         }
 
         .ent-care-text p {
             color: var(--text-medium);
-            margin-bottom: 20px;
-            line-height: 1.8;
+            margin-bottom: 16px;
+            line-height: 1.7;
             font-size: 16px;
         }
 
         .ent-modules {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 30px;
+            gap: 14px;
+            margin-top: 24px;
         }
 
         .ent-module {
             background: white;
-            padding: 20px;
+            padding: 18px;
             border-radius: 12px;
-            border-left: 4px solid var(--primary);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            transition: all 0.3s;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: all 0.25s;
         }
 
-        .ent-module:nth-child(2) { border-left-color: var(--accent-teal); }
-        .ent-module:nth-child(3) { border-left-color: var(--accent-teal); }
-        .ent-module:nth-child(4) { border-left-color: var(--primary); }
-
         .ent-module:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 25px rgba(0,84,166,0.1);
+            transform: translateX(4px);
+            border-color: var(--accent-teal);
+            box-shadow: 0 6px 18px rgba(0,84,166,0.08);
         }
 
         .ent-module h4 {
             font-weight: 700;
             margin-bottom: 6px;
             font-size: 15px;
+            color: var(--text-dark);
         }
 
         .ent-module p {
@@ -881,25 +825,29 @@
             margin: 0;
         }
 
+        .ent-care .hero-image {
+            box-shadow: 0 16px 48px rgba(0,84,166,0.15);
+        }
+
         /* ========== BRANCHES ========== */
         .branches {
-            padding: 100px 0;
+            padding: 80px 0;
             background: var(--bg-light);
         }
 
         .branches-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
+            gap: 24px;
         }
 
         .branch-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: all 0.3s;
-            border-top: 4px solid var(--primary);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            transition: all 0.25s;
+            border-top: 3px solid var(--primary);
         }
 
         .branch-card:nth-child(2) { border-top-color: var(--accent-teal); }
@@ -907,13 +855,13 @@
         .branch-card:nth-child(4) { border-top-color: var(--primary); }
 
         .branch-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,84,166,0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,84,166,0.1);
         }
 
         .branch-card-image {
             width: 100%;
-            height: 200px;
+            height: 180px;
             overflow: hidden;
         }
 
@@ -929,13 +877,13 @@
         }
 
         .branch-card-content {
-            padding: 24px;
+            padding: 20px;
         }
 
         .branch-card h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             color: var(--primary);
             line-height: 1.3;
             display: flex;
@@ -946,8 +894,8 @@
         .branch-card h3::before {
             content: '';
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: var(--accent-teal);
         }
@@ -955,28 +903,35 @@
         .branch-info {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .branch-info-item {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-medium);
             line-height: 1.5;
         }
 
         .branch-info-item .icon {
-            font-size: 18px;
             flex-shrink: 0;
             margin-top: 2px;
             color: var(--accent-teal);
         }
 
+        .branch-info-item .icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 1.75;
+            fill: none;
+        }
+
         /* ========== LANGUAGE CENTER ========== */
         .language-center {
-            padding: 100px 0;
+            padding: 80px 0;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
             position: relative;
             overflow: hidden;
@@ -996,29 +951,27 @@
         .language-center-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 48px;
             align-items: center;
         }
 
         .language-center-image {
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,84,166,0.15);
+            box-shadow: 0 16px 48px rgba(0,84,166,0.15);
             border: 3px solid white;
-            outline: 3px solid var(--accent-teal);
-            outline-offset: -8px;
         }
 
         .language-center-image img {
             width: 100%;
-            height: 400px;
+            height: 360px;
             object-fit: cover;
         }
 
         .language-center-text h2 {
-            font-size: 40px;
+            font-size: 36px;
             font-weight: 800;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: var(--primary);
             display: flex;
             align-items: center;
@@ -1028,122 +981,96 @@
         .language-center-text h2::before {
             content: '';
             display: inline-block;
-            width: 6px;
-            height: 40px;
+            width: 5px;
+            height: 36px;
             background: linear-gradient(180deg, var(--accent-teal) 0%, var(--primary) 100%);
             border-radius: 3px;
         }
 
         .language-center-text p {
             color: var(--text-medium);
-            margin-bottom: 20px;
-            line-height: 1.8;
+            margin-bottom: 16px;
+            line-height: 1.7;
             font-size: 16px;
         }
 
         /* ========== PARTNERS ========== */
         .partners {
-            padding: 80px 0;
-            background: var(--bg-light);
+            padding: 64px 0;
+            background: var(--bg-white);
         }
 
         .partners-grid {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 50px;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
         .partner-logo {
-            width: 120px;
-            height: 60px;
+            width: 130px;
+            height: 58px;
             background: white;
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 14px;
             color: var(--primary);
-            box-shadow: 0 4px 15px rgba(0,84,166,0.1);
-            border: 2px solid transparent;
-            transition: all 0.3s;
+            border: 1px solid var(--border);
+            transition: all 0.25s;
         }
 
         .partner-logo:hover {
             border-color: var(--accent-teal);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,84,166,0.15);
+            box-shadow: 0 8px 22px rgba(0,84,166,0.1);
         }
 
         /* ========== CTA ========== */
         .cta {
-            background: linear-gradient(135deg, #0054a6 0%, #003d7a 40%, #0054a6 70%, #03bfd7 100%);
-            padding: 100px 0;
+            background: var(--primary);
+            padding: 80px 0;
             text-align: center;
             color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(3,191,215,0.12) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .cta::after {
-            content: '';
-            position: absolute;
-            bottom: -40%;
-            right: -15%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(3,191,215,0.1) 0%, transparent 60%);
-            pointer-events: none;
         }
 
         .cta h2 {
-            font-size: 42px;
+            font-size: 36px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
+        }
+
+        .cta p {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 28px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
 
         .cta .btn-white {
-            background: linear-gradient(135deg, white 0%, #f0f9ff 100%);
+            background: white;
             color: var(--primary);
             font-weight: 700;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s;
+            transition: all 0.25s;
             border: none;
         }
 
         .cta .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            background: white;
-        }
-
-        .cta p {
-            font-size: 18px;
-            opacity: 0.95;
-            margin-bottom: 36px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
         }
 
         /* ========== FOOTER ========== */
         .footer {
             background: linear-gradient(135deg, #0f172a 0%, #1a2744 50%, #0f172a 100%);
             color: white;
-            padding: 80px 0 30px;
+            padding: 64px 0 24px;
             position: relative;
             overflow: hidden;
         }
@@ -1162,26 +1089,26 @@
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
             gap: 40px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .footer-brand h3 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             color: white;
         }
 
         .footer-brand p {
             color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.8;
+            font-size: 14px;
+            line-height: 1.75;
         }
 
         .footer-links h4 {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: white;
         }
 
@@ -1190,14 +1117,14 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
             color: #94a3b8;
             text-decoration: none;
             font-size: 14px;
-            transition: color 0.3s;
+            transition: color 0.25s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -1209,22 +1136,43 @@
 
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 24px;
+            padding-top: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #94a3b8;
-            font-size: 14px;
+            font-size: 13px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
+            .services-categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .quick-links-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .banners-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
             .branches-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
             .dropdown {
                 position: static;
                 opacity: 1;
@@ -1240,303 +1188,150 @@
             }
 
             .hero-content,
-            .about-content,
             .ent-care-content,
-            .language-center-content {
+            .language-center-content,
+            .appointment-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 36px;
             }
 
-            .services-grid,
-            .news-grid,
-            .stats-grid,
-            .featured-grid,
-            .branches-grid {
-                grid-template-columns: 1fr !important;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .hero {
+                padding: 100px 0 60px;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 36px;
             }
 
-            .nav {
-                display: none;
+            .hero-image img {
+                height: 320px;
             }
 
             .hero-buttons {
                 flex-direction: column;
             }
 
-            .section-header h2,
-            .about-text h2,
-            .cta h2,
-            .ent-care-text h2,
-            .language-center-text h2 {
-                font-size: 32px;
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-outline {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
             }
 
-            .banners-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .carousel-container {
+                height: 340px;
+            }
+
+            .carousel-content h3 {
+                font-size: 26px;
+            }
+
+            .carousel-content p {
+                font-size: 15px;
+            }
+
+            .services-categories-grid,
+            .featured-grid,
+            .stats-grid,
+            .branches-grid {
+                grid-template-columns: 1fr;
             }
 
             .quick-links-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .search-filters {
-                grid-template-columns: 1fr;
-            }
-
-            .search-btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .services-categories-grid {
+            .banners-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .appointment-content {
+            .appointment-features {
                 grid-template-columns: 1fr;
-                padding: 40px;
             }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+            .ent-modules {
+                grid-template-columns: 1fr;
+            }
 
-        .section-header h2 {
-            font-size: 42px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
-        }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
 
-        .section-header h2::before,
-        .section-header h2::after {
-            content: '';
-            display: inline-block;
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-teal) 100%);
-            border-radius: 2px;
-        }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
 
-        .section-header p {
-            color: var(--text-light);
-            font-size: 17px;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        .services-title h2 {
+            .section-header h2,
+            .services-title h2,
+            .cta h2,
+            .ent-care-text h2,
+            .language-center-text h2,
+            .appointment-text h2 {
                 font-size: 28px;
+            }
+
+            .section-header h2::before,
+            .section-header h2::after {
+                width: 24px;
             }
         }
 
         @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .carousel-content h3 {
+                font-size: 22px;
+            }
+
+            .carousel-content .btn-primary {
+                padding: 12px 22px;
+                font-size: 14px;
+            }
+
+            .quick-links-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .quick-link-card {
+                padding: 18px 10px;
+            }
+
+            .quick-link-icon {
+                width: 44px;
+                height: 44px;
+            }
+
+            .quick-link-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .quick-link-card h4 {
+                font-size: 12px;
+            }
+
+            .banners-grid {
+                grid-template-columns: 1fr;
+            }
+
             .services-categories-grid {
                 grid-template-columns: 1fr;
             }
 
-            .additional-filters {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .filter-chip {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .clear-filters {
-                margin-left: 0;
-                justify-content: center;
-            }
-
-            .search-module {
-                padding: 24px;
-            }
-
             .appointment-content {
-            padding: 36px;
+                padding: 28px;
+            }
+
+            .appointment-image img {
+                height: 220px;
             }
         }
-
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            margin-bottom: 20px;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 50%, #81d4fa 100%);
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .carousel-content {
-            flex: 1;
-        }
-
-        .carousel-content h3 {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-
-        .carousel-content p {
-            font-size: 16px;
-            color: var(--text-medium);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .carousel-image {
-            width: 300px;
-            height: 200px;
-            border-radius: 16px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .carousel-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
-        }
-
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #d1d5db;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .carousel-dot.active {
-            background: linear-gradient(90deg, var(--accent-orange) 0%, var(--accent-teal) 100%);
-            width: 30px;
-            border-radius: 5px;
-        }
-
-        .quick-links {
-            padding: 60px 0;
-            background: var(--bg-white);
-        }
-
-        .quick-links-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-        }
-
-        .quick-link-card {
-            text-align: center;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 2px solid transparent;
-            transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quick-link-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--accent-teal) 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .quick-link-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,84,166,0.12);
-            border-color: var(--primary);
-        }
-
-        .quick-link-card:hover::before {
-            opacity: 1;
-        }
-
-        .quick-link-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent-teal) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            color: white;
-            font-size: 32px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,84,166,0.25);
-            transition: all 0.3s;
-        }
-
-        .quick-link-card:hover .quick-link-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 10px 30px rgba(0,84,166,0.35);
-        }
-
-        .quick-link-icon::before {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 25px;
-            border: 3px solid rgba(255,255,255,0.4);
-            border-bottom: none;
-            border-radius: 25px 25px 0 0;
-        }
-
-        .quick-link-card h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
     </style>
 </head>
 <body>
@@ -1574,7 +1369,8 @@
             </div>
         </div>
     </header>
-<!-- Hero -->
+
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -1594,50 +1390,146 @@
         </div>
     </section>
 
-    <!-- Auto-scrolling Banner -->
+    <!-- Banner Carousel -->
     <section class="banner-carousel">
-        <div class="container">
-            <div class="carousel-container">
-                <div class="carousel-track" id="carouselTrack">
-                    <div class="carousel-slide">
+        <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&h=600&fit=crop');">
+                    <div class="container">
                         <div class="carousel-content">
-                            <h3><svg viewBox="0 0 24 24" width="24" height="24" style="vertical-align:middle;margin-right:8px;"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M10 17c0-2 1-3 3-3s3 1 3 3-1 3-3 3"/></svg> Signia - Албан ёсны дистрибьютер</h3>
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M10 17c0-2 1-3 3-3s3 1 3 3-1 3-3 3"/></svg>
+                                Signia - Албан ёсны дистрибьютер
+                            </h3>
                             <p>EMJJ Hospital нь дэлхийд тэргүүлэгч Signia сонсголын аппаратын албан ёсны дистрибьютер. Хамгийн сүүлийн үеийн технологи бүхий сонсголын аппаратыг мэргэжлийн зөвлөгөөтэйгээр.</p>
                             <a href="services.html" class="btn btn-primary">Дэлгэрэнгүй</a>
                         </div>
-                        <div class="carousel-image">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop" alt="Signia Hearing Aids">
-                        </div>
                     </div>
-                    
-                    <div class="carousel-slide">
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=1600&h=600&fit=crop');">
+                    <div class="container">
                         <div class="carousel-content">
-                            <h3><svg viewBox="0 0 24 24" width="24" height="24" style="vertical-align:middle;margin-right:8px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Онлайн цаг захиалга</h3>
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                Онлайн цаг захиалга
+                            </h3>
                             <p>1900-9999 дугаарт холбогдон эсвэл онлайнаар цаг захиалаарай. Бид 7 хоногийн 6 өдөр, 08:00-20:00 цагийн хооронд үйлчилж байна.</p>
                             <a href="contact.html" class="btn btn-primary">Цаг захиалах</a>
                         </div>
-                        <div class="carousel-image">
-                            <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=400&h=300&fit=crop" alt="Online Appointment">
-                        </div>
                     </div>
-                    
-                    <div class="carousel-slide">
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&h=600&fit=crop');">
+                    <div class="container">
                         <div class="carousel-content">
-                            <h3><svg viewBox="0 0 24 24" width="24" height="24" style="vertical-align:middle;margin-right:8px;"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/></svg> 4 салбар, 1 цэгт</h3>
+                            <h3>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                4 салбар, 1 цэгт
+                            </h3>
                             <p>Төв эмнэлэг, 10-р хороолол, Халдварт, Мишээл клиник - бид олон улсын стандартад нийцсэн үйлчилгээг эх хэлээрээ.</p>
                             <a href="branches.html" class="btn btn-primary">Салбарууд</a>
-                        </div>
-                        <div class="carousel-image">
-                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop" alt="EMJJ Branches">
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class="carousel-dots">
                 <span class="carousel-dot active" onclick="goToSlide(0)"></span>
                 <span class="carousel-dot" onclick="goToSlide(1)"></span>
                 <span class="carousel-dot" onclick="goToSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Categories -->
+    <section class="services-categories">
+        <div class="container">
+            <div class="services-title">
+                <h2>Үйлчилгээний чиглэл</h2>
+                <p>Манай нарийн мэргэжлийн баг хамт олон танд үйлчилж байна</p>
+            </div>
+            <div class="services-categories-grid">
+                <a href="services.html" class="service-category-card">
+                    <div class="service-category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M10 17c0-2 1-3 3-3s3 1 3 3-1 3-3 3"/></svg>
+                    </div>
+                    <h3>Чихний эмгэг</h3>
+                    <p>Чихний өвчин, эмгэгийн оношилгоо, эмчилгээ</p>
+                    <span class="service-category-btn">Дэлгэрэнгүй <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+                </a>
+
+                <a href="services.html" class="service-category-card">
+                    <div class="service-category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M12 12v4"/><path d="M9 20h6"/></svg>
+                    </div>
+                    <h3>Хамар, хоолой</h3>
+                    <p>Хамар, хоолойн өвчин, мэс заслын эмчилгээ</p>
+                    <span class="service-category-btn">Дэлгэрэнгүй <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+                </a>
+
+                <a href="services.html" class="service-category-card">
+                    <div class="service-category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M10 17c0-2 1-3 3-3s3 1 3 3-1 3-3 3"/><path d="M19 5a7 7 0 0 1 0 10"/><path d="M21 3a10 10 0 0 1 0 14"/></svg>
+                    </div>
+                    <h3>Сонсгол шалгалт</h3>
+                    <p>Дэлхийн жишигт нийцсэн сонсголын оношлогоо</p>
+                    <span class="service-category-btn">Дэлгэрэнгүй <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+                </a>
+
+                <a href="services.html" class="service-category-card">
+                    <div class="service-category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M8 14h8"/><path d="M9 18h6"/><path d="M17 10l3-3"/><path d="M17 14l3 3"/></svg>
+                    </div>
+                    <h3>Сонсголын аппарат</h3>
+                    <p>Signia сонсголын аппаратын зөвлөгөө, тохируулга</p>
+                    <span class="service-category-btn">Дэлгэрэнгүй <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+                </a>
+
+                <a href="training.html" class="service-category-card">
+                    <div class="service-category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Хэл засал</h3>
+                    <p>ДуН хэл заслын мэргэжлийн сургалт</p>
+                    <span class="service-category-btn">Дэлгэрэнгүй <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section" id="appointment">
+        <div class="container">
+            <div class="appointment-content">
+                <div class="appointment-image">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&h=400&fit=crop" alt="Online appointment">
+                </div>
+                <div class="appointment-text">
+                    <h2>Онлайн цаг захиалга</h2>
+                    <p>Бидэнтэй холбогдох хамгийн хурдан арга. Мэргэжлийн эмч нарын зөвлөгөө, оношлогоо, эмчилгээний цагийг онлайнаар захиалаарай.</p>
+                    <div class="appointment-features">
+                        <div class="appointment-feature">
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>24/7 онлайн захиалга</span>
+                        </div>
+                        <div class="appointment-feature">
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Тохиромжтой цаг сонголт</span>
+                        </div>
+                        <div class="appointment-feature">
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Баталгаатай үйлчилгээ</span>
+                        </div>
+                        <div class="appointment-feature">
+                            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                            <span>Мэдэгдэл, сануулагч</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="appointment-btn">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        Цаг захиалах
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1647,32 +1539,44 @@
         <div class="container">
             <div class="quick-links-grid">
                 <a href="contact.html" class="quick-link-card">
-                    <div class="quick-link-icon"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> </div>
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
                     <h4>Цаг захиалга</h4>
                 </a>
-                
+
                 <a href="services.html" class="quick-link-card">
-                    <div class="quick-link-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
                     <h4>Багц үйлчилгээ</h4>
                 </a>
-                
+
                 <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
-                    <div class="quick-link-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M10 17c0-2 1-3 3-3s3 1 3 3-1 3-3 3"/></svg></div>
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M10 17c0-2 1-3 3-3s3 1 3 3-1 3-3 3"/></svg>
+                    </div>
                     <h4>Сонсголын тест</h4>
                 </a>
-                
+
                 <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
-                    <div class="quick-link-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                    <h4>Сонсгол хамгаалах өдөр</h4>
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Сонсгол хамгаалах</h4>
                 </a>
-                
+
                 <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
-                    <div class="quick-link-icon"><svg viewBox="0 0 24 24" width="24" height="24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-                    <h4>Тоног төхөөрөмж худалдаа</h4>
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h4>Тоног төхөөрөмж</h4>
                 </a>
-                
+
                 <a href="#" class="quick-link-card" onclick="alert('Тун удахгүй...')">
-                    <div class="quick-link-icon"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8"/><path d="M10 17c0-2 1-3 3-3s3 1 3 3-1 3-3 3"/></svg></div>
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M8 14h8"/><path d="M9 18h6"/><path d="M17 10l3-3"/><path d="M17 14l3 3"/></svg>
+                    </div>
                     <h4>Сонсголын аппарат</h4>
                 </a>
             </div>
@@ -1684,24 +1588,24 @@
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
         const track = document.getElementById('carouselTrack');
-        
+
         function goToSlide(index) {
             currentSlide = index;
             updateCarousel();
         }
-        
+
         function updateCarousel() {
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === currentSlide);
             });
         }
-        
+
         function nextSlide() {
             currentSlide = (currentSlide + 1) % slides.length;
             updateCarousel();
         }
-        
+
         setInterval(nextSlide, 5000);
     </script>
 
@@ -1743,7 +1647,7 @@
                 </div>
                 <div class="banner-card" onclick="window.location.href='services.html'">
                     <h3>Signia</h3>
-                    <p>Албан ёсны дистрибютер</p>
+                    <p>Албан ёсны дистрибьютер</p>
                 </div>
                 <div class="banner-card" onclick="window.location.href='services.html'">
                     <h3>Хөнгөлөлттэй багц</h3>
@@ -1770,42 +1674,54 @@
             </div>
             <div class="featured-grid">
                 <div class="featured-card" onclick="window.location.href='about.html'">
-                    <div class="featured-image"><svg viewBox="0 0 24 24" width="48" height="48"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/></svg></div>
+                    <div class="featured-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/></svg>
+                    </div>
                     <div class="featured-content">
                         <h3>Эмнэлгийн танилцуулга</h3>
                         <p>Бидний түүх, үнэт зүйлс, алсын хараа</p>
                     </div>
                 </div>
                 <div class="featured-card" onclick="window.location.href='services.html'">
-                    <div class="featured-image"><svg viewBox="0 0 24 24" width="48" height="48"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                    <div class="featured-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
                     <div class="featured-content">
                         <h3>Тасгийн танилцуулга</h3>
                         <p>Манай нарийн мэргэжлийн тасгууд</p>
                     </div>
                 </div>
                 <div class="featured-card" onclick="window.location.href='training.html'">
-                    <div class="featured-image"><svg viewBox="0 0 24 24" width="48" height="48"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                    <div class="featured-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
                     <div class="featured-content">
                         <h3>Сургалт эрдэм шинжилгээ</h3>
                         <p>Мэргэжил дээшлүүлэх сургалтууд</p>
                     </div>
                 </div>
                 <div class="featured-card" onclick="alert('Тун удахгүй...')">
-                    <div class="featured-image"><svg viewBox="0 0 24 24" width="48" height="48"><path d="M10 2h4"/><path d="M12 2v12"/><path d="M17 14l-1.5 6h-7L7 14"/><path d="M5 14h14"/></svg></div>
+                    <div class="featured-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4"/><path d="M12 2v12"/><path d="M17 14l-1.5 6h-7L7 14"/><path d="M5 14h14"/></svg>
+                    </div>
                     <div class="featured-content">
                         <h3>Сонсголын аппарат</h3>
                         <p>Сонсголын аппаратны зай борлуулагдаж буй байршлууд</p>
                     </div>
                 </div>
                 <div class="featured-card" onclick="alert('Тун удахгүй...')">
-                    <div class="featured-image"><svg viewBox="0 0 24 24" width="48" height="48"><path d="M12 22c4.97 0 9-4.03 9-9c0-4.97-4.03-9-9-9-4.97 0-9 4.03-9 9 0 4.97 4.03 9 9 9z"/><path d="M12 7v5l3 3"/></svg></div>
+                    <div class="featured-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 3"/></svg>
+                    </div>
                     <div class="featured-content">
                         <h3>Сэргээн засах сувилал</h3>
                         <p>Улаанбаатар хотоос 50 км-т байрлах сувилал</p>
                     </div>
                 </div>
                 <div class="featured-card" onclick="alert('Тун удахгүй...')">
-                    <div class="featured-image"><svg viewBox="0 0 24 24" width="48" height="48"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <div class="featured-image">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <div class="featured-content">
                         <h3>B2B Хамтран ажиллагаа</h3>
                         <p>Байгууллагатай хамтран ажиллах</p>
@@ -1865,15 +1781,15 @@
                         <h3>ЭМЖЖ Төв эмнэлэг</h3>
                         <div class="branch-info">
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
                                 <span>СБД, 1-р төрөх эмнэлгийн зүүн талд</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
                                 <span>1900-9999, 7034-1111</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
                                 <span>Да-Ба: 08:00-20:00<br>Бя: 10:00-14:00</span>
                             </div>
                         </div>
@@ -1888,15 +1804,15 @@
                         <h3>Мишээл клиник</h3>
                         <div class="branch-info">
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
                                 <span>ХУД, Мишээл Сити цогцолбор, М1 блок, 3 давхар</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
                                 <span>1900-9999, 7799-7744</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
                                 <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
                             </div>
                         </div>
@@ -1911,15 +1827,15 @@
                         <h3>10-р хороолол клиник</h3>
                         <div class="branch-info">
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
                                 <span>БГД, 10-р хорооллын "Хаан банк"-ны баруун талд, 89-р байрны 1 давхар</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
                                 <span>1900-9999, 7702-5858</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
                                 <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
                             </div>
                         </div>
@@ -1934,15 +1850,15 @@
                         <h3>Халдварт клиник</h3>
                         <div class="branch-info">
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
                                 <span>БЗД, ХӨСҮТ эцсийн буудал RAPID MED төвийн 5 давхар</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
                                 <span>1900-9999, 7037-4444</span>
                             </div>
                             <div class="branch-info-item">
-                                <span class="icon"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> </span>
+                                <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
                                 <span>Да-Ба: 08:00-17:00<br>Бя: 10:00-14:00</span>
                             </div>
                         </div>
@@ -1991,7 +1907,7 @@
         <div class="container">
             <h2>Бидэнтэй холбоо барих</h2>
             <p>Танд асуулт байна уу? Бид таньд тусалъя. Доорх товчийг дарж бидэнтэй холбоо барина уу.</p>
-                    <a href="contact.html" class="btn btn-white btn-large">Холбоо барих</a>
+            <a href="contact.html" class="btn btn-white btn-large">Холбоо барих</a>
         </div>
     </section>
 
@@ -2065,7 +1981,7 @@
                 nav_ent: "ENT Health",
                 nav_contact: "Холбоо барих",
                 nav_branches: "Салбар байршил",
-                hero_title: "Таны сонсголыг\nхамгаалъя",
+                hero_title: "Таны эрүүл мэнд\nбидний зорилго",
                 hero_subtitle: "ДуН, БАХА, Сонсгол нөхөн сэргээх чиглэлээр Монгол улсдаа тэргүүлэгч эмнэлэг",
                 cta_appointment: "Цаг захиалга",
                 cta_services: "Үйлчилгээ",
@@ -2091,7 +2007,7 @@
                 nav_ent: "ENT Health",
                 nav_contact: "Contact",
                 nav_branches: "Branches",
-                hero_title: "Protect Your\nHearing",
+                hero_title: "Your health\nis our goal",
                 hero_subtitle: "Mongolia's leading hospital in ENT, Audiology & Speech Therapy",
                 cta_appointment: "Book Appointment",
                 cta_services: "Our Services",
@@ -2120,10 +2036,10 @@
             const t = translations[currentLang];
             const btn = document.querySelector('.ref-lang-toggle');
             if (btn) btn.textContent = currentLang.toUpperCase();
-            
+
             // Update title
             document.title = t.title;
-            
+
             // Update nav links
             const navLinks = document.querySelectorAll('.ref-nav a');
             if (navLinks[0]) navLinks[0].textContent = t.nav_home;
@@ -2133,23 +2049,26 @@
             if (navLinks[4]) navLinks[4].textContent = t.nav_news;
             if (navLinks[5]) navLinks[5].textContent = t.nav_ent;
             if (navLinks[6]) navLinks[6].textContent = t.nav_contact;
-            
+
             // Update hero
             const heroTitle = document.querySelector('.hero h1');
-            if (heroTitle) heroTitle.textContent = t.hero_title;
-            
-            const heroSubtitle = document.querySelector('.hero p');
+            if (heroTitle) {
+                const parts = t.hero_title.split('\n');
+                heroTitle.innerHTML = parts[0] + (parts[1] ? '<span>' + parts[1] + '</span>' : '');
+            }
+
+            const heroSubtitle = document.querySelector('.hero-text > p');
             if (heroSubtitle) heroSubtitle.textContent = t.hero_subtitle;
-            
+
             // Update footer
-            const footerAbout = document.querySelector('.footer-about p');
+            const footerAbout = document.querySelector('.footer-brand p');
             if (footerAbout) footerAbout.textContent = t.footer_about;
-            
+
             const footerBottom = document.querySelector('.footer-bottom p');
             if (footerBottom) footerBottom.textContent = t.copyright;
         }
 
-                // Mobile Menu Functions
+        // Mobile Menu Functions
         function toggleMenu() {
             document.getElementById('refNav').classList.toggle('open');
             document.querySelector('.ref-menu').classList.toggle('active');
@@ -2188,9 +2107,9 @@
         document.addEventListener('click', (e) => {
             const refNav = document.getElementById('refNav');
             const refMenu = document.querySelector('.ref-menu');
-            
-            if (refNav.classList.contains('open') && 
-                !refNav.contains(e.target) && 
+
+            if (refNav.classList.contains('open') &&
+                !refNav.contains(e.target) &&
                 !refMenu.contains(e.target)) {
                 refNav.classList.remove('open');
                 refMenu.classList.remove('active');
@@ -2203,9 +2122,9 @@
             const navWrapper = document.getElementById('mobileNav');
             const btn = document.querySelector('.mobile-menu-btn');
             const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            if (navWrapper.classList.contains('active') && 
-                !navWrapper.contains(e.target) && 
+
+            if (navWrapper && navWrapper.classList.contains('active') &&
+                !navWrapper.contains(e.target) &&
                 !btn.contains(e.target)) {
                 navWrapper.classList.remove('active');
                 btn.classList.remove('active');
