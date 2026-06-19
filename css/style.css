@@ -349,6 +349,8 @@ button {
 .ref-dropdown {
   position: relative;
   cursor: pointer;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
 }
 
 .ref-dropdown > a {
@@ -357,14 +359,8 @@ button {
   align-items: center;
   gap: 6px;
   padding: 30px 0 26px;
-}
-
-.ref-dropdown:hover > .ref-dropdown-menu,
-.ref-dropdown:focus-within > .ref-dropdown-menu,
-.ref-dropdown.open > .ref-dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  position: relative;
+  z-index: 1001;
 }
 
 .ref-dropdown > a::after {
@@ -386,7 +382,7 @@ button {
 
 .ref-dropdown-menu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% - 4px);
   left: 0;
   background: white;
   border-radius: 12px;
@@ -396,7 +392,7 @@ button {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
-  transition: all 0.2s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
   z-index: 1000;
   pointer-events: none;
 }
