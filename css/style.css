@@ -254,7 +254,6 @@ button {
   box-shadow: 0 2px 20px rgba(0, 84, 166, 0.06);
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .ref-header-inner {
@@ -265,7 +264,6 @@ button {
   gap: 28px;
   width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .ref-logo {
