@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ЭМЖЖ эмнэлэгтэй холбоо барих, санал хүсэлт илгээх, салбар байршил.">
     <title>Холбоо барих - EMJJ Hospital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         body {
@@ -397,6 +398,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Гол агуулга руу очих</a>
     <!-- Header -->
         <!-- Header -->
     <header class="ref-header">
@@ -405,12 +407,20 @@
                 <div class="ref-logo-mark">ↄ</div>
                 <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="ref-menu" aria-label="Цэс" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <button class="ref-menu" aria-label="Цэс" aria-expanded="false" aria-controls="refNav" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
-                <a href="index.html">Нүүр</a>
+                <div class="ref-dropdown">
+                    <a href="index.html">Нүүр ▾</a>
+                    <div class="ref-dropdown-menu">
+                        <a href="index.html">НҮҮР 1</a>
+                        <a href="index2.html">НҮҮР 2</a>
+                        <a href="index3.html">НҮҮР 3</a>
+                        <a href="index4.html">НҮҮР 4</a>
+                        <a href="index5/">НҮҮР 5</a>
+                    </div>
+                </div>
                 <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
-                <a href="doctors.html">Эмч, мэргэжилтнүүд</a>
                 <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html">ENT Health</a>
@@ -419,19 +429,20 @@
                         <a href="ent-care.html">ENT Care</a>
                     </div>
                 </div>
-                <a href="contact.html" class="active">Холбоо барих</a>
+                <a aria-current="page" href="contact.html" class="active">Холбоо барих</a>
                 <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
                 <div class="mobile-actions">
-                    <a href="tel:70341111" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                    <a href="tel:70341111" class="btn btn-primary"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                     <a href="contact.html" class="btn btn-outline">Цаг авах</a>
                 </div>
             </nav>
             <div class="header-actions">
-                <a href="tel:70341111" class="phone-link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                <a href="tel:70341111" class="phone-link"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                 <a href="contact.html" class="btn btn-primary">Цаг авах</a>
             </div>
         </div>
     </header>
+    <main id="main">
 <!-- Page Header -->
     <section class="page-header">
         <div class="container">
@@ -450,7 +461,7 @@
                     
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="contact-icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </div>
+                            <div class="contact-icon"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </div>
                             <div>
                                 <h3>Утас</h3>
                                 <p><a href="tel:19009999" style="color:rgba(255,255,255,0.9);text-decoration:none;">1900-9999 (Үнэгүй)</a><br><a href="tel:70341111" style="color:rgba(255,255,255,0.9);text-decoration:none;">7034-1111</a></p>
@@ -458,7 +469,7 @@
                         </div>
                         
                         <div class="contact-item">
-                            <div class="contact-icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> </div>
+                            <div class="contact-icon"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> </div>
                             <div>
                                 <h3>И-мэйл</h3>
                                 <p><a href="mailto:info@emjj.mn" style="color:rgba(255,255,255,0.9);text-decoration:none;">info@emjj.mn</a></p>
@@ -466,7 +477,7 @@
                         </div>
                         
                         <div class="contact-item">
-                            <div class="contact-icon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </div>
+                            <div class="contact-icon"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </div>
                             <div>
                                 <h3>Хаяг</h3>
                                 <p>СБД, 1-р төрөх эмнэлгийн зүүн талд,<br>Улаанбаатар, Монгол</p>
@@ -474,7 +485,7 @@
                         </div>
                         
                         <div class="contact-item">
-                            <div class="contact-icon"><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> </div>
+                            <div class="contact-icon"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> </div>
                             <div>
                                 <h3>Цагийн хуваарь</h3>
                                 <p>Даваа - Баасан: 08:00 - 20:00<br>Бямба: 10:00 - 14:00<br>Ням: Амарна</p>
@@ -487,23 +498,23 @@
                     <h3>Мессеж илгээх</h3>
                     <form id="contactForm" onsubmit="return handleContactSubmit(event)">
                         <div class="form-group">
-                            <label>Нэр</label>
-                            <input type="text" placeholder="Таны нэр">
+                            <label for="contact-name">Нэр</label>
+                            <input type="text" id="contact-name" name="contact-name" placeholder="Таны нэр">
                         </div>
                         
                         <div class="form-group">
-                            <label>И-мэйл</label>
-                            <input type="email" placeholder="your@email.com">
+                            <label for="contact-email">И-мэйл</label>
+                            <input type="email" id="contact-email" name="contact-email" placeholder="your@email.com">
                         </div>
                         
                         <div class="form-group">
-                            <label>Утас</label>
-                            <input type="tel" placeholder="9911-2233">
+                            <label for="contact-phone">Утас</label>
+                            <input type="tel" id="contact-phone" name="contact-phone" placeholder="9911-2233">
                         </div>
                         
                         <div class="form-group">
-                            <label>Салбар</label>
-                            <select>
+                            <label for="contact-branch">Салбар</label>
+                            <select id="contact-branch" name="contact-branch">
                                 <option>Салбар сонгох</option>
                                 <option>Төв эмнэлэг</option>
                                 <option>10-р хороолол клиник</option>
@@ -514,8 +525,8 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Мессеж</label>
-                            <textarea placeholder="Таны мессеж..."></textarea>
+                            <label for="contact-message">Мессеж</label>
+                            <textarea id="contact-message" name="contact-message" placeholder="Таны мессеж..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-large" style="width: 100%; justify-content: center;">Илгээх</button>
@@ -534,7 +545,7 @@
             </div>
             
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2673.0!2d106.9178!3d47.9186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDU1JzA3LjAiTiAxMDbCsDU1JzA0LjEiRQ!5e0!3m2!1sen!2smn!4v1600000000000!5m2!1sen!2smn" width="100%" height="100%" style="border:0;border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe title="EMJJ Hospital байршил" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2673.0!2d106.9178!3d47.9186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDU1JzA3LjAiTiAxMDbCsDU1JzA0LjEiRQ!5e0!3m2!1sen!2smn!4v1600000000000!5m2!1sen!2smn" width="100%" height="100%" style="border:0;border-radius:20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -550,50 +561,51 @@
             <div class="branches-grid">
                 <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Төв эмнэлэг</h3>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> СБД, 1-р төрөх эмнэлгийн зүүн талд</p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:19009999" style="color:inherit;text-decoration:none;">1900-9999</a>, <a href="tel:70341111" style="color:inherit;text-decoration:none;">7034-1111</a></p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:00-20:00</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> СБД, 1-р төрөх эмнэлгийн зүүн талд</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span style="color:inherit;">1900-9999</span>, <span style="color:inherit;">7034-1111</span></p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:00-20:00</p>
                 </a>
                 
                 <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>10-р хороолол клиник</h3>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> БГД, 10-р хороолол</p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:77025858" style="color:inherit;text-decoration:none;">7702-5858</a></p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:30-17:00</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> БГД, 10-р хороолол</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span style="color:inherit;">7702-5858</span></p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:30-17:00</p>
                 </a>
                 
                 <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Халдварт клиник</h3>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> БЗД, ХӨСҮТ эцсийн буудал</p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:70374444" style="color:inherit;text-decoration:none;">7037-4444</a></p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:30-17:00</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> БЗД, ХӨСҮТ эцсийн буудал</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span style="color:inherit;">7037-4444</span></p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:30-17:00</p>
                 </a>
                 
                 <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Мишээл клиник</h3>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ХУД, Мишээл Сити</p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:77997744" style="color:inherit;text-decoration:none;">7799-7744</a></p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:30-17:00</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ХУД, Мишээл Сити</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span style="color:inherit;">7799-7744</span></p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:30-17:00</p>
                 </a>
                 
                 <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Сэргээн засах сувилал</h3>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Төв аймаг, Баянчандмань сум</p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:99427581" style="color:inherit;text-decoration:none;">9942-7581</a></p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:30-17:00</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Төв аймаг, Баянчандмань сум</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span style="color:inherit;">9942-7581</span></p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 08:30-17:00</p>
                 </a>
                 
                 <a href="branches.html" class="branch-card" style="text-decoration:none;color:inherit;display:block;">
                     <h3>Эм ханган нийлүүлэх</h3>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> БЗД, RAPID MED төв</p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="tel:70375555" style="color:inherit;text-decoration:none;">7037-5555</a></p>
-                    <p><svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 09:00-17:00</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> БЗД, RAPID MED төв</p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span style="color:inherit;">7037-5555</span></p>
+                    <p><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Да-Ба: 09:00-17:00</p>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
+        </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -632,8 +644,8 @@
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="tel:19009999"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 1900-9999</a></li>
-                        <li><a href="mailto:info@emjj.mn"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@emjj.mn</a></li>
+                        <li><a href="tel:19009999"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 1900-9999</a></li>
+                        <li><a href="mailto:info@emjj.mn"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@emjj.mn</a></li>
                     </ul>
                 </div>
             </div>
@@ -647,6 +659,8 @@
         function toggleMenu() {
             document.getElementById('refNav').classList.toggle('open');
             document.querySelector('.ref-menu').classList.toggle('active');
+            const menuBtn = document.querySelector('.ref-menu');
+            if (menuBtn) menuBtn.setAttribute('aria-expanded', document.getElementById('refNav').classList.contains('open'));
             document.body.classList.toggle('menu-open');
         }
 
@@ -655,9 +669,9 @@
             dropdownLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    const dropdownMenu = dropdownLink.nextElementSibling;
-                    if (dropdownMenu && dropdownMenu.classList.contains('ref-dropdown-menu')) {
-                        dropdownMenu.classList.toggle('open');
+                    const dropdown = dropdownLink.parentElement;
+                    if (dropdown && dropdown.classList.contains('ref-dropdown')) {
+                        dropdown.classList.toggle('open');
                     }
                 }
             });
@@ -690,23 +704,6 @@
                 refMenu.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
-        });
-
-        // Close mobile menu when clicking overlay
-        document.addEventListener('click', (e) => {
-            const navWrapper = document.getElementById('mobileNav');
-            const btn = document.querySelector('.mobile-menu-btn');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            if (navWrapper.classList.contains('active') && 
-                !navWrapper.contains(e.target) && 
-                !btn.contains(e.target)) {
-                navWrapper.classList.remove('active');
-                btn.classList.remove('active');
-                if (overlay) overlay.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-        });
         });
 
         // Contact form submission handler
@@ -773,15 +770,8 @@
             const t = translations[currentLang];
             const btn = document.querySelector('.ref-lang-toggle');
             if (btn) btn.textContent = currentLang.toUpperCase();
-            
-            // Update nav links
-            const navLinks = document.querySelectorAll('.ref-nav a');
-            if (navLinks[0]) navLinks[0].textContent = t.nav_home;
-            if (navLinks[1]) navLinks[1].textContent = t.nav_about;
-            if (navLinks[2]) navLinks[2].textContent = t.nav_services;
-            if (navLinks[3]) navLinks[3].textContent = t.nav_training;
-            if (navLinks[4]) navLinks[4].textContent = t.nav_news;
-            if (navLinks[5]) navLinks[5].textContent = t.nav_contact;
+
+            // Update nav links removed: dropdown structure preserved
             
             // Update footer
             const footerBottom = document.querySelector('.footer-bottom p');

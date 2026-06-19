@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ЭМЖЖ эмнэлгийн сургалт, эрдэм шинжилгээ, мэргэжил дээшлүүлэх хөтөлбөр.">
     <title>Сургалт, эрдэм шинжилгээ - EMJJ Hospital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .container {
@@ -717,6 +718,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Гол агуулга руу очих</a>
     <!-- Header -->
         <!-- Header -->
     <header class="ref-header">
@@ -725,12 +727,20 @@
                 <div class="ref-logo-mark">ↄ</div>
                 <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="ref-menu" aria-label="Цэс" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <button class="ref-menu" aria-label="Цэс" aria-expanded="false" aria-controls="refNav" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
-                <a href="index.html">Нүүр</a>
+                <div class="ref-dropdown">
+                    <a href="index.html">Нүүр ▾</a>
+                    <div class="ref-dropdown-menu">
+                        <a href="index.html">НҮҮР 1</a>
+                        <a href="index2.html">НҮҮР 2</a>
+                        <a href="index3.html">НҮҮР 3</a>
+                        <a href="index4.html">НҮҮР 4</a>
+                        <a href="index5/">НҮҮР 5</a>
+                    </div>
+                </div>
                 <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
-                <a href="doctors.html">Эмч, мэргэжилтнүүд</a>
                 <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html">ENT Health</a>
@@ -742,16 +752,17 @@
                 <a href="contact.html">Холбоо барих</a>
                 <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
                 <div class="mobile-actions">
-                    <a href="tel:70341111" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                    <a href="tel:70341111" class="btn btn-primary"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                     <a href="contact.html" class="btn btn-outline">Цаг авах</a>
                 </div>
             </nav>
             <div class="header-actions">
-                <a href="tel:70341111" class="phone-link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                <a href="tel:70341111" class="phone-link"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                 <a href="contact.html" class="btn btn-primary">Цаг авах</a>
             </div>
         </div>
     </header>
+    <main id="main">
 <!-- Training Hero -->
     <section class="training-hero">
         <div class="container">
@@ -761,7 +772,7 @@
                     <p>2005 оноос түүс эмнэлгийн дэргэдэ Шинжлэх ухаан технологи сургалтын алба байгуулагдсан бөгөөд дараах чиглэлийн үйл ажиллагааг хариуцан ажиллаж байна.</p>
                 </div>
                 <div class="training-hero-image">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=400&fit=crop" alt="Сургалт">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=400&fit=crop" alt="Сургалт" loading="lazy" decoding="async" width="800" height="400">
                 </div>
             </div>
         </div>
@@ -803,31 +814,31 @@
                 <p>Бид олон төрлийн сургалтын хөтөлбөрийг санал болгож байна</p>
             </div>
             <div class="programs-grid">
-                <div class="program-card" onclick="alert('Төрсөлтийн өмнөх оюутны сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="program-icon">&#127891;</div>
+                <button type="button" class="program-card" data-toast="Төрсөлтийн өмнөх оюутны сургалтын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="program-icon" aria-hidden="true">&#127891;</div>
                     <h4>Төрсөлтийн өмнөх оюутны сургалт</h4>
                     <p>АШУУИС, "Ач" АУИС-ийн чих хамар хоолойн тэнхмийн оюутны сургалт</p>
-                </div>
-                <div class="program-card" onclick="alert('Төрсөлтийн дараах нарийн мэргэжлийн зээлилгэх сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="program-icon">&#128104;&#8205;&#9877;&#65039;</div>
+                </button>
+                <button type="button" class="program-card" data-toast="Төрсөлтийн дараах нарийн мэргэжлийн зээлилгэх сургалтын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="program-icon" aria-hidden="true">&#128104;&#8205;&#9877;&#65039;</div>
                     <h4>Төрсөлтийн дараах нарийн мэргэжлийн зээлилгэх сургалт</h4>
                     <p>Резидент болон чих, хамар, хоолой, сонсгол судлалын нарийн мэргэжилтэн</p>
-                </div>
-                <div class="program-card" onclick="alert('Эрдэм шинжилгээний ажлын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="program-icon">&#128300;</div>
+                </button>
+                <button type="button" class="program-card" data-toast="Эрдэм шинжилгээний ажлын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="program-icon" aria-hidden="true">&#128300;</div>
                     <h4>Эрдэм шинжилгээний ажил</h4>
                     <p>Докторант, магистрантын судалгаа, нарийн мэргэжлийн төслөөс хөгжүүлэх</p>
-                </div>
-                <div class="program-card" onclick="alert('Дотоод болон гадаадын мэргэжил дээшлүүлэх сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="program-icon">&#127757;</div>
+                </button>
+                <button type="button" class="program-card" data-toast="Дотоод болон гадаадын мэргэжил дээшлүүлэх сургалтын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="program-icon" aria-hidden="true">&#127757;</div>
                     <h4>Дотоод болон гадаадын мэргэжил дээшлүүлэх сургалт</h4>
                     <p>Богино болон урт хугацааны сургалт</p>
-                </div>
-                <div class="program-card" onclick="alert('Олон улсын семинар зохион байгуулах талаар удахгүй мэдээлэл нэмэгдэнэ.')">
-                    <div class="program-icon">&#127942;</div>
+                </button>
+                <button type="button" class="program-card" data-toast="Олон улсын семинар зохион байгуулах талаар удахгүй мэдээлэл нэмэгдэнэ.">
+                    <div class="program-icon" aria-hidden="true">&#127942;</div>
                     <h4>Олон улсын семинар зохион байгуулах</h4>
                     <p>Дотоод, гадаадын семинарыг илтгэл тавих</p>
-                </div>
+                </button>
             </div>
         </div>
     </section>
@@ -856,9 +867,9 @@
                 <h2>СУРГАЛТЫН ЧИГЛЭЛҮҮД</h2>
             </div>
             <div class="directions-grid">
-                <div class="direction-card" onclick="window.location.href='contact.html'">
+                <a href="contact.html" class="direction-card">
                     <div class="direction-number">01</div>
-                    <div class="direction-image">&#127891;</div>
+                    <div class="direction-image" aria-hidden="true">&#127891;</div>
                     <div class="direction-content">
                         <h3>ТӨРСӨЛТИЙН ӨМНӨХ СУРГАЛТ (ОЮУТАН)</h3>
                         <ul>
@@ -867,10 +878,10 @@
                             <li>Амбулатори, мэс заслын тасгийн тойронт сургалт</li>
                         </ul>
                     </div>
-                </div>
-                <div class="direction-card" onclick="window.location.href='contact.html'">
+                </a>
+                <a href="contact.html" class="direction-card">
                     <div class="direction-number">02</div>
-                    <div class="direction-image">&#128104;&#8205;&#9877;&#65039;</div>
+                    <div class="direction-image" aria-hidden="true">&#128104;&#8205;&#9877;&#65039;</div>
                     <div class="direction-content">
                         <h3>ТӨРСӨЛТИЙН ДАРААХ СУРГАЛТ (РЕЗИДЕНТ)</h3>
                         <ul>
@@ -879,10 +890,10 @@
                             <li>Туршлагатай эмч нарын удирдлага дор дадлагажих</li>
                         </ul>
                     </div>
-                </div>
-                <div class="direction-card" onclick="window.location.href='contact.html'">
+                </a>
+                <a href="contact.html" class="direction-card">
                     <div class="direction-number">03</div>
-                    <div class="direction-image">&#128300;</div>
+                    <div class="direction-image" aria-hidden="true">&#128300;</div>
                     <div class="direction-content">
                         <h3>ЭРДЭМ ШИНЖИЛГЭЭ</h3>
                         <ul>
@@ -891,7 +902,7 @@
                             <li>Эрдэм шинжилгээний өгүүлэл, илтгэл, бүтээл</li>
                         </ul>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -904,26 +915,26 @@
                 <p>Хамтын ажиллагаат гадаадын их сургууль, эмнэлэгүүдэд мэргэжил дээшлүүлэх сургалтад хамруулж, танилцах дадлага хийлгэдэг.</p>
             </div>
             <div class="partners-grid">
-                <div class="partner-card" onclick="alert('БНСУ-ын Сөүлийн үндэсний их сургуулийн Бунданг эмнэлэгтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="partner-flag">&#127472;&#127479;</div>
+                <button type="button" class="partner-card" data-toast="БНСУ-ын Сөүлийн үндэсний их сургуулийн Бунданг эмнэлэгтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="partner-flag" aria-hidden="true">&#127472;&#127479;</div>
                     <h4>БНСУ</h4>
                     <p>Сөүлийн үндэсний их сургуулийн Бунданг эмнэлэг</p>
-                </div>
-                <div class="partner-card" onclick="alert('ХБНГУ-ын Вюрцбургийн их сургууль, HELOS эмнэлэгтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="partner-flag">&#127465;&#127466;</div>
+                </button>
+                <button type="button" class="partner-card" data-toast="ХБНГУ-ын Вюрцбургийн их сургууль, HELOS эмнэлэгтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="partner-flag" aria-hidden="true">&#127465;&#127466;</div>
                     <h4>ХБНГУ</h4>
                     <p>Вюрцбургийн их сургууль, HELOS эмнэлэг</p>
-                </div>
-                <div class="partner-card" onclick="alert('Heinz Kurz фирмтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="partner-flag">&#127465;&#127466;</div>
+                </button>
+                <button type="button" class="partner-card" data-toast="Heinz Kurz фирмтэй хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="partner-flag" aria-hidden="true">&#127465;&#127466;</div>
                     <h4>ХБНГУ</h4>
                     <p>Heinz Kurz фирм</p>
-                </div>
-                <div class="partner-card" onclick="alert('БНСУ-ын HANNA, SOREE, AUO-ийн их сургуультай хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="partner-flag">&#127472;&#127479;</div>
+                </button>
+                <button type="button" class="partner-card" data-toast="БНСУ-ын HANNA, SOREE, AUO-ийн их сургуультай хамтын ажиллагааны мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="partner-flag" aria-hidden="true">&#127472;&#127479;</div>
                     <h4>БНСУ</h4>
                     <p>HANNA, SOREE, AUO-ийн их сургууль</p>
-                </div>
+                </button>
             </div>
         </div>
     </section>
@@ -936,26 +947,26 @@
                 <p>Дараах чиглэлээр мэргэжил дээшлүүлэх сургалт явуулж байна</p>
             </div>
             <div class="specialties-grid">
-                <div class="specialty-item" onclick="alert('Толгой хүзүүний мэс засал судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="specialty-icon">&#128066;</div>
+                <button type="button" class="specialty-item" data-toast="Толгой хүзүүний мэс засал судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="specialty-icon" aria-hidden="true">&#128066;</div>
                     <span>Толгой хүзүүний мэс засал судлал</span>
-                </div>
-                <div class="specialty-item" onclick="alert('Тэнцвэр судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="specialty-icon">&#129504;</div>
+                </button>
+                <button type="button" class="specialty-item" data-toast="Тэнцвэр судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="specialty-icon" aria-hidden="true">&#129504;</div>
                     <span>Тэнцвэр судлал</span>
-                </div>
-                <div class="specialty-item" onclick="alert('Хамар судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="specialty-icon">&#128067;</div>
+                </button>
+                <button type="button" class="specialty-item" data-toast="Хамар судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="specialty-icon" aria-hidden="true">&#128067;</div>
                     <span>Хамар судлал</span>
-                </div>
-                <div class="specialty-item" onclick="alert('Чих хамар хоолой судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="specialty-icon">&#128066;</div>
+                </button>
+                <button type="button" class="specialty-item" data-toast="Чих хамар хоолой судлалын сургалтын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="specialty-icon" aria-hidden="true">&#128066;</div>
                     <span>Чих хамар хоолой судлал</span>
-                </div>
-                <div class="specialty-item" onclick="alert('Хүзүүний эхо сургалтын мэдээлэл удахгүй нэмэгдэнэ.')">
-                    <div class="specialty-icon">&#127911;</div>
+                </button>
+                <button type="button" class="specialty-item" data-toast="Хүзүүний эхо сургалтын мэдээлэл удахгүй нэмэгдэнэ.">
+                    <div class="specialty-icon" aria-hidden="true">&#127911;</div>
                     <span>Хүзүүний эхо</span>
-                </div>
+                </button>
             </div>
         </div>
     </section>
@@ -965,7 +976,7 @@
         <div class="container">
             <div class="contact-banner-content">
                 <div class="contact-banner-text">
-                    <h3>&#127911; Танд туслахад бид бэлэн</h3>
+                    <h3><span aria-hidden="true">&#127911;</span> Танд туслахад бид бэлэн</h3>
                     <p>7034-1111, 1900-999</p>
                 </div>
                 <a href="contact.html" class="btn btn-white">Холбоо барих</a>
@@ -974,6 +985,7 @@
     </section>
 
     <!-- Footer -->
+        </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -1016,10 +1028,10 @@
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="tel:19009999">&#128222; 1900-9999</a></li>
-                        <li><a href="tel:70341111">&#128222; 7034-1111</a></li>
-                        <li><a href="mailto:info@emjj.mn">&#9993; info@emjj.mn</a></li>
-                        <li><a href="#" onclick="event.preventDefault(); alert('СБД, 1-р төрөх эмнэлгийн зүүн талд')">&#128205; СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
+                        <li><a href="tel:19009999"><span aria-hidden="true">&#128222;</span> 1900-9999</a></li>
+                        <li><a href="tel:70341111"><span aria-hidden="true">&#128222;</span> 7034-1111</a></li>
+                        <li><a href="mailto:info@emjj.mn"><span aria-hidden="true">&#9993;</span> info@emjj.mn</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('СБД, 1-р төрөх эмнэлгийн зүүн талд')"><span aria-hidden="true">&#128205;</span> СБД, 1-р төрөх эмнэлгийн зүүн талд</a></li>
                     </ul>
                 </div>
             </div>
@@ -1034,6 +1046,8 @@
         function toggleMenu() {
             document.getElementById('refNav').classList.toggle('open');
             document.querySelector('.ref-menu').classList.toggle('active');
+            const menuBtn = document.querySelector('.ref-menu');
+            if (menuBtn) menuBtn.setAttribute('aria-expanded', document.getElementById('refNav').classList.contains('open'));
             document.body.classList.toggle('menu-open');
         }
 
@@ -1042,9 +1056,9 @@
             dropdownLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    const dropdownMenu = dropdownLink.nextElementSibling;
-                    if (dropdownMenu && dropdownMenu.classList.contains('ref-dropdown-menu')) {
-                        dropdownMenu.classList.toggle('open');
+                    const dropdown = dropdownLink.parentElement;
+                    if (dropdown && dropdown.classList.contains('ref-dropdown')) {
+                        dropdown.classList.toggle('open');
                     }
                 }
             });
@@ -1139,15 +1153,8 @@
             const t = translations[currentLang];
             const btn = document.querySelector('.ref-lang-toggle');
             if (btn) btn.textContent = currentLang.toUpperCase();
-            
-            // Update nav links
-            const navLinks = document.querySelectorAll('.ref-nav a');
-            if (navLinks[0]) navLinks[0].textContent = t.nav_home;
-            if (navLinks[1]) navLinks[1].textContent = t.nav_about;
-            if (navLinks[2]) navLinks[2].textContent = t.nav_services;
-            if (navLinks[3]) navLinks[3].textContent = t.nav_training;
-            if (navLinks[4]) navLinks[4].textContent = t.nav_news;
-            if (navLinks[5]) navLinks[5].textContent = t.nav_contact;
+
+            // Update nav links removed: dropdown structure preserved
             
             // Update footer
             const footerBottom = document.querySelector('.footer-bottom p');
@@ -1156,5 +1163,11 @@
 
         applyLanguage();
     </script>
+
+<script>
+    document.querySelectorAll('[data-toast]').forEach(function(el){
+        el.addEventListener('click', function(){ alert(el.dataset.toast); });
+    });
+</script>
 </body>
 </html>

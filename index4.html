@@ -104,9 +104,72 @@
       letter-spacing: 0.02em;
       color: var(--color-obsidian-ink);
       transition: color 0.2s ease;
+      text-decoration: none;
     }
 
     .main-nav a:hover {
+      color: var(--color-copper-clay);
+    }
+
+    .main-nav-dropdown {
+      position: relative;
+    }
+
+    .main-nav-dropdown > a::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 6px;
+      vertical-align: middle;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid currentColor;
+      transition: transform 0.2s ease;
+    }
+
+    .main-nav-dropdown:hover > a::after,
+    .main-nav-dropdown:focus-within > a::after {
+      transform: rotate(180deg);
+    }
+
+    .main-nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      background: var(--color-marble-white);
+      border: 1px solid rgba(142, 142, 149, 0.25);
+      border-radius: 12px;
+      padding: 8px 0;
+      min-width: 160px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: all 0.2s ease;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-nav-dropdown:hover .main-nav-dropdown-menu,
+    .main-nav-dropdown:focus-within .main-nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .main-nav-dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--color-obsidian-ink);
+    }
+
+    .main-nav-dropdown-menu a:hover {
+      background: rgba(0, 0, 0, 0.04);
       color: var(--color-copper-clay);
     }
 
@@ -460,6 +523,34 @@
         border-bottom: 1px solid rgba(142, 142, 149, 0.15);
       }
 
+      .main-nav-dropdown {
+        width: 100%;
+      }
+
+      .main-nav-dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding: 0 0 0 16px;
+        margin-bottom: 8px;
+        display: none;
+      }
+
+      .main-nav.open .main-nav-dropdown-menu,
+      .main-nav-dropdown:focus-within .main-nav-dropdown-menu {
+        display: flex;
+      }
+
+      .main-nav-dropdown-menu a {
+        font-size: 15px;
+        padding: 10px 0;
+        border-bottom: none;
+      }
+
       .hamburger {
         display: block;
       }
@@ -542,6 +633,16 @@
         <a href="news.html">Мэдээ</a>
         <a href="ent-health.html">ENT Health</a>
         <a href="contact.html">Холбоо барих</a>
+        <div class="main-nav-dropdown">
+          <a href="index.html">Нүүр ▾</a>
+          <div class="main-nav-dropdown-menu">
+            <a href="index.html">НҮҮР 1</a>
+            <a href="index2.html">НҮҮР 2</a>
+            <a href="index3.html">НҮҮР 3</a>
+            <a href="index4.html">НҮҮР 4</a>
+            <a href="index5/">НҮҮР 5</a>
+          </div>
+        </div>
       </nav>
       <button class="hamburger" id="menuToggle" aria-label="Цэс нээх" aria-expanded="false" aria-controls="mainNav">
         <span></span>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EMJJ Hospital - Чих, хамар, хоолойн эрүүл мэндийн тусламж, үйлчилгээ, багцууд, мэргэжилтнүүд">
     <title>Тусламж үйлчилгээ - EMJJ Hospital</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -821,7 +822,7 @@
             <div class="container">
                 <div class="cta-card">
                     <div class="cta-image">
-                        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400&h=400&fit=crop" alt="Calendar">
+                        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400&h=400&fit=crop" alt="Calendar" width="400" height="400">
                     </div>
                     <div class="cta-text">
                         <h2>
@@ -1340,9 +1341,9 @@
             dropdownLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    const dropdownMenu = dropdownLink.nextElementSibling;
-                    if (dropdownMenu && dropdownMenu.classList.contains('ref-dropdown-menu')) {
-                        dropdownMenu.classList.toggle('open');
+                    const dropdown = dropdownLink.parentElement;
+                    if (dropdown && dropdown.classList.contains('ref-dropdown')) {
+                        dropdown.classList.toggle('open');
                     }
                 }
             });
@@ -1374,12 +1375,6 @@
             const t = translations[currentLang];
             const btn = document.querySelector('.ref-lang-toggle');
             if (btn) btn.textContent = currentLang.toUpperCase();
-            const navLinks = document.querySelectorAll('.ref-nav > a');
-            if (navLinks[0]) navLinks[0].textContent = t.nav_home;
-            if (navLinks[1]) navLinks[1].textContent = t.nav_about;
-            if (navLinks[2]) navLinks[2].textContent = t.nav_services;
-            if (navLinks[3]) navLinks[3].textContent = t.nav_news;
-            if (navLinks[4]) navLinks[4].textContent = t.nav_contact;
         }
 
         // ===== STARTUP =====

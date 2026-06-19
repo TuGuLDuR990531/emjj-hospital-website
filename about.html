@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ЭМЖЖ эмнэлгийн танилцуулга, түүх, үнэт зүйлс, алсын хараа, удирдлагын баг.">
     <title>Бидний тухай - EMJJ Hospital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         body { font-family: 'Montserrat', sans-serif; }
@@ -593,6 +594,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Гол агуулга руу очих</a>
     <!-- Header -->
         <!-- Header -->
     <header class="ref-header">
@@ -601,12 +603,20 @@
                 <div class="ref-logo-mark">ↄ</div>
                 <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="ref-menu" aria-label="Цэс" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <button class="ref-menu" aria-label="Цэс" aria-expanded="false" aria-controls="refNav" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
-                <a href="index.html">Нүүр</a>
-                <a href="about.html" class="active">Бидний тухай</a>
+                <div class="ref-dropdown">
+                    <a href="index.html">Нүүр ▾</a>
+                    <div class="ref-dropdown-menu">
+                        <a href="index.html">НҮҮР 1</a>
+                        <a href="index2.html">НҮҮР 2</a>
+                        <a href="index3.html">НҮҮР 3</a>
+                        <a href="index4.html">НҮҮР 4</a>
+                        <a href="index5/">НҮҮР 5</a>
+                    </div>
+                </div>
+                <a aria-current="page" href="about.html" class="active">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
-                <a href="doctors.html">Эмч, мэргэжилтнүүд</a>
                 <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html">ENT Health</a>
@@ -618,16 +628,17 @@
                 <a href="contact.html">Холбоо барих</a>
                 <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
                 <div class="mobile-actions">
-                    <a href="tel:70341111" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                    <a href="tel:70341111" class="btn btn-primary"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                     <a href="contact.html" class="btn btn-outline">Цаг авах</a>
                 </div>
             </nav>
             <div class="header-actions">
-                <a href="tel:70341111" class="phone-link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                <a href="tel:70341111" class="phone-link"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                 <a href="contact.html" class="btn btn-primary">Цаг авах</a>
             </div>
         </div>
     </header>
+    <main id="main">
 <!-- Page Header -->
     <section class="page-header">
         <div class="container">
@@ -641,7 +652,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&h=400&fit=crop" alt="EMJJ Hospital">
+                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800&h=400&fit=crop" alt="EMJJ Hospital" loading="lazy" decoding="async" width="800" height="400">>
                 </div>
                 <div class="about-text">
                     <h2>ЭМЖЖ Төв Эмнэлэг</h2>
@@ -657,17 +668,17 @@
         <div class="container">
             <div class="vmv-grid">
                 <div class="vmv-card">
-                    <div class="vmv-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <div class="vmv-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
                     <h3>АЛСЫН ХАРАА</h3>
                     <p>Олон улсын жишигт нийцсэн, чих хамар хоолой, сонсгол судлалын үндэсний загвар төв болох.</p>
                 </div>
                 <div class="vmv-card">
-                    <div class="vmv-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                    <div class="vmv-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                     <h3>ЭРХЭМ ЗОРИЛГО</h3>
                     <p>Үйлчлүүлэгчдээ эрхэмлэгч тэргүүлэх туршлага, шинэчлэн бүтээх инноваци бүхий эмнэлэг, эрдэм шинжилгээ, сургалтын төв байх.</p>
                 </div>
                 <div class="vmv-card">
-                    <div class="vmv-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 3h12l6 7-12 11L0 10l6-7z"/><path d="M12 22V10"/><path d="M12 10L0 10"/><path d="M12 10l6-7"/><path d="M12 10l-6-7"/></svg></div>
+                    <div class="vmv-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 3h12l6 7-12 11L0 10l6-7z"/><path d="M12 22V10"/><path d="M12 10L0 10"/><path d="M12 10l6-7"/><path d="M12 10l-6-7"/></svg></div>
                     <h3>ҮНЭТ ЗҮЙЛ</h3>
                     <ul>
                         <li>Э-ЭЛДЭГ ХАРИЛЦАА</li>
@@ -697,11 +708,11 @@
                         <span>он</span>
                     </div>
                     <div class="timeline-dot">
-                        <div class="timeline-dot-inner"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="10" y1="9" x2="14" y2="9"/></svg></div>
+                        <div class="timeline-dot-inner"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="12" y1="7" x2="12" y2="11"/><line x1="10" y1="9" x2="14" y2="9"/></svg></div>
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=200&fit=crop" alt="1992">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=200&fit=crop" alt="1992" width="400" height="200">
                         </div>
                         <h3>Баттай Эрдэнэжаргал ээжийн "Сонор" пүүс байгуулагдлаа</h3>
                         <p>Анхны пүүс нь түүхэн үеийн ЭНЭШТөв (одоогоор ЭХЭМҮТ)-ийн Чих хамар хоолойн мэс заслын тасгийн эмч, ажилчид пүүсийнхээ хувь эзэмшигч байсан бөгөөд түүхэн үеийн пүүсийн захирал Э.Жаргалсүрэн, аж ахуйн дарга, менежер Д.Довчин, манчин, сувилагч х.Авирзэд (сувилагч) нар ажиллаж байв.</p>
@@ -714,11 +725,11 @@
                         <span>он</span>
                     </div>
                     <div class="timeline-dot">
-                        <div class="timeline-dot-inner"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11 14l2-2"/><path d="M15 10l2 2"/><path d="M8 17l3-3"/><path d="M18 12l-3 3"/><path d="M5 14l-1 3 3-1"/></svg></div>
+                        <div class="timeline-dot-inner"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11 14l2-2"/><path d="M15 10l2 2"/><path d="M8 17l3-3"/><path d="M18 12l-3 3"/><path d="M5 14l-1 3 3-1"/></svg></div>
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="1994">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="1994" loading="lazy" decoding="async" width="400" height="200">>
                         </div>
                         <h3>"Сонор" пүүс татан буугдаж, "Сонор-Ж" ХЗАА-т АШУ-ны доктор, профессор, Монгол Улсын Хүний Гавьяат эмч Баттай Эрдэнэжаргалын санаачлагаар байгуулагдсан бөгөөд Чих хамар хоолойн явуулын үзлэг, гадаад худаалдаа, мал аж ахуй эрхэлж байв.</h3>
                     </div>
@@ -730,11 +741,11 @@
                         <span>он</span>
                     </div>
                     <div class="timeline-dot">
-                        <div class="timeline-dot-inner"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+                        <div class="timeline-dot-inner"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=200&fit=crop" alt="1990s">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=200&fit=crop" alt="1990s" width="400" height="200">
                         </div>
                         <h3>Түүхэн үеийн хууль тогтоомжийн хүрээнд "Сонор-Ж" ХЗАА татан буугдаж сүүлийн дээр нь "ЭМЖЖ" эмнэлгийг 1-р төв эмнэлгийн хуучин байрны 2 давхарт байгуулж, 15 ортой Мэс засал, хавьтлын эмчилгээ тасаг нээж, үйл ажиллагаагаа өргөжүүлж, 1 Чих хамар хоолойн эмч, 5 их эмч, 1 үтүглүүр эмч, 4 сувилагч, 2 туслах ажилтан 1 тогоочийн бүрэлдэхүүнтэйгээр ажиллаж байв.</h3>
                     </div>
@@ -746,11 +757,11 @@
                         <span>он</span>
                     </div>
                     <div class="timeline-dot">
-                        <div class="timeline-dot-inner"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></div>
+                        <div class="timeline-dot-inner"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></div>
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2001">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2001" loading="lazy" decoding="async" width="400" height="200">>
                         </div>
                         <h3>Дунд чихний протезийн мэс заслыг хийж эхэллээ.</h3>
                         <p>ХБНГУ-ын "Fro Acoustic" холбоотой хамтын ажиллагааны гэрээ байгуулж, Монгол улсад анх удаа акустик инженерүүдийг бэлтгэж, Сонсгол судлалын их бүрэн кабинеттэй нэг олон улсын стандартыг дагуу сонсголын аппаратын тохируулга, засвар үйлчилгээ, сонсголын өвчлөлийн шинжилгээ хийх, олон улсын хамтарсан сургалт зохион байгуулав.</p>
@@ -763,11 +774,11 @@
                         <span>он</span>
                     </div>
                     <div class="timeline-dot">
-                        <div class="timeline-dot-inner"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="8 2 12 7 16 2"/></svg></div>
+                        <div class="timeline-dot-inner"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="8 2 12 7 16 2"/></svg></div>
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2003">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2003" loading="lazy" decoding="async" width="400" height="200">>
                         </div>
                         <h3>Монгол улсад анх удаа ХБНГУ-ын эрдэмтдийн хамтарч мэс заслыг LIVE-р шууд дамжуулан ҮНТЗ дээр сургалт зохион байгуулав.</h3>
                         <p>Магадлан итгэмжлэгдсэн анхдагч хувийн эмнэлэгүүдийн нэг болов.</p>
@@ -780,11 +791,11 @@
                         <span>он</span>
                     </div>
                     <div class="timeline-dot">
-                        <div class="timeline-dot-inner"><svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> </div>
+                        <div class="timeline-dot-inner"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> </div>
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-image">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2005">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop" alt="2005" loading="lazy" decoding="async" width="400" height="200">>
                         </div>
                         <h3>"ЭМЖЖ" эмнэлэг 33 ортой, өөрчийн байртай болж үйл ажиллагаагаа өргөжүүлж, 8 эмч, 12 сувилагч, 8 туслах ажилтантай болов.</h3>
                         <p>Монгол улсад анх удаа нярайн сонсгол шалгах шинжилгээг нэвтрүүлж, анхны бие даасан сонсголын тасгийг байгуулав.</p>
@@ -801,37 +812,37 @@
             
             <div class="achievements-grid">
                 <div class="achievement-card">
-                    <div class="achievement-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></div>
+                    <div class="achievement-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></div>
                     <h4>Дунд чихний титан протезийн мэс засал</h4>
                     <div class="year">2006 он</div>
                 </div>
                 
                 <div class="achievement-card">
-                    <div class="achievement-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="8" r="4"/><path d="M6 21v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3"/></svg></div>
+                    <div class="achievement-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="8" r="4"/><path d="M6 21v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3"/></svg></div>
                     <h4>Нярайн сонсгол шалгах шинжилгээ</h4>
                     <div class="year">2005 он</div>
                 </div>
                 
                 <div class="achievement-card">
-                    <div class="achievement-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/><path d="M17 3l2 2"/><path d="M19 1l2 2"/></svg></div>
+                    <div class="achievement-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/><path d="M17 3l2 2"/><path d="M19 1l2 2"/></svg></div>
                     <h4>Дунгийн суулгац хагалгаа</h4>
                     <div class="year">2009 он</div>
                 </div>
                 
                 <div class="achievement-card">
-                    <div class="achievement-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 2v6"/><path d="M12 14c-2 0-4 1-5 3"/><path d="M12 14c2 0 4 1 5 3"/><path d="M7 17c-1 2 0 4 2 5h6c2-1 3-3 2-5"/></svg></div>
+                    <div class="achievement-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 2v6"/><path d="M12 14c-2 0-4 1-5 3"/><path d="M12 14c2 0 4 1 5 3"/><path d="M7 17c-1 2 0 4 2 5h6c2-1 3-3 2-5"/></svg></div>
                     <h4>Хамрын дурангийн мэс засал</h4>
                     <div class="year">2010 он</div>
                 </div>
                 
                 <div class="achievement-card">
-                    <div class="achievement-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></div>
+                    <div class="achievement-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></div>
                     <h4>Чихний дурангийн мэс засал</h4>
                     <div class="year">2017 он</div>
                 </div>
                 
                 <div class="achievement-card">
-                    <div class="achievement-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9"/><polyline points="21 3 21 9 15 9"/></svg></div>
+                    <div class="achievement-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9"/><polyline points="21 3 21 9 15 9"/></svg></div>
                     <h4>СВСТ төхөөрөмж нэвтрүүлсэн</h4>
                     <div class="year">2020 он</div>
                 </div>
@@ -849,25 +860,25 @@
             
             <div class="values-grid">
                 <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                    <div class="value-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                     <h3>Чанар</h3>
                     <p>Олон улсын стандартад нийцсэн чанартай үйлчилгээ</p>
                 </div>
                 
                 <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                    <div class="value-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
                     <h3>Хүндэтгэл</h3>
                     <p>Үйлчлүүлэгч бүрийг хувь хүнийг нь хүндэтгэн үйлчилнэ</p>
                 </div>
                 
                 <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 18l6-6"/><path d="M16 4l-4 4"/><path d="M10 14l-4 4"/><path d="M20 2l2 2-6 6"/><circle cx="18" cy="6" r="2"/></svg></div>
+                    <div class="value-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 18l6-6"/><path d="M16 4l-4 4"/><path d="M10 14l-4 4"/><path d="M20 2l2 2-6 6"/><circle cx="18" cy="6" r="2"/></svg></div>
                     <h3>Инноваци</h3>
                     <p>Хамгийн сүүлийн үеийн дэвшилтэт технологийг нэвтрүүлнэ</p>
                 </div>
                 
                 <div class="value-card">
-                    <div class="value-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11 14l2-2"/><path d="M15 10l2 2"/><path d="M8 17l3-3"/><path d="M18 12l-3 3"/><path d="M5 14l-1 3 3-1"/></svg></div>
+                    <div class="value-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11 14l2-2"/><path d="M15 10l2 2"/><path d="M8 17l3-3"/><path d="M18 12l-3 3"/><path d="M5 14l-1 3 3-1"/></svg></div>
                     <h3>Хамтын ажиллагаа</h3>
                     <p>Олон улсын хэмжээнд хамтран ажиллаж байна</p>
                 </div>
@@ -884,7 +895,7 @@
             </div>
             
             <div class="leader-card">
-                <div class="leader-image"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M12 3v2"/><path d="M9 6h6"/></svg>️</div>
+                <div class="leader-image"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M12 3v2"/><path d="M9 6h6"/></svg></div>
                 <div class="leader-content">
                     <h3>Захирал</h3>
                     <div class="position">Тэргүүн захирал</div>
@@ -895,6 +906,7 @@
     </section>
 
     <!-- Footer -->
+        </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -918,26 +930,26 @@
                     <h4>Туслах цэс</h4>
                     <ul>
                         <li><a href="contact.html">Онлайн цаг захиалга</a></li>
-                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Сонсголын тест</a></li>
+                        <li><button type="button" onclick="alert('Тун удахгүй...')">Сонсголын тест</button></li>
                         <li><a href="branches.html">Салбар байршил</a></li>
-                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Сонсголын аппарат</a></li>
+                        <li><button type="button" onclick="alert('Тун удахгүй...')">Сонсголын аппарат</button></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Танд тусалъя</h4>
                     <ul>
-                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Түгээмэл асуулт</a></li>
-                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Цагийн хуваарь</a></li>
+                        <li><button type="button" onclick="alert('Тун удахгүй...')">Түгээмэл асуулт</button></li>
+                        <li><button type="button" onclick="alert('Тун удахгүй...')">Цагийн хуваарь</button></li>
                         <li><a href="contact.html">Санал хүсэлт</a></li>
-                        <li><a href="javascript:void(0)" onclick="alert('Тун удахгүй...')">Хандив</a></li>
+                        <li><button type="button" onclick="alert('Тун удахгүй...')">Хандив</button></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Холбоо барих</h4>
                     <ul>
-                        <li><a href="tel:19009999"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 1900-9999</a></li>
-                        <li><a href="tel:70341111"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a></li>
-                        <li><a href="mailto:info@emjj.mn"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@emjj.mn</a></li>
+                        <li><a href="tel:19009999"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 1900-9999</a></li>
+                        <li><a href="tel:70341111"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a></li>
+                        <li><a href="mailto:info@emjj.mn"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@emjj.mn</a></li>
                     </ul>
                 </div>
             </div>
@@ -952,6 +964,8 @@
         function toggleMenu() {
             document.getElementById('refNav').classList.toggle('open');
             document.querySelector('.ref-menu').classList.toggle('active');
+            const menuBtn = document.querySelector('.ref-menu');
+            if (menuBtn) menuBtn.setAttribute('aria-expanded', document.getElementById('refNav').classList.contains('open'));
             document.body.classList.toggle('menu-open');
         }
 
@@ -960,9 +974,9 @@
             dropdownLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    const dropdownMenu = dropdownLink.nextElementSibling;
-                    if (dropdownMenu && dropdownMenu.classList.contains('ref-dropdown-menu')) {
-                        dropdownMenu.classList.toggle('open');
+                    const dropdown = dropdownLink.parentElement;
+                    if (dropdown && dropdown.classList.contains('ref-dropdown')) {
+                        dropdown.classList.toggle('open');
                     }
                 }
             });
@@ -1057,15 +1071,8 @@
             const t = translations[currentLang];
             const btn = document.querySelector('.ref-lang-toggle');
             if (btn) btn.textContent = currentLang.toUpperCase();
-            
-            // Update nav links
-            const navLinks = document.querySelectorAll('.ref-nav a');
-            if (navLinks[0]) navLinks[0].textContent = t.nav_home;
-            if (navLinks[1]) navLinks[1].textContent = t.nav_about;
-            if (navLinks[2]) navLinks[2].textContent = t.nav_services;
-            if (navLinks[3]) navLinks[3].textContent = t.nav_training;
-            if (navLinks[4]) navLinks[4].textContent = t.nav_news;
-            if (navLinks[5]) navLinks[5].textContent = t.nav_contact;
+
+            // Update nav links removed: dropdown structure preserved
             
             // Update footer
             const footerBottom = document.querySelector('.footer-bottom p');

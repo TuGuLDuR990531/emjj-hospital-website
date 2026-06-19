@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ENT CARE - Сургуулийн чих, хамар, хоолойн эрүүл мэндийн боловсрол олгох хөтөлбөр.">
     <title>ENT CARE - ЭМЖЖ Эмнэлэг</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
@@ -101,7 +102,7 @@
         .donation-card p { color: var(--text-medium); font-size: 15px; line-height: 1.7; font-weight: 600; margin-bottom: 20px; }
         .donation-icons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 20px; font-size: 13px; font-weight: 700; margin-bottom: 20px; }
         .donation-icons span { background: linear-gradient(135deg, #e8f4ff, #fff); padding: 12px 16px; border-radius: 10px; border-left: 3px solid var(--accent-teal); color: var(--primary-dark); }
-        .donation-icons span::before { content: '<svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"/></svg>'; margin-right: 6px; color: var(--accent-teal); font-weight: 800; }
+        .donation-icons span::before { content: '<svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"/></svg>'; margin-right: 6px; color: var(--accent-teal); font-weight: 800; }
         .donation-card img { width: 100%; height: 260px; object-fit: cover; border-radius: 16px; border: 4px solid #fff; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
         .donation-table { grid-column: 1 / -1; background: linear-gradient(135deg, #0054a6, #003d7a); border-radius: 16px; overflow: hidden; display: grid; grid-template-columns: 1.5fr .7fr 1fr .8fr 1.2fr; font-size: 14px; color: #fff; font-weight: 700; }
         .donation-table div { padding: 16px 18px; border-right: 1px solid rgba(255,255,255,0.2); }
@@ -124,7 +125,7 @@
         .cta-panel::before { content: ''; position: absolute; top: -50%; right: -30%; width: 500px; height: 500px; background: rgba(249,157,51,0.15); border-radius: 50%; }
         .cta-left h2 { font-size: 30px; line-height: 1.25; font-weight: 800; margin-bottom: 24px; position: relative; z-index: 1; }
         .cta-left li { list-style: none; margin-bottom: 14px; font-size: 16px; font-weight: 600; display: flex; gap: 12px; position: relative; z-index: 1; }
-        .cta-left li::before { content: '<svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"/></svg>'; background: #f99d33; border-radius: 50%; width: 24px; height: 24px; display: grid; place-items: center; flex: 0 0 auto; font-size: 12px; font-weight: 800; }
+        .cta-left li::before { content: '<svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"/></svg>'; background: #f99d33; border-radius: 50%; width: 24px; height: 24px; display: grid; place-items: center; flex: 0 0 auto; font-size: 12px; font-weight: 800; }
         .cta-form { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 32px; position: relative; z-index: 1; }
         .cta-form h3 { text-align: center; font-size: 20px; font-weight: 800; margin-bottom: 20px; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
@@ -172,6 +173,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Гол агуулга руу очих</a>
         <!-- Header -->
     <header class="ref-header">
         <div class="container ref-header-inner">
@@ -179,15 +181,23 @@
                 <div class="ref-logo-mark">ↄ</div>
                 <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="ref-menu" aria-label="Цэс" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <button class="ref-menu" aria-label="Цэс" aria-expanded="false" aria-controls="refNav" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
-                <a href="index.html">Нүүр</a>
+                <div class="ref-dropdown">
+                    <a href="index.html">Нүүр ▾</a>
+                    <div class="ref-dropdown-menu">
+                        <a href="index.html">НҮҮР 1</a>
+                        <a href="index2.html">НҮҮР 2</a>
+                        <a href="index3.html">НҮҮР 3</a>
+                        <a href="index4.html">НҮҮР 4</a>
+                        <a href="index5/">НҮҮР 5</a>
+                    </div>
+                </div>
                 <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
-                <a href="doctors.html">Эмч, мэргэжилтнүүд</a>
                 <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
-                    <a href="ent-health.html" class="active">ENT Health</a>
+                    <a aria-current="page" href="ent-health.html" class="active">ENT Health</a>
                     <div class="ref-dropdown-menu">
                         <a href="ent-wellness.html">ENT Wellness</a>
                         <a href="ent-care.html">ENT Care</a>
@@ -196,18 +206,18 @@
                 <a href="contact.html">Холбоо барих</a>
                 <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
                 <div class="mobile-actions">
-                    <a href="tel:70341111" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                    <a href="tel:70341111" class="btn btn-primary"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                     <a href="contact.html" class="btn btn-outline">Цаг авах</a>
                 </div>
             </nav>
             <div class="header-actions">
-                <a href="tel:70341111" class="phone-link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                <a href="tel:70341111" class="phone-link"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                 <a href="contact.html" class="btn btn-primary">Цаг авах</a>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="care-hero">
             <div class="hero-sign">СОНСГОЛОО ХАМГААЛЪЯ<br>ЭРҮҮЛ ИРЭЭДҮЙГ БҮТЭЭЕ!</div>
             <div class="wrap">
@@ -216,8 +226,8 @@
                     <h2>Чих, хамар, хоолойн эрүүл мэндийн<br>боловсрол олгох нийгмийн төсөл</h2>
                     <p>14-18 насны сурагчдын чих, хамар, хоолойн эрүүл мэндийг хамгаалах, эрт илрүүлэх, урьдчилан сэргийлэх зорилгоор ENT CARE төслийг хэрэгжүүлж байна.</p>
                     <div class="hero-partners">
-                        <div class="hero-partner"><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></i><span>БОЛОВСРОЛЫН<br>ЕРӨНХИЙ ГАЗАР</span></div>
-                        <div class="hero-partner"><i>ↄ</i><span>ЭМЖЖ ЭМНЭЛЭГ<br>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
+                        <div class="hero-partner"><i><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></i><span>БОЛОВСРОЛЫН<br>ЕРӨНХИЙ ГАЗАР</span></div>
+                        <div class="hero-partner"><i aria-hidden="true">ↄ</i><span>ЭМЖЖ ЭМНЭЛЭГ<br>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
                     </div>
                 </div>
             </div>
@@ -228,20 +238,20 @@
                 <div>
                     <div class="section-head"><div><h2>Хэрэгжилтийн үр дүн</h2><small>2026.02.24 - 03.02</small></div></div>
                     <div class="stat-grid">
-                        <div class="stat-card"><div class="stat-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><strong>2500+</strong><p>Суралцагчид<br>хамрагдсан</p></div>
-                        <div class="stat-card"><div class="stat-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div><strong>1500+</strong><p>Цахим авиан тест<br>хийсэн</p></div>
+                        <div class="stat-card"><div class="stat-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><strong>2500+</strong><p>Суралцагчид<br>хамрагдсан</p></div>
+                        <div class="stat-card"><div class="stat-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div><strong>1500+</strong><p>Цахим авиан тест<br>хийсэн</p></div>
                         <div class="stat-card"><div class="stat-icon">▥</div><strong>450+</strong><p>Шуугиантай орчинд<br>тоогоор тест хийсэн</p></div>
-                        <div class="stat-card"><div class="stat-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M12 3v2"/><path d="M9 6h6"/></svg>️</div><strong>100%</strong><p>Эрсдэлтэй оролцогчдод<br>анхан шатны зөвлөгөө хүргэсэн</p></div>
+                        <div class="stat-card"><div class="stat-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M12 3v2"/><path d="M9 6h6"/></svg></div><strong>100%</strong><p>Эрсдэлтэй оролцогчдод<br>анхан шатны зөвлөгөө хүргэсэн</p></div>
                     </div>
                     <p class="note">Сургалтын хүрээнд ЧХХ-ийн суурь мэдлэг олгож, сонсголын эрсдэлийг эрт илрүүллээ.</p>
                 </div>
                 <div>
                     <div class="section-head"><h2>Сургалтын альбом</h2><a href="news.html">Бүгдийг харах →</a></div>
                     <div class="album-grid">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=520&h=330&fit=crop" alt="Онлайн сонсголын тест">
-                        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=520&h=330&fit=crop" alt="Сургалт">
-                        <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=520&h=330&fit=crop" alt="Гарын авлага">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=520&h=330&fit=crop" alt="Зөвлөгөө">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=520&h=330&fit=crop" alt="Онлайн сонсголын тест" loading="lazy" decoding="async" width="520" height="330">
+                        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=520&h=330&fit=crop" alt="Сургалт" loading="lazy" decoding="async" width="520" height="330">
+                        <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=520&h=330&fit=crop" alt="Гарын авлага" loading="lazy" decoding="async" width="520" height="330">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=520&h=330&fit=crop" alt="Зөвлөгөө" loading="lazy" decoding="async" width="520" height="330">
                     </div>
                 </div>
             </div>
@@ -251,12 +261,12 @@
             <div class="wrap">
                 <h2 class="center-title">Хамтын ажиллагааны процесс</h2>
                 <div class="process-grid">
-                    <div class="process-step"><div class="process-no">1</div><div class="process-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M2 12h20"/><path d="M2 12l5-5 11-5 4 5-4 5-11 5-5-5z"/><path d="M12 22v-5"/></svg></div><p>Сургууль хамтран ажиллах хүсэлт илгээх</p></div>
-                    <div class="process-step"><div class="process-no">2</div><div class="process-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div><p>Анхан шатны зөвлөгөө өгөх</p></div>
-                    <div class="process-step"><div class="process-no">3</div><div class="process-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></div><p>Онлайн сонсголын тестэд хамруулах</p></div>
-                    <div class="process-step"><div class="process-no">4</div><div class="process-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div><p>Тестийн үр дүн, тайланг нэгтгэж санал солилцох</p></div>
-                    <div class="process-step"><div class="process-no">5</div><div class="process-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><p>2-3 өдрийн сургалт, зөвлөгөө зохион байгуулах</p></div>
-                    <div class="process-step"><div class="process-no">6</div><div class="process-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4.5 10a2.5 2.5 0 0 1 0-5"/><path d="M19.5 10a2.5 2.5 0 0 0 0-5"/><path d="M2 10v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2"/><path d="M14 10v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2"/></svg></div><p>Эмчийн үзлэг, оношилгоо хийж зөвлөгөө өгөх</p></div>
+                    <div class="process-step"><div class="process-no">1</div><div class="process-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M2 12h20"/><path d="M2 12l5-5 11-5 4 5-4 5-11 5-5-5z"/><path d="M12 22v-5"/></svg></div><p>Сургууль хамтран ажиллах хүсэлт илгээх</p></div>
+                    <div class="process-step"><div class="process-no">2</div><div class="process-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div><p>Анхан шатны зөвлөгөө өгөх</p></div>
+                    <div class="process-step"><div class="process-no">3</div><div class="process-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 8a6 6 0 0 1 12 0c0 2.5-1.5 3.5-2.5 5S14 16 14 18"/><path d="M14 19a2 2 0 0 1-2 2 2 2 0 0 1-2-2"/></svg></div><p>Онлайн сонсголын тестэд хамруулах</p></div>
+                    <div class="process-step"><div class="process-no">4</div><div class="process-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div><p>Тестийн үр дүн, тайланг нэгтгэж санал солилцох</p></div>
+                    <div class="process-step"><div class="process-no">5</div><div class="process-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><p>2-3 өдрийн сургалт, зөвлөгөө зохион байгуулах</p></div>
+                    <div class="process-step"><div class="process-no">6</div><div class="process-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4.5 10a2.5 2.5 0 0 1 0-5"/><path d="M19.5 10a2.5 2.5 0 0 0 0-5"/><path d="M2 10v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2"/><path d="M14 10v2a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-2"/></svg></div><p>Эмчийн үзлэг, оношилгоо хийж зөвлөгөө өгөх</p></div>
                 </div>
             </div>
         </section>
@@ -266,13 +276,13 @@
                 <h2 class="center-title">ENT CARE булан</h2>
                 <p class="store-sub">Сургуулийн орчинд зориулсан эрүүл мэндийн боловсролын хэрэгслүүд</p>
                 <div class="store-grid">
-                    <div class="product" onclick="alert('Багшийн микрофон: Дууны ачааллыг бууруулж, хоолойн эрүүл мэндийг хамгаална. Холбоо барих: 7707-5050')" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=320&h=220&fit=crop" alt="Микрофон"><h3>Багшийн микрофон</h3><p>Дууны ачааллыг бууруулж, хоолойн эрүүл мэндийг хамгаална.</p></div>
-                    <div class="product" onclick="alert('Зөөврийн speaker: Сургалт, мэдээлэл түгээхэд тохиромжтой. Холбоо барих: 7707-5050')" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=320&h=220&fit=crop" alt="Speaker"><h3>Зөөврийн speaker</h3><p>Сургалт, мэдээлэл түгээхэд тохиромжтой.</p></div>
-                    <div class="product" onclick="alert('ENT CARE футболк: Мэдээллийг олон нийтэд хүргэх брэнд хэрэгсэл. Холбоо барих: 7707-5050')" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=320&h=220&fit=crop" alt="Футболк"><h3>ENT CARE футболк</h3><p>Мэдээллийг олон нийтэд хүргэх брэнд хэрэгсэл.</p></div>
-                    <div class="product" onclick="alert('Брэнд үзэг: Өдөр тутмын сануулга, эрүүл дадал хэвшил. Холбоо барих: 7707-5050')" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=320&h=220&fit=crop" alt="Үзэг"><h3>Брэнд үзэг</h3><p>Өдөр тутмын сануулга, эрүүл дадал хэвшил.</p></div>
-                    <div class="product" onclick="alert('Гарын авлага: Чих, хамар, хоолойн эрүүл мэндийн зөвлөгөө. Холбоо барих: 7707-5050')" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=320&h=220&fit=crop" alt="Гарын авлага"><h3>Гарын авлага</h3><p>Чих, хамар, хоолойн эрүүл мэндийн зөвлөгөө.</p></div>
-                    <div class="product" onclick="alert('ENT CARE булан: Сургалтын материал, постер, QR код, мэдээлэл. Холбоо барих: 7707-5050')" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=320&h=220&fit=crop" alt="Булан"><h3>ENT CARE булан</h3><p>Сургалтын материал, постер, QR код, мэдээлэл.</p></div>
-                    <div class="product" onclick="alert('Киоск: Онлайн тест, мэдээлэл авах зориулалттай. Холбоо барих: 7707-5050')" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=320&h=220&fit=crop" alt="Киоск"><h3>Киоск</h3><p>Онлайн тест, мэдээлэл авах зориулалттай.</p></div>
+                    <button type="button" class="product" data-toast="Багшийн микрофон: Дууны ачааллыг бууруулж, хоолойн эрүүл мэндийг хамгаална. Холбоо барих: 7707-5050"><img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=320&h=220&fit=crop" alt="Микрофон" loading="lazy" decoding="async" width="320" height="220"><h3>Багшийн микрофон</h3><p>Дууны ачааллыг бууруулж, хоолойн эрүүл мэндийг хамгаална.</p></button>
+                    <button type="button" class="product" data-toast="Зөөврийн speaker: Сургалт, мэдээлэл түгээхэд тохиромжтой. Холбоо барих: 7707-5050"><img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=320&h=220&fit=crop" alt="Speaker" loading="lazy" decoding="async" width="320" height="220"><h3>Зөөврийн speaker</h3><p>Сургалт, мэдээлэл түгээхэд тохиромжтой.</p></button>
+                    <button type="button" class="product" data-toast="ENT CARE футболк: Мэдээллийг олон нийтэд хүргэх брэнд хэрэгсэл. Холбоо барих: 7707-5050"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=320&h=220&fit=crop" alt="Футболк" loading="lazy" decoding="async" width="320" height="220"><h3>ENT CARE футболк</h3><p>Мэдээллийг олон нийтэд хүргэх брэнд хэрэгсэл.</p></button>
+                    <button type="button" class="product" data-toast="Брэнд үзэг: Өдөр тутмын сануулга, эрүүл дадал хэвшил. Холбоо барих: 7707-5050"><img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=320&h=220&fit=crop" alt="Үзэг" loading="lazy" decoding="async" width="320" height="220"><h3>Брэнд үзэг</h3><p>Өдөр тутмын сануулга, эрүүл дадал хэвшил.</p></button>
+                    <button type="button" class="product" data-toast="Гарын авлага: Чих, хамар, хоолойн эрүүл мэндийн зөвлөгөө. Холбоо барих: 7707-5050"><img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=320&h=220&fit=crop" alt="Гарын авлага" loading="lazy" decoding="async" width="320" height="220"><h3>Гарын авлага</h3><p>Чих, хамар, хоолойн эрүүл мэндийн зөвлөгөө.</p></button>
+                    <button type="button" class="product" data-toast="ENT CARE булан: Сургалтын материал, постер, QR код, мэдээлэл. Холбоо барих: 7707-5050"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=320&h=220&fit=crop" alt="Булан" loading="lazy" decoding="async" width="320" height="220"><h3>ENT CARE булан</h3><p>Сургалтын материал, постер, QR код, мэдээлэл.</p></button>
+                    <button type="button" class="product" data-toast="Киоск: Онлайн тест, мэдээлэл авах зориулалттай. Холбоо барих: 7707-5050"><img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=320&h=220&fit=crop" alt="Киоск" loading="lazy" decoding="async" width="320" height="220"><h3>Киоск</h3><p>Онлайн тест, мэдээлэл авах зориулалттай.</p></button>
                 </div>
             </div>
         </section>
@@ -282,9 +292,9 @@
                 <div class="soft-card">
                     <h2 class="center-title" style="margin-bottom:0">Хамтран ажилласан байгууллагууд</h2>
                     <div class="partners-mini">
-                        <div class="partner-stat"><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></i><strong>6</strong><span>Ерөнхий боловсролын сургууль</span></div>
-                        <div class="partner-stat"><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/></svg></i><strong>3</strong><span>Политехник коллеж</span></div>
-                        <div class="partner-stat"><i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11 14l2-2"/><path d="M15 10l2 2"/><path d="M8 17l3-3"/><path d="M18 12l-3 3"/><path d="M5 14l-1 3 3-1"/></svg></i><span>Хамтын ажиллагаа тогтвортой үргэлжилнэ</span></div>
+                        <div class="partner-stat"><i><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></i><strong>6</strong><span>Ерөнхий боловсролын сургууль</span></div>
+                        <div class="partner-stat"><i><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/></svg></i><strong>3</strong><span>Политехник коллеж</span></div>
+                        <div class="partner-stat"><i><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M11 14l2-2"/><path d="M15 10l2 2"/><path d="M8 17l3-3"/><path d="M18 12l-3 3"/><path d="M5 14l-1 3 3-1"/></svg></i><span>Хамтын ажиллагаа тогтвортой үргэлжилнэ</span></div>
                     </div>
                 </div>
                 <div class="soft-card donation-card">
@@ -293,7 +303,7 @@
                         <p>ENT CARE төслийн хүрээнд хамтран ажилласан үйлчилгээний төлбөрийн 1%-ийг “ДҮН” сангийн сургалтын төвийн үйл ажиллагааг дэмжихэд зориулан хандивладаг.</p>
                         <div class="donation-icons"><span>Хүүхдийн хөгжил</span><span>Хэл ярианы бэрхшээлтэй хүүхдүүд</span><span>Тогтвортой нийгмийн хариуцлага</span><span>Хөгжлийн дэмжлэг</span><span>Эрүүл ирээдүй</span><span>Нийгмийн оролцоо</span></div>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=520&h=320&fit=crop" alt="Хандив">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=520&h=320&fit=crop" alt="Хандив" loading="lazy" decoding="async" width="520" height="320">
                     <div class="donation-table">
                         <div>ХАНДИВЫН ТАЙЛАН</div><div>Он</div><div>Байгууллага</div><div>Хандивын дүн</div><div>Тус үйлдлийг нийт дүнгээс харуулсан.</div>
                         <div></div><div>2026</div><div>ENT CARE төсөл</div><div>1%</div><div></div>
@@ -306,11 +316,11 @@
             <div class="wrap">
                 <div class="section-head"><h2>Мэдээ мэдээлэл</h2><a href="news.html">Бүгдийг харах →</a></div>
                 <div class="news-grid">
-                    <article class="news-card" onclick="location.href='news.html'" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.02.12</div><h3>БЕГ-тай хамтын ажиллагааны санамж бичиг байгуулав</h3><p>ENT CARE төслийн хүрээнд Боловсролын ерөнхий газартай хамтран ажиллахаар боллоо.</p></div></article>
-                    <article class="news-card" onclick="location.href='news.html'" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.03.03</div><h3>Дэлхийн сонсгол хамгаалах өдөр 2026</h3><p>Дэлхийн сонсгол хамгаалах өдрийг тохиолдуулан олон үйл ажиллагаа зохион байгуулав.</p></div></article>
-                    <article class="news-card" onclick="location.href='news.html'" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.03.05</div><h3>2500 суралцагч хамрагдлаа</h3><p>6 сургууль, 3 политехник коллежийн 2500 сурагчид сургалт, скрининг тестэд хамрагдав.</p></div></article>
-                    <article class="news-card" onclick="location.href='news.html'" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.03.10</div><h3>Сонсголын онлайн тестийн үр дүн</h3><p>Цахим авиан болон шуурхай тестээр сонсголын эрсдэлийг тодорхойллоо.</p></div></article>
-                    <article class="news-card" onclick="location.href='news.html'" style="cursor:pointer"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=420&h=260&fit=crop" alt="Мэдээ"><div class="news-body"><div class="news-date">2026.04.02</div><h3>Шинэ сургууль төсөлд нэгдлээ</h3><p>Төслийн хамрах хүрээ өргөжин шинэ сургуулиуд нэгдэж байна.</p></div></article>
+                    <a href="news.html" class="news-card"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=420&h=260&fit=crop" alt="Мэдээ" loading="lazy" decoding="async" width="420" height="260"><div class="news-body"><div class="news-date">2026.02.12</div><h3>БЕГ-тай хамтын ажиллагааны санамж бичиг байгуулав</h3><p>ENT CARE төслийн хүрээнд Боловсролын ерөнхий газартай хамтран ажиллахаар боллоо.</p></div></a>
+                    <a href="news.html" class="news-card"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=420&h=260&fit=crop" alt="Мэдээ" loading="lazy" decoding="async" width="420" height="260"><div class="news-body"><div class="news-date">2026.03.03</div><h3>Дэлхийн сонсгол хамгаалах өдөр 2026</h3><p>Дэлхийн сонсгол хамгаалах өдрийг тохиолдуулан олон үйл ажиллагаа зохион байгуулав.</p></div></a>
+                    <a href="news.html" class="news-card"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=420&h=260&fit=crop" alt="Мэдээ" loading="lazy" decoding="async" width="420" height="260"><div class="news-body"><div class="news-date">2026.03.05</div><h3>2500 суралцагч хамрагдлаа</h3><p>6 сургууль, 3 политехник коллежийн 2500 сурагчид сургалт, скрининг тестэд хамрагдав.</p></div></a>
+                    <a href="news.html" class="news-card"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=420&h=260&fit=crop" alt="Мэдээ" loading="lazy" decoding="async" width="420" height="260"><div class="news-body"><div class="news-date">2026.03.10</div><h3>Сонсголын онлайн тестийн үр дүн</h3><p>Цахим авиан болон шуурхай тестээр сонсголын эрсдэлийг тодорхойллоо.</p></div></a>
+                    <a href="news.html" class="news-card"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=420&h=260&fit=crop" alt="Мэдээ" loading="lazy" decoding="async" width="420" height="260"><div class="news-body"><div class="news-date">2026.04.02</div><h3>Шинэ сургууль төсөлд нэгдлээ</h3><p>Төслийн хамрах хүрээ өргөжин шинэ сургуулиуд нэгдэж байна.</p></div></a>
                 </div>
             </div>
         </section>
@@ -323,15 +333,15 @@
                 </div>
                 <form class="cta-form">
                     <h3>ХАМТРАН АЖИЛЛАХ ХҮСЭЛТ ИЛГЭЭХ</h3>
-                    <div class="form-grid"><input placeholder="Сургуулийн нэр"><input placeholder="Холбогдох хүний нэр"></div>
-                    <div class="form-grid"><input placeholder="Утасны дугаар"><input placeholder="И-мэйл хаяг"></div>
-                    <textarea placeholder="Санал хүсэлт, нэмэлт мэдээлэл"></textarea>
-                    <button type="button" onclick="this.innerHTML='<svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"/></svg> АМЖИЛТТАЙ ИЛГЭЭГДЛЭЭ'; this.style.background='#03bfd7'; this.disabled=true;"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M2 12h20"/><path d="M2 12l5-5 11-5 4 5-4 5-11 5-5-5z"/><path d="M12 22v-5"/></svg> ХҮСЭЛТ ИЛГЭЭХ</button>
+                    <div class="form-grid"><label class="sr-only" for="ec-school">Сургуулийн нэр</label><input id="ec-school" name="school" placeholder="Сургуулийн нэр"><label class="sr-only" for="ec-person">Холбогдох хүний нэр</label><input id="ec-person" name="person" placeholder="Холбогдох хүний нэр"></div>
+                    <div class="form-grid"><label class="sr-only" for="ec-phone">Утасны дугаар</label><input id="ec-phone" name="phone" placeholder="Утасны дугаар"><label class="sr-only" for="ec-email">И-мэйл хаяг</label><input id="ec-email" name="email" placeholder="И-мэйл хаяг"></div>
+                    <label class="sr-only" for="ec-message">Санал хүсэлт, нэмэлт мэдээлэл</label><textarea id="ec-message" name="message" placeholder="Санал хүсэлт, нэмэлт мэдээлэл"></textarea>
+                    <button type="submit" onclick="this.innerHTML='<svg aria-hidden=\'true\' viewBox=\'0 0 24 24\' style=\'width:1em;height:1em;display:inline-block;vertical-align:middle;\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'20 6 9 17 4 12\'/></svg> АМЖИЛТТАЙ ИЛГЭЭГДЛЭЭ'; this.style.background='#03bfd7'; this.disabled=true;"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M2 12l5-5 11-5 4 5-4 5-11 5-5-5z"/><path d="M12 22v-5"/></svg> ХҮСЭЛТ ИЛГЭЭХ</button>
                 </form>
                 <div class="cta-contact">
                     <h3>ХОЛБОО БАРИХ</h3>
-                    <p><a href="tel:77075050" style="color:#fff"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7707-5050</a></p><p><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> entcare@emj.mn</p><p>◎ www.emj.mn</p>
-                    <div class="qr" onclick="alert('QR код: Дэлгэрэнгүй мэдээллийг удахгүй scan хийж үзэх боломжтой болно.')" style="cursor:pointer">▦</div><p class="qr-note">Дэлгэрэнгүй мэдээллийг scan хийж үз</p>
+                    <p><a href="tel:77075050" style="color:#fff"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7707-5050</a></p><p><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> entcare@emj.mn</p><p><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> www.emj.mn</p>
+                    <button type="button" class="qr" data-toast="QR код: Дэлгэрэнгүй мэдээллийг удахгүй scan хийж үзэх боломжтой болно."><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></button><p class="qr-note">Дэлгэрэнгүй мэдээллийг scan хийж үз</p>
                 </div>
             </div>
         </section>
@@ -341,6 +351,8 @@
         function toggleMenu() {
             document.getElementById('refNav').classList.toggle('open');
             document.querySelector('.ref-menu').classList.toggle('active');
+            const menuBtn = document.querySelector('.ref-menu');
+            if (menuBtn) menuBtn.setAttribute('aria-expanded', document.getElementById('refNav').classList.contains('open'));
             document.body.classList.toggle('menu-open');
         }
 
@@ -349,9 +361,9 @@
             dropdownLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    const dropdownMenu = dropdownLink.nextElementSibling;
-                    if (dropdownMenu && dropdownMenu.classList.contains('ref-dropdown-menu')) {
-                        dropdownMenu.classList.toggle('open');
+                    const dropdown = dropdownLink.parentElement;
+                    if (dropdown && dropdown.classList.contains('ref-dropdown')) {
+                        dropdown.classList.toggle('open');
                     }
                 }
             });
@@ -377,5 +389,11 @@
     }
 </script>
 
+
+<script>
+    document.querySelectorAll('[data-toast]').forEach(function(el){
+        el.addEventListener('click', function(){ alert(el.dataset.toast); });
+    });
+</script>
 </body>
 </html>

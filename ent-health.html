@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ENT HEALTH - ЭМЖЖ эмнэлгийн нийгмийн эрүүл мэндийн боловсрол олгох аян.">
     <title>ENT Health - ЭМЖЖ Эмнэлэг</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
@@ -98,7 +99,7 @@
         .eh-program-body p { font-size: 14px; color: var(--eh-text-medium); line-height: 1.7; margin-bottom: 20px; font-weight: 600; }
         .eh-program-features { margin-bottom: 24px; }
         .eh-program-features li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--eh-text-medium); margin-bottom: 10px; font-weight: 600; }
-        .eh-program-features li::before { content: '<svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"/></svg>'; color: var(--eh-teal); font-weight: 800; }
+        .eh-program-features li::before { content: ''; width: 18px; height: 18px; flex-shrink: 0; background: var(--eh-teal); mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center/contain; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center/contain; }
         .eh-program-btn { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; background: var(--eh-primary); color: #fff; padding: 14px 26px; border-radius: 10px; font-size: 13px; font-weight: 700; transition: all .3s; align-self: flex-start; }
         .eh-program-btn:hover { background: var(--eh-primary-dark); transform: translateY(-2px); }
         .eh-program-btn.care { background: var(--eh-teal); }
@@ -111,7 +112,7 @@
         .eh-ambassador-content h2 span { color: var(--eh-teal); }
         .eh-ambassador-content p { font-size: 15px; color: var(--eh-text-medium); line-height: 1.8; margin-bottom: 20px; font-weight: 600; }
         .eh-ambassador-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--eh-text); margin-bottom: 12px; font-weight: 600; }
-        .eh-ambassador-list li::before { content: '<svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"/></svg>'; color: var(--eh-teal); font-weight: 800; }
+        .eh-ambassador-list li::before { content: ''; width: 18px; height: 18px; flex-shrink: 0; background: var(--eh-teal); mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center/contain; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center/contain; margin-top: 2px; }
         .eh-ambassador-image { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,84,166,.12); }
         .eh-ambassador-image img { width: 100%; height: 360px; object-fit: cover; }
 
@@ -159,6 +160,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Гол агуулга руу очих</a>
         <!-- Header -->
     <header class="ref-header">
         <div class="container ref-header-inner">
@@ -166,15 +168,23 @@
                 <div class="ref-logo-mark">ↄ</div>
                 <div class="ref-logo-text">ЭМЖЖ ЭМНЭЛЭГ<span>ЧИХ ХАМАР ХООЛОЙН ТӨВ</span></div>
             </a>
-            <button class="ref-menu" aria-label="Цэс" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+            <button class="ref-menu" aria-label="Цэс" aria-expanded="false" aria-controls="refNav" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
-                <a href="index.html">Нүүр</a>
+                <div class="ref-dropdown">
+                    <a href="index.html">Нүүр ▾</a>
+                    <div class="ref-dropdown-menu">
+                        <a href="index.html">НҮҮР 1</a>
+                        <a href="index2.html">НҮҮР 2</a>
+                        <a href="index3.html">НҮҮР 3</a>
+                        <a href="index4.html">НҮҮР 4</a>
+                        <a href="index5/">НҮҮР 5</a>
+                    </div>
+                </div>
                 <a href="about.html">Бидний тухай</a>
                 <a href="services.html">Үйлчилгээ</a>
-                <a href="doctors.html">Эмч, мэргэжилтнүүд</a>
                 <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
-                    <a href="ent-health.html" class="active">ENT Health</a>
+                    <a aria-current="page" href="ent-health.html" class="active">ENT Health</a>
                     <div class="ref-dropdown-menu">
                         <a href="ent-wellness.html">ENT Wellness</a>
                         <a href="ent-care.html">ENT Care</a>
@@ -183,23 +193,23 @@
                 <a href="contact.html">Холбоо барих</a>
                 <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
                 <div class="mobile-actions">
-                    <a href="tel:70341111" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                    <a href="tel:70341111" class="btn btn-primary"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                     <a href="contact.html" class="btn btn-outline">Цаг авах</a>
                 </div>
             </nav>
             <div class="header-actions">
-                <a href="tel:70341111" class="phone-link"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
+                <a href="tel:70341111" class="phone-link"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 7034-1111</a>
                 <a href="contact.html" class="btn btn-primary">Цаг авах</a>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="eh-hero">
             <div class="eh-container">
                 <div class="eh-hero-inner">
                     <div class="eh-hero-content">
-                        <span class="eh-hero-badge"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Нийгмийн эрүүл мэндийн аян</span>
+                        <span class="eh-hero-badge"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Нийгмийн эрүүл мэндийн аян</span>
                         <h1>ENT HEALTH</h1>
                         <p class="eh-hero-subtitle">Нийгмийн эрүүл мэндийн чих, хамар, хоолойн боловсрол олгох аян</p>
                         <p class="eh-hero-text">Өнөөдрийн нийгэмд хүмүүс эрүүл мэндээ өвдсөн үедээ л анзаарч, асуудал хүндэрсний дараа эмнэлэгт ханддаг хэв маяг түгээмэл болсон. ENT HEALTH аян нь энэ бүхнийг зөвхөн эмчилгээний түвшинд биш, нийгмийн боловсролын түвшинд өөрчлөх зорилготой.</p>
@@ -207,7 +217,7 @@
                     </div>
                     <div class="eh-hero-visual">
                         <div class="eh-hero-image">
-                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=500&fit=crop" alt="ENT Health">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=500&fit=crop" alt="ENT Health" loading="lazy" decoding="async" width="700" height="500">
                         </div>
                         <div class="eh-hero-float">
                             <strong>33+</strong>
@@ -251,17 +261,17 @@
 
                 <div class="eh-mission-grid">
                     <div class="eh-mission-card">
-                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>️</i>
+                        <i><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></i>
                         <h3>Урьдчилан сэргийлнэ</h3>
                         <p>Өвчин гарсны дараа эмчлэхээс илүүтэйгээр, өвдөхөөс нь өмнө ойлгуулж, хамгаалж, урьдчилан сэргийлнэ.</p>
                     </div>
                     <div class="eh-mission-card">
-                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></i>
+                        <i><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></i>
                         <h3>Боловсрол олгоно</h3>
                         <p>Шинжлэх ухаанд суурилсан үнэн зөв мэдлэгийг иргэдэд хүртээмжтэй, ойлгомжтой байдлаар түгээнэ.</p>
                     </div>
                     <div class="eh-mission-card">
-                        <i><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M8 21v-2a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v2"/><circle cx="12" cy="11" r="3"/><circle cx="5" cy="9" r="2"/><path d="M2 21v-2a3 3 0 0 1 3-3h1"/><circle cx="19" cy="9" r="2"/><path d="M22 21v-2a3 3 0 0 0-3-3h-1"/></svg></i>
+                        <i><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M8 21v-2a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v2"/><circle cx="12" cy="11" r="3"/><circle cx="5" cy="9" r="2"/><path d="M2 21v-2a3 3 0 0 1 3-3h1"/><circle cx="19" cy="9" r="2"/><path d="M22 21v-2a3 3 0 0 0-3-3h-1"/></svg></i>
                         <h3>Гэр бүлийг хамтрана</h3>
                         <p>Эцэг эхчүүдэд хүүхдийн эрүүл мэндийн анхны шинж тэмдгийг таних мэдлэг олгоно.</p>
                     </div>
@@ -302,9 +312,9 @@
                 <div class="eh-programs-grid">
                     <div class="eh-program-card">
                         <div class="eh-program-image wellness">
-                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop" alt="ENT Wellness">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop" alt="ENT Wellness" loading="lazy" decoding="async" width="600" height="400">
                             <span class="eh-program-badge">БАЙГУУЛЛАГАД ЗОРИУЛСАН</span>
-                            <div class="eh-program-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/></svg></div>
+                            <div class="eh-program-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><line x1="9" y1="12" x2="9.01" y2="12"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="9" y1="8" x2="9.01" y2="8"/><line x1="15" y1="8" x2="15.01" y2="8"/></svg></div>
                         </div>
                         <div class="eh-program-body">
                             <h3>ENT Wellness</h3>
@@ -321,9 +331,9 @@
 
                     <div class="eh-program-card">
                         <div class="eh-program-image care">
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop" alt="ENT Care">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop" alt="ENT Care" loading="lazy" decoding="async" width="600" height="400">
                             <span class="eh-program-badge">СУРГУУЛЬД ЗОРИУЛСАН</span>
-                            <div class="eh-program-icon"><svg viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                            <div class="eh-program-icon"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:1em;height:1em;display:inline-block;vertical-align:middle;" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
                         </div>
                         <div class="eh-program-body">
                             <h3>ENT Care</h3>
@@ -356,7 +366,7 @@
                         </ul>
                     </div>
                     <div class="eh-ambassador-image">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" alt="ENT Ambossoder">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop" alt="ENT Ambossoder" loading="lazy" decoding="async" width="600" height="400">
                     </div>
                 </div>
             </div>
@@ -382,7 +392,7 @@
         <div class="eh-container">
             <div class="eh-footer-grid">
                 <div class="eh-footer-brand">
-                    <h3><i>ↄ</i>ЭМЖЖ ЭМНЭЛЭГ</h3>
+                    <h3><i aria-hidden="true">ↄ</i>ЭМЖЖ ЭМНЭЛЭГ</h3>
                     <p>Чих, хамар, хоолой, сонсгол, тэнцвэрийн нарийн мэргэжлийн эмнэлэг</p>
                 </div>
                 <div class="eh-footer-col">
@@ -397,22 +407,23 @@
                 <div class="eh-footer-col">
                     <h4>ЭМЧ, МЭРГЭЖИЛТНҮҮД</h4>
                     <ul>
-                        <li><a href="doctors.html">Эмч нарын баг</a></li>
-                        <li><a href="doctors.html">Мэргэжилтнүүд</a></li>
+                        <li><a href="services.html">Эмч нарын баг</a></li>
+                        <li><a href="services.html">Мэргэжилтнүүд</a></li>
                         <li><a href="training.html">Ажлын байр</a></li>
                     </ul>
                 </div>
                 <div class="eh-footer-col eh-footer-contact">
                     <h4>ХОЛБОО БАРИХ</h4>
                     <ul>
-                        <li><i><svg viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </i>Улаанбаатар хот, Сүхбаатар дүүрэг, 11-р хороо, ЭМЖЖ эмнэлэг</li>
-                        <li><i><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> </i>info@emjjhospital.mn</li>
-                        <li><i><svg viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </i>7034-1111</li>
+                        <li><i><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> </i>Улаанбаатар хот, Сүхбаатар дүүрэг, 11-р хороо, ЭМЖЖ эмнэлэг</li>
+                        <li><i><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> </i>info@emjjhospital.mn</li>
+                        <li><i><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </i>1900-9999</li>
+                        <li><i><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> </i>7034-1111</li>
                     </ul>
                 </div>
             </div>
             <div class="eh-footer-bottom">
-                © 2025 ЭМЖЖ эмнэлэг. Бүх эрх хуулиар хамгаалагдсан.
+                © 2026 EMJJ Hospital. Бүх эрх хуулиар хамгаалагдсан.
             </div>
         </div>
     </footer>
@@ -421,6 +432,8 @@
         function toggleMenu() {
             document.getElementById('refNav').classList.toggle('open');
             document.querySelector('.ref-menu').classList.toggle('active');
+            const menuBtn = document.querySelector('.ref-menu');
+            if (menuBtn) menuBtn.setAttribute('aria-expanded', document.getElementById('refNav').classList.contains('open'));
             document.body.classList.toggle('menu-open');
         }
 
@@ -428,9 +441,9 @@
             dropdownLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    const dropdownMenu = dropdownLink.nextElementSibling;
-                    if (dropdownMenu && dropdownMenu.classList.contains('ref-dropdown-menu')) {
-                        dropdownMenu.classList.toggle('open');
+                    const dropdown = dropdownLink.parentElement;
+                    if (dropdown && dropdown.classList.contains('ref-dropdown')) {
+                        dropdown.classList.toggle('open');
                     }
                 }
             });
