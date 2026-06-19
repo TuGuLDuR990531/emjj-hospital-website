@@ -349,17 +349,14 @@ button {
 .ref-dropdown {
   position: relative;
   cursor: pointer;
-  padding-bottom: 26px;
-  margin-bottom: -26px;
 }
 
 .ref-dropdown > a {
   cursor: pointer;
-  pointer-events: none;
-}
-
-.ref-dropdown > a[href] {
-  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 30px 0 26px;
 }
 
 .ref-dropdown:hover > .ref-dropdown-menu,
@@ -378,6 +375,7 @@ button {
   border-right: 4px solid transparent;
   border-top: 4px solid currentColor;
   transition: transform 0.3s;
+  flex-shrink: 0;
 }
 
 .ref-dropdown:hover > a::after,
@@ -400,14 +398,16 @@ button {
   transform: translateY(-6px);
   transition: all 0.2s ease;
   z-index: 1000;
+  pointer-events: none;
 }
 
-.ref-dropdown:hover .ref-dropdown-menu,
-.ref-dropdown:focus-within .ref-dropdown-menu,
-.ref-dropdown.open .ref-dropdown-menu {
+.ref-dropdown:hover > .ref-dropdown-menu,
+.ref-dropdown:focus-within > .ref-dropdown-menu,
+.ref-dropdown.open > .ref-dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .ref-dropdown-menu::before {

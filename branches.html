@@ -463,10 +463,7 @@
             dropdownLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    const dropdown = dropdownLink.parentElement;
-                    if (dropdown && dropdown.classList.contains('ref-dropdown')) {
-                        dropdown.classList.toggle('open');
-                    }
+                    const dropdown = dropdownLink.closest('.ref-dropdown'); if (dropdown) { dropdown.classList.toggle('open'); }
                 }
             });
         });
@@ -476,7 +473,7 @@
             link.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     // Don't close if it's a dropdown parent (handled above)
-                    if (link.parentElement.classList.contains('ref-dropdown')) {
+                    if (link.closest('.ref-dropdown')) {
                         return;
                     }
                     document.getElementById('refNav').classList.remove('open');
