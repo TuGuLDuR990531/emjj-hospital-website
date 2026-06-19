@@ -71,6 +71,8 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      max-width: 100vw;
+      overflow-x: hidden;
     }
 
     .header-inner {
@@ -78,6 +80,9 @@
       align-items: center;
       justify-content: space-between;
       height: 80px;
+      max-width: 100vw;
+      overflow: hidden;
+      gap: 16px;
     }
 
     .wordmark {
@@ -86,6 +91,7 @@
       letter-spacing: -0.04em;
       color: var(--color-obsidian-ink);
       line-height: 1;
+      flex-shrink: 0;
     }
 
     .wordmark span {
@@ -182,6 +188,7 @@
       background: none;
       border: none;
       padding: 0;
+      flex-shrink: 0;
     }
 
     .hamburger span {
@@ -555,6 +562,10 @@
         display: block;
       }
 
+      .wordmark {
+        font-size: 28px;
+      }
+
       .hero-headline {
         font-size: 40px;
       }
@@ -592,6 +603,10 @@
     }
 
     @media (max-width: 520px) {
+      .wordmark {
+        font-size: 24px;
+      }
+
       .hero-headline {
         font-size: 32px;
       }
@@ -628,21 +643,21 @@
     <div class="container header-inner">
       <a href="index.html" class="wordmark">EM<span>JJ</span></a>
       <nav class="main-nav" id="mainNav" aria-label="Үндсэн цэс">
-        <a href="services.html">Үйлчилгээ</a>
-        <a href="about.html">Эмч нар</a>
-        <a href="news.html">Мэдээ</a>
-        <a href="ent-health.html">ENT Health</a>
-        <a href="contact.html">Холбоо барих</a>
         <div class="main-nav-dropdown">
           <a href="index.html">Нүүр ▾</a>
           <div class="main-nav-dropdown-menu">
             <a href="index.html">НҮҮР 1</a>
             <a href="index2.html">НҮҮР 2</a>
             <a href="index3.html">НҮҮР 3</a>
-            <a href="index4.html">НҮҮР 4</a>
+            <a href="index4.html" class="active">НҮҮР 4</a>
             <a href="index5/">НҮҮР 5</a>
           </div>
         </div>
+        <a href="about.html">Бидний тухай</a>
+        <a href="services.html">Үйлчилгээ</a>
+        <a href="news.html">Мэдээ, мэдээлэл</a>
+        <a href="ent-health.html">ENT Health</a>
+        <a href="contact.html">Холбоо барих</a>
       </nav>
       <button class="hamburger" id="menuToggle" aria-label="Цэс нээх" aria-expanded="false" aria-controls="mainNav">
         <span></span>

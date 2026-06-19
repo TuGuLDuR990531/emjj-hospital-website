@@ -619,9 +619,19 @@
             </a>
             <button class="ref-menu" aria-label="Нээх" onclick="toggleMenu()"><span></span><span></span><span></span></button>
             <nav class="ref-nav" id="refNav">
-                <a href="index.html">Нүүр</a>
+                <div class="ref-dropdown">
+                    <a href="index.html">Нүүр ▾</a>
+                    <div class="ref-dropdown-menu">
+                        <a href="index.html">НҮҮР 1</a>
+                        <a href="index2.html">НҮҮР 2</a>
+                        <a href="index3.html">НҮҮР 3</a>
+                        <a href="index4.html">НҮҮР 4</a>
+                        <a href="index5/">НҮҮР 5</a>
+                    </div>
+                </div>
                 <a href="about.html">Бидний тухай</a>
                 <a href="services.html" class="active">Үйлчилгээ</a>
+                <a href="news.html">Мэдээ, мэдээлэл</a>
                 <div class="ref-dropdown">
                     <a href="ent-health.html">ENT Health</a>
                     <div class="ref-dropdown-menu">
@@ -629,7 +639,6 @@
                         <a href="ent-care.html">ENT Care</a>
                     </div>
                 </div>
-                <a href="news.html">Мэдээ мэдээлэл</a>
                 <a href="contact.html">Холбоо барих</a>
                 <button class="ref-lang-toggle" onclick="toggleLanguage()">MN</button>
             </nav>

@@ -264,6 +264,18 @@
             background: linear-gradient(135deg, #f0f8ff 0%, #e6f7fa 50%, #ffffff 100%);
         }
         
+        .values-header {
+            position: sticky;
+            top: 76px;
+            z-index: 90;
+            background: rgba(240, 248, 255, 0.98);
+            border-bottom: 1px solid rgba(0, 84, 166, 0.12);
+            padding: 16px 0;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 84, 166, 0.05);
+        }
+        
         .values-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -853,7 +865,7 @@
     <!-- Values Section -->
     <section class="values-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header values-header">
                 <h2>Үнэт зүйлс</h2>
                 <p>Бидний эрхэм зорилго</p>
             </div>

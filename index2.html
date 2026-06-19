@@ -69,6 +69,8 @@
             backdrop-filter: blur(20px);
             background: rgba(10, 22, 40, 0.6);
             border-bottom: 1px solid var(--glass-border);
+            max-width: 100vw;
+            overflow-x: hidden;
         }
 
         .header-inner {
@@ -76,6 +78,8 @@
             align-items: center;
             justify-content: space-between;
             gap: 40px;
+            max-width: 100vw;
+            overflow: hidden;
         }
 
         .menu-toggle {
@@ -102,6 +106,9 @@
             gap: 12px;
             text-decoration: none;
             color: #fff;
+            min-width: 0;
+            flex-shrink: 1;
+            overflow: hidden;
         }
 
         .logo-mark {
@@ -120,6 +127,10 @@
             font-size: 18px;
             font-weight: 700;
             letter-spacing: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
         }
 
         .logo-text span {
@@ -810,7 +821,7 @@
             .feature-grid { grid-template-columns: 1fr; }
             .services-row-grid { grid-template-columns: repeat(3, 1fr); }
             .news-grid { grid-template-columns: 1fr; }
-            .menu-toggle { display: flex; }
+            .menu-toggle { display: flex; flex-shrink: 0; }
             .nav { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(10, 22, 40, 0.98); backdrop-filter: blur(20px); flex-direction: column; align-items: stretch; padding: 24px; gap: 0; border-bottom: 1px solid var(--glass-border); z-index: 99; }
             .nav.open { display: flex; }
             .nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: transparent; border: none; padding: 0 0 0 16px; display: none; }
@@ -822,6 +833,9 @@
 
         @media (max-width: 768px) {
             .wrap { width: calc(100% - 32px); }
+            .header-actions { display: none; }
+            .header-inner { gap: 16px; }
+            .logo { max-width: calc(100vw - 90px); }
             .hero h1 { font-size: 28px; }
             .service-bar-grid { grid-template-columns: repeat(2, 1fr); }
             .service-bar-item { border-right: none; border-bottom: 1px solid var(--glass-border); }
@@ -829,6 +843,11 @@
             .stat-bar-item { border-right: none; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px; }
             .services-row-grid { grid-template-columns: repeat(2, 1fr); }
             .cta-bar { flex-direction: column; text-align: center; gap: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text { font-size: 15px; white-space: normal; overflow: visible; text-overflow: clip; }
+            .logo-mark { width: 38px; height: 38px; font-size: 18px; }
         }
     </style>
 </head>
@@ -849,20 +868,20 @@
             <nav>
                 <ul class="nav" id="navMenu">
                     <li class="nav-dropdown">
-                        <a href="index.html" class="active">НҮҮР ▾</a>
+                        <a href="index.html">Нүүр ▾</a>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="index.html" class="active">НҮҮР 1</a></li>
-                            <li><a href="index2.html">НҮҮР 2</a></li>
+                            <li><a href="index.html">НҮҮР 1</a></li>
+                            <li><a href="index2.html" class="active">НҮҮР 2</a></li>
                             <li><a href="index3.html">НҮҮР 3</a></li>
                             <li><a href="index4.html">НҮҮР 4</a></li>
                             <li><a href="index5/">НҮҮР 5</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html">БИДНИЙ ТУХАЙ</a></li>
-                    <li><a href="services.html">ҮЙЛЧИЛГЭЭ</a></li>
-                    <li><a href="ent-health.html">ENT HEALTH</a></li>
-                    <li><a href="news.html">МЭДЭЭ МЭДЭЭЛЭЛ</a></li>
-                    <li><a href="contact.html">ХОЛБОО БАРИХ</a></li>
+                    <li><a href="about.html">Бидний тухай</a></li>
+                    <li><a href="services.html">Үйлчилгээ</a></li>
+                    <li><a href="news.html">Мэдээ, мэдээлэл</a></li>
+                    <li><a href="ent-health.html">ENT Health</a></li>
+                    <li><a href="contact.html">Холбоо барих</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
