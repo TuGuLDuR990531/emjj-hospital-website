@@ -62,6 +62,12 @@
         .note { color: var(--text-medium); font-size: 14px; margin-top: 20px; display: flex; gap: 8px; align-items: center; font-weight: 600; background: #fff; padding: 14px 18px; border-radius: 10px; border-left: 4px solid var(--accent-teal); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .album-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .album-grid img { width: 100%; height: 190px; object-fit: cover; border-radius: 12px; display: block; border: 3px solid #fff; box-shadow: 0 6px 20px rgba(0,84,166,0.15); }
+        .full-gallery { padding: 70px 0 60px; background: linear-gradient(180deg, #f0f7ff 0%, #fff 100%); }
+        .full-gallery .section-head h2 { color: var(--primary-dark); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .gallery-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px; display: block; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,84,166,0.15); transition: transform 0.3s, box-shadow 0.3s; }
+        .gallery-grid img:hover { transform: translateY(-6px); box-shadow: 0 16px 45px rgba(0,84,166,0.25); }
+        .gallery-caption { text-align: center; margin-top: 28px; color: var(--text-medium); font-size: 14px; font-weight: 600; }
 
         /* ===== PROCESS - Colorful Steps ===== */
         .process { padding: 70px 0 60px; background: linear-gradient(135deg, #0054a6 0%, #003d7a 100%); position: relative; overflow: hidden; }
@@ -165,7 +171,7 @@
             .hero-copy h1 { font-size: 52px; }
             .hero-copy h2 { font-size: 19px; }
             .hero-partners { flex-direction: column; align-items: flex-start; gap: 14px; }
-            .stat-grid, .album-grid, .process-grid, .store-grid, .partners-mini, .news-grid, .form-grid { grid-template-columns: 1fr; }
+            .stat-grid, .album-grid, .gallery-grid, .process-grid, .store-grid, .partners-mini, .news-grid, .form-grid { grid-template-columns: 1fr; }
             .cta-panel { padding: 28px 20px; }
             .cta-left h2 { font-size: 22px; }
             .care-hero { min-height: 560px; }
@@ -246,7 +252,7 @@
                     <p class="note">Сургалтын хүрээнд ЧХХ-ийн суурь мэдлэг олгож, сонсголын эрсдэлийг эрт илрүүллээ.</p>
                 </div>
                 <div id="gallery">
-                    <div class="section-head"><h2>Сургалтын альбом</h2><a href="index5/#gallery">Бүгдийг харах →</a></div>
+                    <div class="section-head"><h2>Сургалтын альбом</h2><a href="#album">Бүгдийг харах →</a></div>
                     <div class="album-grid">
                         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=520&h=330&fit=crop" alt="Онлайн сонсголын тест" loading="lazy" decoding="async" width="520" height="330">
                         <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=520&h=330&fit=crop" alt="Сургалт" loading="lazy" decoding="async" width="520" height="330">
@@ -322,6 +328,23 @@
                     <a href="news.html" class="news-card"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=420&h=260&fit=crop" alt="Мэдээ" loading="lazy" decoding="async" width="420" height="260"><div class="news-body"><div class="news-date">2026.03.10</div><h3>Сонсголын онлайн тестийн үр дүн</h3><p>Цахим авиан болон шуурхай тестээр сонсголын эрсдэлийг тодорхойллоо.</p></div></a>
                     <a href="news.html" class="news-card"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=420&h=260&fit=crop" alt="Мэдээ" loading="lazy" decoding="async" width="420" height="260"><div class="news-body"><div class="news-date">2026.04.02</div><h3>Шинэ сургууль төсөлд нэгдлээ</h3><p>Төслийн хамрах хүрээ өргөжин шинэ сургуулиуд нэгдэж байна.</p></div></a>
                 </div>
+            </div>
+        </section>
+
+        <section id="album" class="full-gallery">
+            <div class="wrap">
+                <div class="section-head"><h2>Сургалтын альбом</h2><a href="news.html">Мэдээ үзэх →</a></div>
+                <div class="gallery-grid">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=520&h=330&fit=crop" alt="Онлайн сонсголын тест" loading="lazy" decoding="async" width="520" height="330">
+                    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=520&h=330&fit=crop" alt="Сургалт" loading="lazy" decoding="async" width="520" height="330">
+                    <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=520&h=330&fit=crop" alt="Гарын авлага" loading="lazy" decoding="async" width="520" height="330">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=520&h=330&fit=crop" alt="Зөвлөгөө" loading="lazy" decoding="async" width="520" height="330">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=520&h=330&fit=crop" alt="Хичээлийн үйл ажиллагаа" loading="lazy" decoding="async" width="520" height="330">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=520&h=330&fit=crop" alt="Сурагчид хамрагдаж байна" loading="lazy" decoding="async" width="520" height="330">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=520&h=330&fit=crop" alt="Эрүүл мэндийн боловсрол" loading="lazy" decoding="async" width="520" height="330">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=520&h=330&fit=crop" alt="Эмчийн зөвлөгөө" loading="lazy" decoding="async" width="520" height="330">
+                </div>
+                <p class="gallery-caption">ENT CARE сургалт, скрининг, эмчийн зөвлөгөөний үйл ажиллагаанаас сонгомол зургууд.</p>
             </div>
         </section>
 
