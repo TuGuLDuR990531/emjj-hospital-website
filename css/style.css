@@ -348,10 +348,26 @@ button {
 
 .ref-dropdown {
   position: relative;
+  cursor: pointer;
+  padding-bottom: 26px;
+  margin-bottom: -26px;
 }
 
 .ref-dropdown > a {
   cursor: pointer;
+  pointer-events: none;
+}
+
+.ref-dropdown > a[href] {
+  pointer-events: auto;
+}
+
+.ref-dropdown:hover > .ref-dropdown-menu,
+.ref-dropdown:focus-within > .ref-dropdown-menu,
+.ref-dropdown.open > .ref-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .ref-dropdown > a::after {
