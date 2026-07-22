@@ -21,7 +21,7 @@
     ['screening', 'Сонсголын урьдчилсан тест', '/services/sonsgol'],
     ['protection', 'Сонсгол хамгаалах өдөр', '/ent-health'],
     ['equipment', 'Тоног төхөөрөмж худалдаа', '/services/sonsgol'],
-    ['hearing', 'Сонсголын аппарат', '/services/sonsgol'],
+    ['hearing', 'Сонсголын аппарат', '/signia'],
   ];
 
   const branches = [
