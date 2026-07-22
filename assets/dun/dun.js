@@ -177,15 +177,20 @@
     if (mounting) return;
     mounting = true;
     const main = document.querySelector('#main');
+    const root = document.querySelector('#root');
+    const target = main || root;
     const isDunPage = currentRoutePath().replace(/\/$/, '').endsWith('/dun');
-    const mounted = main && main.querySelector(':scope > emjj-dun-page');
+    let mounted = document.querySelector('emjj-dun-page');
 
-    if (main && isDunPage && !mounted) {
-      main.classList.add('dun-route-mounted');
-      main.appendChild(document.createElement('emjj-dun-page'));
+    if (target && isDunPage) {
+      root?.classList.toggle('dun-route-mounted', target === root);
+      main?.classList.toggle('dun-route-mounted', target === main);
+      if (!mounted) mounted = document.createElement('emjj-dun-page');
+      if (mounted.parentElement !== target) target.appendChild(mounted);
       document.title = 'ДУН хэл заслын сургалтын төв | ЭМЖЖ Эмнэлэг';
-    } else if (main && !isDunPage) {
-      main.classList.remove('dun-route-mounted');
+    } else if (!isDunPage) {
+      root?.classList.remove('dun-route-mounted');
+      main?.classList.remove('dun-route-mounted');
       mounted?.remove();
       if (document.title.startsWith('ДУН хэл заслын')) document.title = 'EMJJ Hospital';
     }

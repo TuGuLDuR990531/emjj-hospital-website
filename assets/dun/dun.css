@@ -1,6 +1,7 @@
 emjj-dun-page { display: block; }
 
-main.dun-route-mounted > :not(emjj-dun-page) { display: none !important; }
+main.dun-route-mounted > :not(emjj-dun-page),
+#root.dun-route-mounted > :not(emjj-dun-page) { display: none !important; }
 
 .dun-page {
   --dun-blue: #086ab7;
