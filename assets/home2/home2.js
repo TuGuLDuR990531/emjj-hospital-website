@@ -27,6 +27,7 @@
   const branches = [
     {
       name: 'ЭМЖЖ Төв эмнэлэг',
+      type: 'Эмнэлэг',
       image: './assets/home2/branch-central.webp',
       hours: 'Даваа – Баасан: 08:00 – 20:00|Бямба: 10:00 – 14:00',
       phone: '1900-9999',
@@ -34,6 +35,7 @@
     },
     {
       name: 'Мишээл клиник',
+      type: 'Клиник',
       image: './assets/home2/branch-misheel.webp',
       hours: 'Даваа – Баасан: 08:00 – 17:00|Бямба: 10:00 – 14:00',
       phone: '1900-9999',
@@ -41,6 +43,8 @@
     },
     {
       name: '10-р хороолол клиник',
+      type: 'Клиник',
+      compact: true,
       image: './assets/home2/branch-10.webp',
       hours: 'Даваа – Баасан: 08:00 – 17:00|Бямба: 10:00 – 14:00',
       phone: '1900-9999',
@@ -48,10 +52,39 @@
     },
     {
       name: 'Халдварт клиник',
+      type: 'Клиник',
+      compact: true,
       image: './assets/home2/branch-infectious.webp',
       hours: 'Даваа – Баасан: 08:00 – 17:00|Бямба: 10:00 – 14:00',
       phone: '1900-9999',
       address: 'БЗД, ХӨСҮТ эцсийн буудал, RAPID MED төвийн 5 давхар',
+    },
+    {
+      name: 'ДУН хэл заслын сургалтын төв',
+      type: 'Хэл засал, сургалтын төв',
+      image: './assets/dun/dun-hero.webp',
+      photo: true,
+      hours: 'Даваа – Баасан: 08:00 – 17:00|Бямба: 10:00 – 14:00',
+      phone: '1900-9999',
+      address: 'Байршлын мэдээлэл удахгүй шинэчлэгдэнэ',
+      href: '/dun',
+      linkLabel: 'Төвийн тухай дэлгэрэнгүй',
+    },
+    {
+      name: 'ЭМЖЖ Сувилал',
+      type: 'Сэргээн засах, сувилал',
+      image: './assets/home2/branch-central.webp',
+      hours: 'Даваа – Баасан: 08:00 – 17:00|Бямба: 10:00 – 14:00',
+      phone: '1900-9999',
+      address: 'Байршлын мэдээлэл удахгүй шинэчлэгдэнэ',
+    },
+    {
+      name: 'ЭМЖЖЭМ',
+      type: 'Эм ханган нийлүүлэгч',
+      image: './assets/home2/branch-misheel.webp',
+      hours: 'Даваа – Баасан: 08:00 – 17:00|Бямба: 10:00 – 14:00',
+      phone: '1900-9999',
+      address: 'Байршлын мэдээлэл удахгүй шинэчлэгдэнэ',
     },
   ];
 
@@ -195,17 +228,18 @@
               <p>Нэгдсэн утас: <a href="tel:19009999">1900-9999</a></p>
             </div>
             <div class="home2-branch-grid">
-              ${branches.map((branch, index) => `
-                <article class="home2-branch-card${index > 1 ? ' home2-branch-card--compact-building' : ''}">
+              ${branches.map((branch) => `
+                <article class="home2-branch-card${branch.compact ? ' home2-branch-card--compact-building' : ''}${branch.photo ? ' home2-branch-card--photo' : ''}">
                   <div class="home2-building-wrap">
                     <img src="${branch.image}" alt="${branch.name} салбарын дүрслэл" loading="lazy" />
                   </div>
                   <div class="home2-branch-copy">
+                    <span class="home2-branch-type">${branch.type}</span>
                     <h3>${branch.name}</h3>
                     ${branch.hours.split('|').map((line) => `<p><span aria-hidden="true">◷</span>${line}</p>`).join('')}
                     <p><span aria-hidden="true">☎</span><a href="tel:19009999">${branch.phone}</a></p>
                     <p><span aria-hidden="true">⌖</span>${branch.address}</p>
-                    <a class="home2-branch-link" href="/contact" data-route>Байршил, холбоо барих <span aria-hidden="true">→</span></a>
+                    <a class="home2-branch-link" href="${branch.href || '/contact'}" data-route>${branch.linkLabel || 'Байршил, холбоо барих'} <span aria-hidden="true">→</span></a>
                   </div>
                 </article>`).join('')}
             </div>

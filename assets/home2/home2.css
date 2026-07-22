@@ -438,6 +438,19 @@ main.home2-route-mounted > :not(emjj-home-two) {
   height: 80%;
 }
 
+.home2-branch-card--photo .home2-building-wrap {
+  padding: 0;
+}
+
+.home2-branch-card--photo .home2-building-wrap img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 66% center;
+  filter: none;
+}
+
 .home2-branch-copy {
   flex: 1;
   display: flex;
@@ -453,6 +466,22 @@ main.home2-route-mounted > :not(emjj-home-two) {
   font-size: 20px;
   line-height: 1.25;
   font-weight: 800;
+}
+
+.home2-branch-type {
+  width: max-content;
+  max-width: 100%;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 999px;
+  color: #c9f9ff;
+  background: rgba(3, 75, 146, .22);
+  font-size: 9px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
 }
 
 .home2-branch-copy p {
