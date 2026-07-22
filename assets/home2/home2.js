@@ -123,8 +123,13 @@
         link.addEventListener('click', (event) => {
           if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
           event.preventDefault();
-          window.history.pushState({}, '', link.getAttribute('href'));
-          window.dispatchEvent(new PopStateEvent('popstate'));
+          const destination = link.getAttribute('href');
+          if (window.location.hash.startsWith('#/')) {
+            window.location.hash = destination;
+          } else {
+            window.history.pushState({}, '', destination);
+            window.dispatchEvent(new PopStateEvent('popstate'));
+          }
         });
       });
     }
@@ -134,12 +139,17 @@
     customElements.define('emjj-home-two', EmjjHomeTwo);
   }
 
+  const currentRoutePath = () => {
+    const hashPath = window.location.hash.replace(/^#/, '').split('?')[0];
+    return hashPath.startsWith('/') ? hashPath : window.location.pathname;
+  };
+
   let mounting = false;
   const mountHomeTwo = () => {
     if (mounting) return;
     mounting = true;
     const main = document.querySelector('#main');
-    const isHomeTwo = window.location.pathname.replace(/\/$/, '').endsWith('/home-2');
+    const isHomeTwo = currentRoutePath().replace(/\/$/, '').endsWith('/home-2');
     const mounted = main && main.querySelector(':scope > emjj-home-two');
 
     if (main && isHomeTwo && !mounted) {
@@ -159,6 +169,7 @@
       new MutationObserver(mountHomeTwo).observe(root, { childList: true, subtree: true });
     }
     window.addEventListener('popstate', mountHomeTwo);
+    window.addEventListener('hashchange', mountHomeTwo);
   };
 
   if (document.readyState === 'loading') {
