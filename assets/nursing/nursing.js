@@ -22,10 +22,10 @@
   ];
 
   const rooms = [
-    { image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=900&h=650&fit=crop', title: 'Энгийн өрөө' },
-    { image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&h=650&fit=crop', title: 'Хагас люкс өрөө' },
-    { image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&h=650&fit=crop', title: 'Люкс өрөө' },
-    { image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=650&fit=crop', title: 'Шавар гэр' },
+    { image: './assets/nursing/room-standard.webp', title: 'Энгийн өрөө' },
+    { image: './assets/nursing/room-semilux.webp', title: 'Хагас люкс өрөө' },
+    { image: './assets/nursing/room-luxury.webp', title: 'Люкс өрөө' },
+    { image: './assets/nursing/room-mud-ger.webp', title: 'Шавар гэр' },
   ];
 
   const treatments = [
@@ -56,8 +56,8 @@
           <div class="nursing-main" id="nursing-content" tabindex="-1">
             <section class="nursing-hero" aria-labelledby="nursing-title">
               <picture>
-                <source media="(max-width:720px)" srcset="./assets/nursing/nursing-hero-960.webp" />
-                <img src="./assets/nursing/nursing-hero-1800.webp" srcset="./assets/nursing/nursing-hero-960.webp 960w, ./assets/nursing/nursing-hero-1800.webp 1800w" sizes="100vw" width="1800" height="810" fetchpriority="high" alt="Төв аймгийн Баянчандмань сум дахь ЭМЖЖ сэргээн засах сувиллын барилга, ногоон орчин" />
+                <source media="(max-width:720px)" srcset="./assets/nursing/nursing-hero-v2-960.webp" />
+                <img src="./assets/nursing/nursing-hero-v2-1800.webp" srcset="./assets/nursing/nursing-hero-v2-960.webp 960w, ./assets/nursing/nursing-hero-v2-1800.webp 1800w" sizes="100vw" width="1800" height="810" fetchpriority="high" alt="Төв аймгийн Баянчандмань сум дахь ЭМЖЖ сэргээн засах сувиллын барилга, ногоон орчин" />
               </picture>
               <div class="nursing-hero-overlay"></div>
               <div class="nursing-hero-content">
