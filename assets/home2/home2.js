@@ -11,6 +11,8 @@
     protection: icon('<path d="M12 3a7 7 0 0 0-7 7v5a3 3 0 0 0 3 3h1v-7H6"/><path d="M12 3a7 7 0 0 1 7 7v5a3 3 0 0 1-3 3h-1v-7h3"/><path d="M15 18c0 2-1 3-3 3"/>'),
     equipment: icon('<rect x="4" y="5" width="16" height="11" rx="2"/><path d="M8 20h8M12 16v4M8 10h2l2-3 2 6 2-3h2"/>'),
     hearing: icon('<path d="M16.5 12.5c0-3-1.7-5-4.5-5a4.5 4.5 0 0 0-4.5 4.5"/><path d="M12 3a9 9 0 0 1 9 9c0 3-1.5 5-4 7-1 .7-1.5 2-3 2-2 0-3-1.2-3-3"/><path d="M10 13c0-1.2.7-2 2-2s2 .8 2 2c0 2-3 2.2-3 5"/>'),
+    search: icon('<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>'),
+    reset: icon('<path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M6.1 9a7 7 0 0 1 11.4-2L20 9M4 15l2.5 2A7 7 0 0 0 18 15"/>'),
   };
 
   const services = [
@@ -84,6 +86,97 @@
             </div>
           </section>
 
+          <section class="home2-filter" aria-labelledby="home2-filter-title">
+            <div class="home2-filter-heading">
+              <span>Үйлчилгээ хайх</span>
+              <h2 id="home2-filter-title">Танд тохирох үйлчилгээг олоорой</h2>
+              <p>Бүлэг, дэд төрөл, эмч, салбараар шүүж хэрэгтэй мэдээллээ хурдан аваарай.</p>
+            </div>
+            <form class="home2-filter-panel" data-service-filter>
+              <div class="home2-filter-search-row">
+                <label class="home2-filter-search-field">
+                  <span>Үйлчилгээ, эмч, шинжилгээний нэрээр хайх</span>
+                  <span class="home2-filter-input-wrap">
+                    ${icons.search}
+                    <input type="search" name="q" placeholder="Жишээ: сонсголын үзлэг, хамрын мэс засал..." />
+                  </span>
+                </label>
+                <div class="home2-filter-actions">
+                  <button class="home2-filter-submit" type="submit">${icons.search}<span>Хайх</span></button>
+                  <button class="home2-filter-reset" type="reset">${icons.reset}<span>Цэвэрлэх</span></button>
+                </div>
+              </div>
+              <div class="home2-filter-grid">
+                <label>Тусламж үйлчилгээ
+                  <select name="group" data-filter-group>
+                    <option value="">Бүх бүлэг</option>
+                    <option value="ambulatory">Амбулаторийн тусламж үйлчилгээ</option>
+                    <option value="inpatient">Хэвтүүлэн эмчлэх</option>
+                    <option value="diagnostics">Үйл онош</option>
+                    <option value="rehab_resort">Сэргээн засах сувилал</option>
+                  </select>
+                </label>
+                <label>Дэд төрөл
+                  <select name="subtype" data-filter-subtype disabled>
+                    <option value="">Бүх дэд төрөл</option>
+                    <option>Хамрын мэс засал</option>
+                    <option>Чихний мэс засал</option>
+                    <option>Залгиур төвөнхийн мэс засал</option>
+                    <option>Чих, Сонсгол</option>
+                    <option>Залгиур, төвөнх</option>
+                    <option>Хамар, Харшил</option>
+                    <option>Дотор</option>
+                    <option>Тэнцвэр</option>
+                    <option>Дүрс оношлогоо</option>
+                    <option>Лаборатори</option>
+                  </select>
+                </label>
+                <label>Эмч
+                  <select name="doctor">
+                    <option value="">Бүх эмч</option>
+                    <option>Б.Эрдэнэчимэг</option>
+                    <option>Б.Батхишиг</option>
+                    <option>Д.Өлзийсайхан</option>
+                    <option>Ч.Сайнбилэг</option>
+                    <option>Н.Мягмарнаран</option>
+                    <option>Б.Рагчаасүрэн</option>
+                    <option>Б.Сосорбарам</option>
+                    <option>Я.Саруулзул</option>
+                    <option>Т.Марал</option>
+                    <option>А.Хэрлэн</option>
+                  </select>
+                </label>
+                <label>Үйлчилгээ
+                  <select name="service">
+                    <option value="">Бүх үйлчилгээ</option>
+                    <option>Үзлэг, зөвлөгөө</option>
+                    <option>Сонсголын шинжилгээ</option>
+                    <option>Лабораторийн шинжилгээ</option>
+                    <option>Мэс ажилбар</option>
+                    <option>Сэргээн засах эмчилгээ</option>
+                  </select>
+                </label>
+                <label>Салбар
+                  <select name="branch">
+                    <option value="">Бүх салбар</option>
+                    <option value="central">Төв эмнэлэг</option>
+                    <option value="10th">10-р хороолол клиник</option>
+                    <option value="khaldvar">Халдварт клиник</option>
+                    <option value="misheel">Мишээл клиник</option>
+                    <option value="resort">Сэргээн засах сувилал</option>
+                  </select>
+                </label>
+              </div>
+              <div class="home2-filter-legend">
+                <strong>Тайлбар:</strong>
+                <span><i class="home2-legend-dot home2-legend-dot--blue"></i>Цаг авах боломжтой</span>
+                <span><i class="home2-legend-dot home2-legend-dot--cyan"></i>Эмчтэй үйлчилгээ</span>
+                <span><i class="home2-legend-dot home2-legend-dot--orange"></i>Шинжилгээ</span>
+                <span><i class="home2-legend-dot home2-legend-dot--navy"></i>Мэс ажилбар</span>
+              </div>
+            </form>
+          </section>
+
           <section class="home2-booking" aria-label="Онлайн цаг захиалга">
             <div class="home2-section-heading home2-section-heading--compact">
               <span>Онлайн үйлчилгээ</span>
@@ -102,8 +195,8 @@
               <p>Нэгдсэн утас: <a href="tel:19009999">1900-9999</a></p>
             </div>
             <div class="home2-branch-grid">
-              ${branches.map((branch) => `
-                <article class="home2-branch-card">
+              ${branches.map((branch, index) => `
+                <article class="home2-branch-card${index > 1 ? ' home2-branch-card--compact-building' : ''}">
                   <div class="home2-building-wrap">
                     <img src="${branch.image}" alt="${branch.name} салбарын дүрслэл" loading="lazy" />
                   </div>
@@ -119,18 +212,42 @@
           </section>
         </div>`;
 
+      const navigateTo = (destination) => {
+        if (window.location.hash.startsWith('#/')) {
+          window.location.hash = destination;
+        } else {
+          window.history.pushState({}, '', destination);
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        }
+      };
+
       this.querySelectorAll('[data-route]').forEach((link) => {
         link.addEventListener('click', (event) => {
           if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
           event.preventDefault();
-          const destination = link.getAttribute('href');
-          if (window.location.hash.startsWith('#/')) {
-            window.location.hash = destination;
-          } else {
-            window.history.pushState({}, '', destination);
-            window.dispatchEvent(new PopStateEvent('popstate'));
-          }
+          navigateTo(link.getAttribute('href'));
         });
+      });
+
+      const filterForm = this.querySelector('[data-service-filter]');
+      const groupSelect = filterForm.querySelector('[data-filter-group]');
+      const subtypeSelect = filterForm.querySelector('[data-filter-subtype]');
+      groupSelect.addEventListener('change', () => {
+        subtypeSelect.disabled = !groupSelect.value;
+        if (!groupSelect.value) subtypeSelect.value = '';
+      });
+      filterForm.addEventListener('reset', () => {
+        window.setTimeout(() => {
+          subtypeSelect.disabled = true;
+        }, 0);
+      });
+      filterForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const params = new URLSearchParams(new FormData(filterForm));
+        [...params.keys()].forEach((key) => {
+          if (!params.get(key)) params.delete(key);
+        });
+        navigateTo(`/services${params.size ? `?${params.toString()}` : ''}`);
       });
     }
   }

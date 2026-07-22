@@ -141,6 +141,217 @@ main.home2-route-mounted > :not(emjj-home-two) {
   font-size: 21px;
 }
 
+.home2-filter {
+  padding: 44px 32px 82px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(186, 231, 255, .44), transparent 32%),
+    linear-gradient(105deg, #edf7ff 0%, #f8fbfc 55%, #fffaf2 100%);
+}
+
+.home2-filter-heading {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.home2-filter-heading > span {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 11px 24px;
+  border: 1px solid rgba(255, 255, 255, .75);
+  border-radius: 999px;
+  color: var(--home2-blue);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 28px rgba(3, 191, 215, .14), -8px -8px 24px rgba(255, 255, 255, .9);
+}
+
+.home2-filter-heading h2 {
+  margin: 0 0 10px;
+  color: var(--home2-ink);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.home2-filter-heading p {
+  margin: 0;
+  color: #5a7a9a;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.home2-filter-panel {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: 14px 18px 38px rgba(68, 91, 118, .17), -8px -8px 24px rgba(255, 255, 255, .9);
+}
+
+.home2-filter-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.home2-filter-search-field,
+.home2-filter-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--home2-ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+
+.home2-filter-input-wrap {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 15px;
+  border: 1px solid #edf1f6;
+  border-radius: 17px;
+  background: #f8fafc;
+  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, .035), inset -2px -2px 6px rgba(255, 255, 255, .9);
+}
+
+.home2-filter-input-wrap:focus-within {
+  border-color: var(--home2-blue);
+}
+
+.home2-filter-input-wrap svg,
+.home2-filter-actions svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home2-filter-input-wrap svg {
+  color: var(--home2-blue);
+}
+
+.home2-filter-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--home2-ink);
+  background: transparent;
+  font: 600 13px/1.4 Montserrat, Arial, sans-serif;
+}
+
+.home2-filter-input-wrap input::placeholder {
+  color: #7a8aa0;
+}
+
+.home2-filter-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.home2-filter-actions button {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font: 800 12px/1 Montserrat, Arial, sans-serif;
+  cursor: pointer;
+}
+
+.home2-filter-submit {
+  border: 0;
+  color: #fff;
+  background: linear-gradient(145deg, #086ab7, #034c98);
+  box-shadow: 6px 7px 14px rgba(0, 84, 166, .22);
+}
+
+.home2-filter-reset {
+  border: 1px solid #e4e9f0;
+  color: var(--home2-ink);
+  background: #fff;
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, .05);
+}
+
+.home2-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.home2-filter-grid select {
+  width: 100%;
+  height: 46px;
+  padding: 0 13px;
+  border: 1px solid #edf1f6;
+  border-radius: 17px;
+  outline: 0;
+  color: var(--home2-ink);
+  background: #f8fafc;
+  font: 700 12px/1.2 Montserrat, Arial, sans-serif;
+  text-transform: none;
+  box-shadow: inset 3px 3px 7px rgba(0, 0, 0, .035), inset -2px -2px 6px rgba(255, 255, 255, .9);
+}
+
+.home2-filter-grid select:focus {
+  border-color: var(--home2-blue);
+}
+
+.home2-filter-grid select:disabled {
+  opacity: .58;
+  cursor: not-allowed;
+}
+
+.home2-filter-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 13px;
+  color: #52627a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.home2-filter-legend strong {
+  color: var(--home2-ink);
+}
+
+.home2-filter-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.home2-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.home2-legend-dot--blue { background: #086ab7; }
+.home2-legend-dot--cyan { background: #12bdd1; }
+.home2-legend-dot--orange { background: #ff9d2e; }
+.home2-legend-dot--navy { background: #07376c; }
+
 .home2-booking {
   padding-top: 34px;
   padding-bottom: 82px;
@@ -206,6 +417,8 @@ main.home2-route-mounted > :not(emjj-home-two) {
 
 .home2-building-wrap {
   height: 280px;
+  min-height: 280px;
+  overflow: hidden;
   display: grid;
   place-items: center;
   padding: 18px 16px 0;
@@ -213,10 +426,16 @@ main.home2-route-mounted > :not(emjj-home-two) {
 }
 
 .home2-building-wrap img {
-  width: 100%;
+  width: auto;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 18px 15px rgba(0, 39, 82, .24));
+}
+
+.home2-branch-card--compact-building .home2-building-wrap img {
+  height: 80%;
 }
 
 .home2-branch-copy {
@@ -274,6 +493,10 @@ main.home2-route-mounted > :not(emjj-home-two) {
   .home2-branch-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .home2-filter-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -315,6 +538,39 @@ main.home2-route-mounted > :not(emjj-home-two) {
   .home2-services,
   .home2-booking {
     padding: 52px 18px;
+  }
+
+  .home2-filter {
+    padding: 44px 18px 58px;
+  }
+
+  .home2-filter-heading {
+    margin-bottom: 24px;
+  }
+
+  .home2-filter-heading h2 {
+    font-size: 27px;
+  }
+
+  .home2-filter-heading p {
+    font-size: 13px;
+  }
+
+  .home2-filter-panel {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .home2-filter-search-row {
+    grid-template-columns: 1fr;
+  }
+
+  .home2-filter-actions button {
+    flex: 1;
+  }
+
+  .home2-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .home2-section-heading {
@@ -373,6 +629,13 @@ main.home2-route-mounted > :not(emjj-home-two) {
 
   .home2-building-wrap {
     height: 260px;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 470px) {
+  .home2-filter-grid {
+    grid-template-columns: 1fr;
   }
 }
 
