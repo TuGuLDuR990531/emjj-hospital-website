@@ -57,6 +57,7 @@
               <span>Хамтын үнэ цэнэ</span>
               <h2>ЭМЖЖ Эмнэлэг орлогынхоо <strong>1%-ийг</strong> ДУН төвийн үйл ажиллагаанд зориулдаг.</h2>
               <p>Хүүхдийн сургалт, нөхөн сэргээх үйлчилгээ болон төвийн өдөр тутмын үйл ажиллагааг тогтвортой дэмжин ажилладаг.</p>
+              <button class="dun-donation-button" type="button" data-scroll="dun-donors">Хандивлагч болох <span aria-hidden="true">→</span></button>
             </div>
           </section>
 
@@ -87,6 +88,30 @@
                   <h3>${program.title}</h3>
                   <p>${program.text}</p>
                 </article>`).join('')}
+            </div>
+          </section>
+
+          <section class="dun-donors" id="dun-donors" aria-labelledby="dun-donors-title">
+            <div class="dun-section-heading">
+              <span>Хамтдаа илүү их боломжийг бүтээнэ</span>
+              <h2 id="dun-donors-title">Бидний хандивлагчид</h2>
+              <p>Хүүхэд бүрийн сонсох, харилцах, хөгжих боломжийг тогтвортой дэмждэг байгууллага, хувь хүмүүст талархаж байна.</p>
+            </div>
+            <div class="dun-donor-layout">
+              <article class="dun-donor-card">
+                <div class="dun-donor-logo">${spiralMark}<span>EMJJ<small>HOSPITAL</small></span></div>
+                <div>
+                  <span class="dun-donor-label">Тогтмол дэмжигч</span>
+                  <h3>ЭМЖЖ Эмнэлэг</h3>
+                  <p>Орлогынхоо 1%-ийг ДУН төвийн сургалт, нөхөн сэргээх үйлчилгээ болон өдөр тутмын үйл ажиллагаанд зориулдаг.</p>
+                </div>
+              </article>
+              <aside class="dun-donor-invite">
+                <span>Та ч бас бидэнтэй нэгдээрэй</span>
+                <h3>Хүүхдийн ирээдүйд бодит хувь нэмэр оруулах</h3>
+                <p>Хандивын хэлбэр, хамтын ажиллагааны боломжийн талаар манай багтай холбогдоорой.</p>
+                <a href="/contact" data-route>Хандивлагч болох <span aria-hidden="true">→</span></a>
+              </aside>
             </div>
           </section>
 
