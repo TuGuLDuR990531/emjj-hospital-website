@@ -3,6 +3,7 @@
 
   const products = [
     {
+      slug: 'motion-p-ix',
       name: 'Motion Charge&Go P IX',
       image: './assets/signia/motion-p-ix.png',
       alt: 'Motion Charge&Go P IX сонсголын аппарат болон цэнэглэгч',
@@ -11,6 +12,7 @@
       facts: ['RealTime Conversation Enhancement', 'Bluetooth холболт', 'Телекоил'],
     },
     {
+      slug: 'motion-sp-ix',
       name: 'Motion Charge&Go SP IX',
       image: './assets/signia/motion-sp-ix.png',
       alt: 'Motion Charge&Go SP IX супер хүчирхэг сонсголын аппарат болон цэнэглэгч',
@@ -19,6 +21,7 @@
       facts: ['82 дБ хүртэл өсгөлт', 'Өдөржин хэрэглэх цэнэг', 'Signia Assistant'],
     },
     {
+      slug: 'insio-cic-ix',
       name: 'Insio Charge&Go IX CIC',
       image: './assets/signia/insio-cic-ix.png',
       alt: 'Insio Charge&Go IX CIC чихний сувагт байрлах аппарат болон зөөврийн цэнэглэгч',
@@ -94,7 +97,7 @@
                       <h3>${product.name}</h3>
                       <p>${product.text}</p>
                       <ul>${product.facts.map((fact) => `<li>${fact}</li>`).join('')}</ul>
-                      <button type="button" data-scroll="signia-services">Тохируулгын зөвлөгөө авах <span aria-hidden="true">→</span></button>
+                      <a class="signia-product-link" href="/signia/${product.slug}" data-route>Дэлгэрэнгүй <span aria-hidden="true">→</span></a>
                     </div>
                   </article>`).join('')}
               </div>

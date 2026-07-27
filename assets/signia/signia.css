@@ -57,6 +57,7 @@ main.signia-route-mounted > :not(emjj-signia-page),
 .signia-product-copy ul { display:flex; flex-wrap:wrap; gap:7px; margin:18px 0 22px; padding:0; list-style:none; }
 .signia-product-copy li { padding:6px 9px; border:1px solid #dce9f2; border-radius:999px; color:#3f607d; background:#f8fbfd; font-size:9px; font-weight:700; }
 .signia-product-copy button { min-height:44px; padding:0; border:0; color:var(--sg-blue); background:none; font:800 11px/1 Montserrat,Arial,sans-serif; cursor:pointer; }
+.signia-product-link { min-height:46px; display:inline-flex; align-items:center; gap:8px; padding:0 18px; border-radius:10px; color:#fff; background:var(--sg-blue); font-size:11px; font-weight:800; text-decoration:none; }
 .signia-product-note { max-width:900px; margin:28px auto 0; color:#6a8298; font-size:11px; line-height:1.6; text-align:center; }
 
 .signia-services { background:linear-gradient(145deg,#edf8ff,#f8fcff); }
